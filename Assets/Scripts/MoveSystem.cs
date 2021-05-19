@@ -64,6 +64,8 @@ public class MoveSystem : MonoBehaviour
                                                        correctForm.transform.localScale.y,
                                                        correctForm.transform.localScale.z);
             finish = true;
+
+            GameObject.Find("PointsHandle").GetComponent<WinScript>().AddPoints();
         }
         else
         {
