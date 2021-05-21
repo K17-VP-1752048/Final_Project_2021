@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class WinScript : MonoBehaviour
 {
     [SerializeField] GameObject myAnimals;
@@ -20,8 +20,15 @@ public class WinScript : MonoBehaviour
         if (currentPoints >= pointsToWin)
         {
             //Win
-            transform.GetChild(0).gameObject.SetActive(true);
+            //transform.GetChild(0).gameObject.SetActive(true);
+            StartCoroutine(PrintfAfter(2.0f));
         }
+    }
+
+    IEnumerator PrintfAfter(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene("WinScene");
     }
 
     public void AddPoints()

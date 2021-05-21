@@ -66,6 +66,7 @@ public class MoveSystem : MonoBehaviour
             finish = true;
 
             GameObject.Find("PointsHandle").GetComponent<WinScript>().AddPoints();
+            GetComponent<AudioSource>().Play();
         }
         else
         {
