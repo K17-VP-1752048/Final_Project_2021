@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 18200454}
   - component: {fileID: 18200455}
   m_Layer: 0
-  m_Name: rabbit shadow
+  m_Name: animal2 shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -242,7 +242,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 438728235}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -334,7 +335,7 @@ GameObject:
   - component: {fileID: 299415018}
   - component: {fileID: 299415017}
   m_Layer: 5
-  m_Name: rabbit text
+  m_Name: animal2 text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -559,6 +560,106 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -6, y: -316}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &372927479
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 236780935}
+    m_Modifications:
+    - target: {fileID: 6759868270604001720, guid: afe7eb3648bf17b48aa3cbd2a80443a4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759868270604001720, guid: afe7eb3648bf17b48aa3cbd2a80443a4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759868270604001720, guid: afe7eb3648bf17b48aa3cbd2a80443a4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759868270604001720, guid: afe7eb3648bf17b48aa3cbd2a80443a4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759868270604001720, guid: afe7eb3648bf17b48aa3cbd2a80443a4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759868270604001720, guid: afe7eb3648bf17b48aa3cbd2a80443a4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759868270604001720, guid: afe7eb3648bf17b48aa3cbd2a80443a4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759868270604001720, guid: afe7eb3648bf17b48aa3cbd2a80443a4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759868270604001720, guid: afe7eb3648bf17b48aa3cbd2a80443a4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759868270604001720, guid: afe7eb3648bf17b48aa3cbd2a80443a4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759868270604001720, guid: afe7eb3648bf17b48aa3cbd2a80443a4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759868270604001723, guid: afe7eb3648bf17b48aa3cbd2a80443a4,
+        type: 3}
+      propertyPath: m_Name
+      value: WinBg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759868270604001723, guid: afe7eb3648bf17b48aa3cbd2a80443a4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7516351769750418527, guid: afe7eb3648bf17b48aa3cbd2a80443a4, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: afe7eb3648bf17b48aa3cbd2a80443a4, type: 3}
+--- !u!1 &438728234 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6759868270604001723, guid: afe7eb3648bf17b48aa3cbd2a80443a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 372927479}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &438728235 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6759868270604001720, guid: afe7eb3648bf17b48aa3cbd2a80443a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 372927479}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &438728236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438728234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d449e36f7fa874d4c8275efe9ac15c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: Animals_Match2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,7 +754,7 @@ GameObject:
   - component: {fileID: 584301828}
   - component: {fileID: 584301829}
   m_Layer: 0
-  m_Name: bear shadow
+  m_Name: animal1 shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -739,7 +840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 662605240}
   m_Layer: 5
-  m_Name: Bear
+  m_Name: Animal1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -776,7 +877,7 @@ GameObject:
   m_Component:
   - component: {fileID: 695971257}
   m_Layer: 5
-  m_Name: Rabbit
+  m_Name: Animal2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -817,7 +918,7 @@ GameObject:
   - component: {fileID: 697073216}
   - component: {fileID: 697073219}
   m_Layer: 0
-  m_Name: snake
+  m_Name: animal3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1036,7 +1137,7 @@ GameObject:
   - component: {fileID: 760676837}
   - component: {fileID: 760676838}
   m_Layer: 0
-  m_Name: bear
+  m_Name: animal1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1341,6 +1442,100 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &944359700
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 438728235}
+    m_Modifications:
+    - target: {fileID: 2922200119815499493, guid: a78f52d75fd803c4890921dc4183dee2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922200119815499493, guid: a78f52d75fd803c4890921dc4183dee2,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922200119815499493, guid: a78f52d75fd803c4890921dc4183dee2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922200119815499493, guid: a78f52d75fd803c4890921dc4183dee2,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922200119815499493, guid: a78f52d75fd803c4890921dc4183dee2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922200119815499493, guid: a78f52d75fd803c4890921dc4183dee2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922200119815499493, guid: a78f52d75fd803c4890921dc4183dee2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922200119815499493, guid: a78f52d75fd803c4890921dc4183dee2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922200119815499493, guid: a78f52d75fd803c4890921dc4183dee2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922200119815499493, guid: a78f52d75fd803c4890921dc4183dee2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922200119815499493, guid: a78f52d75fd803c4890921dc4183dee2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922200119815499493, guid: a78f52d75fd803c4890921dc4183dee2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922200119815499493, guid: a78f52d75fd803c4890921dc4183dee2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922200119815499493, guid: a78f52d75fd803c4890921dc4183dee2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922200119815499494, guid: a78f52d75fd803c4890921dc4183dee2,
+        type: 3}
+      propertyPath: m_Name
+      value: Congratulations
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922200119815499494, guid: a78f52d75fd803c4890921dc4183dee2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922200120103394547, guid: a78f52d75fd803c4890921dc4183dee2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a78f52d75fd803c4890921dc4183dee2, type: 3}
 --- !u!1 &949650729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,7 +1548,7 @@ GameObject:
   - component: {fileID: 949650732}
   - component: {fileID: 949650731}
   m_Layer: 5
-  m_Name: snake border
+  m_Name: animal3 border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1430,7 +1625,7 @@ GameObject:
   - component: {fileID: 1082091922}
   - component: {fileID: 1082091923}
   m_Layer: 0
-  m_Name: rabbit
+  m_Name: animal2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1719,7 +1914,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1468735162}
   m_Layer: 5
-  m_Name: Snake
+  m_Name: Animal3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1758,7 +1953,7 @@ GameObject:
   - component: {fileID: 1480819826}
   - component: {fileID: 1480819825}
   m_Layer: 5
-  m_Name: bear border
+  m_Name: animal1 border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1944,7 +2139,7 @@ GameObject:
   - component: {fileID: 1874629450}
   - component: {fileID: 1874629449}
   m_Layer: 5
-  m_Name: bear text
+  m_Name: animal1 text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2077,7 +2272,7 @@ GameObject:
   - component: {fileID: 1935467252}
   - component: {fileID: 1935467251}
   m_Layer: 5
-  m_Name: snake text
+  m_Name: animal3 text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2210,7 +2405,7 @@ GameObject:
   - component: {fileID: 1990024683}
   - component: {fileID: 1990024682}
   m_Layer: 5
-  m_Name: rabbit border
+  m_Name: animal2 border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2284,7 +2479,7 @@ GameObject:
   - component: {fileID: 2072319376}
   - component: {fileID: 2072319375}
   m_Layer: 0
-  m_Name: snake shadow
+  m_Name: animal3 shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

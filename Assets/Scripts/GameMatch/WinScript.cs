@@ -20,7 +20,6 @@ public class WinScript : MonoBehaviour
         if (currentPoints >= pointsToWin)
         {
             //Win
-            //transform.GetChild(0).gameObject.SetActive(true);
             StartCoroutine(PrintfAfter(2.0f));
         }
     }
@@ -28,7 +27,7 @@ public class WinScript : MonoBehaviour
     IEnumerator PrintfAfter(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        SceneManager.LoadScene("WinScene");
+        transform.GetChild(0).gameObject.SetActive(true);
     }
 
     public void AddPoints()

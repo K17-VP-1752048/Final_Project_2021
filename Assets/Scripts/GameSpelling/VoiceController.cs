@@ -52,14 +52,14 @@ public class VoiceController : MonoBehaviour
     {
         if(result.ToLower() == resText.text.ToLower())
         {
-            SceneManager.LoadScene("WinScene");
+            transform.GetChild(0).gameObject.SetActive(true);
         }
     }
     void OnPartialSpeechResult(string result)
     {
         if (result.ToLower() == resText.text.ToLower())
         {
-            SceneManager.LoadScene("WinScene");
+            transform.GetChild(0).gameObject.SetActive(true);
         }
     }
 
