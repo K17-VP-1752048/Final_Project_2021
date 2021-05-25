@@ -40,6 +40,7 @@ public class QuizUI : MonoBehaviour
         }*/
         questionText.text = question.questionInfo;
         questionImg.sprite = question.questionImg;
+        questionImg.preserveAspect = true;
 
         //shuffle the list of options
         List<Answer> ansOptions = ShuffleList.ShuffleListItems<Answer>(question.options);

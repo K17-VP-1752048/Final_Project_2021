@@ -133,6 +133,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SettingBtn
       objectReference: {fileID: 0}
+    - target: {fileID: 3338019506331195720, guid: ccd624b7482b3144381f95b3b98e2c27,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4156118341045994221, guid: ccd624b7482b3144381f95b3b98e2c27,
         type: 3}
       propertyPath: m_Pivot.x
@@ -242,7 +247,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: ccd624b7482b3144381f95b3b98e2c27, type: 3}
 --- !u!224 &118152778 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4156118341045994221, guid: ccd624b7482b3144381f95b3b98e2c27,
+  m_CorrespondingSourceObject: {fileID: 3338019506331195720, guid: ccd624b7482b3144381f95b3b98e2c27,
     type: 3}
   m_PrefabInstance: {fileID: 118152777}
   m_PrefabAsset: {fileID: 0}
@@ -525,7 +530,6 @@ GameObject:
   - component: {fileID: 814206242}
   - component: {fileID: 814206241}
   - component: {fileID: 814206240}
-  - component: {fileID: 814206244}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -609,8 +613,8 @@ RectTransform:
   - {fileID: 591775665}
   - {fileID: 1168762130}
   - {fileID: 1205126696}
-  - {fileID: 864437382}
   - {fileID: 118152778}
+  - {fileID: 864437382}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -619,18 +623,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &814206244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814206239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a5519bf7066bd9458bc92f628dbb497, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &864437381
 PrefabInstance:
   m_ObjectHideFlags: 0
