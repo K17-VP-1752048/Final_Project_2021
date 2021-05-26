@@ -17,4 +17,20 @@ public class ScenceLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Scenes/MenuScene");
     }
+    public void LoadTopicsAnimalScene()
+    {
+        SceneManager.LoadScene("Scenes/TopicsAnimalsScene");
+    }
+    public void LoadTopicsAlimentsScene()
+    {
+        SceneManager.LoadScene("Scenes/TopicsAlimentsScene");
+    }
+    public void LoadTopicsHouseScene()
+    {
+        SceneManager.LoadScene("Scenes/TopicsHouseScene");
+    }
+    public void LoadTopicsNumberScene()
+    {
+        SceneManager.LoadScene("Scenes/TopicsNumberScene");
+    }
 }
