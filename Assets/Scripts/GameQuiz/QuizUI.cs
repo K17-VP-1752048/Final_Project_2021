@@ -49,6 +49,7 @@ public class QuizUI : MonoBehaviour
         {
             options[i].answerText.text      = ansOptions[i].answerText;
             options[i].answerImg.sprite     = ansOptions[i].answerImg;
+            options[i].answerImg.preserveAspect = true;
             options[i].answerImg.color      = new Color(0.854902f, 0.9176471f, 0.6039216f, 1);
             options[i].answerImg.GetComponent<AudioSource>().clip = ansOptions[i].answerClip;
             //options[i].speakImg.GetComponent<AudioSource>().clip = options[i].answerImg.GetComponent<AudioSource>().clip;
@@ -133,7 +134,7 @@ public class QuizUI : MonoBehaviour
         img.color = Color.white;
         yield return new WaitForSeconds(0.1f);
         img.color = Color.green;
-        img.GetComponent<AudioSource>().Play();
+        //img.GetComponent<AudioSource>().Play();
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(gameObject.GetComponent<AudioSource>().clip.length + 2f);
