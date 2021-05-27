@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class UpLevel : MonoBehaviour
 {
-    [SerializeField] string nextScene = "";
+    [SerializeField] private SpellingManager spellingManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,13 +15,9 @@ public class UpLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && (nextScene != ""))
+        if (Input.GetMouseButtonDown(0))
         {
-            SceneManager.LoadScene(nextScene);
-        }
-        else if (Input.GetMouseButtonDown(0))
-        {
-            SceneManager.LoadScene("TopicsAnimalsScene");
+            spellingManager.NextRound();
         }
     }
 }

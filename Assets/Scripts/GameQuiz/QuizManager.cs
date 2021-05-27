@@ -67,7 +67,7 @@ public class Question
 public class Answer
 {
     public string answerText;
-    public Sprite answerImg;
+    public Sprite answerSprite;
     public AudioClip answerClip;
 }
 
