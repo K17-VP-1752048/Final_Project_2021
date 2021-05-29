@@ -2117,7 +2117,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.017290324, y: 0}
   m_AnchorMax: {x: 0.98122585, y: 1}
-  m_AnchoredPosition: {x: -287.49994, y: 0}
+  m_AnchoredPosition: {x: -287.5, y: 0}
   m_SizeDelta: {x: -1320, y: -5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &653226925
@@ -2139,7 +2139,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 269b081f4ed826040b78eef1afd2a4be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6236343170b204c498e8a2aade636c67, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4401,7 +4401,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: poulets
+  m_text: canards
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32748eb8eca9c9b4d9ea186b05aa7176, type: 2}
   m_sharedMaterial: {fileID: 2490175986913974265, guid: 32748eb8eca9c9b4d9ea186b05aa7176,
@@ -4868,7 +4868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56d167a2e813c54faee5423f2fc6aa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfAnimalsSelected: 5
+  numberOfAnimalsSelected: 3
 --- !u!4 &1526130995
 Transform:
   m_ObjectHideFlags: 0
@@ -5785,7 +5785,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Number_Count2
+          m_StringArgument: Number_Count3
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1738480895
@@ -6038,8 +6038,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.017290324, y: 0}
   m_AnchorMax: {x: 0.98122585, y: 1}
-  m_AnchoredPosition: {x: -98.499985, y: 0}
-  m_SizeDelta: {x: -1318, y: -30}
+  m_AnchoredPosition: {x: -98.499985, y: 1.25}
+  m_SizeDelta: {x: -1318, y: -2.499998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1887684679
 MonoBehaviour:
@@ -6060,7 +6060,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9c8698f772b72674eb8b3b05306f082a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 269b081f4ed826040b78eef1afd2a4be, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6134,7 +6134,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 269b081f4ed826040b78eef1afd2a4be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f208e319e2364b64eb087f6c5f120fb4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
