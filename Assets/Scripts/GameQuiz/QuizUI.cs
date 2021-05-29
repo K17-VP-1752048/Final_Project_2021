@@ -48,7 +48,7 @@ public class QuizUI : MonoBehaviour
         for(int i = 0; i < options.Count; i++)
         {
             options[i].answerText.text      = ansOptions[i].answerText;
-            options[i].answerImg.sprite     = ansOptions[i].answerImg;
+            options[i].answerImg.sprite     = ansOptions[i].answerSprite;
             options[i].answerImg.preserveAspect = true;
             options[i].answerImg.color      = new Color(0.854902f, 0.9176471f, 0.6039216f, 1);
             options[i].answerImg.GetComponent<AudioSource>().clip = ansOptions[i].answerClip;
