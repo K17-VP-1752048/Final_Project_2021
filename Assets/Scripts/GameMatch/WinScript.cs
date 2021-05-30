@@ -8,6 +8,7 @@ public class WinScript : MonoBehaviour
 
     private int pointsToWin;
     private int currentPoints;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class WinScript : MonoBehaviour
         {
             //Win
             StartCoroutine(PrintfAfter(2.0f));
+            
         }
     }
 
