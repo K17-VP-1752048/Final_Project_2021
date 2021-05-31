@@ -13,6 +13,7 @@ public class CountUI : MonoBehaviour
     [SerializeField] private AudioClip fail_audio;
     [SerializeField] private TMP_Text questionInfoText;
     [SerializeField] private TMP_Text questionAnimalText;
+    [SerializeField] private TMP_Text warningText;
 
     // Start is called before the first frame update
     void Start()
@@ -32,13 +33,20 @@ public class CountUI : MonoBehaviour
     //handle button verifier
     public void HandleOptionChoose(GameObject obj)
     {
+        bool selected = false;
         foreach (Transform child in obj.transform)
         {
             if (child.GetComponentInChildren<Image>().color == new Color(1, 1, 0, 1))
             {
+                selected = true;
                 HandleQuestion(child.GetComponentInChildren<Image>());
                 break;
             }
+        }
+        //not choose any question
+        if (!selected)
+        {
+            StartCoroutine(Warning(1f));
         }
     }
 
@@ -64,7 +72,7 @@ public class CountUI : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         img.color = new Color(1, 1, 0, 1);
         img.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(img.GetComponent<AudioSource>().clip.length + 2f);
+        yield return new WaitForSeconds(img.GetComponent<AudioSource>().clip.length + 0.2f);
     }
 
     //this give blink effect [if needed use or dont use]
@@ -76,8 +84,9 @@ public class CountUI : MonoBehaviour
         //img.GetComponent<AudioSource>().Play();
         gameObject.GetComponent<AudioSource>().clip = fail_audio;
         gameObject.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(gameObject.GetComponent<AudioSource>().clip.length);
+        yield return new WaitForSeconds(0.5f);
         img.color = new Color(0.8823529f, 0.8862745f, 0.6509804f, 1);
+        yield return new WaitForSeconds(gameObject.GetComponent<AudioSource>().clip.length);
     }
 
     //this give blink effect [if needed use or dont use]
@@ -92,5 +101,12 @@ public class CountUI : MonoBehaviour
         showRes.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(1f);
         showRes.GetComponentInChildren<Image>().GetComponentInChildren<TMP_Text>().text = questionInfoText.text + " " + img.GetComponentInChildren<TMP_Text>().text.ToLower() + " " + questionAnimalText.text;
+    }
+
+    IEnumerator Warning(float delayTime)
+    {
+        warningText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(delayTime);
+        warningText.gameObject.SetActive(false);
     }
 }
