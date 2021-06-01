@@ -15,7 +15,6 @@ public class VoiceController : MonoBehaviour
     void Start()
     {
         Setup(LANG_CODE);
-
 #if UNITY_ANDROID
         SpeechToText.instance.onPartialResultsCallback = OnPartialSpeechResult;
 #endif
@@ -55,11 +54,19 @@ public class VoiceController : MonoBehaviour
         {
             spellingManager.NextRound();
         }
+        else if (result == "overtime")
+        {
+            spellingManager.NextRound();
+        }
     }
 
     void OnPartialSpeechResult(string result)
     {
         if (result.ToLower() == resText.text.ToLower())
+        {
+            spellingManager.NextRound();
+        }
+        else if (result == "overtime")
         {
             spellingManager.NextRound();
         }
