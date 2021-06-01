@@ -14,6 +14,7 @@ public class QuizUI : MonoBehaviour
     [SerializeField] private AudioClip bravo_audio;
     [SerializeField] private AudioClip fail_audio;
     [SerializeField] private GameObject[] congrats;
+    [SerializeField] private GameObject congratEndGame;
 
     private Question question;
     private Answer answer;
@@ -101,11 +102,17 @@ public class QuizUI : MonoBehaviour
         if (!answered)
         {
             answered = true;
-            bool val = quizManager.Answer(ansImg.GetComponentInChildren<TMP_Text>().text);
-            if (val)
+            int val = quizManager.Answer(ansImg.GetComponentInChildren<TMP_Text>().text);
+            if (val == 1)
             {
                 //set color to correct
                 StartCoroutine(BlinkCorrectImg(ansImg));
+            }
+            else if(val == -1)
+            {
+                //set color to correct
+                Debug.Log("ENDGAME");
+                StartCoroutine(EndGame(ansImg));
             }
             else
             {
@@ -159,6 +166,22 @@ public class QuizUI : MonoBehaviour
         warningText.gameObject.SetActive(true);
         yield return new WaitForSeconds(delayTime);
         warningText.gameObject.SetActive(false);
+    }
+
+    //this give blink effect [if needed use or dont use]
+    IEnumerator EndGame(Image img)
+    {
+        img.color = Color.white;
+        yield return new WaitForSeconds(0.2f);
+        img.color = Color.green;
+        //img.GetComponent<AudioSource>().Play();
+
+        //random popup congratulation
+        Instantiate(congratEndGame);
+
+        gameObject.GetComponent<AudioSource>().clip = bravo_audio;
+        gameObject.GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(gameObject.GetComponent<AudioSource>().clip.length + 0.2f);
     }
 
     public void HandleSpeakOption(Image speakImg)

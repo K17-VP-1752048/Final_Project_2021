@@ -23,7 +23,8 @@ public class QuizManager : MonoBehaviour
     {
         if (questions.Count <= 0)
         {
-            SceneManager.LoadScene("TopicsAnimalsScene");
+            StartCoroutine(NextRound(3f));
+            //SceneManager.LoadScene("TopicsAnimalsScene");
         }
         else
         {
@@ -34,23 +35,35 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    public bool Answer(string answered)
+    public int Answer(string answered)
     {
-        bool correctAns = false;
-        if (answered == selectedQuestion.correctAns)
+        int correctAns = 0;
+        Debug.Log("Count: " + questions.Count);
+        if (answered == selectedQuestion.correctAns && questions.Count > 1)
         {
             //YES
-            correctAns = true;
+            correctAns = 1;
+            questions.RemoveAt(this.index);
+        }
+        else if(answered == selectedQuestion.correctAns && questions.Count <= 1)
+        {
+            correctAns = -1;
             questions.RemoveAt(this.index);
         }
         else
         {
-            //NO
+            correctAns = 0;
         }
-
+        Debug.Log("ans: " + correctAns);
         Invoke("SelectQuestion", 3f);
 
         return correctAns;
+    }
+
+    IEnumerator NextRound(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        SceneManager.LoadScene("TopicsAnimalsScene");
     }
 }
 
