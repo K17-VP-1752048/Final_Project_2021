@@ -13,6 +13,7 @@ public class QuizUI : MonoBehaviour
     [SerializeField] private List<AnswerUI> options;
     [SerializeField] private AudioClip bravo_audio;
     [SerializeField] private AudioClip fail_audio;
+    [SerializeField] private GameObject[] congrats;
 
     private Question question;
     private Answer answer;
@@ -143,9 +144,14 @@ public class QuizUI : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         img.color = Color.green;
         //img.GetComponent<AudioSource>().Play();
+
+        //random popup congratulation
+        int val = Random.Range(0, congrats.Length);
+        Instantiate(congrats[val]);
+
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(gameObject.GetComponent<AudioSource>().clip.length + 0.2f);       
+        yield return new WaitForSeconds(gameObject.GetComponent<AudioSource>().clip.length + 0.2f);
     }
 
     IEnumerator Warning(float delayTime)
