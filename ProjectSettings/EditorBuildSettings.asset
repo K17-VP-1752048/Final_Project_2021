@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LoadingScene.unity
     guid: dce149fa519024a4ca84d6f9aff0795f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MenuScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/TopicsHouseScene.unity
     guid: e1a8a15c413ddea4e851b5cc88414674
+  - enabled: 1
+    path: Assets/Scenes/TopicsAnimalsScene.unity
+    guid: 0141ba9db8c91c94cb828b97faa069c8
   - enabled: 0
     path: Assets/Scenes/PickObjectToRoom1.unity
     guid: 5665593bc88cd3744a3b97fbe6be6a18
@@ -41,27 +44,33 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/GameQuiz/Animals_Quiz.unity
     guid: b1b5733cf4be80847828a2e323e521ed
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/GameMatch/Animals_Match1.unity
     guid: 64a518bf180d4ca409cae1a3fe5ab953
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/GameMatch/Animals_Match2.unity
     guid: 79307dc0ad21623429ba73bcfd9bf343
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/GameMatch/Animals_Match3.unity
     guid: a596414dc6f86604b8d1e85f442d8267
+  - enabled: 1
+    path: Assets/Scenes/GameMatch/Animals_Match4.unity
+    guid: 3566315d23f6ba34fafb1474f105b7c0
+  - enabled: 1
+    path: Assets/Scenes/GameMatch/Animals_Match5.unity
+    guid: 5bb6da392decd274982b46f36da0da9e
+  - enabled: 1
+    path: Assets/Scenes/GameMatch/Animals_Match6.unity
+    guid: c89c41ed5c86eb2489f94dd49c31de5e
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameSpell/Animals_Spelling.unity
     guid: c4b8be5511edb7743ae0fad4f0388d2e
-  - enabled: 1
-    path: Assets/Scenes/TopicsAnimalsScene.unity
-    guid: 0141ba9db8c91c94cb828b97faa069c8
   - enabled: 0
     path: Assets/Scenes/GameNumberCount/Number_Count1.unity
     guid: f1f4b2f2722aefc42b062dd23582a181
@@ -83,10 +92,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/WinScene.unity
     guid: deeb24b639ff0da489f2b1a61cf5976b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameFind/Aliment_Find1.unity
     guid: ac953dee38ebf464296cee8bc2d632fb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameFind/Aliment_Find2.unity
     guid: edccc00598c99e34d868697a0cff3c8f
   m_configObjects: {}
