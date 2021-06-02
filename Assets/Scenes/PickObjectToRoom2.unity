@@ -404,8 +404,8 @@ RectTransform:
   - {fileID: 55280256}
   - {fileID: 789569911}
   - {fileID: 1001558460}
-  - {fileID: 1731860214}
   - {fileID: 1052608874}
+  - {fileID: 1731860214}
   - {fileID: 5694623144259894604}
   - {fileID: 988075518}
   m_Father: {fileID: 0}
@@ -572,6 +572,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 814206243}
     m_Modifications:
+    - target: {fileID: 519574829237801126, guid: 8330aad60afcb1042a72456e3e24b802,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1976375315444299529, guid: 8330aad60afcb1042a72456e3e24b802,
         type: 3}
       propertyPath: m_Pivot.x
@@ -686,7 +691,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 8330aad60afcb1042a72456e3e24b802, type: 3}
 --- !u!224 &1052608874 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1976375315444299529, guid: 8330aad60afcb1042a72456e3e24b802,
+  m_CorrespondingSourceObject: {fileID: 519574829237801126, guid: 8330aad60afcb1042a72456e3e24b802,
     type: 3}
   m_PrefabInstance: {fileID: 1052608873}
   m_PrefabAsset: {fileID: 0}
@@ -756,6 +761,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CongratPopup
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371671492778530588, guid: 4e289f1a37374ff4f8c8fa791ccc632f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371671493840601060, guid: 4e289f1a37374ff4f8c8fa791ccc632f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e289f1a37374ff4f8c8fa791ccc632f, type: 3}
@@ -866,7 +881,7 @@ RectTransform:
   - {fileID: 1995022369}
   - {fileID: 2082112660}
   m_Father: {fileID: 814206243}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
