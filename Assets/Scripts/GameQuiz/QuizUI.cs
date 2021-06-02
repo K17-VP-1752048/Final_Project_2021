@@ -8,10 +8,13 @@ public class QuizUI : MonoBehaviour
 {
     [SerializeField] private QuizManager quizManager;
     [SerializeField] private TMP_Text questionText;
+    [SerializeField] private TMP_Text warningText;
     [SerializeField] private Image questionImg;
     [SerializeField] private List<AnswerUI> options;
     [SerializeField] private AudioClip bravo_audio;
     [SerializeField] private AudioClip fail_audio;
+    [SerializeField] private GameObject[] congrats;
+    [SerializeField] private GameObject congratEndGame;
 
     private Question question;
     private Answer answer;
@@ -77,13 +80,20 @@ public class QuizUI : MonoBehaviour
     //handle button verifier
     public void HandleOptionChoose(GameObject obj)
     {
+        bool selected = false;
         foreach (Transform child in obj.transform)
         {
             if(child.GetComponentInChildren<Image>().color == new Color(0.5962264f, 0.745283f, 0, 1))
             {
+                selected = true;
                 HandleQuestion(child.GetComponentInChildren<Image>());
-                break;
+                return;
             }
+        }
+        //not choose any question
+        if (!selected)
+        {
+            StartCoroutine(Warning(1f));
         }
     }
 
@@ -92,11 +102,17 @@ public class QuizUI : MonoBehaviour
         if (!answered)
         {
             answered = true;
-            bool val = quizManager.Answer(ansImg.GetComponentInChildren<TMP_Text>().text);
-            if (val)
+            int val = quizManager.Answer(ansImg.GetComponentInChildren<TMP_Text>().text);
+            if (val == 1)
             {
                 //set color to correct
                 StartCoroutine(BlinkCorrectImg(ansImg));
+            }
+            else if(val == -1)
+            {
+                //set color to correct
+                Debug.Log("ENDGAME");
+                StartCoroutine(EndGame(ansImg));
             }
             else
             {
@@ -113,31 +129,59 @@ public class QuizUI : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         img.color = new Color(0.5962264f,0.745283f,0,1);
         img.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(img.GetComponent<AudioSource>().clip.length + 2f);
+        yield return new WaitForSeconds(img.GetComponent<AudioSource>().clip.length + 0.2f);
     }
 
     //this give blink effect [if needed use or dont use]
     IEnumerator BlinkWrongImg(Image img)
     {
         img.color = Color.white;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         img.color = Color.red;
         //img.GetComponent<AudioSource>().Play();
         gameObject.GetComponent<AudioSource>().clip = fail_audio;
         gameObject.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(gameObject.GetComponent<AudioSource>().clip.length + 2f);
+        yield return new WaitForSeconds(gameObject.GetComponent<AudioSource>().clip.length + 0.2f);
     }
 
     //this give blink effect [if needed use or dont use]
     IEnumerator BlinkCorrectImg(Image img)
     {
         img.color = Color.white;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         img.color = Color.green;
         //img.GetComponent<AudioSource>().Play();
+
+        //random popup congratulation
+        int val = Random.Range(0, congrats.Length);
+        Instantiate(congrats[val]);
+
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(gameObject.GetComponent<AudioSource>().clip.length + 2f);
+        yield return new WaitForSeconds(gameObject.GetComponent<AudioSource>().clip.length + 0.2f);
+    }
+
+    IEnumerator Warning(float delayTime)
+    {
+        warningText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(delayTime);
+        warningText.gameObject.SetActive(false);
+    }
+
+    //this give blink effect [if needed use or dont use]
+    IEnumerator EndGame(Image img)
+    {
+        img.color = Color.white;
+        yield return new WaitForSeconds(0.2f);
+        img.color = Color.green;
+        //img.GetComponent<AudioSource>().Play();
+
+        //random popup congratulation
+        Instantiate(congratEndGame);
+
+        gameObject.GetComponent<AudioSource>().clip = bravo_audio;
+        gameObject.GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(gameObject.GetComponent<AudioSource>().clip.length + 0.2f);
     }
 
     public void HandleSpeakOption(Image speakImg)
