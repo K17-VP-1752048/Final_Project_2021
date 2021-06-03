@@ -9,6 +9,7 @@ public class CongratsAnimation_2 : MonoBehaviour
     void Start()
     {
         SetAnimationsInActive();
+        GetComponent<AudioSource>().PlayDelayed(1f);
     }
 
     // Update is called once per frame
@@ -32,5 +33,10 @@ public class CongratsAnimation_2 : MonoBehaviour
         {
             transform.GetChild(i).gameObject.SetActive(false);
         }
+    }
+
+    public void DestroyObject()
+    {
+        Destroy(gameObject);
     }
 }
