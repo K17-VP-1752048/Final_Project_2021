@@ -12,6 +12,8 @@ public class VoiceController : MonoBehaviour
     [SerializeField] private TMP_Text resText;
     [SerializeField] private SpellingManager spellingManager;
 
+    private int count = 0;
+
     void Start()
     {
         Setup(LANG_CODE);
@@ -50,26 +52,52 @@ public class VoiceController : MonoBehaviour
 
     void OnFinalSpeechResult(string result)
     {
-        if(result.ToLower() == resText.text.ToLower())
+        if(result.ToLower() == resText.text.ToLower() && spellingManager.GetLength() > 0)
         {
             spellingManager.NextRound();
+            count = 0;
         }
-        else if (result == "overtime")
+        else if ((result.ToLower() == resText.text.ToLower() && spellingManager.GetLength() <= 0))
+        {
+            spellingManager.EndGame();
+            count = 0;
+        }
+        else if (count >= 3 && spellingManager.GetLength() > 0)
         {
             spellingManager.NextRound();
+            count = 0;
         }
+        else if (count >= 3 && spellingManager.GetLength() <= 0)
+        {
+            spellingManager.EndGame();
+            count = 0;
+        }
+        count++;
     }
 
     void OnPartialSpeechResult(string result)
     {
-        if (result.ToLower() == resText.text.ToLower())
+        if (result.ToLower() == resText.text.ToLower() && spellingManager.GetLength() > 0)
         {
             spellingManager.NextRound();
+            count = 0;
         }
-        else if (result == "overtime")
+        else if ((result.ToLower() == resText.text.ToLower() && spellingManager.GetLength() <= 0))
+        {
+            spellingManager.EndGame();
+            count = 0;
+        }
+        else if (count >= 3 && spellingManager.GetLength() > 0)
         {
             spellingManager.NextRound();
+            count = 0;
         }
+        else if (count >= 3 && spellingManager.GetLength() <= 0)
+        {
+            spellingManager.EndGame();
+            count = 0;
+        }
+        count++;
     }
 
     void Setup(string code)

@@ -13,6 +13,7 @@ public class HandleCheck : MonoBehaviour
     void OnMouseDown()
     {
         checkImg.color = new Color(0.5962264f, 0.745283f, 0, 1);
+        checkImg.GetComponent<AudioSource>().Play();
         //run event
         downEvent?.Invoke();
     }

@@ -38,24 +38,27 @@ public class QuizManager : MonoBehaviour
     public int Answer(string answered)
     {
         int correctAns = 0;
-        Debug.Log("Count: " + questions.Count);
+        float delayTime = 0;
         if (answered == selectedQuestion.correctAns && questions.Count > 1)
         {
             //YES
             correctAns = 1;
             questions.RemoveAt(this.index);
+            delayTime = 3f;
         }
         else if(answered == selectedQuestion.correctAns && questions.Count <= 1)
         {
             correctAns = -1;
             questions.RemoveAt(this.index);
+            delayTime = 3f;
         }
         else
         {
             correctAns = 0;
+            delayTime = 1f;
         }
-        Debug.Log("ans: " + correctAns);
-        Invoke("SelectQuestion", 3f);
+
+        Invoke("SelectQuestion", delayTime);
 
         return correctAns;
     }

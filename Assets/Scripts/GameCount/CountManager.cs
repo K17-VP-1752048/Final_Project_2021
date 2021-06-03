@@ -46,6 +46,39 @@ public class CountManager : MonoBehaviour
             case 9:
                 temp = "neuf";
                 break;
+            case 10:
+                temp = "dix";
+                break;
+            case 11:
+                temp = "onze";
+                break;
+            case 12:
+                temp = "douze";
+                break;
+            case 13:
+                temp = "treize";
+                break;
+            case 14:
+                temp = "quatorze";
+                break;
+            case 15:
+                temp = "quinze";
+                break;
+            case 16:
+                temp = "seize";
+                break;
+            case 17:
+                temp = "dix-sept";
+                break;
+            case 18:
+                temp = "dix-huit";
+                break;
+            case 19:
+                temp = "dix-neuf";
+                break;
+            case 20:
+                temp = "vingt";
+                break;
             default:
                 temp = "";
                 break;
