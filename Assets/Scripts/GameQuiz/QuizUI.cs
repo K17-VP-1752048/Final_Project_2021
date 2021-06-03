@@ -129,7 +129,7 @@ public class QuizUI : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         img.color = new Color(0.5962264f,0.745283f,0,1);
         img.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(img.GetComponent<AudioSource>().clip.length + 0.2f);
+        //yield return new WaitForSeconds(img.GetComponent<AudioSource>().clip.length + 0.2f);
     }
 
     //this give blink effect [if needed use or dont use]
@@ -158,7 +158,7 @@ public class QuizUI : MonoBehaviour
 
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(gameObject.GetComponent<AudioSource>().clip.length + 0.2f);
+        //yield return new WaitForSeconds(gameObject.GetComponent<AudioSource>().clip.length + 0.2f);
     }
 
     IEnumerator Warning(float delayTime)
@@ -181,7 +181,7 @@ public class QuizUI : MonoBehaviour
 
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(gameObject.GetComponent<AudioSource>().clip.length + 0.2f);
+        //yield return new WaitForSeconds(gameObject.GetComponent<AudioSource>().clip.length + 0.2f);
     }
 
     public void HandleSpeakOption(Image speakImg)
