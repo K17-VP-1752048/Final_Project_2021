@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class NormalObject : MonoBehaviour, IPointerDownHandler
 {
@@ -11,6 +12,7 @@ public class NormalObject : MonoBehaviour, IPointerDownHandler
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        gameObject.GetComponent<Image>().alphaHitTestMinimumThreshold = 0.1f;
     }
 
     public void OnPointerDown(PointerEventData eventData)
