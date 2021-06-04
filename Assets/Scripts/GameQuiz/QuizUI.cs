@@ -111,7 +111,6 @@ public class QuizUI : MonoBehaviour
             else if(val == -1)
             {
                 //set color to correct
-                Debug.Log("ENDGAME");
                 StartCoroutine(EndGame(ansImg));
             }
             else
