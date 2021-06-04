@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class ClickControl : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] GameObject text;
-    [SerializeField] RectTransform pivot;
+    //[SerializeField] RectTransform pivot;
     [SerializeField] float moveSpeed = 500f;
 
     private RectTransform rectTransform;
@@ -68,6 +68,7 @@ public class ClickControl : MonoBehaviour, IPointerDownHandler
     {
         if (textPos != null)
         {
+            gameObject.GetComponent<Canvas>().sortingOrder = 10;
             audioSource.Play();
             StartCoroutine(WaitBeforeMaximize());
         }
