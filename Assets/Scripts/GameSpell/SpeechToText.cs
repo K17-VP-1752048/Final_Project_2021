@@ -8,7 +8,6 @@ namespace TextSpeech
 {
     public class SpeechToText : MonoBehaviour
     {
-
         #region Init
         static SpeechToText _instance;
         static int count = 0;
@@ -50,7 +49,6 @@ namespace TextSpeech
         }
         public void StartRecording(string _message = "")
         {
-            count++;
 #if UNITY_EDITOR
 #elif UNITY_IPHONE
         _TAG_startRecording();
@@ -104,10 +102,6 @@ namespace TextSpeech
         {
             if (onResultCallback != null)
                 onResultCallback(_results);
-            if(count >= 3)
-            {
-                onResultCallback("overtime");
-            }
         }
 
         #region Android STT custom
