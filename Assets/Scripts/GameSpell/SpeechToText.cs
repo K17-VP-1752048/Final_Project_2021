@@ -10,7 +10,6 @@ namespace TextSpeech
     {
         #region Init
         static SpeechToText _instance;
-        static int count = 0;
         public static SpeechToText instance
         {
             get
