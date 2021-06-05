@@ -358,8 +358,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 3.3}
-  m_SizeDelta: {x: 0.000061035156, y: -41.793457}
+  m_AnchoredPosition: {x: 1.1000061, y: 1.0999985}
+  m_SizeDelta: {x: -28.25238, y: -46.140015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &206019251
 MonoBehaviour:
@@ -382,7 +382,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
@@ -393,7 +393,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bienvenue!
+  m_Text: 
 --- !u!222 &206019252
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -973,7 +973,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0 - Zero
+  m_Text: "0 - Z\xE9ro"
 --- !u!222 &853375365
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1026,6 +1026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textWriter: {fileID: 338212185}
+  textBackground: {fileID: 2010745328}
 --- !u!1 &968637332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1807,8 +1808,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -543, y: 344}
-  m_SizeDelta: {x: 413.85168, y: 114.165985}
+  m_AnchoredPosition: {x: -563.1, y: 335.8}
+  m_SizeDelta: {x: 454.0113, y: 158.6228}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2010745330
 MonoBehaviour:
