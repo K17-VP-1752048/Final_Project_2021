@@ -9,6 +9,7 @@ public class SpellingUI : MonoBehaviour
     [SerializeField] private TMP_Text pronunciationText;
     [SerializeField] private Image animalImg;
     [SerializeField] private Image speak;
+    [SerializeField] private GameObject spellUI;
 
     private Pronunciation pronunciation;
     // Start is called before the first frame update
@@ -19,11 +20,13 @@ public class SpellingUI : MonoBehaviour
 
     public void SetPronunciation(Pronunciation pronunciation)
     {
-        this.pronunciation                      = pronunciation;
+        this.pronunciation                          = pronunciation;
 
-        pronunciationText.text                  = pronunciation.pronounceText;
-        speak.GetComponent<AudioSource>().clip  = pronunciation.pronounceAudio;
-        animalImg.sprite                        = pronunciation.animalSprite;
-        animalImg.preserveAspect                = true;
+        pronunciationText.text                      = pronunciation.pronounceText;
+        speak.GetComponent<AudioSource>().clip      = pronunciation.pronounceAudio;
+        animalImg.sprite                            = pronunciation.animalSprite;
+        spellUI.GetComponent<AudioSource>().clip    = pronunciation.animalAudio;
+        spellUI.GetComponent<AudioSource>().Play();
+        animalImg.preserveAspect                    = true;
     }
 }

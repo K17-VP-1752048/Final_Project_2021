@@ -73,5 +73,6 @@ public class Pronunciation
 {
     public string pronounceText;
     public AudioClip pronounceAudio;
+    public AudioClip animalAudio;
     public Sprite animalSprite;
 }
