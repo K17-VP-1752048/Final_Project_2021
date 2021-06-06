@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class WinScript : MonoBehaviour
 {
-    [SerializeField] GameObject myAnimals;
+    [SerializeField] private GameObject myAnimals;
+    [SerializeField] private string nextScene;
 
     private int pointsToWin;
     private int currentPoints;
@@ -20,6 +21,12 @@ public class WinScript : MonoBehaviour
     {
         if (currentPoints >= pointsToWin)
         {
+            //save next scene after win
+            if (nextScene != "")
+            {
+                PlayerPrefs.SetString("nextSceneMatch", nextScene);
+            }
+
             //Win
             StartCoroutine(PrintfAfter(2.0f));
             
