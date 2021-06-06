@@ -5,22 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class UpLevelScript : MonoBehaviour
 {
-    [SerializeField] private string nextScene;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && nextScene != "")
+        if(Input.GetMouseButtonDown(0) && PlayerPrefs.GetString("nextSceneMatch") != "")
         {
-            SceneManager.LoadScene(nextScene);
+            SceneManager.LoadScene(PlayerPrefs.GetString("nextSceneMatch"));
         }
         else if (Input.GetMouseButtonDown(0))
         {
+            PlayerPrefs.DeleteKey("nextSceneMatch");
             SceneManager.LoadScene("TopicsAnimalsScene");
         }
     }
