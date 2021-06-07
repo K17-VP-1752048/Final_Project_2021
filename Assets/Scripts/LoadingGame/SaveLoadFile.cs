@@ -7,11 +7,10 @@ using System.Runtime.Serialization.Formatters.Binary;
 public class SaveLoadFile : MonoBehaviour
 {
     private QuizDataScriptable quizData;
+    private string nameScene_Match;
+    private string nameScene_CountNumber;
 
-    public SaveLoadFile(QuizDataScriptable q)
-    {
-        quizData = q;
-    }
+    public QuizDataScriptable QuizData { get => quizData; set => quizData = value; }
 
     //save and load game quiz
     public void SaveCurrentList(List<Question> currentList)
@@ -89,6 +88,64 @@ public class SaveLoadFile : MonoBehaviour
         return null;
     }
 
+    //save and load current scene of Match game
+    public void SaveCurrentSceneMatch(string nameScene)
+    {
+        //save current list
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentSceneMatch.dat", FileMode.OpenOrCreate);
+        nameScene_Match = nameScene;
+        bf.Serialize(file, nameScene_Match);
+        file.Close();
+    }
+
+    public string LoadCurrentSceneMatch()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentSceneMatch.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentSceneMatch.dat", FileMode.OpenOrCreate);
+            if (file.Length == 0)
+            {
+                return null;
+            }
+            nameScene_Match = bf.Deserialize(file) as string;
+            file.Close();
+
+            return nameScene_Match;
+        }
+        return null;
+    }
+
+    //save and load current scene of Count game
+    public void SaveCurrentSceneCountNumber(string nameScene)
+    {
+        //save current list
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentSceneCountNumber.dat", FileMode.OpenOrCreate);
+        nameScene_CountNumber = nameScene;
+        bf.Serialize(file, nameScene_CountNumber);
+        file.Close();
+    }
+
+    public string LoadCurrentSceneCountNumber()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentSceneCountNumber.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentSceneCountNumber.dat", FileMode.OpenOrCreate);
+            if (file.Length == 0)
+            {
+                return null;
+            }
+            nameScene_CountNumber = bf.Deserialize(file) as string;
+            file.Close();
+
+            return nameScene_CountNumber;
+        }
+        return null;
+    }
+
     public void ResetGame()
     {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentQuestion.dat"))
@@ -98,6 +155,14 @@ public class SaveLoadFile : MonoBehaviour
         if (File.Exists(Application.persistentDataPath + "/saveCurrentList.dat"))
         {
             File.Delete(Application.persistentDataPath + "/saveCurrentList.dat");
+        }
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentSceneMatch.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/saveCurrentSceneMatch.dat");
+        }
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentSceneCountNumber.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/saveCurrentSceneCountNumber.dat");
         }
     }
 }

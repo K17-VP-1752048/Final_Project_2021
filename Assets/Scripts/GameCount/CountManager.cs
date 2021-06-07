@@ -8,8 +8,15 @@ using UnityEngine.SceneManagement;
 public class CountManager : MonoBehaviour
 {
     [SerializeField] private int numberOfAnimalsSelected;
+    [SerializeField] private string nextScene;
 
+    private SaveLoadFile slf;
     // Start is called before the first frame update
+    private void Start()
+    {
+        slf = gameObject.AddComponent<SaveLoadFile>();
+    }
+
     public bool HandleCount(string numberText)
     {
         bool correctAns = false;
@@ -86,13 +93,20 @@ public class CountManager : MonoBehaviour
         if(temp.ToLower() == numberText.ToLower())
         {
             correctAns = true;
+            if (nextScene == "")
+            {
+                slf.ResetGame();
+            }
+            else
+            {
+                slf.SaveCurrentSceneCountNumber(nextScene);
+            }
         }
-
         //Invoke("NextRound", 3f);
         return correctAns;
     }
 
-    public void NextRound(string nextScene)
+    public void NextRound()
     {
         if(nextScene == "")
         {

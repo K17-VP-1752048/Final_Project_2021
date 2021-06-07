@@ -17,25 +17,28 @@ public class QuizManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        slf = new SaveLoadFile(quizData);
+        slf = gameObject.AddComponent<SaveLoadFile>();
+        slf.QuizData = quizData;
+        List<Question> list = slf.LoadCurrentList();
+        Question q = slf.LoadCurrentQuestion();
 
-        if (slf.LoadCurrentList() == null)
+        if (list == null)
         {
             questions = new List<Question>(quizData.questions);
         }
         else
         {
-            questions = slf.LoadCurrentList();
+            questions = list;
         }
-        if(slf.LoadCurrentQuestion() == null)
+        if(q == null)
         {
             SelectQuestion();
         }
         else
         {
-            selectedQuestion = slf.LoadCurrentQuestion();
+            selectedQuestion = q;
             quizUI.SetQuestion(selectedQuestion);
-            this.index = questions.IndexOf(slf.LoadCurrentQuestion());
+            this.index = questions.IndexOf(q);
         }
     }
 

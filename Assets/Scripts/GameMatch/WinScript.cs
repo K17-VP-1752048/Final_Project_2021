@@ -5,14 +5,18 @@ using UnityEngine.SceneManagement;
 public class WinScript : MonoBehaviour
 {
     [SerializeField] private GameObject myAnimals;
-    [SerializeField] private string nextScene;
+    [SerializeField] private string nextScene = "";
 
     private int pointsToWin;
     private int currentPoints;
+    private SaveLoadFile slf;
 
     // Start is called before the first frame update
     void Start()
     {
+        //initiate
+        slf = gameObject.AddComponent<SaveLoadFile>();
+
         pointsToWin = myAnimals.transform.childCount;
     }
 
@@ -24,7 +28,12 @@ public class WinScript : MonoBehaviour
             //save next scene after win
             if (nextScene != "")
             {
-                PlayerPrefs.SetString("nextSceneMatch", nextScene);
+                //PlayerPrefs.SetString("nextSceneMatch", nextScene);
+                slf.SaveCurrentSceneMatch(nextScene);
+            }
+            else
+            {
+                slf.SaveCurrentSceneMatch("TopicsAnimalsScene");
             }
 
             //Win

@@ -6,12 +6,41 @@ using UnityEngine.SceneManagement;
 public class LoadPlayer : MonoBehaviour
 {
     [SerializeField] private Image progressBar;
-    [SerializeField] private string valueDefault;
-    [SerializeField] private string namePlayerPrefs;
+    [SerializeField] private string nameGame;
+
+    private SaveLoadFile slf;
 
     private void Start()
     {
-        StartCoroutine(LoadAsynchronously(PlayerPrefs.GetString(namePlayerPrefs, valueDefault)));
+        //StartCoroutine(LoadAsynchronously(PlayerPrefs.GetString(namePlayerPrefs, valueDefault)));
+        slf = gameObject.AddComponent<SaveLoadFile>();
+
+        if (nameGame == "GameMatch")
+        {
+            string nameScene = slf.LoadCurrentSceneMatch();
+            if(nameScene == null)
+            {
+                StartCoroutine(LoadAsynchronously("Animals_Match1"));
+            }
+            else
+            {
+                //back topic animal in UpLevelScript
+                StartCoroutine(LoadAsynchronously(nameScene));
+            }
+        }
+        else if (nameGame == "GameCountNumber")
+        {
+            string nameScene = slf.LoadCurrentSceneCountNumber();
+            if (nameScene == null)
+            {
+                StartCoroutine(LoadAsynchronously("Number_Count1"));
+            }
+            else
+            {
+                //back topic animal in UpLevelScript
+                StartCoroutine(LoadAsynchronously(nameScene));
+            }
+        }
     }
 
     IEnumerator LoadAsynchronously(string nameScene)
