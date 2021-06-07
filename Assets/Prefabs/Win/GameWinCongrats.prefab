@@ -4709,7 +4709,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3f6f4118cfc1c3f4e8f43dd7c0159a91, type: 2}
+  - {fileID: 2100000, guid: c180c69536796114196fe8c7bf03c77c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4852,7 +4852,7 @@ GameObject:
   - component: {fileID: 5584758103733605847}
   - component: {fileID: 1239752363}
   m_Layer: 0
-  m_Name: 1_Congratulation
+  m_Name: GameWinCongrats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24415,7 +24415,6 @@ GameObject:
   - component: {fileID: 7747866290583091231}
   - component: {fileID: 7747866290583091230}
   - component: {fileID: 7747866290583091229}
-  - component: {fileID: 6774928053614063096}
   m_Layer: 0
   m_Name: WinBg
   m_TagString: Untagged
@@ -24506,16 +24505,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6774928053614063096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7747866290583091228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d449e36f7fa874d4c8275efe9ac15c22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spellingManager: {fileID: 0}
