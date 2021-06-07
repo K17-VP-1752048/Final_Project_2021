@@ -6,7 +6,7 @@ public class RotateToucher : MonoBehaviour
 {
     private void OnMouseDown()
     {
-        if(!PuzzleControl.win)
+        if(PuzzleControl.continu)
         {
             transform.Rotate(0f, 0f, 90f);
             PuzzleControl.CheckAnswer();
