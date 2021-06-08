@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PuzzleControl : MonoBehaviour
@@ -18,6 +19,7 @@ public class PuzzleControl : MonoBehaviour
         continu = true;
         winCanvas = GameObject.Find("CanvasReussite").GetComponent<Canvas>();
         winCanvas.enabled = false;
+        GameObject.Find("Trans").GetComponent<Image>().enabled = false;
         name = puzzleName;
     }
 
@@ -45,15 +47,13 @@ public class PuzzleControl : MonoBehaviour
         if (win && continu)
         {
             continu = false;
-            StartCoroutine(showCongratulation());
+            GameObject.Find("Trans").GetComponent<Image>().enabled = true;
+            GameObject.Find("PanelPuzzle").SetActive(false);
+            winCanvas.enabled = true;
         }
-    }
+        if(!continu)
+        {
 
-    IEnumerator showCongratulation()
-    {
-        GameObject.Find("PanelPuzzle").SetActive(false);
-        winCanvas.enabled = true;
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("Scenes/CollectionScene");
+        }
     }
 }
