@@ -7,9 +7,12 @@ public class SpellingManager : MonoBehaviour
 {
     [SerializeField] private SpellingUI spellUI;
     [SerializeField] private SpellDataScriptable spellData;
+    [SerializeField] private SpellFoodDataScriptable spellFoodData;
+    [SerializeField] private SpellHouseholdDataScriptable spellHouseholdData;
     [SerializeField] private AudioClip bravo_audio;
     [SerializeField] private GameObject[] congrats;
     [SerializeField] private GameObject congratEndGame;
+    [SerializeField] private string selectedTopic;
 
     private List<Pronunciation> pronunciations;
     private Pronunciation selectedPronunciation;
@@ -20,13 +23,79 @@ public class SpellingManager : MonoBehaviour
     void Start()
     {
         slf = gameObject.AddComponent<SaveLoadFile>();
+        if(selectedTopic == "Animals")
+        {
+            SpellAnimal();
+        }
+        else if (selectedTopic == "Food")
+        {
+            SpellFood();
+        }
+        else if (selectedTopic == "Household")
+        {
+            SpellHousehold();
+        }
+    }
+
+    public void SpellAnimal()
+    {
         slf.SpellData = spellData;
         List<Pronunciation> list = slf.LoadCurrentListSpellAnimals();
         Pronunciation p = slf.LoadCurrentSpellAnimal();
 
         if (list == null)
         {
-            pronunciations = new List<Pronunciation>(spellData.pronunciations);
+            pronunciations = new List<Pronunciation>(slf.SpellData.pronunciations);
+        }
+        else
+        {
+            pronunciations = list;
+        }
+        if (p == null)
+        {
+            SelectPronunciation();
+        }
+        else
+        {
+            spellUI.SetPronunciation(p);
+            this.index = pronunciations.IndexOf(p);
+        }
+    }
+
+    public void SpellFood()
+    {
+        slf.SpellFoodData = spellFoodData;
+        List<Pronunciation> list = slf.LoadCurrentListSpellFood();
+        Pronunciation p = slf.LoadCurrentSpellFood();
+
+        if (list == null)
+        {
+            pronunciations = new List<Pronunciation>(slf.SpellFoodData.pronunciations);
+        }
+        else
+        {
+            pronunciations = list;
+        }
+        if (p == null)
+        {
+            SelectPronunciation();
+        }
+        else
+        {
+            spellUI.SetPronunciation(p);
+            this.index = pronunciations.IndexOf(p);
+        }
+    }
+
+    public void SpellHousehold()
+    {
+        slf.SpellHouseholdData = spellHouseholdData;
+        List<Pronunciation> list = slf.LoadCurrentListSpellHousehold();
+        Pronunciation p = slf.LoadCurrentSpellHousehold();
+
+        if (list == null)
+        {
+            pronunciations = new List<Pronunciation>(slf.SpellHouseholdData.pronunciations);
         }
         else
         {
@@ -45,18 +114,53 @@ public class SpellingManager : MonoBehaviour
 
     void SelectPronunciation()
     {
-        if(pronunciations.Count <= 0)
+        if (selectedTopic == "Animals")
         {
-            slf.ResetGameSpell();
-            StartCoroutine(BackTopic(3f));
+            if (pronunciations.Count <= 0)
+            {
+                slf.ResetGameSpellAnimals();
+                StartCoroutine(BackTopic(3f));
+            }
+            else
+            {
+                int val = Random.Range(0, pronunciations.Count);
+                selectedPronunciation = pronunciations[val];
+                this.index = val;
+                spellUI.SetPronunciation(selectedPronunciation);
+                slf.SaveCurrentSpellAnimal(selectedPronunciation);
+            }
         }
-        else
+        else if (selectedTopic == "Food")
         {
-            int val = Random.Range(0, pronunciations.Count);
-            selectedPronunciation = pronunciations[val];
-            this.index = val;
-            spellUI.SetPronunciation(selectedPronunciation);
-            slf.SaveCurrentSpellAnimal(selectedPronunciation);
+            if (pronunciations.Count <= 0)
+            {
+                slf.ResetGameSpellFood();
+                StartCoroutine(BackTopic(3f));
+            }
+            else
+            {
+                int val = Random.Range(0, pronunciations.Count);
+                selectedPronunciation = pronunciations[val];
+                this.index = val;
+                spellUI.SetPronunciation(selectedPronunciation);
+                slf.SaveCurrentSpellFood(selectedPronunciation);
+            }
+        }
+        else if (selectedTopic == "Household")
+        {
+            if (pronunciations.Count <= 0)
+            {
+                slf.ResetGameSpellHousehold();
+                StartCoroutine(BackTopic(3f));
+            }
+            else
+            {
+                int val = Random.Range(0, pronunciations.Count);
+                selectedPronunciation = pronunciations[val];
+                this.index = val;
+                spellUI.SetPronunciation(selectedPronunciation);
+                slf.SaveCurrentSpellHousehold(selectedPronunciation);
+            }
         }
     }
 
@@ -71,7 +175,18 @@ public class SpellingManager : MonoBehaviour
         pronunciations.RemoveAt(this.index);
 
         //save current list
-        slf.SaveCurrentListSpellAnimals(pronunciations);
+        if (selectedTopic == "Animals")
+        {
+            slf.SaveCurrentListSpellAnimals(pronunciations);
+        }
+        else if (selectedTopic == "Food")
+        {
+            slf.SaveCurrentListSpellFood(pronunciations);
+        }
+        else if (selectedTopic == "Household")
+        {
+            slf.SaveCurrentListSpellHousehold(pronunciations);
+        }
 
         //random popup congratulation
         int val = Random.Range(0, congrats.Length);
@@ -85,7 +200,14 @@ public class SpellingManager : MonoBehaviour
     public void EndGame()
     {
         //reset game
-        slf.ResetGameSpell();
+        if (selectedTopic == "Animals")
+        {
+            slf.ResetGameSpellAnimals();
+        }
+        else if (selectedTopic == "Food")
+        {
+            slf.ResetGameSpellFood();
+        }
 
         Instantiate(congratEndGame);
 
@@ -106,6 +228,6 @@ public class Pronunciation
 {
     public string pronounceText;
     public AudioClip pronounceAudio;
-    public AudioClip animalAudio;
-    public Sprite animalSprite;
+    public AudioClip audio;
+    public Sprite sprite;
 }

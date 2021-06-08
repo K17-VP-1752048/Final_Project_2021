@@ -24,7 +24,7 @@ public class QuizManager : MonoBehaviour
 
         if (list == null)
         {
-            questions = new List<Question>(quizData.questions);
+            questions = new List<Question>(slf.QuizData.questions);
         }
         else
         {

@@ -8,9 +8,13 @@ public class SaveLoadFile : MonoBehaviour
 {
     private QuizDataScriptable quizData;
     private SpellDataScriptable spellData;
+    private SpellFoodDataScriptable spellFoodData;
+    private SpellHouseholdDataScriptable spellHouseholdData;
 
     public QuizDataScriptable QuizData { get => quizData; set => quizData = value; }
     public SpellDataScriptable SpellData { get => spellData; set => spellData = value; }
+    public SpellFoodDataScriptable SpellFoodData { get => spellFoodData; set => spellFoodData = value; }
+    public SpellHouseholdDataScriptable SpellHouseholdData { get => spellHouseholdData; set => spellHouseholdData = value; }
 
     //save and load quiz game
     public void SaveCurrentList(List<Question> currentList)
@@ -88,7 +92,7 @@ public class SaveLoadFile : MonoBehaviour
         return null;
     }
 
-    //save and load spell game
+    //save and load spell animals game
     public void SaveCurrentListSpellAnimals(List<Pronunciation> currentList)
     {
         //save current list
@@ -156,6 +160,158 @@ public class SaveLoadFile : MonoBehaviour
             file.Close();
 
             Pronunciation result = spellData.pronunciations.Find(x => x.pronounceText == p);
+            if (result != null)
+            {
+                return result;
+            }
+        }
+        return null;
+    }
+
+    //save and load spell food game
+    public void SaveCurrentListSpellFood(List<Pronunciation> currentList)
+    {
+        //save current list
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentListSpellFood.dat", FileMode.OpenOrCreate);
+        List<string> list = new List<string>();
+        for (int i = 0; i < currentList.Count; i++)
+        {
+            list.Add(currentList[i].pronounceText);
+        }
+        bf.Serialize(file, list);
+        file.Close();
+    }
+
+    public void SaveCurrentSpellFood(Pronunciation pr)
+    {
+        //save current question
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentSpellFood.dat", FileMode.OpenOrCreate);
+        string pronounceText = pr.pronounceText;
+        bf.Serialize(file, pronounceText);
+        file.Close();
+    }
+
+    public List<Pronunciation> LoadCurrentListSpellFood()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentListSpellFood.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentListSpellFood.dat", FileMode.OpenOrCreate);
+
+            if (file.Length == 0)
+            {
+                return null;
+            }
+
+            List<string> list = bf.Deserialize(file) as List<string>;
+            file.Close();
+
+            List<Pronunciation> listPronounce = new List<Pronunciation>();
+            for (int i = 0; i < list.Count; i++)
+            {
+                Pronunciation result = spellFoodData.pronunciations.Find(x => x.pronounceText == list[i]);
+                if (result != null)
+                {
+                    listPronounce.Add(result);
+                }
+            }
+            return listPronounce;
+        }
+        return null;
+    }
+
+    public Pronunciation LoadCurrentSpellFood()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentSpellFood.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentSpellFood.dat", FileMode.OpenOrCreate);
+            if (file.Length == 0)
+            {
+                return null;
+            }
+            string p = bf.Deserialize(file) as string;
+            file.Close();
+
+            Pronunciation result = spellFoodData.pronunciations.Find(x => x.pronounceText == p);
+            if (result != null)
+            {
+                return result;
+            }
+        }
+        return null;
+    }
+
+    //save and load spell household game
+    public void SaveCurrentListSpellHousehold(List<Pronunciation> currentList)
+    {
+        //save current list
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentListSpellHouseHold.dat", FileMode.OpenOrCreate);
+        List<string> list = new List<string>();
+        for (int i = 0; i < currentList.Count; i++)
+        {
+            list.Add(currentList[i].pronounceText);
+        }
+        bf.Serialize(file, list);
+        file.Close();
+    }
+
+    public void SaveCurrentSpellHousehold(Pronunciation pr)
+    {
+        //save current question
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentSpellHousehold.dat", FileMode.OpenOrCreate);
+        string pronounceText = pr.pronounceText;
+        bf.Serialize(file, pronounceText);
+        file.Close();
+    }
+
+    public List<Pronunciation> LoadCurrentListSpellHousehold()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentListSpellHousehold.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentListSpellHousehold.dat", FileMode.OpenOrCreate);
+
+            if (file.Length == 0)
+            {
+                return null;
+            }
+
+            List<string> list = bf.Deserialize(file) as List<string>;
+            file.Close();
+
+            List<Pronunciation> listPronounce = new List<Pronunciation>();
+            for (int i = 0; i < list.Count; i++)
+            {
+                Pronunciation result = spellHouseholdData.pronunciations.Find(x => x.pronounceText == list[i]);
+                if (result != null)
+                {
+                    listPronounce.Add(result);
+                }
+            }
+            return listPronounce;
+        }
+        return null;
+    }
+
+    public Pronunciation LoadCurrentSpellHousehold()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentSpellHousehold.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentSpellHousehold.dat", FileMode.OpenOrCreate);
+            if (file.Length == 0)
+            {
+                return null;
+            }
+            string p = bf.Deserialize(file) as string;
+            file.Close();
+
+            Pronunciation result = spellHouseholdData.pronunciations.Find(x => x.pronounceText == p);
             if (result != null)
             {
                 return result;
@@ -232,7 +388,7 @@ public class SaveLoadFile : MonoBehaviour
         }
     }
 
-    public void ResetGameSpell()
+    public void ResetGameSpellAnimals()
     {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentSpellAnimal.dat"))
         {
@@ -241,6 +397,30 @@ public class SaveLoadFile : MonoBehaviour
         if (File.Exists(Application.persistentDataPath + "/saveCurrentListSpellAnimals.dat"))
         {
             File.Delete(Application.persistentDataPath + "/saveCurrentListSpellAnimals.dat");
+        }
+    }
+
+    public void ResetGameSpellFood()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentSpellFood.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/saveCurrentSpellFood.dat");
+        }
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentListSpellFood.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/saveCurrentListSpellFood.dat");
+        }
+    }
+
+    public void ResetGameSpellHousehold()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentSpellHousehold.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/saveCurrentSpellHousehold.dat");
+        }
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentListSpellHousehold.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/saveCurrentListSpellHousehold.dat");
         }
     }
 
