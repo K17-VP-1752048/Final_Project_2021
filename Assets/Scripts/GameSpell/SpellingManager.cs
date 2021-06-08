@@ -21,8 +21,8 @@ public class SpellingManager : MonoBehaviour
     {
         slf = gameObject.AddComponent<SaveLoadFile>();
         slf.SpellData = spellData;
-        List<Pronunciation> list = slf.LoadCurrentListSpell();
-        Pronunciation p = slf.LoadCurrentSpell();
+        List<Pronunciation> list = slf.LoadCurrentListSpellAnimals();
+        Pronunciation p = slf.LoadCurrentSpellAnimal();
 
         if (list == null)
         {
@@ -56,7 +56,7 @@ public class SpellingManager : MonoBehaviour
             selectedPronunciation = pronunciations[val];
             this.index = val;
             spellUI.SetPronunciation(selectedPronunciation);
-            slf.SaveCurrentSpell(selectedPronunciation);
+            slf.SaveCurrentSpellAnimal(selectedPronunciation);
         }
     }
 
@@ -71,7 +71,7 @@ public class SpellingManager : MonoBehaviour
         pronunciations.RemoveAt(this.index);
 
         //save current list
-        slf.SaveCurrentListSpell(pronunciations);
+        slf.SaveCurrentListSpellAnimals(pronunciations);
 
         //random popup congratulation
         int val = Random.Range(0, congrats.Length);

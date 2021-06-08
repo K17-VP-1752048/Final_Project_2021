@@ -8,8 +8,6 @@ public class SaveLoadFile : MonoBehaviour
 {
     private QuizDataScriptable quizData;
     private SpellDataScriptable spellData;
-    private string nameScene_Match;
-    private string nameScene_CountNumber;
 
     public QuizDataScriptable QuizData { get => quizData; set => quizData = value; }
     public SpellDataScriptable SpellData { get => spellData; set => spellData = value; }
@@ -91,11 +89,11 @@ public class SaveLoadFile : MonoBehaviour
     }
 
     //save and load spell game
-    public void SaveCurrentListSpell(List<Pronunciation> currentList)
+    public void SaveCurrentListSpellAnimals(List<Pronunciation> currentList)
     {
         //save current list
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentListSpell.dat", FileMode.OpenOrCreate);
+        FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentListSpellAnimals.dat", FileMode.OpenOrCreate);
         List<string> list = new List<string>();
         for (int i = 0; i < currentList.Count; i++)
         {
@@ -105,22 +103,22 @@ public class SaveLoadFile : MonoBehaviour
         file.Close();
     }
 
-    public void SaveCurrentSpell(Pronunciation pr)
+    public void SaveCurrentSpellAnimal(Pronunciation pr)
     {
         //save current question
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentSpell.dat", FileMode.OpenOrCreate);
+        FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentSpellAnimal.dat", FileMode.OpenOrCreate);
         string pronounceText = pr.pronounceText;
         bf.Serialize(file, pronounceText);
         file.Close();
     }
 
-    public List<Pronunciation> LoadCurrentListSpell()
+    public List<Pronunciation> LoadCurrentListSpellAnimals()
     {
-        if (File.Exists(Application.persistentDataPath + "/saveCurrentListSpell.dat"))
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentListSpellAnimals.dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentListSpell.dat", FileMode.OpenOrCreate);
+            FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentListSpellAnimals.dat", FileMode.OpenOrCreate);
 
             if (file.Length == 0)
             {
@@ -144,12 +142,12 @@ public class SaveLoadFile : MonoBehaviour
         return null;
     }
 
-    public Pronunciation LoadCurrentSpell()
+    public Pronunciation LoadCurrentSpellAnimal()
     {
-        if (File.Exists(Application.persistentDataPath + "/saveCurrentSpell.dat"))
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentSpellAnimal.dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentSpell.dat", FileMode.OpenOrCreate);
+            FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentSpellAnimal.dat", FileMode.OpenOrCreate);
             if (file.Length == 0)
             {
                 return null;
@@ -172,8 +170,7 @@ public class SaveLoadFile : MonoBehaviour
         //save current list
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentSceneMatch.dat", FileMode.OpenOrCreate);
-        nameScene_Match = nameScene;
-        bf.Serialize(file, nameScene_Match);
+        bf.Serialize(file, nameScene);
         file.Close();
     }
 
@@ -187,10 +184,10 @@ public class SaveLoadFile : MonoBehaviour
             {
                 return null;
             }
-            nameScene_Match = bf.Deserialize(file) as string;
+            string res = bf.Deserialize(file) as string;
             file.Close();
 
-            return nameScene_Match;
+            return res;
         }
         return null;
     }
@@ -201,8 +198,7 @@ public class SaveLoadFile : MonoBehaviour
         //save current list
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentSceneCountNumber.dat", FileMode.OpenOrCreate);
-        nameScene_CountNumber = nameScene;
-        bf.Serialize(file, nameScene_CountNumber);
+        bf.Serialize(file, nameScene);
         file.Close();
     }
 
@@ -216,10 +212,10 @@ public class SaveLoadFile : MonoBehaviour
             {
                 return null;
             }
-            nameScene_CountNumber = bf.Deserialize(file) as string;
+            string res = bf.Deserialize(file) as string;
             file.Close();
 
-            return nameScene_CountNumber;
+            return res;
         }
         return null;
     }
@@ -238,13 +234,13 @@ public class SaveLoadFile : MonoBehaviour
 
     public void ResetGameSpell()
     {
-        if (File.Exists(Application.persistentDataPath + "/saveCurrentSpell.dat"))
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentSpellAnimal.dat"))
         {
-            File.Delete(Application.persistentDataPath + "/saveCurrentSpell.dat");
+            File.Delete(Application.persistentDataPath + "/saveCurrentSpellAnimal.dat");
         }
-        if (File.Exists(Application.persistentDataPath + "/saveCurrentListSpell.dat"))
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentListSpellAnimals.dat"))
         {
-            File.Delete(Application.persistentDataPath + "/saveCurrentListSpell.dat");
+            File.Delete(Application.persistentDataPath + "/saveCurrentListSpellAnimals.dat");
         }
     }
 
