@@ -1,15 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Acheivement : MonoBehaviour
+public class Achievement : MonoBehaviour
 {
     [SerializeField] float timeWait = 2f;
-    [SerializeField] List<Sprite> acheivementSprites;
 
     private Animator animator;
-    private SpriteRenderer spriteRenderer;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -24,15 +22,13 @@ public class Acheivement : MonoBehaviour
 
     IEnumerator LoadAnimations()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle_2"))
         {
             yield return new WaitForSeconds(timeWait);
-            animator.SetTrigger("FadeOut");
+            animator.SetTrigger("FadeOut_2");
 
             yield return new WaitForSeconds(1f);
             Destroy(gameObject);
         }
     }
-
-    
 }
