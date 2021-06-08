@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &74442223
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -339,6 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &75865043
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -555,6 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &117932070
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -677,6 +680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &212935948
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -799,6 +803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &227223655
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -921,6 +926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &291905932
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1004,6 +1010,7 @@ RectTransform:
   - {fileID: 1766611395}
   - {fileID: 212935945}
   - {fileID: 117932067}
+  - {fileID: 952375184}
   m_Father: {fileID: 1024200403}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1145,6 +1152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &320596367
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1267,6 +1275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &333588478
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1487,6 +1496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &515322028
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1608,6 +1618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &713025270
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1730,6 +1741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &726172746
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1953,6 +1965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &917689724
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2075,6 +2088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &951694376
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2101,6 +2115,137 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.2142856, y: 2.214718}
   m_EdgeRadius: 0
+--- !u!1001 &952375183
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 317748189}
+    m_Modifications:
+    - target: {fileID: 1056004038304837706, guid: 18a204ce64f2c744b9b5c4803571ee68,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004038304837706, guid: 18a204ce64f2c744b9b5c4803571ee68,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004038304837706, guid: 18a204ce64f2c744b9b5c4803571ee68,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004038304837706, guid: 18a204ce64f2c744b9b5c4803571ee68,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004038304837706, guid: 18a204ce64f2c744b9b5c4803571ee68,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004038304837706, guid: 18a204ce64f2c744b9b5c4803571ee68,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004038304837706, guid: 18a204ce64f2c744b9b5c4803571ee68,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004038304837706, guid: 18a204ce64f2c744b9b5c4803571ee68,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004038304837706, guid: 18a204ce64f2c744b9b5c4803571ee68,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004038304837706, guid: 18a204ce64f2c744b9b5c4803571ee68,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004038304837706, guid: 18a204ce64f2c744b9b5c4803571ee68,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004038304837706, guid: 18a204ce64f2c744b9b5c4803571ee68,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004038304837706, guid: 18a204ce64f2c744b9b5c4803571ee68,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004038304837706, guid: 18a204ce64f2c744b9b5c4803571ee68,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004038304837706, guid: 18a204ce64f2c744b9b5c4803571ee68,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004038304837706, guid: 18a204ce64f2c744b9b5c4803571ee68,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004038304837706, guid: 18a204ce64f2c744b9b5c4803571ee68,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004038304837706, guid: 18a204ce64f2c744b9b5c4803571ee68,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004038304837706, guid: 18a204ce64f2c744b9b5c4803571ee68,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004038304837706, guid: 18a204ce64f2c744b9b5c4803571ee68,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004038304837706, guid: 18a204ce64f2c744b9b5c4803571ee68,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004038304837749, guid: 18a204ce64f2c744b9b5c4803571ee68,
+        type: 3}
+      propertyPath: m_Name
+      value: PuzzleSound
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 18a204ce64f2c744b9b5c4803571ee68, type: 3}
+--- !u!224 &952375184 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1056004038304837706, guid: 18a204ce64f2c744b9b5c4803571ee68,
+    type: 3}
+  m_PrefabInstance: {fileID: 952375183}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &952375185 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1056004038304837707, guid: 18a204ce64f2c744b9b5c4803571ee68,
+    type: 3}
+  m_PrefabInstance: {fileID: 952375183}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &962043504
 GameObject:
   m_ObjectHideFlags: 0
@@ -2380,6 +2525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &1029734049
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2584,6 +2730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &1185673995
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2755,6 +2902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &1422621102
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2877,6 +3025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &1432598124
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2999,6 +3148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &1445518955
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3121,6 +3271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &1514962110
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3243,6 +3394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &1549108681
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3365,6 +3517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &1560261654
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3487,6 +3640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &1605206798
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3609,6 +3763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &1631578364
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3731,6 +3886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &1645141024
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3853,6 +4009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &1668457942
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3975,6 +4132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &1766611398
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4097,6 +4255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &1770687247
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4558,6 +4717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa97a30c2b8564983259b2e8ab9ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleSound: {fileID: 952375185}
 --- !u!61 &2139004251
 BoxCollider2D:
   m_ObjectHideFlags: 0
