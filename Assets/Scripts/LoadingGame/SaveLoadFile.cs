@@ -10,11 +10,17 @@ public class SaveLoadFile : MonoBehaviour
     private SpellDataScriptable spellData;
     private SpellFoodDataScriptable spellFoodData;
     private SpellHouseholdDataScriptable spellHouseholdData;
+    private int key;
 
     public QuizDataScriptable QuizData { get => quizData; set => quizData = value; }
     public SpellDataScriptable SpellData { get => spellData; set => spellData = value; }
     public SpellFoodDataScriptable SpellFoodData { get => spellFoodData; set => spellFoodData = value; }
     public SpellHouseholdDataScriptable SpellHouseholdData { get => spellHouseholdData; set => spellHouseholdData = value; }
+
+    private void Start()
+    {
+        this.key = LoadKey();
+    }
 
     //save and load quiz game
     public void SaveCurrentList(List<Question> currentList)
@@ -323,7 +329,6 @@ public class SaveLoadFile : MonoBehaviour
     //save and load current scene of Match game
     public void SaveCurrentSceneMatch(string nameScene)
     {
-        //save current list
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentSceneMatch.dat", FileMode.OpenOrCreate);
         bf.Serialize(file, nameScene);
@@ -351,7 +356,6 @@ public class SaveLoadFile : MonoBehaviour
     //save and load current scene of Count game
     public void SaveCurrentSceneCountNumber(string nameScene)
     {
-        //save current list
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentSceneCountNumber.dat", FileMode.OpenOrCreate);
         bf.Serialize(file, nameScene);
@@ -374,6 +378,64 @@ public class SaveLoadFile : MonoBehaviour
             return res;
         }
         return null;
+    }
+
+    //save and load current scene of Find game
+    public void SaveCurrentSceneFindFood(string nameScene)
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentSceneFindFood.dat", FileMode.OpenOrCreate);
+        bf.Serialize(file, nameScene);
+        file.Close();
+    }
+
+    public string LoadCurrentSceneFindFood()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentSceneFindFood.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentSceneFindFood.dat", FileMode.OpenOrCreate);
+            if (file.Length == 0)
+            {
+                return null;
+            }
+            string res = bf.Deserialize(file) as string;
+            file.Close();
+
+            return res;
+        }
+        return null;
+    }
+
+    //save and load value key
+    public void SaveKey()
+    {
+        //increase key
+        this.key++;
+
+        //save key
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Open(Application.persistentDataPath + "/saveKey.dat", FileMode.OpenOrCreate);
+        bf.Serialize(file, this.key);
+        file.Close();
+    }
+
+    public int LoadKey()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveKey.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/saveKey.dat", FileMode.OpenOrCreate);
+            if (file.Length == 0)
+            {
+                return 0;
+            }
+            string res = bf.Deserialize(file) as string;
+            file.Close();
+
+            return System.Int32.Parse(res);
+        }
+        return 0;
     }
 
     public void ResetGameQuiz()
@@ -437,6 +499,14 @@ public class SaveLoadFile : MonoBehaviour
         if (File.Exists(Application.persistentDataPath + "/saveCurrentSceneCountNumber.dat"))
         {
             File.Delete(Application.persistentDataPath + "/saveCurrentSceneCountNumber.dat");
+        }
+    }
+
+    public void ResetGameFindFood()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentSceneFindFood.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/saveCurrentSceneFindFood.dat");
         }
     }
 }
