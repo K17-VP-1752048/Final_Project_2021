@@ -7,12 +7,14 @@ using System.Runtime.Serialization.Formatters.Binary;
 public class SaveLoadFile : MonoBehaviour
 {
     private QuizDataScriptable quizData;
+    private SpellDataScriptable spellData;
     private string nameScene_Match;
     private string nameScene_CountNumber;
 
     public QuizDataScriptable QuizData { get => quizData; set => quizData = value; }
+    public SpellDataScriptable SpellData { get => spellData; set => spellData = value; }
 
-    //save and load game quiz
+    //save and load quiz game
     public void SaveCurrentList(List<Question> currentList)
     {
         //save current list
@@ -88,6 +90,82 @@ public class SaveLoadFile : MonoBehaviour
         return null;
     }
 
+    //save and load spell game
+    public void SaveCurrentListSpell(List<Pronunciation> currentList)
+    {
+        //save current list
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentListSpell.dat", FileMode.OpenOrCreate);
+        List<string> list = new List<string>();
+        for (int i = 0; i < currentList.Count; i++)
+        {
+            list.Add(currentList[i].pronounceText);
+        }
+        bf.Serialize(file, list);
+        file.Close();
+    }
+
+    public void SaveCurrentSpell(Pronunciation pr)
+    {
+        //save current question
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentSpell.dat", FileMode.OpenOrCreate);
+        string pronounceText = pr.pronounceText;
+        bf.Serialize(file, pronounceText);
+        file.Close();
+    }
+
+    public List<Pronunciation> LoadCurrentListSpell()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentListSpell.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentListSpell.dat", FileMode.OpenOrCreate);
+
+            if (file.Length == 0)
+            {
+                return null;
+            }
+
+            List<string> list = bf.Deserialize(file) as List<string>;
+            file.Close();
+
+            List<Pronunciation> listPronounce = new List<Pronunciation>();
+            for (int i = 0; i < list.Count; i++)
+            {
+                Pronunciation result = spellData.pronunciations.Find(x => x.pronounceText == list[i]);
+                if (result != null)
+                {
+                    listPronounce.Add(result);
+                }
+            }
+            return listPronounce;
+        }
+        return null;
+    }
+
+    public Pronunciation LoadCurrentSpell()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentSpell.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentSpell.dat", FileMode.OpenOrCreate);
+            if (file.Length == 0)
+            {
+                return null;
+            }
+            string p = bf.Deserialize(file) as string;
+            file.Close();
+
+            Pronunciation result = spellData.pronunciations.Find(x => x.pronounceText == p);
+            if (result != null)
+            {
+                return result;
+            }
+        }
+        return null;
+    }
+
     //save and load current scene of Match game
     public void SaveCurrentSceneMatch(string nameScene)
     {
@@ -146,7 +224,7 @@ public class SaveLoadFile : MonoBehaviour
         return null;
     }
 
-    public void ResetGame()
+    public void ResetGameQuiz()
     {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentQuestion.dat"))
         {
@@ -156,10 +234,30 @@ public class SaveLoadFile : MonoBehaviour
         {
             File.Delete(Application.persistentDataPath + "/saveCurrentList.dat");
         }
+    }
+
+    public void ResetGameSpell()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentSpell.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/saveCurrentSpell.dat");
+        }
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentListSpell.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/saveCurrentListSpell.dat");
+        }
+    }
+
+    public void ResetGameMatch()
+    {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentSceneMatch.dat"))
         {
             File.Delete(Application.persistentDataPath + "/saveCurrentSceneMatch.dat");
         }
+    }
+
+    public void ResetGameCountNumber()
+    {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentSceneCountNumber.dat"))
         {
             File.Delete(Application.persistentDataPath + "/saveCurrentSceneCountNumber.dat");

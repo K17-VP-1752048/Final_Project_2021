@@ -95,7 +95,7 @@ public class CountManager : MonoBehaviour
             correctAns = true;
             if (nextScene == "")
             {
-                slf.ResetGame();
+                slf.ResetGameCountNumber();
             }
             else
             {

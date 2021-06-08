@@ -13,26 +13,50 @@ public class SpellingManager : MonoBehaviour
 
     private List<Pronunciation> pronunciations;
     private Pronunciation selectedPronunciation;
+    private SaveLoadFile slf;
+    private int index;
 
     // Start is called before the first frame update
     void Start()
     {
-        pronunciations = new List<Pronunciation>(spellData.pronunciations);
-        SelectPronunciation();
+        slf = gameObject.AddComponent<SaveLoadFile>();
+        slf.SpellData = spellData;
+        List<Pronunciation> list = slf.LoadCurrentListSpell();
+        Pronunciation p = slf.LoadCurrentSpell();
+
+        if (list == null)
+        {
+            pronunciations = new List<Pronunciation>(spellData.pronunciations);
+        }
+        else
+        {
+            pronunciations = list;
+        }
+        if (p == null)
+        {
+            SelectPronunciation();
+        }
+        else
+        {
+            spellUI.SetPronunciation(p);
+            this.index = pronunciations.IndexOf(p);
+        }
     }
 
     void SelectPronunciation()
     {
         if(pronunciations.Count <= 0)
         {
+            slf.ResetGameSpell();
             StartCoroutine(BackTopic(3f));
         }
         else
         {
             int val = Random.Range(0, pronunciations.Count);
             selectedPronunciation = pronunciations[val];
+            this.index = val;
             spellUI.SetPronunciation(selectedPronunciation);
-            pronunciations.RemoveAt(val);
+            slf.SaveCurrentSpell(selectedPronunciation);
         }
     }
 
@@ -43,6 +67,12 @@ public class SpellingManager : MonoBehaviour
 
     public void NextRound()
     {
+        //remove after spell correct
+        pronunciations.RemoveAt(this.index);
+
+        //save current list
+        slf.SaveCurrentListSpell(pronunciations);
+
         //random popup congratulation
         int val = Random.Range(0, congrats.Length);
         Instantiate(congrats[val]);
@@ -54,6 +84,9 @@ public class SpellingManager : MonoBehaviour
 
     public void EndGame()
     {
+        //reset game
+        slf.ResetGameSpell();
+
         Instantiate(congratEndGame);
 
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;

@@ -24,7 +24,7 @@ public class UpLevelScript : MonoBehaviour
         else if (Input.GetMouseButtonDown(0))
         {
             //PlayerPrefs.DeleteKey("nextSceneMatch");
-            slf.ResetGame();
+            slf.ResetGameMatch();
             SceneManager.LoadScene("TopicsAnimalsScene");
         }
     }

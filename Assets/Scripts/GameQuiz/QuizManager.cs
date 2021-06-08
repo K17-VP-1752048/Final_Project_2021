@@ -47,7 +47,7 @@ public class QuizManager : MonoBehaviour
         if (questions.Count <= 0)
         {
             //reset game quiz
-            slf.ResetGame();
+            slf.ResetGameQuiz();
 
             StartCoroutine(NextRound(3f));
             //SceneManager.LoadScene("TopicsAnimalsScene");
