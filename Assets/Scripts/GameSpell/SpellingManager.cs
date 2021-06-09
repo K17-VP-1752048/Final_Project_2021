@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SpellingManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class SpellingManager : MonoBehaviour
     [SerializeField] private SpellFoodDataScriptable spellFoodData;
     [SerializeField] private SpellHouseholdDataScriptable spellHouseholdData;
     [SerializeField] private AudioClip bravo_audio;
+    [SerializeField] private AudioClip fail_audio;
     [SerializeField] private GameObject[] congrats;
     [SerializeField] private GameObject congratEndGame;
     [SerializeField] private string selectedTopic;
@@ -195,6 +197,12 @@ public class SpellingManager : MonoBehaviour
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();
         Invoke("SelectPronunciation", gameObject.GetComponent<AudioSource>().clip.length + 0.1f);
+    }
+
+    public void TryAgain()
+    {
+        gameObject.GetComponent<AudioSource>().clip = fail_audio;
+        gameObject.GetComponent<AudioSource>().Play();
     }
 
     public void EndGame()
