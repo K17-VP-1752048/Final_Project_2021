@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
@@ -416,7 +417,7 @@ public class SaveLoadFile : MonoBehaviour
         //save key
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Open(Application.persistentDataPath + "/saveKey.dat", FileMode.OpenOrCreate);
-        bf.Serialize(file, this.key);
+        bf.Serialize(file, this.key.ToString());
         file.Close();
     }
 
@@ -433,7 +434,7 @@ public class SaveLoadFile : MonoBehaviour
             string res = bf.Deserialize(file) as string;
             file.Close();
 
-            return System.Int32.Parse(res);
+            return Int32.Parse(res);
         }
         return 0;
     }
