@@ -41,6 +41,19 @@ public class LoadPlayer : MonoBehaviour
                 StartCoroutine(LoadAsynchronously(nameScene));
             }
         }
+        else if (nameGame == "GameFindFood")
+        {
+            string nameScene = slf.LoadCurrentSceneFindFood();
+            if (nameScene == null)
+            {
+                StartCoroutine(LoadAsynchronously("Aliment_Find1"));
+            }
+            else
+            {
+                //back topic animal in UpLevelScript
+                StartCoroutine(LoadAsynchronously(nameScene));
+            }
+        }
     }
 
     IEnumerator LoadAsynchronously(string nameScene)

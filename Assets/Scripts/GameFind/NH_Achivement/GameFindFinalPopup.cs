@@ -9,10 +9,13 @@ public class GameFindFinalPopup : MonoBehaviour
     [SerializeField] string nextScene = null;
 
     private bool clickable = false;
+    private SaveLoadFile slf;
 
     // Start is called before the first frame update
     void Start()
     {
+        slf = gameObject.AddComponent<SaveLoadFile>();
+        slf.ResetGameFindFood();
         StartCoroutine("WaitBeforeClickable");
     }
 
