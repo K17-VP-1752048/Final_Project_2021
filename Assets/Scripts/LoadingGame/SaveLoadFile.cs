@@ -409,7 +409,7 @@ public class SaveLoadFile : MonoBehaviour
     }
 
     //save and load value key
-    public void SaveKey()
+    public void IncreaseKey()
     {
         //increase key
         this.key++;
@@ -437,6 +437,21 @@ public class SaveLoadFile : MonoBehaviour
             return Int32.Parse(res);
         }
         return 0;
+    }
+
+    public void DecreaseKey()
+    {
+        if(this.key > 0)
+        {
+            //decrease key
+            this.key--;
+
+            //save key
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/saveKey.dat", FileMode.OpenOrCreate);
+            bf.Serialize(file, this.key.ToString());
+            file.Close();
+        }
     }
 
     public void ResetGameQuiz()
