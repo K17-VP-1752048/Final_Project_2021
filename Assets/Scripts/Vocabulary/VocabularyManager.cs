@@ -27,22 +27,45 @@ public class VocabularyManager : MonoBehaviour
         }*/
         for (int i = 0; i < vocaData.vocals.Count; i++)
         {
-            if(i > listImg.Count)
+            if(i >= listImg.Count)
             {
-                Debug.Log("break");
+                this.index = i;
                 break;
             }
+            
             listImg[i].sprite = vocaData.vocals[i].sprite;
             listImg[i].preserveAspect = true;
             listImg[i].GetComponentInChildren<TMP_Text>().text = vocaData.vocals[i].voca_text;
-            this.index = i;
+            listImg[i].gameObject.SetActive(true);
         }
     }
 
     public void NextList()
     {
-        Debug.Log(this.index);
-        //for(int i = this.index++; i < )
+        ResetActiveFalse();
+        int tmp = 0;
+        for (int i = this.index; i < vocaData.vocals.Count; i++)
+        {
+            if (tmp >= listImg.Count)
+            {
+                this.index = i;
+                break;
+            }
+
+            listImg[tmp].sprite = vocaData.vocals[i].sprite;
+            listImg[tmp].preserveAspect = true;
+            listImg[tmp].GetComponentInChildren<TMP_Text>().text = vocaData.vocals[i].voca_text;
+            listImg[tmp].gameObject.SetActive(true);
+            tmp++;
+        }
+    }
+
+    public void ResetActiveFalse()
+    {
+        for (int i = 0; i < listImg.Count; i++)
+        {
+            listImg[i].gameObject.SetActive(false); 
+        }
     }
 }
 
