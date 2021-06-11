@@ -8,10 +8,11 @@ public class TreasureManager : MonoBehaviour
 {
     private GameObject keyFly;
     private Canvas OpenTreasureCanvas;
-
+    private SaveLoadFile slf;
 
     private void Start()
     {
+        slf = gameObject.AddComponent<SaveLoadFile>();
         OpenTreasureCanvas = GameObject.Find("CanvasOpenTreasure").GetComponent<Canvas>();
         keyFly = GameObject.Find("Key");
         keyFly.SetActive(false);
@@ -19,11 +20,15 @@ public class TreasureManager : MonoBehaviour
 
     public void openATreasure()
     {
-        // check the keys first!
-        // ...
-        string name = "Puzzle" + (CollectionManager.numberOfOpenTreasure + 1);
-        Debug.Log("Click on button " + name);
-        StartCoroutine(openTreasureAnim(name));
+        if (slf.LoadKey() > 0)
+        {
+            // check the keys first!
+            // ...
+            //string name = "Puzzle" + (CollectionManager.numberOfOpenTreasure + 1);
+            string name = "Puzzle" + (slf.LoadBox() + 1);
+            Debug.Log("Click on button " + name);
+            StartCoroutine(openTreasureAnim(name));
+        }
     }
 
     IEnumerator openTreasureAnim(string objectName)
@@ -33,8 +38,10 @@ public class TreasureManager : MonoBehaviour
         if (tmp.GetComponent<Image>().color == Color.white)
         {
             keyFly.SetActive(true);
-            CollectionManager.numberOfOpenTreasure++;
+            //CollectionManager.numberOfOpenTreasure++;
+            slf.IncreaseBox();
             // Keys--
+            slf.DecreaseKey(1);
             
             yield return new WaitForSeconds(0.5f);
             keyFly.SetActive(false);

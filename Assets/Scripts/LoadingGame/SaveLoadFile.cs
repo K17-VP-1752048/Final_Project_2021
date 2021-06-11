@@ -12,16 +12,13 @@ public class SaveLoadFile : MonoBehaviour
     private SpellFoodDataScriptable spellFoodData;
     private SpellHouseholdDataScriptable spellHouseholdData;
     private int key;
+    private int box;
 
     public QuizDataScriptable QuizData { get => quizData; set => quizData = value; }
     public SpellDataScriptable SpellData { get => spellData; set => spellData = value; }
     public SpellFoodDataScriptable SpellFoodData { get => spellFoodData; set => spellFoodData = value; }
     public SpellHouseholdDataScriptable SpellHouseholdData { get => spellHouseholdData; set => spellHouseholdData = value; }
 
-    private void Start()
-    {
-        this.key = LoadKey();
-    }
 
     //save and load quiz game
     public void SaveCurrentList(List<Question> currentList)
@@ -412,6 +409,7 @@ public class SaveLoadFile : MonoBehaviour
     public void IncreaseKey()
     {
         //increase key
+        this.key = LoadKey();
         this.key++;
 
         //save key
@@ -439,12 +437,13 @@ public class SaveLoadFile : MonoBehaviour
         return 0;
     }
 
-    public void DecreaseKey()
+    public void DecreaseKey(int value)
     {
-        if(this.key > 0)
+        this.key = LoadKey();
+        if (this.key >= value)
         {
             //decrease key
-            this.key--;
+            this.key = this.key - value;
 
             //save key
             BinaryFormatter bf = new BinaryFormatter();
@@ -454,6 +453,39 @@ public class SaveLoadFile : MonoBehaviour
         }
     }
 
+    //save and load value box
+    public void IncreaseBox()
+    {
+        //increase box
+        this.box = LoadBox();
+        this.box++;
+
+        //save box
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Open(Application.persistentDataPath + "/saveBox.dat", FileMode.OpenOrCreate);
+        bf.Serialize(file, this.box.ToString());
+        file.Close();
+    }
+
+    public int LoadBox()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveBox.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/saveBox.dat", FileMode.OpenOrCreate);
+            if (file.Length == 0)
+            {
+                return 0;
+            }
+            string res = bf.Deserialize(file) as string;
+            file.Close();
+
+            return Int32.Parse(res);
+        }
+        return 0;
+    }
+
+    //reset game
     public void ResetGameQuiz()
     {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentQuestion.dat"))

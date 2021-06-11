@@ -6,13 +6,16 @@ using UnityEngine.UI;
 public class CollectionManager : MonoBehaviour
 {
     [SerializeField] int numberOfTreasure;
-    public static int numberOfOpenTreasure = 2;
+    private static int numberOfOpenTreasure;
     private Canvas OpenTreasureCanvas;
+    private SaveLoadFile slf;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        slf = gameObject.AddComponent<SaveLoadFile>();
+        numberOfOpenTreasure = slf.LoadBox();
         for (int i = 1; i <= numberOfTreasure; i++)
         {
             GameObject tmp = GameObject.Find("Puzzle" + i);
