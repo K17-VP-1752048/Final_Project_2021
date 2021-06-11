@@ -6,28 +6,47 @@ using TMPro;
 
 public class VocabularyManager : MonoBehaviour
 {
-    [SerializeField] private Vocabulary_Animals_Scriptable vocaData;
+    [SerializeField] private DataAnimalsScriptable vocaData;
+    [SerializeField] private List<Image> listImg;
 
     private int index = 0;
     private Image img;
     private TMP_Text tmpText;
     private GameObject obj;
-
+    private int page;
     // Start is called before the first frame update
     void Start()
     {
-        Vector2 screen = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        for (int i = index; i < vocaData.list.Count; i++)
+        /*if(vocaData.vocals.Count / 9 == 0)
         {
-            obj.AddComponent<Image>().sprite = vocaData.list[i].sprite;
-            obj.AddComponent<Image>().preserveAspect = true;
-            obj.AddComponent<TMP_Text>().text = vocaData.list[i].voca_text;
-            GameObject tmp = Instantiate(obj) as GameObject;
-            tmp.transform.position = new Vector2(screen.x * 2, screen.y * 4);
+            page = vocaData.vocals.Count / 9;
         }
+        else
+        {
+            page = vocaData.vocals.Count / 9 + 1;
+        }*/
+        for (int i = 0; i < vocaData.vocals.Count; i++)
+        {
+            if(i > listImg.Count)
+            {
+                Debug.Log("break");
+                break;
+            }
+            listImg[i].sprite = vocaData.vocals[i].sprite;
+            listImg[i].preserveAspect = true;
+            listImg[i].GetComponentInChildren<TMP_Text>().text = vocaData.vocals[i].voca_text;
+            this.index = i;
+        }
+    }
+
+    public void NextList()
+    {
+        Debug.Log(this.index);
+        //for(int i = this.index++; i < )
     }
 }
 
+[System.Serializable]
 public class Vocabulary
 {
     public Sprite sprite;

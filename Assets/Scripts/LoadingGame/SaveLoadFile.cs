@@ -568,9 +568,9 @@ public class SaveLoadFile : MonoBehaviour
 
     public void ResetBox()
     {
-        if (File.Exists(Application.persistentDataPath + "/saveKey.dat"))
+        if (File.Exists(Application.persistentDataPath + "/saveBox.dat"))
         {
-            File.Delete(Application.persistentDataPath + "/saveKey.dat");
+            File.Delete(Application.persistentDataPath + "/saveBox.dat");
         }
     }
 }
