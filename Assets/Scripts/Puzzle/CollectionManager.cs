@@ -16,6 +16,7 @@ public class CollectionManager : MonoBehaviour
     {
         slf = gameObject.AddComponent<SaveLoadFile>();
         numberOfOpenTreasure = slf.LoadBox();
+
         for (int i = 1; i <= numberOfTreasure; i++)
         {
             GameObject tmp = GameObject.Find("Puzzle" + i);

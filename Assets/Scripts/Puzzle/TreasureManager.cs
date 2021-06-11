@@ -9,6 +9,7 @@ public class TreasureManager : MonoBehaviour
     private GameObject keyFly;
     private Canvas OpenTreasureCanvas;
     private SaveLoadFile slf;
+    [SerializeField] int keyNeeded;
 
     private void Start()
     {
@@ -20,14 +21,17 @@ public class TreasureManager : MonoBehaviour
 
     public void openATreasure()
     {
-        if (slf.LoadKey() > 0)
+        // check the keys first!
+        //string name = "Puzzle" + (CollectionManager.numberOfOpenTreasure + 1);
+        string name = "Puzzle" + (slf.LoadBox() + 1);
+        Debug.Log("Click on button " + name);
+        if (slf.LoadKey() >= keyNeeded)
         {
-            // check the keys first!
-            // ...
-            //string name = "Puzzle" + (CollectionManager.numberOfOpenTreasure + 1);
-            string name = "Puzzle" + (slf.LoadBox() + 1);
-            Debug.Log("Click on button " + name);
             StartCoroutine(openTreasureAnim(name));
+        }
+        else
+        {
+            // Alert that keys are not enough
         }
     }
 
