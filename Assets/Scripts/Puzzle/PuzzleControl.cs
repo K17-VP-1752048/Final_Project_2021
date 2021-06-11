@@ -53,7 +53,17 @@ public class PuzzleControl : MonoBehaviour
         }
         if(!continu)
         {
-
+            StartCoroutine(loadToCollection());
+            if(Input.touchCount > 0)
+            {
+                SceneManager.LoadScene("Scenes/CollectionScene");
+            }
         }
+    }
+
+    IEnumerator loadToCollection()
+    {
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("Scenes/CollectionScene");
     }
 }

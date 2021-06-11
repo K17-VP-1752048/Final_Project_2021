@@ -2,38 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TreasureManager : MonoBehaviour
 {
-    //    private Animation keyFly = GameObject.Find("Key").GetComponent<Animation>();
+    private GameObject keyFly;
     private Canvas OpenTreasureCanvas;
+
 
     private void Start()
     {
         OpenTreasureCanvas = GameObject.Find("CanvasOpenTreasure").GetComponent<Canvas>();
-
+        keyFly = GameObject.Find("Key");
+        keyFly.SetActive(false);
     }
 
     public void openATreasure()
     {
-        string name = "Puzzle" + CollectionManager.numberOfOpenTreasure + 1;
+        // check the keys first!
+        // ...
+        string name = "Puzzle" + (CollectionManager.numberOfOpenTreasure + 1);
+        Debug.Log("Click on button " + name);
         StartCoroutine(openTreasureAnim(name));
     }
 
     IEnumerator openTreasureAnim(string objectName)
     {
-        if (gameObject.name.Equals(objectName))
+        GameObject tmp = GameObject.Find(objectName).transform.GetChild(1).gameObject;
+
+        if (tmp.GetComponent<Image>().color == Color.white)
         {
- //           keyFly.Play();
+            keyFly.SetActive(true);
             CollectionManager.numberOfOpenTreasure++;
+            // Keys--
+            
+            yield return new WaitForSeconds(0.5f);
+            keyFly.SetActive(false);
+            tmp.GetComponent<Image>().enabled = false;
+
             OpenTreasureCanvas.enabled = true;
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
 
-            GameObject tmp = GameObject.Find(objectName);
-            tmp.GetComponent<Image>().sprite = null;
-            tmp.transform.Find("Image").GetComponent<Image>().enabled = true;
-
-            OpenTreasureCanvas.enabled = false;
+            SceneManager.LoadScene("Scenes/Puzzle/" + objectName);
         }
     }
 }
