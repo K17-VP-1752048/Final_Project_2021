@@ -557,4 +557,20 @@ public class SaveLoadFile : MonoBehaviour
             File.Delete(Application.persistentDataPath + "/saveCurrentSceneFindFood.dat");
         }
     }
+
+    public void ResetKey()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveKey.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/saveKey.dat");
+        }
+    }
+
+    public void ResetBox()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveKey.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/saveKey.dat");
+        }
+    }
 }

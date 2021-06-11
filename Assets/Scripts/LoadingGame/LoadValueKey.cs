@@ -18,4 +18,10 @@ public class LoadValueKey : MonoBehaviour
         //get value key
         keyImg.GetComponentInChildren<TMP_Text>().text = slf.LoadKey().ToString();
     }
+
+    void Update()
+    {
+        //get value key
+        keyImg.GetComponentInChildren<TMP_Text>().text = slf.LoadKey().ToString();
+    }
 }
