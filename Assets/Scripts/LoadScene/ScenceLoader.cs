@@ -33,4 +33,44 @@ public class ScenceLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Scenes/TopicsNumberScene");
     }
+    public void LoadVocaAnimalScene()
+    {
+        SceneManager.LoadScene("Scenes/Vocabulary/Vocabulary_Animal");
+    }
+    public void LoadVocaFoodScene()
+    {
+        SceneManager.LoadScene("Scenes/Vocabulary/Vocabulary_Food");
+    }
+    public void LoadVocaHouseScene()
+    {
+        SceneManager.LoadScene("Scenes/Vocabulary/Vocabulary_House");
+    }
+    public void LoadGameSpellAnimal()
+    {
+        SceneManager.LoadScene("Scenes/Loading/LoadingGameSpellAnimal");
+    }
+    public void LoadGameSpellFood()
+    {
+        SceneManager.LoadScene("Scenes/Loading/LoadingGameSpellFood");
+    }
+    public void LoadGameSpellHouse()
+    {
+        SceneManager.LoadScene("Scenes/Loading/LoadingGameSpellHousehold");
+    }
+    public void LoadGameMatch()
+    {
+        SceneManager.LoadScene("Scenes/Loading/LoadingGameMatch");
+    }
+    public void LoadGameFind()
+    {
+        SceneManager.LoadScene("Scenes/Loading/LoadingGameFindFood");
+    }
+    public void LoadGameCount()
+    {
+        SceneManager.LoadScene("Scenes/Loading/LoadingGameCountNumber");
+    }
+    public void LoadGameQuiz()
+    {
+        SceneManager.LoadScene("Scenes/Loading/LoadingGameQuiz");
+    }
 }
