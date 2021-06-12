@@ -54,6 +54,19 @@ public class LoadPlayer : MonoBehaviour
                 StartCoroutine(LoadAsynchronously(nameScene));
             }
         }
+        else if (nameGame == "GamePickToRoom")
+        {
+            string nameScene = slf.LoadCurrentScenePickToRoom();
+            if (nameScene == null)
+            {
+                StartCoroutine(LoadAsynchronously("PickObjectToRoom1"));
+            }
+            else
+            {
+                //back topic animal in UpLevelScript
+                StartCoroutine(LoadAsynchronously(nameScene));
+            }
+        }
     }
 
     IEnumerator LoadAsynchronously(string nameScene)

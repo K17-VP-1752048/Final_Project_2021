@@ -405,6 +405,33 @@ public class SaveLoadFile : MonoBehaviour
         return null;
     }
 
+    //save and load current scene of Pick To Room game
+    public void SaveCurrentScenePickToRoom(string nameScene)
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentScenePickToRoom.dat", FileMode.OpenOrCreate);
+        bf.Serialize(file, nameScene);
+        file.Close();
+    }
+
+    public string LoadCurrentScenePickToRoom()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentScenePickToRoom.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentScenePickToRoom.dat", FileMode.OpenOrCreate);
+            if (file.Length == 0)
+            {
+                return null;
+            }
+            string res = bf.Deserialize(file) as string;
+            file.Close();
+
+            return res;
+        }
+        return null;
+    }
+
     //save and load value key
     public void IncreaseKey()
     {
@@ -555,6 +582,14 @@ public class SaveLoadFile : MonoBehaviour
         if (File.Exists(Application.persistentDataPath + "/saveCurrentSceneFindFood.dat"))
         {
             File.Delete(Application.persistentDataPath + "/saveCurrentSceneFindFood.dat");
+        }
+    }
+
+    public void ResetGamePickToRoom()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentScenePickToRoom.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/saveCurrentScenePickToRoom.dat");
         }
     }
 

@@ -11,18 +11,25 @@ public class Level : MonoBehaviour
     [SerializeField] string nextScene;
 
     private int objectNumber;
+    private SaveLoadFile slf;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        slf = gameObject.AddComponent<SaveLoadFile>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (objectNumber == objectInThisLvl)
+        if (objectNumber == objectInThisLvl && nextScene != "TopicsHouseScene")
         {
+            slf.SaveCurrentScenePickToRoom(nextScene);
+            ShowPopup();
+        }
+        else if (objectNumber == objectInThisLvl && nextScene == "TopicsHouseScene") 
+        {
+            slf.ResetGamePickToRoom();
             ShowPopup();
         }
         if (popupCanvas.activeSelf && Input.GetMouseButtonDown(0))
