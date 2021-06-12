@@ -1,12 +1,12 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class NumberActiver : MonoBehaviour
 {
     [SerializeField] TextWriter textWriter;
-//    [SerializeField] private Object textBackground;
+    [SerializeField] GameObject textBackground;
+    private Text message;
 
     private string[] nums = {"One", "Two", "Three", "Four", "Five", "Six",
         "Seven", "Eight", "Nine", "Ten", "Zero"};
@@ -19,21 +19,27 @@ public class NumberActiver : MonoBehaviour
             GameObject.Find(nums[i]).GetComponent<Text>().enabled = false;
         }
 
-        Text message = GameObject.Find("TextRun").GetComponent<Text>();
-        textWriter.addWriter(message, "Bienvenue!", .2f);
-        
-//        GameObject.Find("TextBackground").GetComponent<Image>().enabled = false;
-
+        message = textBackground.transform.Find("TextRun").GetComponent<Text>();
         StartCoroutine(printNumberCoroutine());
     }
 
-    // Update is called once per frame
     IEnumerator printNumberCoroutine()
     {
+        textWriter.addWriter(message, "Bienvenue!", .1f);
+        yield return new WaitForSeconds(2f);
+        textWriter.addWriter(message, "C'est un sujet de nombres 0-10", .1f);
+        yield return new WaitForSeconds(4f);
+        textWriter.addWriter(message, "Comptez avec moi!", .1f);
+        yield return new WaitForSeconds(3f);
+        textBackground.SetActive(false);
+
         for (int i = 0; i < nums.Length; i++)
         {
-            yield return new WaitForSeconds(2f);
             GameObject.Find(nums[i]).GetComponent<Text>().enabled = true;
+            yield return new WaitForSeconds(2f);
         }
+
+        message.text = "Excellent! T'es prête à faire autre défi?";
+        textBackground.SetActive(true);
     }
 }

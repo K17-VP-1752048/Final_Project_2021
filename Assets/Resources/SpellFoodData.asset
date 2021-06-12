@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8b27d311f73b44791c3681d8c67363, type: 3}
+  m_Name: SpellFoodData
+  m_EditorClassIdentifier: 
+  pronunciations:
+  - pronounceText: la banane
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    sprite: {fileID: 21300000, guid: c61b62f829bb37d499dcdbd793451c27, type: 3}
+  - pronounceText: L'avocat
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    sprite: {fileID: 21300000, guid: ba2ab42ef6814cd41b948da703fa469d, type: 3}
+  - pronounceText: le pomme
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    sprite: {fileID: 21300000, guid: a430262304ac4ac4d974d082c229d21a, type: 3}
+  - pronounceText: la baguette
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    sprite: {fileID: 21300000, guid: f9b953c423b1b2646b8c1327033fbb7d, type: 3}
+  - pronounceText: "le caf\xE9"
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    sprite: {fileID: 21300000, guid: 371c70b0c06c1784eb74c13182758ee3, type: 3}
+  - pronounceText: "le g\xE2teau"
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    sprite: {fileID: 21300000, guid: d806d5c1541d22340b5b7fa4f126dbb6, type: 3}
+  - pronounceText: le bonbon
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    sprite: {fileID: 21300000, guid: f4fde425cac7b2b4facf57b35151cc46, type: 3}
+  - pronounceText: le chou-fleur
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    sprite: {fileID: 21300000, guid: 2eb2745bc6198694984cdf45a9006cf9, type: 3}
+  - pronounceText: le mangoustan
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    sprite: {fileID: 21300000, guid: 8acdb825b1fd4274b915cd0b230667f0, type: 3}
+  - pronounceText: la mangue
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    sprite: {fileID: 21300000, guid: 53e5ba9442e38e14c9eda45c84bfca2d, type: 3}

@@ -111,7 +111,6 @@ public class QuizUI : MonoBehaviour
             else if(val == -1)
             {
                 //set color to correct
-                Debug.Log("ENDGAME");
                 StartCoroutine(EndGame(ansImg));
             }
             else
@@ -154,7 +153,8 @@ public class QuizUI : MonoBehaviour
 
         //random popup congratulation
         int val = Random.Range(0, congrats.Length);
-        Instantiate(congrats[val]);
+        GameObject popUpCongrats =  Instantiate(congrats[val]);
+        popUpCongrats.transform.SetParent(transform.parent, false);
 
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();

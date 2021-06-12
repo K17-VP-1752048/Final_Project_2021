@@ -9,11 +9,19 @@ public class NH_Achievement : MonoBehaviour
     [SerializeField] string nextScene = null;
 
     private Animator animator;
+    private SaveLoadFile slf;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
+
+        //save current scene
+        slf = gameObject.AddComponent<SaveLoadFile>();
+        if (nextScene != null)
+        {
+            slf.SaveCurrentSceneFindFood(nextScene);
+        }
     }
 
     // Update is called once per frame

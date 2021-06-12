@@ -12,17 +12,43 @@ public class QuizManager : MonoBehaviour
     private List<Question> questions;
     private Question selectedQuestion;
     private int index;
+    private SaveLoadFile slf;
+
     // Start is called before the first frame update
     void Start()
     {
-        questions = new List<Question>(quizData.questions);
-        SelectQuestion();
+        slf = gameObject.AddComponent<SaveLoadFile>();
+        slf.QuizData = quizData;
+        List<Question> list = slf.LoadCurrentList();
+        Question q = slf.LoadCurrentQuestion();
+
+        if (list == null)
+        {
+            questions = new List<Question>(slf.QuizData.questions);
+        }
+        else
+        {
+            questions = list;
+        }
+        if(q == null)
+        {
+            SelectQuestion();
+        }
+        else
+        {
+            selectedQuestion = q;
+            quizUI.SetQuestion(selectedQuestion);
+            this.index = questions.IndexOf(q);
+        }
     }
 
     void SelectQuestion()
     {
         if (questions.Count <= 0)
         {
+            //reset game quiz
+            slf.ResetGameQuiz();
+
             StartCoroutine(NextRound(3f));
             //SceneManager.LoadScene("TopicsAnimalsScene");
         }
@@ -30,8 +56,12 @@ public class QuizManager : MonoBehaviour
         {
             int val = Random.Range(0, questions.Count);
             selectedQuestion = questions[val];
+
+            //save game quiz
+            slf.SaveCurrentQuestion(selectedQuestion);
+
             quizUI.SetQuestion(selectedQuestion);
-            this.index = val;
+            this.index = val;     
         }
     }
 
@@ -44,6 +74,7 @@ public class QuizManager : MonoBehaviour
             //YES
             correctAns = 1;
             questions.RemoveAt(this.index);
+            slf.SaveCurrentList(questions);
             delayTime = 3f;
         }
         else if(answered == selectedQuestion.correctAns && questions.Count <= 1)

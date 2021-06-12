@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6759868270604001720}
   - component: {fileID: 6759868270604001721}
   - component: {fileID: 6759868270604001722}
-  - component: {fileID: 7516351769750418527}
   m_Layer: 0
   m_Name: WinBg
   m_TagString: Untagged
@@ -102,16 +101,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7516351769750418527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6759868270604001723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d449e36f7fa874d4c8275efe9ac15c22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextScene: 

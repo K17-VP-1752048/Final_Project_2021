@@ -18,7 +18,6 @@ public class CountUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     public void ChooseOption(Image opt)
@@ -72,7 +71,7 @@ public class CountUI : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         img.color = new Color(1, 1, 0, 1);
         img.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(img.GetComponent<AudioSource>().clip.length + 0.2f);
+        //yield return new WaitForSeconds(img.GetComponent<AudioSource>().clip.length + 0.2f);
     }
 
     //this give blink effect [if needed use or dont use]
@@ -99,7 +98,7 @@ public class CountUI : MonoBehaviour
         showRes.SetActive(true);
         showRes.GetComponent<AudioSource>().clip = bravo_audio;
         showRes.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(1f);
+        //yield return new WaitForSeconds(1f);
         showRes.GetComponentInChildren<Image>().GetComponentInChildren<TMP_Text>().text = questionInfoText.text + " " + img.GetComponentInChildren<TMP_Text>().text.ToLower() + " " + questionAnimalText.text;
     }
 
