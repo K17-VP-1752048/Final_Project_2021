@@ -42,7 +42,7 @@ public class TreasureManager : MonoBehaviour
         if (tmp.GetComponent<Image>().color == Color.white)
         {
             keyFly.SetActive(true);
-            //CollectionManager.numberOfOpenTreasure++;
+            // numberOfOpenTreasure++;
             slf.IncreaseBox();
             // Keys--
             slf.DecreaseKey(1);
