@@ -35,10 +35,12 @@ public class NumberActiver : MonoBehaviour
 
         for (int i = 0; i < nums.Length; i++)
         {
-            GameObject.Find(nums[i]).GetComponent<Text>().enabled = true;
+            GetComponent<AudioSource>().Play();
             yield return new WaitForSeconds(2f);
+            GameObject.Find(nums[i]).GetComponent<Text>().enabled = true;
         }
 
+        yield return new WaitForSeconds(2f);
         message.text = "Excellent! T'es prête à faire autre défi?";
         textBackground.SetActive(true);
     }

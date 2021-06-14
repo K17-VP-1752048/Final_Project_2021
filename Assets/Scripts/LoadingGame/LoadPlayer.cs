@@ -71,9 +71,15 @@ public class LoadPlayer : MonoBehaviour
 
     IEnumerator LoadAsynchronously(string nameScene)
     {
-        yield return new WaitForSeconds(0.5f);
-        progressBar.fillAmount = 0.5f;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(.5f);
+        progressBar.fillAmount = 0.2f;
+        yield return new WaitForSeconds(.5f);
+        progressBar.fillAmount = 0.4f;
+        yield return new WaitForSeconds(.5f);
+        progressBar.fillAmount = 0.6f;
+        yield return new WaitForSeconds(.5f);
+        progressBar.fillAmount = 0.9f;
+        yield return new WaitForSeconds(1f);
         AsyncOperation operation = SceneManager.LoadSceneAsync(nameScene);
         while (!operation.isDone)
         {
