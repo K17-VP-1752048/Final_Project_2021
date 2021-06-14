@@ -13,6 +13,7 @@ public class VocabularyManager : MonoBehaviour
     [SerializeField] private string topic;
 
     private int index = 0;
+    private int indexPrevious = 0;
     private List<Vocabulary> list;
 
     // Start is called before the first frame update
@@ -52,9 +53,16 @@ public class VocabularyManager : MonoBehaviour
         int tmp = 0;
         for (int i = this.index; i < list.Count; i++)
         {
+            if (i == list.Count - 1)
+            {
+                int page = (list.Count % listImg.Count != 0) ? (list.Count / 9 + 1) : (list.Count / 9);
+                this.indexPrevious = listImg.Count * page - 2 * listImg.Count;
+            }
+
             if (tmp >= listImg.Count)
             {
                 this.index = i;
+                this.indexPrevious = this.index - 2 * listImg.Count;
                 break;
             }
 
@@ -63,6 +71,30 @@ public class VocabularyManager : MonoBehaviour
             listImg[tmp].GetComponentInChildren<TMP_Text>().text = list[i].voca_text;
             listImg[tmp].gameObject.SetActive(true);
             tmp++;
+        }
+    }
+
+    public void PreviousList()
+    {
+        if(this.indexPrevious >= 0)
+        {
+            ResetActiveFalse();
+            int tmp = 0;
+            for (int i = this.indexPrevious; i < list.Count; i++)
+            {
+                if (tmp >= listImg.Count)
+                {
+                    this.index = i;
+                    this.indexPrevious = this.index - 2 * listImg.Count;
+                    break;
+                }
+
+                listImg[tmp].sprite = list[i].sprite;
+                listImg[tmp].preserveAspect = true;
+                listImg[tmp].GetComponentInChildren<TMP_Text>().text = list[i].voca_text;
+                listImg[tmp].gameObject.SetActive(true);
+                tmp++;
+            }
         }
     }
 
