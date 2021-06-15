@@ -9,14 +9,12 @@ public class CharBox : MonoBehaviour, IDropHandler
     private Vector3 correctPos;
     private GameObject droppedCharacter;
     private Color c;
-    private AudioSource dropSound;
 
     void Start()
     {
         correctPos = gameObject.GetComponent<RectTransform>().position;
         c = gameObject.GetComponent<Image>().color;
         droppedCharacter = null;
-        dropSound = GameObject.Find("DropSound").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -36,7 +34,7 @@ public class CharBox : MonoBehaviour, IDropHandler
     {
         if (eventData.pointerDrag != null)
         {
-            dropSound.Play();
+            GetComponent<AudioSource>().Play();
             droppedCharacter = eventData.pointerDrag;
             droppedCharacter.GetComponent<RectTransform>().position = correctPos;
             droppedCharacter.GetComponent<DragAndDropControl>().SetDroppedOnBox(true);
