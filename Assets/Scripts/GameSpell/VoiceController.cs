@@ -64,7 +64,7 @@ public class VoiceController : MonoBehaviour
         }
         else if (count >= 3 && spellingManager.GetLength() > 0)
         {
-            spellingManager.NextRound();
+            spellingManager.TimeOut();
             count = 0;
         }
         else if (count >= 3 && spellingManager.GetLength() <= 0)
