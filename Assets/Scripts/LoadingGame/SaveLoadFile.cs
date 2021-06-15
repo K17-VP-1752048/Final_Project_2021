@@ -512,19 +512,24 @@ public class SaveLoadFile : MonoBehaviour
         return 0;
     }
 
-    //reset game
-    public void ResetGameQuiz()
+    //reset Quiz game
+    public void ResetCurrentList_GameQuiz()
     {
-        if (File.Exists(Application.persistentDataPath + "/saveCurrentQuestion.dat"))
-        {
-            File.Delete(Application.persistentDataPath + "/saveCurrentQuestion.dat");
-        }
         if (File.Exists(Application.persistentDataPath + "/saveCurrentList.dat"))
         {
             File.Delete(Application.persistentDataPath + "/saveCurrentList.dat");
         }
     }
 
+    public void ResetCurrentQuestion_GameQuiz()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentQuestion.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/saveCurrentQuestion.dat");
+        }
+    }
+
+    //reset Spell game
     public void ResetGameSpellAnimals()
     {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentSpellAnimal.dat"))
@@ -561,6 +566,7 @@ public class SaveLoadFile : MonoBehaviour
         }
     }
 
+    //reset Match game
     public void ResetGameMatch()
     {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentSceneMatch.dat"))
@@ -569,6 +575,7 @@ public class SaveLoadFile : MonoBehaviour
         }
     }
 
+    //reset Count game
     public void ResetGameCountNumber()
     {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentSceneCountNumber.dat"))
@@ -577,6 +584,7 @@ public class SaveLoadFile : MonoBehaviour
         }
     }
 
+    //reset Find game
     public void ResetGameFindFood()
     {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentSceneFindFood.dat"))
@@ -585,6 +593,7 @@ public class SaveLoadFile : MonoBehaviour
         }
     }
 
+    //reset PickToRoom game
     public void ResetGamePickToRoom()
     {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentScenePickToRoom.dat"))
@@ -593,6 +602,7 @@ public class SaveLoadFile : MonoBehaviour
         }
     }
 
+    //reset key
     public void ResetKey()
     {
         if (File.Exists(Application.persistentDataPath + "/saveKey.dat"))
@@ -601,6 +611,7 @@ public class SaveLoadFile : MonoBehaviour
         }
     }
 
+    //reset box
     public void ResetBox()
     {
         if (File.Exists(Application.persistentDataPath + "/saveBox.dat"))
