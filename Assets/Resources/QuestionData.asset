@@ -29,7 +29,7 @@ MonoBehaviour:
   - questionInfo: La baleine vit ... ?
     questionImg: {fileID: 21300000, guid: 70d0687f8b74cc0479798250507ef232, type: 3}
     options:
-    - answerText: "Dans la for\xEAt"
+    - answerText: Dans la savane
       answerSprite: {fileID: 21300000, guid: 2e54e132a5da99e4a99aa74e933cb77e, type: 3}
       answerClip: {fileID: 8300000, guid: 64fec76fef9a81d4d8e738c40c494269, type: 3}
     - answerText: Dans l'eau
@@ -81,7 +81,7 @@ MonoBehaviour:
   - questionInfo: Le lion vit ... ?
     questionImg: {fileID: 21300000, guid: ffef5c2531af8364cbd4c89eb4fe72d8, type: 3}
     options:
-    - answerText: "Dans la for\xEAt"
+    - answerText: Dans la savane
       answerSprite: {fileID: 21300000, guid: 2e54e132a5da99e4a99aa74e933cb77e, type: 3}
       answerClip: {fileID: 8300000, guid: 64fec76fef9a81d4d8e738c40c494269, type: 3}
     - answerText: Dans le poulailler
@@ -90,7 +90,7 @@ MonoBehaviour:
     - answerText: Dans l'eau
       answerSprite: {fileID: 21300000, guid: 20d11a096e8b9d14ca36b3e85db778cd, type: 3}
       answerClip: {fileID: 8300000, guid: 7499636e35452de4bae68f8eff06f0e1, type: 3}
-    correctAns: "Dans la for\xEAt"
+    correctAns: Dans la savane
   - questionInfo: Le cochon vit ... ?
     questionImg: {fileID: 21300000, guid: 2541fd5e7b4609e4189524a9fc99c775, type: 3}
     options:
@@ -120,7 +120,7 @@ MonoBehaviour:
   - questionInfo: Le pingouin vit ... ?
     questionImg: {fileID: 21300000, guid: b7adc4c5643ee9b4da0cc5447f2c6d40, type: 3}
     options:
-    - answerText: "Dans la for\xEAt"
+    - answerText: Dans la savane
       answerSprite: {fileID: 21300000, guid: 2e54e132a5da99e4a99aa74e933cb77e, type: 3}
       answerClip: {fileID: 8300000, guid: 64fec76fef9a81d4d8e738c40c494269, type: 3}
     - answerText: Dans la porcherie
@@ -130,3 +130,29 @@ MonoBehaviour:
       answerSprite: {fileID: 21300000, guid: 3fdcb86712a063741934f90c1a47b6b8, type: 3}
       answerClip: {fileID: 8300000, guid: 7499636e35452de4bae68f8eff06f0e1, type: 3}
     correctAns: Sur la banquise
+  - questionInfo: Que produit la vache ?
+    questionImg: {fileID: 21300000, guid: e80842f2fabe03d49a6c9366796f1d1a, type: 3}
+    options:
+    - answerText: Du lait
+      answerSprite: {fileID: 21300000, guid: fa91e6fecd588e64d808153f584d5fc9, type: 3}
+      answerClip: {fileID: 8300000, guid: 64fec76fef9a81d4d8e738c40c494269, type: 3}
+    - answerText: D'oeuf
+      answerSprite: {fileID: 21300000, guid: 1273930e8aa6a0045b53688a90dc6f95, type: 3}
+      answerClip: {fileID: 8300000, guid: a336493f507d3034b8572d0ca7f649ef, type: 3}
+    - answerText: Des carottes
+      answerSprite: {fileID: 21300000, guid: f4a87272e6fdc8e48bc2e64521334c62, type: 3}
+      answerClip: {fileID: 8300000, guid: 7499636e35452de4bae68f8eff06f0e1, type: 3}
+    correctAns: Du lait
+  - questionInfo: "Quels animaux vivent \xE0 la maison?"
+    questionImg: {fileID: 21300000, guid: 29bedf40399211845ae3ab2385098799, type: 3}
+    options:
+    - answerText: Le chat et le chien
+      answerSprite: {fileID: 0}
+      answerClip: {fileID: 8300000, guid: 64fec76fef9a81d4d8e738c40c494269, type: 3}
+    - answerText: Le tigre et le chat
+      answerSprite: {fileID: 0}
+      answerClip: {fileID: 8300000, guid: a336493f507d3034b8572d0ca7f649ef, type: 3}
+    - answerText: Le lion et le chien
+      answerSprite: {fileID: 0}
+      answerClip: {fileID: 8300000, guid: 7499636e35452de4bae68f8eff06f0e1, type: 3}
+    correctAns: Le chat et le chien
