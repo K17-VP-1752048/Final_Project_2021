@@ -101,6 +101,10 @@ public class VoiceController : MonoBehaviour
             spellingManager.EndGame();
             count = 0;
         }
+        else
+        {
+            spellingManager.TryAgain();
+        }
         count++;
     }
 

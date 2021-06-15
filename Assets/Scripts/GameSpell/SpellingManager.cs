@@ -200,7 +200,8 @@ public class SpellingManager : MonoBehaviour
 
         //random popup congratulation
         int val = Random.Range(0, congrats.Length);
-        Instantiate(congrats[val]);
+        GameObject obj = Instantiate(congrats[val]);
+        obj.transform.SetParent(spellUI.transform, false);
 
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();
@@ -209,7 +210,9 @@ public class SpellingManager : MonoBehaviour
 
     public void TryAgain()
     {
-        Instantiate(popupWrong);
+        GameObject obj = Instantiate(popupWrong);
+        obj.transform.SetParent(spellUI.transform, false);
+
         gameObject.GetComponent<AudioSource>().clip = fail_audio;
         gameObject.GetComponent<AudioSource>().Play();
     }
@@ -233,7 +236,8 @@ public class SpellingManager : MonoBehaviour
             slf.ResetCurrentListSpell_House();
         }
 
-        Instantiate(congratEndGame);
+        GameObject obj = Instantiate(congratEndGame);
+        obj.transform.SetParent(spellUI.transform, false);
 
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();
@@ -259,7 +263,8 @@ public class SpellingManager : MonoBehaviour
             slf.ResetCurrentListSpell_House();
         }
 
-        Instantiate(popupTimeOut);
+        GameObject obj = Instantiate(popupTimeOut);
+        obj.transform.SetParent(spellUI.transform, false);
 
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();
