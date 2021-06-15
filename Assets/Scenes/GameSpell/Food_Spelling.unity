@@ -411,12 +411,16 @@ MonoBehaviour:
   spellFoodData: {fileID: 11400000, guid: 7f6b3f9d6180b5c4e8c401d1b5260cdb, type: 2}
   spellHouseholdData: {fileID: 0}
   bravo_audio: {fileID: 8300000, guid: 73651083d7edfb7429b17051b59edd47, type: 3}
-  fail_audio: {fileID: 0}
+  fail_audio: {fileID: 8300000, guid: f0f9a1758c486cc4db3ffa18611d8755, type: 3}
   congrats:
-  - {fileID: 5853179999292123857, guid: 19d2c0908939ca746a5626cc1c3f6bcf, type: 3}
-  - {fileID: 7863752946418305100, guid: 1cbf696054ffb644badf90e1d10be4f9, type: 3}
-  - {fileID: 3044119423598308287, guid: 149da61d5aaa4974587ff8a669d1180f, type: 3}
+  - {fileID: 8784561621120543643, guid: 4b9c2b1a23cadcd47be0e8d024fbc92c, type: 3}
+  - {fileID: 9189299650591468263, guid: 560b72dc33ba2f1478985dc6db25464e, type: 3}
+  - {fileID: 5453239367352893849, guid: 91ec8ddf6d87647439187f5279c1d1f8, type: 3}
   congratEndGame: {fileID: 3911960353584594007, guid: 1fa913fc3caca95458ce7d0b4e3ccfbf,
+    type: 3}
+  popupWrong: {fileID: 4734448574697624158, guid: 6dd61d7c6fc4a0443a70942b5911a57e,
+    type: 3}
+  popupTimeOut: {fileID: 6776602508805209136, guid: f454c20462f709644ba44946ec92efec,
     type: 3}
   selectedTopic: Food
 --- !u!4 &494471324

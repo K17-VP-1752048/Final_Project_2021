@@ -530,36 +530,48 @@ public class SaveLoadFile : MonoBehaviour
     }
 
     //reset Spell game
-    public void ResetGameSpellAnimals()
+    public void ResetCurrentSpell_Animals()
     {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentSpellAnimal.dat"))
         {
             File.Delete(Application.persistentDataPath + "/saveCurrentSpellAnimal.dat");
         }
+    }
+
+    public void ResetCurrentListSpell_Animals()
+    {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentListSpellAnimals.dat"))
         {
             File.Delete(Application.persistentDataPath + "/saveCurrentListSpellAnimals.dat");
         }
     }
 
-    public void ResetGameSpellFood()
+    public void ResetCurrentSpell_Food()
     {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentSpellFood.dat"))
         {
             File.Delete(Application.persistentDataPath + "/saveCurrentSpellFood.dat");
         }
+    }
+
+    public void ResetCurrentListSpell_Food()
+    {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentListSpellFood.dat"))
         {
             File.Delete(Application.persistentDataPath + "/saveCurrentListSpellFood.dat");
         }
     }
 
-    public void ResetGameSpellHousehold()
+    public void ResetCurrentSpell_House()
     {
-        if (File.Exists(Application.persistentDataPath + "/saveCurrentSpellHousehold.dat"))
+        if(File.Exists(Application.persistentDataPath + "/saveCurrentSpellHousehold.dat"))
         {
             File.Delete(Application.persistentDataPath + "/saveCurrentSpellHousehold.dat");
         }
+    }
+
+    public void ResetCurrentListSpell_House()
+    {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentListSpellHousehold.dat"))
         {
             File.Delete(Application.persistentDataPath + "/saveCurrentListSpellHousehold.dat");
