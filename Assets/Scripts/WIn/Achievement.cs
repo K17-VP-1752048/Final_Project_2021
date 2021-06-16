@@ -26,14 +26,6 @@ public class Achievement : MonoBehaviour
         {
             yield return new WaitForSeconds(timeWait);
             animator.SetTrigger("FadeOut");
-
-            yield return new WaitForSeconds(1f);
-            Destroy(gameObject);
         }
-    }
-
-    public void StartAnimations()
-    {
-        animator.SetTrigger("PopUp");
     }
 }
