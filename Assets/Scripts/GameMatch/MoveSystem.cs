@@ -5,6 +5,8 @@ using UnityEngine;
 public class MoveSystem : MonoBehaviour
 {
     [SerializeField] GameObject correctForm;
+    [SerializeField] AudioClip audioAnimal;
+    [SerializeField] AudioClip audioAnimalName;
 
     private bool moving;
     private bool finish;
@@ -66,11 +68,20 @@ public class MoveSystem : MonoBehaviour
             finish = true;
 
             GameObject.Find("PointsHandle").GetComponent<WinScript>().AddPoints();
-            GetComponent<AudioSource>().Play();
+            GetComponent<AudioSource>().clip = audioAnimalName;
+            StartCoroutine(PlayAudio(GetComponent<AudioSource>().clip.length + 0.2f));
         }
         else
         {
             this.transform.localPosition = new Vector3(resetPosition.x, resetPosition.y, resetPosition.z);
         }
+    }
+
+    IEnumerator PlayAudio(float delaytime)
+    {
+        GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(delaytime);
+        GetComponent<AudioSource>().clip = audioAnimal;
+        GetComponent<AudioSource>().Play();
     }
 }
