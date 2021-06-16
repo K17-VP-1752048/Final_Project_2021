@@ -147,12 +147,38 @@ MonoBehaviour:
     questionImg: {fileID: 21300000, guid: 29bedf40399211845ae3ab2385098799, type: 3}
     options:
     - answerText: Le chat et le chien
-      answerSprite: {fileID: 0}
+      answerSprite: {fileID: 21300000, guid: 0600ad7c41a33a845814cbaca5011be5, type: 3}
       answerClip: {fileID: 8300000, guid: 64fec76fef9a81d4d8e738c40c494269, type: 3}
     - answerText: Le tigre et le chat
-      answerSprite: {fileID: 0}
+      answerSprite: {fileID: 21300000, guid: 0600ad7c41a33a845814cbaca5011be5, type: 3}
       answerClip: {fileID: 8300000, guid: a336493f507d3034b8572d0ca7f649ef, type: 3}
     - answerText: Le lion et le chien
-      answerSprite: {fileID: 0}
+      answerSprite: {fileID: 21300000, guid: 0600ad7c41a33a845814cbaca5011be5, type: 3}
       answerClip: {fileID: 8300000, guid: 7499636e35452de4bae68f8eff06f0e1, type: 3}
     correctAns: Le chat et le chien
+  - questionInfo: Compter ... pour s'endormir plus facilement!!!
+    questionImg: {fileID: 21300000, guid: edcb590cdb18d9847812c556c7ee0a6d, type: 3}
+    options:
+    - answerText: Les moutons
+      answerSprite: {fileID: 21300000, guid: 0600ad7c41a33a845814cbaca5011be5, type: 3}
+      answerClip: {fileID: 8300000, guid: 64fec76fef9a81d4d8e738c40c494269, type: 3}
+    - answerText: Les chiens
+      answerSprite: {fileID: 21300000, guid: 0600ad7c41a33a845814cbaca5011be5, type: 3}
+      answerClip: {fileID: 8300000, guid: a336493f507d3034b8572d0ca7f649ef, type: 3}
+    - answerText: Les poissons
+      answerSprite: {fileID: 21300000, guid: 0600ad7c41a33a845814cbaca5011be5, type: 3}
+      answerClip: {fileID: 8300000, guid: 7499636e35452de4bae68f8eff06f0e1, type: 3}
+    correctAns: Les moutons
+  - questionInfo: Quel animal a pour surnom "Roi des animaux "?
+    questionImg: {fileID: 21300000, guid: 04fe9351a4107204085775b2e95bcfe5, type: 3}
+    options:
+    - answerText: Le lion
+      answerSprite: {fileID: 21300000, guid: 0600ad7c41a33a845814cbaca5011be5, type: 3}
+      answerClip: {fileID: 8300000, guid: 64fec76fef9a81d4d8e738c40c494269, type: 3}
+    - answerText: Le coq
+      answerSprite: {fileID: 21300000, guid: 0600ad7c41a33a845814cbaca5011be5, type: 3}
+      answerClip: {fileID: 8300000, guid: a336493f507d3034b8572d0ca7f649ef, type: 3}
+    - answerText: Le tigre
+      answerSprite: {fileID: 21300000, guid: 0600ad7c41a33a845814cbaca5011be5, type: 3}
+      answerClip: {fileID: 8300000, guid: 7499636e35452de4bae68f8eff06f0e1, type: 3}
+    correctAns: Le lion
