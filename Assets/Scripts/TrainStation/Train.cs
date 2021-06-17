@@ -6,12 +6,14 @@ using UnityEngine;
 public class Train : MonoBehaviour
 {
     [SerializeField] List<RectTransform> wayPoints;
-    [SerializeField] float moveSpeed = 2f;
+    [SerializeField] int moveSpeed = 400;
     [SerializeField] WheelJoint2D backWheel;
+    //[SerializeField] WheelJoint2D frontWheel;
 
     private int wayPointIndex = 0;
     private bool moving = true;
     private TrainStationLevel level;
+    private bool moveToNextWP = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,11 +34,18 @@ public class Train : MonoBehaviour
                 Stop();  
             }
         }
-
         if (level.AllNumberIsInPlace())
         {
-            
-            StartCoroutine("WaitBeforeMoving");
+            level.TogglePopupText(true);
+        }
+        if (moveToNextWP)
+        {
+            wayPointIndex = 1;
+            moving = true;
+        }
+        if (Vector2.Distance(transform.position, wayPoints[wayPoints.Count - 1].position) < 2f)
+        {
+            level.LoadNextLevel(true);
         }
     }
 
@@ -44,15 +53,15 @@ public class Train : MonoBehaviour
     {
         JointMotor2D motor = new JointMotor2D { motorSpeed = 0, maxMotorTorque = 10000 };
         backWheel.motor = motor;
+        //frontWheel.motor = motor;
         moving = false;
     }
 
     private void Move()
     {
-        /*var movementThisFrame = moveSpeed * Time.deltaTime;
-        transform.position += transform.right * movementThisFrame;*/
-        JointMotor2D motor = new JointMotor2D { motorSpeed = moveSpeed, maxMotorTorque = 10000 };
+        JointMotor2D motor = new JointMotor2D { motorSpeed = moveSpeed * -1, maxMotorTorque = 10000 };
         backWheel.motor = motor;
+        //frontWheel.motor = motor;
     }
 
     IEnumerator WaitBeforeMoving()
@@ -60,5 +69,10 @@ public class Train : MonoBehaviour
         yield return new WaitForSeconds(1);
         wayPointIndex++;
         moving = true;
+    }
+
+    public void MoveToNextWayPoint(bool setter)
+    {
+        moveToNextWP = setter;
     }
 }

@@ -9,7 +9,9 @@ public class Number : MonoBehaviour
     [SerializeField] float jumpForce = 0.2f;
     [SerializeField] RectTransform railroadCar;
     [SerializeField] float moveToTrainSpeed = 2f;
+    [SerializeField] int order;
     [SerializeField] GameObject groundCheck;
+    [SerializeField] GameObject orderControlObj;
 
     private int wayPointIndex = 0;
     private bool moving = true;
@@ -17,12 +19,14 @@ public class Number : MonoBehaviour
     private bool moveToTrain = false;
     private SpriteRenderer spriteRenderer;
     private TrainStationLevel level;
+    private TSOrderControl orderControl;
 
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         level = FindObjectOfType<TrainStationLevel>().GetComponent<TrainStationLevel>();
+        orderControl = orderControlObj.GetComponent<TSOrderControl>();
     }
 
     // Update is called once per frame
@@ -45,7 +49,6 @@ public class Number : MonoBehaviour
 
             if (transform.position == targetPos)
             {
-                Debug.Log("Drop");
                 Drop();
                 level.Count();
             }
@@ -66,7 +69,6 @@ public class Number : MonoBehaviour
     {
         if (isGrounded)
         {
-            //Debug.Log("move");
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
         else
@@ -96,9 +98,10 @@ public class Number : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (!moving)
+        if (!moving && order == orderControl.CurrentOrder())
         {
             MoveToTrain();
+            orderControl.NextNumber();
         }
     }
 
@@ -106,7 +109,7 @@ public class Number : MonoBehaviour
     {
         gameObject.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        spriteRenderer.sortingOrder = 3;
+        spriteRenderer.sortingOrder = 5;
         groundCheck.SetActive(false);
         moveToTrain = true;
     }
