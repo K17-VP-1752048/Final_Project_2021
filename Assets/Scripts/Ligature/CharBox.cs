@@ -34,6 +34,7 @@ public class CharBox : MonoBehaviour, IDropHandler
     {
         if (eventData.pointerDrag != null)
         {
+            GetComponent<AudioSource>().Play();
             droppedCharacter = eventData.pointerDrag;
             droppedCharacter.GetComponent<RectTransform>().position = correctPos;
             droppedCharacter.GetComponent<DragAndDropControl>().SetDroppedOnBox(true);

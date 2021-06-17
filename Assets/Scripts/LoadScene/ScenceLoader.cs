@@ -7,30 +7,70 @@ public class ScenceLoader : MonoBehaviour
 {
     public void LoadTopicsScene()
     {
-        SceneManager.LoadScene("Scenes/TopicsScene");
+        SceneManager.LoadScene("TopicsScene");
     }
     public void LoadCollectionScene()
     {
-        SceneManager.LoadScene("Scenes/CollectionScene");
+        SceneManager.LoadScene("CollectionScene");
     }
     public void LoadMenuScene()
     {
-        SceneManager.LoadScene("Scenes/MenuScene");
+        SceneManager.LoadScene("MenuScene");
     }
     public void LoadTopicsAnimalScene()
     {
-        SceneManager.LoadScene("Scenes/TopicsAnimalsScene");
+        SceneManager.LoadScene("TopicsAnimalsScene");
     }
     public void LoadTopicsAlimentsScene()
     {
-        SceneManager.LoadScene("Scenes/TopicsAlimentsScene");
+        SceneManager.LoadScene("TopicsAlimentsScene");
     }
     public void LoadTopicsHouseScene()
     {
-        SceneManager.LoadScene("Scenes/TopicsHouseScene");
+        SceneManager.LoadScene("TopicsHouseScene");
     }
     public void LoadTopicsNumberScene()
     {
-        SceneManager.LoadScene("Scenes/TopicsNumberScene");
+        SceneManager.LoadScene("TopicsNumberScene");
+    }
+    public void LoadVocaAnimalScene()
+    {
+        SceneManager.LoadScene("Vocabulary_Animal");
+    }
+    public void LoadVocaFoodScene()
+    {
+        SceneManager.LoadScene("Vocabulary_Food");
+    }
+    public void LoadVocaHouseScene()
+    {
+        SceneManager.LoadScene("Vocabulary_House");
+    }
+    public void LoadGameSpellAnimal()
+    {
+        SceneManager.LoadScene("LoadingGameSpellAnimal");
+    }
+    public void LoadGameSpellFood()
+    {
+        SceneManager.LoadScene("LoadingGameSpellFood");
+    }
+    public void LoadGameSpellHouse()
+    {
+        SceneManager.LoadScene("LoadingGameSpellHousehold");
+    }
+    public void LoadGameMatch()
+    {
+        SceneManager.LoadScene("LoadingGameMatch");
+    }
+    public void LoadGameFind()
+    {
+        SceneManager.LoadScene("LoadingGameFindFood");
+    }
+    public void LoadGameCount()
+    {
+        SceneManager.LoadScene("LoadingGameCountNumber");
+    }
+    public void LoadGameQuiz()
+    {
+        SceneManager.LoadScene("LoadingGameQuiz");
     }
 }

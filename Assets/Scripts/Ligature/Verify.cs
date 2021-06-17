@@ -54,8 +54,10 @@ public class Verify : MonoBehaviour
                 allAnswerIsCorrect = false;
             }
         }
+        if (!allBoxIsFilled) verifierBtn.GetComponent<AudioSource>().Play();
         if (allBoxIsFilled && !allAnswerIsCorrect)
         {
+            GetComponent<AudioSource>().Play();
             foreach (GameObject charBox in charBoxs)
             {
                 if (charBox.GetComponent<CharBox>().Check() == 0)

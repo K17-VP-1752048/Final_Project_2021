@@ -5,37 +5,50 @@ using UnityEngine.SceneManagement;
 
 public class GameFindLevel : MonoBehaviour
 {
-    [SerializeField] GameObject popup;
+    [SerializeField] GameObject popUp;
     [SerializeField] int currentObjectNumber = 0;
     [SerializeField] int totalObjectNumber;
+    [SerializeField] string nextScene = null;
+    [SerializeField] float timeWait = 1f;
+
+    private SaveLoadFile saveLoadFile;
     //[SerializeField] string nextScene;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        saveLoadFile = gameObject.AddComponent<SaveLoadFile>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentObjectNumber == totalObjectNumber)
+        if (currentObjectNumber == totalObjectNumber && nextScene != null)
         {
-            popup.SetActive(true);
+            //popUp.SetActive(true);
+            //popup.GetComponent<Achievement>().StartAnimations();
             //StartCoroutine("LoadNextScene");
+
+            StartCoroutine(LoadNextScene());
         }
     }
 
-    /*IEnumerator LoadNextScene()
+    IEnumerator LoadNextScene()
     {
-        popup.SetActive(true);
-        yield return new WaitForSeconds(3.2f);
+        SaveCurrentScene();
+        popUp.SetActive(true);
+        yield return new WaitForSeconds(timeWait);
         SceneManager.LoadScene(nextScene);
 
-    }*/
+    }
 
     public void Count()
     {
         currentObjectNumber++;
+    }
+
+    private void SaveCurrentScene()
+    {
+        saveLoadFile.SaveCurrentSceneFindFood(nextScene);
     }
 }

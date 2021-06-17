@@ -405,6 +405,33 @@ public class SaveLoadFile : MonoBehaviour
         return null;
     }
 
+    //save and load current scene of Pick To Room game
+    public void SaveCurrentScenePickToRoom(string nameScene)
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentScenePickToRoom.dat", FileMode.OpenOrCreate);
+        bf.Serialize(file, nameScene);
+        file.Close();
+    }
+
+    public string LoadCurrentScenePickToRoom()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentScenePickToRoom.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentScenePickToRoom.dat", FileMode.OpenOrCreate);
+            if (file.Length == 0)
+            {
+                return null;
+            }
+            string res = bf.Deserialize(file) as string;
+            file.Close();
+
+            return res;
+        }
+        return null;
+    }
+
     //save and load value key
     public void IncreaseKey()
     {
@@ -485,55 +512,73 @@ public class SaveLoadFile : MonoBehaviour
         return 0;
     }
 
-    //reset game
-    public void ResetGameQuiz()
+    //reset Quiz game
+    public void ResetCurrentList_GameQuiz()
     {
-        if (File.Exists(Application.persistentDataPath + "/saveCurrentQuestion.dat"))
-        {
-            File.Delete(Application.persistentDataPath + "/saveCurrentQuestion.dat");
-        }
         if (File.Exists(Application.persistentDataPath + "/saveCurrentList.dat"))
         {
             File.Delete(Application.persistentDataPath + "/saveCurrentList.dat");
         }
     }
 
-    public void ResetGameSpellAnimals()
+    public void ResetCurrentQuestion_GameQuiz()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentQuestion.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/saveCurrentQuestion.dat");
+        }
+    }
+
+    //reset Spell game
+    public void ResetCurrentSpell_Animals()
     {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentSpellAnimal.dat"))
         {
             File.Delete(Application.persistentDataPath + "/saveCurrentSpellAnimal.dat");
         }
+    }
+
+    public void ResetCurrentListSpell_Animals()
+    {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentListSpellAnimals.dat"))
         {
             File.Delete(Application.persistentDataPath + "/saveCurrentListSpellAnimals.dat");
         }
     }
 
-    public void ResetGameSpellFood()
+    public void ResetCurrentSpell_Food()
     {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentSpellFood.dat"))
         {
             File.Delete(Application.persistentDataPath + "/saveCurrentSpellFood.dat");
         }
+    }
+
+    public void ResetCurrentListSpell_Food()
+    {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentListSpellFood.dat"))
         {
             File.Delete(Application.persistentDataPath + "/saveCurrentListSpellFood.dat");
         }
     }
 
-    public void ResetGameSpellHousehold()
+    public void ResetCurrentSpell_House()
     {
-        if (File.Exists(Application.persistentDataPath + "/saveCurrentSpellHousehold.dat"))
+        if(File.Exists(Application.persistentDataPath + "/saveCurrentSpellHousehold.dat"))
         {
             File.Delete(Application.persistentDataPath + "/saveCurrentSpellHousehold.dat");
         }
+    }
+
+    public void ResetCurrentListSpell_House()
+    {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentListSpellHousehold.dat"))
         {
             File.Delete(Application.persistentDataPath + "/saveCurrentListSpellHousehold.dat");
         }
     }
 
+    //reset Match game
     public void ResetGameMatch()
     {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentSceneMatch.dat"))
@@ -542,6 +587,7 @@ public class SaveLoadFile : MonoBehaviour
         }
     }
 
+    //reset Count game
     public void ResetGameCountNumber()
     {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentSceneCountNumber.dat"))
@@ -550,6 +596,7 @@ public class SaveLoadFile : MonoBehaviour
         }
     }
 
+    //reset Find game
     public void ResetGameFindFood()
     {
         if (File.Exists(Application.persistentDataPath + "/saveCurrentSceneFindFood.dat"))
@@ -558,6 +605,16 @@ public class SaveLoadFile : MonoBehaviour
         }
     }
 
+    //reset PickToRoom game
+    public void ResetGamePickToRoom()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentScenePickToRoom.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/saveCurrentScenePickToRoom.dat");
+        }
+    }
+
+    //reset key
     public void ResetKey()
     {
         if (File.Exists(Application.persistentDataPath + "/saveKey.dat"))
@@ -566,6 +623,7 @@ public class SaveLoadFile : MonoBehaviour
         }
     }
 
+    //reset box
     public void ResetBox()
     {
         if (File.Exists(Application.persistentDataPath + "/saveBox.dat"))

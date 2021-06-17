@@ -15,15 +15,15 @@ MonoBehaviour:
   pronunciations:
   - pronounceText: la banane
     pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
-    audio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
     sprite: {fileID: 21300000, guid: c61b62f829bb37d499dcdbd793451c27, type: 3}
   - pronounceText: L'avocat
     pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
-    audio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
     sprite: {fileID: 21300000, guid: ba2ab42ef6814cd41b948da703fa469d, type: 3}
   - pronounceText: le pomme
     pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
-    audio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
     sprite: {fileID: 21300000, guid: a430262304ac4ac4d974d082c229d21a, type: 3}
   - pronounceText: la baguette
     pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
@@ -35,11 +35,11 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 371c70b0c06c1784eb74c13182758ee3, type: 3}
   - pronounceText: "le g\xE2teau"
     pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
-    audio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
     sprite: {fileID: 21300000, guid: d806d5c1541d22340b5b7fa4f126dbb6, type: 3}
   - pronounceText: le bonbon
     pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
-    audio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
     sprite: {fileID: 21300000, guid: f4fde425cac7b2b4facf57b35151cc46, type: 3}
   - pronounceText: le chou-fleur
     pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
@@ -47,9 +47,105 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 2eb2745bc6198694984cdf45a9006cf9, type: 3}
   - pronounceText: le mangoustan
     pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
-    audio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
     sprite: {fileID: 21300000, guid: 8acdb825b1fd4274b915cd0b230667f0, type: 3}
   - pronounceText: la mangue
     pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
-    audio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
     sprite: {fileID: 21300000, guid: 53e5ba9442e38e14c9eda45c84bfca2d, type: 3}
+  - pronounceText: "la past\xE8que"
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: a64cb8ad7a3cd4e4c9cb6179e6ad4395, type: 3}
+  - pronounceText: la tomate
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 5b23a6caa888d7848a806339e2bbfd08, type: 3}
+  - pronounceText: la carotte
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 99c32e61af7ed9d469339c19203d36fe, type: 3}
+  - pronounceText: la cerise
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: aa85d3239413221418b8d8ea70643ed2, type: 3}
+  - pronounceText: le chocolat
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 33c28e8084cea3c48be7b33971e6029c, type: 3}
+  - pronounceText: le coca
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 9d016dc9aedf7f64eb7e43b42ca30029, type: 3}
+  - pronounceText: le biscuit
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 82024794290bf3049a8c46a19f41df2e, type: 3}
+  - pronounceText: "l'\u0153uf"
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 5815acd2e66925844a24ffe319e4d933, type: 3}
+  - pronounceText: l'aubergine
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: b4e168253afdfa844a86169049b6baee, type: 3}
+  - pronounceText: le flan
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 19d9a4065ae255c4c9cda9deef8a8f70, type: 3}
+  - pronounceText: Le raisin
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 9371e79f9c5308e4bb712e1408906c36, type: 3}
+  - pronounceText: l'hamburger
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: a142a1870248ee84589c3a81719e3c3f, type: 3}
+  - pronounceText: "la cr\xE8me glac\xE9e"
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: a4d0c3a3d2ff26247818d231a411273b, type: 3}
+  - pronounceText: le kiwi
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 6c6bd30a753480d438a33d1f6dcb8450, type: 3}
+  - pronounceText: le citron
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 3f98797962778a746b15de0197ed9c79, type: 3}
+  - pronounceText: le lait
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 340cb857c0add9941b5247110bcd6c99, type: 3}
+  - pronounceText: l'orange
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: a21b5287fa6ae8b4d8a36b29c5885737, type: 3}
+  - pronounceText: "la p\xEAche"
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: b08686f856460cc40beca44f9e5227d7, type: 3}
+  - pronounceText: la poire
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: c3ea80d787ba7804db9e504d7a2c3198, type: 3}
+  - pronounceText: la pizza
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 1b7a79d3a16c6414ab2cb00386dade3d, type: 3}
+  - pronounceText: le ramboutan
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 66ee8b067c8d5f94393f8dd0658e4c7e, type: 3}
+  - pronounceText: Les spaghettis
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 28c894fdff29c5a4baa6c4bbb8172814, type: 3}
+  - pronounceText: la fraise
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: aa57112310356e749b84d2e289f35de4, type: 3}
+  - pronounceText: "le l\xE9gume"
+    pronounceAudio: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+    audio: {fileID: 0}
+    sprite: {fileID: 21300000, guid: fe07ef9a10f4975459dd386b64daf5e4, type: 3}

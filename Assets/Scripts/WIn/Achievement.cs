@@ -25,10 +25,7 @@ public class Achievement : MonoBehaviour
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle_2"))
         {
             yield return new WaitForSeconds(timeWait);
-            animator.SetTrigger("FadeOut_2");
-
-            yield return new WaitForSeconds(1f);
-            Destroy(gameObject);
+            animator.SetTrigger("FadeOut");
         }
     }
 }

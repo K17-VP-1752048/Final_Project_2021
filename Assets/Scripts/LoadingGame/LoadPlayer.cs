@@ -54,13 +54,32 @@ public class LoadPlayer : MonoBehaviour
                 StartCoroutine(LoadAsynchronously(nameScene));
             }
         }
+        else if (nameGame == "GamePickToRoom")
+        {
+            string nameScene = slf.LoadCurrentScenePickToRoom();
+            if (nameScene == null)
+            {
+                StartCoroutine(LoadAsynchronously("PickObjectToRoom1"));
+            }
+            else
+            {
+                //back topic animal in UpLevelScript
+                StartCoroutine(LoadAsynchronously(nameScene));
+            }
+        }
     }
 
     IEnumerator LoadAsynchronously(string nameScene)
     {
-        yield return new WaitForSeconds(0.5f);
-        progressBar.fillAmount = 0.5f;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(.5f);
+        progressBar.fillAmount = 0.2f;
+        yield return new WaitForSeconds(.5f);
+        progressBar.fillAmount = 0.4f;
+        yield return new WaitForSeconds(.5f);
+        progressBar.fillAmount = 0.6f;
+        yield return new WaitForSeconds(.5f);
+        progressBar.fillAmount = 0.9f;
+        yield return new WaitForSeconds(1f);
         AsyncOperation operation = SceneManager.LoadSceneAsync(nameScene);
         while (!operation.isDone)
         {

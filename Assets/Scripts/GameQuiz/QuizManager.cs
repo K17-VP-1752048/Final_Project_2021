@@ -47,7 +47,8 @@ public class QuizManager : MonoBehaviour
         if (questions.Count <= 0)
         {
             //reset game quiz
-            slf.ResetGameQuiz();
+            slf.ResetCurrentQuestion_GameQuiz();
+            slf.ResetCurrentList_GameQuiz();
 
             StartCoroutine(NextRound(3f));
             //SceneManager.LoadScene("TopicsAnimalsScene");
@@ -74,6 +75,7 @@ public class QuizManager : MonoBehaviour
             //YES
             correctAns = 1;
             questions.RemoveAt(this.index);
+            slf.ResetCurrentQuestion_GameQuiz();
             slf.SaveCurrentList(questions);
             delayTime = 3f;
         }
@@ -81,6 +83,8 @@ public class QuizManager : MonoBehaviour
         {
             correctAns = -1;
             questions.RemoveAt(this.index);
+            slf.ResetCurrentQuestion_GameQuiz();
+            slf.SaveCurrentList(questions);
             delayTime = 3f;
         }
         else

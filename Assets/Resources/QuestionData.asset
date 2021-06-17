@@ -13,23 +13,23 @@ MonoBehaviour:
   m_Name: QuestionData
   m_EditorClassIdentifier: 
   questions:
-  - questionInfo: Que mange le lapin?
+  - questionInfo: Le lapin mange ... ?
     questionImg: {fileID: 21300000, guid: 5195148ee91c4d44a86af9ff2f61b929, type: 3}
     options:
-    - answerText: La tomate
+    - answerText: Des tomates
       answerSprite: {fileID: 21300000, guid: 645775a97ceccde408798f8f296c3d82, type: 3}
       answerClip: {fileID: 8300000, guid: 64fec76fef9a81d4d8e738c40c494269, type: 3}
-    - answerText: Le poisson
+    - answerText: Des poissons
       answerSprite: {fileID: 21300000, guid: 8f483b58e24ef2e4e95a020491bc8112, type: 3}
       answerClip: {fileID: 8300000, guid: a336493f507d3034b8572d0ca7f649ef, type: 3}
-    - answerText: La carotte
+    - answerText: Des carottes
       answerSprite: {fileID: 21300000, guid: f4a87272e6fdc8e48bc2e64521334c62, type: 3}
       answerClip: {fileID: 8300000, guid: 7499636e35452de4bae68f8eff06f0e1, type: 3}
-    correctAns: La carotte
-  - questionInfo: "O\xF9 vit la baleine?"
+    correctAns: Des carottes
+  - questionInfo: La baleine vit ... ?
     questionImg: {fileID: 21300000, guid: 70d0687f8b74cc0479798250507ef232, type: 3}
     options:
-    - answerText: "Dans la for\xEAt"
+    - answerText: Dans la savane
       answerSprite: {fileID: 21300000, guid: 2e54e132a5da99e4a99aa74e933cb77e, type: 3}
       answerClip: {fileID: 8300000, guid: 64fec76fef9a81d4d8e738c40c494269, type: 3}
     - answerText: Dans l'eau
@@ -39,49 +39,49 @@ MonoBehaviour:
       answerSprite: {fileID: 21300000, guid: 3fdcb86712a063741934f90c1a47b6b8, type: 3}
       answerClip: {fileID: 8300000, guid: 7499636e35452de4bae68f8eff06f0e1, type: 3}
     correctAns: Dans l'eau
-  - questionInfo: Que mange l'ours?
+  - questionInfo: L'ours mange ... ?
     questionImg: {fileID: 21300000, guid: 6fb5d630a092f6244becfe41bd649805, type: 3}
     options:
-    - answerText: Le miel
+    - answerText: Du miel
       answerSprite: {fileID: 21300000, guid: d3d04c39ac68b7644b6bcd56eeaec9ec, type: 3}
       answerClip: {fileID: 8300000, guid: 64fec76fef9a81d4d8e738c40c494269, type: 3}
-    - answerText: La viande
+    - answerText: De la viande
       answerSprite: {fileID: 21300000, guid: 9c0d059b136c7db419df21746b6839ea, type: 3}
       answerClip: {fileID: 8300000, guid: a336493f507d3034b8572d0ca7f649ef, type: 3}
-    - answerText: La tomate
+    - answerText: Des tomates
       answerSprite: {fileID: 21300000, guid: 645775a97ceccde408798f8f296c3d82, type: 3}
       answerClip: {fileID: 8300000, guid: 7499636e35452de4bae68f8eff06f0e1, type: 3}
-    correctAns: Le miel
-  - questionInfo: Que mange le chien?
+    correctAns: Du miel
+  - questionInfo: Le chien mange ... ?
     questionImg: {fileID: 21300000, guid: f9f285b96051eac41bd85bc50f12995c, type: 3}
     options:
-    - answerText: L'herbe
+    - answerText: De l'herbe
       answerSprite: {fileID: 21300000, guid: dbe639cf49dea794a9fa6d4f7a02228c, type: 3}
       answerClip: {fileID: 8300000, guid: 64fec76fef9a81d4d8e738c40c494269, type: 3}
-    - answerText: La viande
+    - answerText: De la viande
       answerSprite: {fileID: 21300000, guid: 9c0d059b136c7db419df21746b6839ea, type: 3}
       answerClip: {fileID: 8300000, guid: a336493f507d3034b8572d0ca7f649ef, type: 3}
-    - answerText: L'os
+    - answerText: Des os
       answerSprite: {fileID: 21300000, guid: 0435f120acc71a044bf97ef0763ed145, type: 3}
       answerClip: {fileID: 8300000, guid: 7499636e35452de4bae68f8eff06f0e1, type: 3}
-    correctAns: L'os
-  - questionInfo: Que mange un coq?
+    correctAns: Des os
+  - questionInfo: Le coq mange ... ?
     questionImg: {fileID: 21300000, guid: 269b081f4ed826040b78eef1afd2a4be, type: 3}
     options:
-    - answerText: L'herbe
+    - answerText: De l'herbe
       answerSprite: {fileID: 21300000, guid: dbe639cf49dea794a9fa6d4f7a02228c, type: 3}
       answerClip: {fileID: 8300000, guid: 64fec76fef9a81d4d8e738c40c494269, type: 3}
-    - answerText: "Les c\xE9r\xE9ales"
+    - answerText: "Des c\xE9r\xE9ales"
       answerSprite: {fileID: 21300000, guid: 4eea01c9707d7244c887ca6fbaf4f37d, type: 3}
       answerClip: {fileID: 8300000, guid: a336493f507d3034b8572d0ca7f649ef, type: 3}
-    - answerText: L'os
+    - answerText: Des os
       answerSprite: {fileID: 21300000, guid: 0435f120acc71a044bf97ef0763ed145, type: 3}
       answerClip: {fileID: 8300000, guid: 7499636e35452de4bae68f8eff06f0e1, type: 3}
-    correctAns: "Les c\xE9r\xE9ales"
-  - questionInfo: "O\xF9 vit le lion?"
+    correctAns: "Des c\xE9r\xE9ales"
+  - questionInfo: Le lion vit ... ?
     questionImg: {fileID: 21300000, guid: ffef5c2531af8364cbd4c89eb4fe72d8, type: 3}
     options:
-    - answerText: "Dans la for\xEAt"
+    - answerText: Dans la savane
       answerSprite: {fileID: 21300000, guid: 2e54e132a5da99e4a99aa74e933cb77e, type: 3}
       answerClip: {fileID: 8300000, guid: 64fec76fef9a81d4d8e738c40c494269, type: 3}
     - answerText: Dans le poulailler
@@ -90,8 +90,8 @@ MonoBehaviour:
     - answerText: Dans l'eau
       answerSprite: {fileID: 21300000, guid: 20d11a096e8b9d14ca36b3e85db778cd, type: 3}
       answerClip: {fileID: 8300000, guid: 7499636e35452de4bae68f8eff06f0e1, type: 3}
-    correctAns: "Dans la for\xEAt"
-  - questionInfo: "O\xF9 vit le cochon?"
+    correctAns: Dans la savane
+  - questionInfo: Le cochon vit ... ?
     questionImg: {fileID: 21300000, guid: 2541fd5e7b4609e4189524a9fc99c775, type: 3}
     options:
     - answerText: Sur la banquise
@@ -117,16 +117,68 @@ MonoBehaviour:
       answerSprite: {fileID: 21300000, guid: a4e9f90827ce25645a0055201897491b, type: 3}
       answerClip: {fileID: 8300000, guid: 7499636e35452de4bae68f8eff06f0e1, type: 3}
     correctAns: Le chien
-  - questionInfo: "O\xF9 vit le pingouin?"
+  - questionInfo: Le pingouin vit ... ?
     questionImg: {fileID: 21300000, guid: b7adc4c5643ee9b4da0cc5447f2c6d40, type: 3}
     options:
-    - answerText: "Dans la for\xEAt"
+    - answerText: Dans la savane
       answerSprite: {fileID: 21300000, guid: 2e54e132a5da99e4a99aa74e933cb77e, type: 3}
       answerClip: {fileID: 8300000, guid: 64fec76fef9a81d4d8e738c40c494269, type: 3}
-    - answerText: La porcherie
+    - answerText: Dans la porcherie
       answerSprite: {fileID: 21300000, guid: 9dd8c4d1bf69ea34ab6f895a7dfd1838, type: 3}
       answerClip: {fileID: 8300000, guid: a336493f507d3034b8572d0ca7f649ef, type: 3}
     - answerText: Sur la banquise
       answerSprite: {fileID: 21300000, guid: 3fdcb86712a063741934f90c1a47b6b8, type: 3}
       answerClip: {fileID: 8300000, guid: 7499636e35452de4bae68f8eff06f0e1, type: 3}
     correctAns: Sur la banquise
+  - questionInfo: Que produit la vache ?
+    questionImg: {fileID: 21300000, guid: e80842f2fabe03d49a6c9366796f1d1a, type: 3}
+    options:
+    - answerText: Du lait
+      answerSprite: {fileID: 21300000, guid: fa91e6fecd588e64d808153f584d5fc9, type: 3}
+      answerClip: {fileID: 8300000, guid: 64fec76fef9a81d4d8e738c40c494269, type: 3}
+    - answerText: D'oeuf
+      answerSprite: {fileID: 21300000, guid: 1273930e8aa6a0045b53688a90dc6f95, type: 3}
+      answerClip: {fileID: 8300000, guid: a336493f507d3034b8572d0ca7f649ef, type: 3}
+    - answerText: Des carottes
+      answerSprite: {fileID: 21300000, guid: f4a87272e6fdc8e48bc2e64521334c62, type: 3}
+      answerClip: {fileID: 8300000, guid: 7499636e35452de4bae68f8eff06f0e1, type: 3}
+    correctAns: Du lait
+  - questionInfo: "Quels animaux vivent \xE0 la maison?"
+    questionImg: {fileID: 21300000, guid: 29bedf40399211845ae3ab2385098799, type: 3}
+    options:
+    - answerText: Le chat et le chien
+      answerSprite: {fileID: 21300000, guid: 0600ad7c41a33a845814cbaca5011be5, type: 3}
+      answerClip: {fileID: 8300000, guid: 64fec76fef9a81d4d8e738c40c494269, type: 3}
+    - answerText: Le tigre et le chat
+      answerSprite: {fileID: 21300000, guid: 0600ad7c41a33a845814cbaca5011be5, type: 3}
+      answerClip: {fileID: 8300000, guid: a336493f507d3034b8572d0ca7f649ef, type: 3}
+    - answerText: Le lion et le chien
+      answerSprite: {fileID: 21300000, guid: 0600ad7c41a33a845814cbaca5011be5, type: 3}
+      answerClip: {fileID: 8300000, guid: 7499636e35452de4bae68f8eff06f0e1, type: 3}
+    correctAns: Le chat et le chien
+  - questionInfo: Compter ... pour s'endormir plus facilement!!!
+    questionImg: {fileID: 21300000, guid: edcb590cdb18d9847812c556c7ee0a6d, type: 3}
+    options:
+    - answerText: Les moutons
+      answerSprite: {fileID: 21300000, guid: 0600ad7c41a33a845814cbaca5011be5, type: 3}
+      answerClip: {fileID: 8300000, guid: 64fec76fef9a81d4d8e738c40c494269, type: 3}
+    - answerText: Les chiens
+      answerSprite: {fileID: 21300000, guid: 0600ad7c41a33a845814cbaca5011be5, type: 3}
+      answerClip: {fileID: 8300000, guid: a336493f507d3034b8572d0ca7f649ef, type: 3}
+    - answerText: Les poissons
+      answerSprite: {fileID: 21300000, guid: 0600ad7c41a33a845814cbaca5011be5, type: 3}
+      answerClip: {fileID: 8300000, guid: 7499636e35452de4bae68f8eff06f0e1, type: 3}
+    correctAns: Les moutons
+  - questionInfo: Quel animal a pour surnom "Roi des animaux "?
+    questionImg: {fileID: 21300000, guid: 04fe9351a4107204085775b2e95bcfe5, type: 3}
+    options:
+    - answerText: Le lion
+      answerSprite: {fileID: 21300000, guid: 0600ad7c41a33a845814cbaca5011be5, type: 3}
+      answerClip: {fileID: 8300000, guid: 64fec76fef9a81d4d8e738c40c494269, type: 3}
+    - answerText: Le coq
+      answerSprite: {fileID: 21300000, guid: 0600ad7c41a33a845814cbaca5011be5, type: 3}
+      answerClip: {fileID: 8300000, guid: a336493f507d3034b8572d0ca7f649ef, type: 3}
+    - answerText: Le tigre
+      answerSprite: {fileID: 21300000, guid: 0600ad7c41a33a845814cbaca5011be5, type: 3}
+      answerClip: {fileID: 8300000, guid: 7499636e35452de4bae68f8eff06f0e1, type: 3}
+    correctAns: Le lion

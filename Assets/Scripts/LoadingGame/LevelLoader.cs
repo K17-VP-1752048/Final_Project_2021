@@ -6,18 +6,26 @@ using UnityEngine.UI;
 
 public class LevelLoader : MonoBehaviour
 {
-    [SerializeField] private Image progressBar;
-    [SerializeField] private string nameScene;
+    private Image progressBar;
+    [SerializeField] private string sceneAddress;
+    
     private void Start()
     {
-        StartCoroutine(LoadAsynchronously(nameScene));
+        progressBar = GameObject.Find("Progress Bar").GetComponent<Image>();
+        StartCoroutine(LoadAsynchronously(sceneAddress));
     }
 
     IEnumerator LoadAsynchronously(string nameScene)
     {
-        yield return new WaitForSeconds(0.5f);
-        progressBar.fillAmount = 0.5f;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(.5f);
+        progressBar.fillAmount = 0.2f;
+        yield return new WaitForSeconds(.5f);
+        progressBar.fillAmount = 0.4f;
+        yield return new WaitForSeconds(.5f);
+        progressBar.fillAmount = 0.6f;
+        yield return new WaitForSeconds(.5f);
+        progressBar.fillAmount = 0.9f;
+        yield return new WaitForSeconds(1f);
         AsyncOperation operation = SceneManager.LoadSceneAsync(nameScene);
         while (!operation.isDone)
         {

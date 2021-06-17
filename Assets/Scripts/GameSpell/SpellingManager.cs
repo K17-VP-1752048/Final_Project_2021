@@ -14,6 +14,8 @@ public class SpellingManager : MonoBehaviour
     [SerializeField] private AudioClip fail_audio;
     [SerializeField] private GameObject[] congrats;
     [SerializeField] private GameObject congratEndGame;
+    [SerializeField] private GameObject popupWrong;
+    [SerializeField] private GameObject popupTimeOut;
     [SerializeField] private string selectedTopic;
 
     private List<Pronunciation> pronunciations;
@@ -120,7 +122,8 @@ public class SpellingManager : MonoBehaviour
         {
             if (pronunciations.Count <= 0)
             {
-                slf.ResetGameSpellAnimals();
+                slf.ResetCurrentSpell_Animals();
+                slf.ResetCurrentListSpell_Animals();
                 StartCoroutine(BackTopic(3f));
             }
             else
@@ -136,7 +139,8 @@ public class SpellingManager : MonoBehaviour
         {
             if (pronunciations.Count <= 0)
             {
-                slf.ResetGameSpellFood();
+                slf.ResetCurrentSpell_Food();
+                slf.ResetCurrentListSpell_Food();
                 StartCoroutine(BackTopic(3f));
             }
             else
@@ -152,7 +156,8 @@ public class SpellingManager : MonoBehaviour
         {
             if (pronunciations.Count <= 0)
             {
-                slf.ResetGameSpellHousehold();
+                slf.ResetCurrentSpell_House();
+                slf.ResetCurrentListSpell_House();
                 StartCoroutine(BackTopic(3f));
             }
             else
@@ -179,20 +184,24 @@ public class SpellingManager : MonoBehaviour
         //save current list
         if (selectedTopic == "Animals")
         {
+            slf.ResetCurrentSpell_Animals();
             slf.SaveCurrentListSpellAnimals(pronunciations);
         }
         else if (selectedTopic == "Food")
         {
+            slf.ResetCurrentSpell_Food();
             slf.SaveCurrentListSpellFood(pronunciations);
         }
         else if (selectedTopic == "Household")
         {
+            slf.ResetCurrentSpell_House();
             slf.SaveCurrentListSpellHousehold(pronunciations);
         }
 
         //random popup congratulation
         int val = Random.Range(0, congrats.Length);
-        Instantiate(congrats[val]);
+        GameObject obj = Instantiate(congrats[val]);
+        obj.transform.SetParent(spellUI.transform, false);
 
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();
@@ -201,6 +210,9 @@ public class SpellingManager : MonoBehaviour
 
     public void TryAgain()
     {
+        GameObject obj = Instantiate(popupWrong);
+        obj.transform.SetParent(spellUI.transform, false);
+
         gameObject.GetComponent<AudioSource>().clip = fail_audio;
         gameObject.GetComponent<AudioSource>().Play();
     }
@@ -210,14 +222,49 @@ public class SpellingManager : MonoBehaviour
         //reset game
         if (selectedTopic == "Animals")
         {
-            slf.ResetGameSpellAnimals();
+            slf.ResetCurrentSpell_Animals();
+            slf.ResetCurrentListSpell_Animals();
         }
         else if (selectedTopic == "Food")
         {
-            slf.ResetGameSpellFood();
+            slf.ResetCurrentSpell_Food();
+            slf.ResetCurrentListSpell_Food();
+        }
+        else if (selectedTopic == "Household")
+        {
+            slf.ResetCurrentSpell_House();
+            slf.ResetCurrentListSpell_House();
         }
 
-        Instantiate(congratEndGame);
+        GameObject obj = Instantiate(congratEndGame);
+        obj.transform.SetParent(spellUI.transform, false);
+
+        gameObject.GetComponent<AudioSource>().clip = bravo_audio;
+        gameObject.GetComponent<AudioSource>().Play();
+        StartCoroutine(BackTopic(gameObject.GetComponent<AudioSource>().clip.length + 0.2f));
+    }
+
+    public void TimeOut()
+    {
+        //reset game
+        if (selectedTopic == "Animals")
+        {
+            slf.ResetCurrentSpell_Animals();
+            slf.ResetCurrentListSpell_Animals();
+        }
+        else if (selectedTopic == "Food")
+        {
+            slf.ResetCurrentSpell_Food();
+            slf.ResetCurrentListSpell_Food();
+        }
+        else if (selectedTopic == "Household")
+        {
+            slf.ResetCurrentSpell_House();
+            slf.ResetCurrentListSpell_House();
+        }
+
+        GameObject obj = Instantiate(popupTimeOut);
+        obj.transform.SetParent(spellUI.transform, false);
 
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();
