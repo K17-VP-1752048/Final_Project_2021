@@ -7,70 +7,70 @@ public class ScenceLoader : MonoBehaviour
 {
     public void LoadTopicsScene()
     {
-        SceneManager.LoadScene("Scenes/TopicsScene");
+        SceneManager.LoadScene("TopicsScene");
     }
     public void LoadCollectionScene()
     {
-        SceneManager.LoadScene("Scenes/CollectionScene");
+        SceneManager.LoadScene("CollectionScene");
     }
     public void LoadMenuScene()
     {
-        SceneManager.LoadScene("Scenes/MenuScene");
+        SceneManager.LoadScene("MenuScene");
     }
     public void LoadTopicsAnimalScene()
     {
-        SceneManager.LoadScene("Scenes/TopicsAnimalsScene");
+        SceneManager.LoadScene("TopicsAnimalsScene");
     }
     public void LoadTopicsAlimentsScene()
     {
-        SceneManager.LoadScene("Scenes/TopicsAlimentsScene");
+        SceneManager.LoadScene("TopicsAlimentsScene");
     }
     public void LoadTopicsHouseScene()
     {
-        SceneManager.LoadScene("Scenes/TopicsHouseScene");
+        SceneManager.LoadScene("TopicsHouseScene");
     }
     public void LoadTopicsNumberScene()
     {
-        SceneManager.LoadScene("Scenes/TopicsNumberScene");
+        SceneManager.LoadScene("TopicsNumberScene");
     }
     public void LoadVocaAnimalScene()
     {
-        SceneManager.LoadScene("Scenes/Vocabulary/Vocabulary_Animal");
+        SceneManager.LoadScene("Vocabulary_Animal");
     }
     public void LoadVocaFoodScene()
     {
-        SceneManager.LoadScene("Scenes/Vocabulary/Vocabulary_Food");
+        SceneManager.LoadScene("Vocabulary_Food");
     }
     public void LoadVocaHouseScene()
     {
-        SceneManager.LoadScene("Scenes/Vocabulary/Vocabulary_House");
+        SceneManager.LoadScene("Vocabulary_House");
     }
     public void LoadGameSpellAnimal()
     {
-        SceneManager.LoadScene("Scenes/Loading/LoadingGameSpellAnimal");
+        SceneManager.LoadScene("LoadingGameSpellAnimal");
     }
     public void LoadGameSpellFood()
     {
-        SceneManager.LoadScene("Scenes/Loading/LoadingGameSpellFood");
+        SceneManager.LoadScene("LoadingGameSpellFood");
     }
     public void LoadGameSpellHouse()
     {
-        SceneManager.LoadScene("Scenes/Loading/LoadingGameSpellHousehold");
+        SceneManager.LoadScene("LoadingGameSpellHousehold");
     }
     public void LoadGameMatch()
     {
-        SceneManager.LoadScene("Scenes/Loading/LoadingGameMatch");
+        SceneManager.LoadScene("LoadingGameMatch");
     }
     public void LoadGameFind()
     {
-        SceneManager.LoadScene("Scenes/Loading/LoadingGameFindFood");
+        SceneManager.LoadScene("LoadingGameFindFood");
     }
     public void LoadGameCount()
     {
-        SceneManager.LoadScene("Scenes/Loading/LoadingGameCountNumber");
+        SceneManager.LoadScene("LoadingGameCountNumber");
     }
     public void LoadGameQuiz()
     {
-        SceneManager.LoadScene("Scenes/Loading/LoadingGameQuiz");
+        SceneManager.LoadScene("LoadingGameQuiz");
     }
 }

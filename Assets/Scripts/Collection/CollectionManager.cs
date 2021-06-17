@@ -26,10 +26,11 @@ public class CollectionManager : MonoBehaviour
             {
                 tmp.transform.GetChild(1).gameObject.SetActive(false);
             }
-            // for un-opened treasures, images set to false
+            // for closed treasures, images set to false
             else
             {
                 tmp.transform.GetChild(0).gameObject.SetActive(false);
+                // impossible d'ouvrir un trésor à l'arrière sans ouvrir le trésor devant lui
                 if (i > numberOfOpenTreasure + 1)
                 {
                     tmp.transform.GetChild(1).GetComponent<Image>().color = Color.grey;
