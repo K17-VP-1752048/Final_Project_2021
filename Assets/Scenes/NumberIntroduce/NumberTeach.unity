@@ -311,6 +311,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7974698546465750372, guid: 8330aad60afcb1042a72456e3e24b802,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadTopicsNumberScene
+      objectReference: {fileID: 0}
     - target: {fileID: 8647818433566583096, guid: 8330aad60afcb1042a72456e3e24b802,
         type: 3}
       propertyPath: m_Name
@@ -382,7 +387,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 26
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
@@ -742,8 +747,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 10, y: 28}
-  m_SizeDelta: {x: -564.01575, y: -349.7996}
+  m_AnchoredPosition: {x: -2.9000244, y: 28}
+  m_SizeDelta: {x: -538.13104, y: -349.7996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &514412608
 MonoBehaviour:
@@ -2056,8 +2061,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -563.1, y: 335.8}
-  m_SizeDelta: {x: 454.0113, y: 158.6228}
+  m_AnchoredPosition: {x: -565, y: 348}
+  m_SizeDelta: {x: 454.0113, y: 183.65219}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2010745330
 MonoBehaviour:

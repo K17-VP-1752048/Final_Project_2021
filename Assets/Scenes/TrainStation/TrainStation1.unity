@@ -749,7 +749,7 @@ MonoBehaviour:
   moveSpeed: 2
   jumpForce: 0.7
   railroadCar: {fileID: 1906207096}
-  moveToTrainSpeed: 5
+  moveToTrainSpeed: 6
   order: 4
   groundCheck: {fileID: 1507077352}
   orderControlObj: {fileID: 871254917}
@@ -1606,7 +1606,7 @@ MonoBehaviour:
   moveSpeed: 2
   jumpForce: 0.7
   railroadCar: {fileID: 1674447319}
-  moveToTrainSpeed: 5
+  moveToTrainSpeed: 6
   order: 2
   groundCheck: {fileID: 1659715207}
   orderControlObj: {fileID: 871254917}
@@ -2046,7 +2046,7 @@ MonoBehaviour:
   moveSpeed: 2
   jumpForce: 0.7
   railroadCar: {fileID: 240421266}
-  moveToTrainSpeed: 5
+  moveToTrainSpeed: 6
   order: 3
   groundCheck: {fileID: 115653643}
   orderControlObj: {fileID: 871254917}
@@ -2449,6 +2449,11 @@ PrefabInstance:
       propertyPath: orderControlObj
       value: 
       objectReference: {fileID: 871254917}
+    - target: {fileID: 5990409007017155696, guid: cdf0a2e95756e594aa2b691ea3fef717,
+        type: 3}
+      propertyPath: moveToTrainSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5990409007017155696, guid: cdf0a2e95756e594aa2b691ea3fef717,
         type: 3}
       propertyPath: wayPoints.Array.data[0]
