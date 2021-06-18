@@ -126,7 +126,7 @@ public class CountUI : MonoBehaviour
 
         yield return new WaitForSeconds(delaytime);
         showRes.SetActive(true);
-        showRes.GetComponentInChildren<Image>().GetComponentInChildren<TMP_Text>().text = "Désolé, vous n'avez pas répondu correctement!!!";
+        showRes.GetComponentInChildren<Image>().GetComponentInChildren<TMP_Text>().text = "Vous n'avez pas répondu correctement!!!";
     }
 
     //this give blink effect [if needed use or dont use]
@@ -155,6 +155,7 @@ public class CountUI : MonoBehaviour
         showRes.GetComponent<AudioSource>().Play();
         //yield return new WaitForSeconds(1f);
         showRes.GetComponentInChildren<Image>().GetComponentInChildren<TMP_Text>().text = questionInfoText.text + " " + img.GetComponentInChildren<TMP_Text>().text.ToLower() + " " + questionAnimalText.text;
+        showRes.GetComponentInChildren<Image>().GetComponentInChildren<TMP_Text>().color = Color.yellow;
     }
 
     IEnumerator Warning(float delayTime)
