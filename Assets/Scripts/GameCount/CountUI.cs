@@ -155,7 +155,7 @@ public class CountUI : MonoBehaviour
         showRes.GetComponent<AudioSource>().Play();
         //yield return new WaitForSeconds(1f);
         showRes.GetComponentInChildren<Image>().GetComponentInChildren<TMP_Text>().text = questionInfoText.text + " " + img.GetComponentInChildren<TMP_Text>().text.ToLower() + " " + questionAnimalText.text;
-        showRes.GetComponentInChildren<Image>().GetComponentInChildren<TMP_Text>().color = Color.yellow;
+        showRes.GetComponentInChildren<Image>().GetComponentInChildren<TMP_Text>().color = Color.blue;
     }
 
     IEnumerator Warning(float delayTime)
