@@ -25,6 +25,20 @@ public class VoiceController : MonoBehaviour
         CheckPermission();
     }
 
+    void Update()
+    {
+        if (count >= 3 && spellingManager.GetLength() > 0)
+        {
+            spellingManager.NextRound();
+            count = 0;
+        }
+        else if (count >= 3 && spellingManager.GetLength() <= 0)
+        {
+            spellingManager.EndGame();
+            count = 0;
+        }
+    }
+
     void CheckPermission()
     {
 #if UNITY_ANDROID
@@ -62,16 +76,6 @@ public class VoiceController : MonoBehaviour
             spellingManager.EndGame();
             count = 0;
         }
-        else if (count >= 3 && spellingManager.GetLength() > 0)
-        {
-            spellingManager.TimeOut();
-            count = 0;
-        }
-        else if (count >= 3 && spellingManager.GetLength() <= 0)
-        {
-            spellingManager.EndGame();
-            count = 0;
-        }
         else
         {
             spellingManager.TryAgain();
@@ -87,16 +91,6 @@ public class VoiceController : MonoBehaviour
             count = 0;
         }
         else if ((result.ToLower() == resText.text.ToLower() && spellingManager.GetLength() <= 0))
-        {
-            spellingManager.EndGame();
-            count = 0;
-        }
-        else if (count >= 3 && spellingManager.GetLength() > 0)
-        {
-            spellingManager.NextRound();
-            count = 0;
-        }
-        else if (count >= 3 && spellingManager.GetLength() <= 0)
         {
             spellingManager.EndGame();
             count = 0;

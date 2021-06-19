@@ -11,16 +11,20 @@ public class CountManager : MonoBehaviour
     [SerializeField] private string nextScene;
 
     private SaveLoadFile slf;
+    private static int time = 0;
+
+    public static int Time { get => time; set => time = value; }
+
     // Start is called before the first frame update
     private void Start()
     {
         slf = gameObject.AddComponent<SaveLoadFile>();
     }
 
-    public bool HandleCount(string numberText)
+    public string ConvertNumberToFrench()
     {
-        bool correctAns = false;
         string temp;
+
         switch (numberOfAnimalsSelected)
         {
             case 0:
@@ -90,6 +94,15 @@ public class CountManager : MonoBehaviour
                 temp = "";
                 break;
         }
+
+        return temp;
+    }
+
+    public bool HandleCount(string numberText)
+    {
+        bool correctAns = false;
+        string temp = ConvertNumberToFrench();
+
         if(temp.ToLower() == numberText.ToLower())
         {
             correctAns = true;
@@ -101,7 +114,13 @@ public class CountManager : MonoBehaviour
             {
                 slf.SaveCurrentSceneCountNumber(nextScene);
             }
+            time = 0;
         }
+        else
+        {
+            time++;
+        }
+
         //Invoke("NextRound", 3f);
         return correctAns;
     }

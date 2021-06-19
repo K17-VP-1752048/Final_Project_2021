@@ -25,11 +25,11 @@ public class NumberActiver : MonoBehaviour
 
     IEnumerator printNumberCoroutine()
     {
-        textWriter.addWriter(message, "Bienvenue!", .1f);
+        textWriter.addWriter(message, "Bonjour!", .1f);
         yield return new WaitForSeconds(2f);
-        textWriter.addWriter(message, "C'est un sujet de nombres 0-10", .1f);
-        yield return new WaitForSeconds(4f);
-        textWriter.addWriter(message, "Comptez avec moi!", .1f);
+        textWriter.addWriter(message, "Aujourd'hui on va apprendre les chiffres 0-10", .1f);
+        yield return new WaitForSeconds(5f);
+        textWriter.addWriter(message, "Alors comptez avec moi", .1f);
         yield return new WaitForSeconds(3f);
         textBackground.SetActive(false);
 
@@ -41,7 +41,7 @@ public class NumberActiver : MonoBehaviour
         }
 
         yield return new WaitForSeconds(2f);
-        message.text = "Excellent! T'es prête à faire autre défi?";
+        message.text = "Excellent, vous êtes prêts à relever d'autres défis?";
         textBackground.SetActive(true);
     }
 }

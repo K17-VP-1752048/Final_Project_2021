@@ -427,36 +427,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Key Img
       objectReference: {fileID: 0}
-    - target: {fileID: 2037640208845266956, guid: b1f51b012e6104e47b619f5286105076,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -6.6477356
-      objectReference: {fileID: 0}
-    - target: {fileID: 2037640208845266956, guid: b1f51b012e6104e47b619f5286105076,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -27.808777
-      objectReference: {fileID: 0}
-    - target: {fileID: 2037640208845266956, guid: b1f51b012e6104e47b619f5286105076,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 9.800003
-      objectReference: {fileID: 0}
-    - target: {fileID: 2037640208845266956, guid: b1f51b012e6104e47b619f5286105076,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 1.0999985
-      objectReference: {fileID: 0}
-    - target: {fileID: 2037640208845266957, guid: b1f51b012e6104e47b619f5286105076,
-        type: 3}
-      propertyPath: m_margin.x
-      value: 6.885063
-      objectReference: {fileID: 0}
-    - target: {fileID: 2037640208845266957, guid: b1f51b012e6104e47b619f5286105076,
-        type: 3}
-      propertyPath: m_margin.z
-      value: 14.178299
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1f51b012e6104e47b619f5286105076, type: 3}
 --- !u!114 &144915221 stripped
@@ -3033,6 +3003,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Back Btn
+      objectReference: {fileID: 0}
+    - target: {fileID: 7974698546465750372, guid: 8330aad60afcb1042a72456e3e24b802,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMenuScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8330aad60afcb1042a72456e3e24b802, type: 3}
