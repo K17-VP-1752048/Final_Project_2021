@@ -10,7 +10,7 @@ public class Level : MonoBehaviour
     [SerializeField] int objectInThisLvl;
     [SerializeField] string nextScene;
 
-    private int objectNumber;
+    [SerializeField] int objectNumber;
     private SaveLoadFile slf;
 
     // Start is called before the first frame update
