@@ -14,7 +14,7 @@ public class CountUI : MonoBehaviour
     [SerializeField] private AudioClip fail_audio;
     [SerializeField] private TMP_Text questionInfoText;
     [SerializeField] private TMP_Text questionAnimalText;
-    [SerializeField] private TMP_Text warningText;
+    [SerializeField] private Image warningImg;
     [SerializeField] private RectTransform guessText;
     [SerializeField] private Image check;
 
@@ -160,8 +160,8 @@ public class CountUI : MonoBehaviour
 
     IEnumerator Warning(float delayTime)
     {
-        warningText.gameObject.SetActive(true);
+        warningImg.gameObject.SetActive(true);
         yield return new WaitForSeconds(delayTime);
-        warningText.gameObject.SetActive(false);
+        warningImg.gameObject.SetActive(false);
     }
 }

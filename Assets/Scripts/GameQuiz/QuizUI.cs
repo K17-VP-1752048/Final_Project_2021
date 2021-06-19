@@ -8,7 +8,7 @@ public class QuizUI : MonoBehaviour
 {
     [SerializeField] private QuizManager quizManager;
     [SerializeField] private TMP_Text questionText;
-    [SerializeField] private TMP_Text warningText;
+    [SerializeField] private Image warningImg;
     [SerializeField] private Image questionImg;
     [SerializeField] private List<AnswerUI> options;
     [SerializeField] private AudioClip bravo_audio;
@@ -163,9 +163,9 @@ public class QuizUI : MonoBehaviour
 
     IEnumerator Warning(float delayTime)
     {
-        warningText.gameObject.SetActive(true);
+        warningImg.gameObject.SetActive(true);
         yield return new WaitForSeconds(delayTime);
-        warningText.gameObject.SetActive(false);
+        warningImg.gameObject.SetActive(false);
     }
 
     //this give blink effect [if needed use or dont use]
