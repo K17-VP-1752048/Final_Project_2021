@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PuzzleControl : MonoBehaviour
 {
-    [SerializeField] public string puzzleName;
+    [SerializeField] string puzzleName;
+    [SerializeField] int orderNumber;
     public static bool continu, win;
 
     private static new string name;
@@ -54,16 +55,12 @@ public class PuzzleControl : MonoBehaviour
         if(!continu)
         {
             StartCoroutine(loadToCollection());
-            if(Input.touchCount > 0)
-            {
-                SceneManager.LoadScene("Scenes/CollectionScene");
-            }
         }
     }
 
     IEnumerator loadToCollection()
     {
-        yield return new WaitForSeconds(4f);
-        SceneManager.LoadScene("Scenes/CollectionScene");
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Image" + orderNumber);
     }
 }
