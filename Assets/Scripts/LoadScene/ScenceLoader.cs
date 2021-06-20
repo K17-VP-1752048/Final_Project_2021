@@ -73,4 +73,14 @@ public class ScenceLoader : MonoBehaviour
     {
         SceneManager.LoadScene("LoadingGameQuiz");
     }
+
+    public void LoadPuzzle(int order)
+    {
+        SceneManager.LoadScene("Puzzle" + order);
+    }
+
+    public void LoadImagePuzzlePrize(int order)
+    {
+        SceneManager.LoadScene("Image" + order);
+    }
 }

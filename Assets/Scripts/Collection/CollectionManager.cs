@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CollectionManager : MonoBehaviour
 {
     [SerializeField] int numberOfTreasure;
+
     private static int numberOfOpenTreasure;
     private Canvas OpenTreasureCanvas;
     private SaveLoadFile slf;
@@ -15,7 +16,10 @@ public class CollectionManager : MonoBehaviour
     void Start()
     {
         slf = gameObject.AddComponent<SaveLoadFile>();
+        //slf.IncreaseKey();
+
         numberOfOpenTreasure = slf.LoadBox();
+        slf.ResetBox();
 
         for (int i = 1; i <= numberOfTreasure; i++)
         {

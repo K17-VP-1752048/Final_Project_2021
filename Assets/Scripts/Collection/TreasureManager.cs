@@ -16,6 +16,7 @@ public class TreasureManager : MonoBehaviour
     {
         slf = gameObject.AddComponent<SaveLoadFile>();
         OpenTreasureCanvas = GameObject.Find("CanvasOpenTreasure").GetComponent<Canvas>();
+        OpenTreasureCanvas.enabled = false;
         keyFly = GameObject.Find("Key");
         keyFly.SetActive(false);
         keyImage = GameObject.Find("Key Img").GetComponent<Image>();

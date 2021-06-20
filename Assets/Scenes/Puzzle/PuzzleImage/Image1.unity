@@ -912,12 +912,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &919023297 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1361317192181117761, guid: 74d4bf9b0d37b9941a49882b7c1fc040,
-    type: 3}
-  m_PrefabInstance: {fileID: 2018265128}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1101217203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,7 +1581,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2018265128}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919023297}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1e44da859590554d8d9b724b409b505, type: 3}
@@ -1920,17 +1914,32 @@ PrefabInstance:
     - target: {fileID: 8572783273708624863, guid: f839268f70850c245b2f995e84284484,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8572783273708624863, guid: f839268f70850c245b2f995e84284484,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 919023297}
+      objectReference: {fileID: 2018265129}
     - target: {fileID: 8572783273708624863, guid: f839268f70850c245b2f995e84284484,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8572783273708624863, guid: f839268f70850c245b2f995e84284484,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: LoadPuzzle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8572783273708624863, guid: f839268f70850c245b2f995e84284484,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8572783273708624863, guid: f839268f70850c245b2f995e84284484,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f839268f70850c245b2f995e84284484, type: 3}
