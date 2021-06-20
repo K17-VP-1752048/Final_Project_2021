@@ -19,7 +19,7 @@ public class CollectionManager : MonoBehaviour
         //slf.IncreaseKey();
 
         numberOfOpenTreasure = slf.LoadBox();
-        slf.ResetBox();
+        //slf.ResetBox();
 
         for (int i = 1; i <= numberOfTreasure; i++)
         {

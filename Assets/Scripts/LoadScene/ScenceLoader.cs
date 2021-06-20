@@ -74,6 +74,26 @@ public class ScenceLoader : MonoBehaviour
         SceneManager.LoadScene("LoadingGameQuiz");
     }
 
+    public void LoadGameWords()
+    {
+        SceneManager.LoadScene("LoadingGameWords");
+    }
+
+    public void LoadGamePickObject()
+    {
+        SceneManager.LoadScene("LoadingGamePickObject");
+    }
+
+    public void LoadGameTrain()
+    {
+        SceneManager.LoadScene("LoadingGameTrain");
+    }
+
+    public void LoadGameNumberIntro()
+    {
+        SceneManager.LoadScene("LoadingNumberIntro");
+    }
+
     public void LoadPuzzle(int order)
     {
         SceneManager.LoadScene("Puzzle" + order);

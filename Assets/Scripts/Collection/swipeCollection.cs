@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class swipe : MonoBehaviour
+public class swipeCollection : MonoBehaviour
 {
-//    public Color[] colors;
     public GameObject scrollbar;// imageContent;
     private float scroll_pos = 0;
     float[] pos;
@@ -63,18 +62,16 @@ public class swipe : MonoBehaviour
             {
                 //Debug.LogWarning("Current Selected Level " + i);
                 transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(1f, 1f), 0.1f);
-                transform.GetChild(i).GetComponent<Button>().interactable = true;
+                //transform.GetChild(i).GetComponent<Button>().interactable = true;
                 for (int j = 0; j < pos.Length; j++)
                 {
                     if (j != i)
                     {
                         transform.GetChild(j).localScale = Vector2.Lerp(transform.GetChild(j).localScale, new Vector2(0.8f, 0.8f), 0.1f);
-                        transform.GetChild(j).GetComponent<Button>().interactable = false;
+                        //transform.GetChild(j).GetComponent<Button>().interactable = false;
                     }
                 }
             }
         }
-
-
     }
 }
