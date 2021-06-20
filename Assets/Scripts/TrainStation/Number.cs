@@ -37,7 +37,7 @@ public class Number : MonoBehaviour
             var targetPosition = wayPoints[wayPointIndex].position;
             Move();
 
-            if (Vector2.Distance(transform.position, targetPosition) < 1f)
+            if (Vector2.Distance(transform.position, targetPosition) < 1.5f)
             {
                 StartCoroutine("Wait");
             }
