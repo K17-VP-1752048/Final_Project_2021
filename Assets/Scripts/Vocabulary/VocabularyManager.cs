@@ -10,6 +10,8 @@ public class VocabularyManager : MonoBehaviour
     [SerializeField] private DataFoodScriptable vocaDataFood;
     [SerializeField] private DataHouseholdScriptable vocaDataHousehold;
     [SerializeField] private List<Image> listImg;
+    [SerializeField] private Button nextBtn;
+    [SerializeField] private Button previousBtn;
     [SerializeField] private string topic;
 
     private int index = 0;
@@ -49,6 +51,7 @@ public class VocabularyManager : MonoBehaviour
 
     public void NextList()
     {
+        this.previousBtn.gameObject.SetActive(true);
         ResetActiveFalse();
         int tmp = 0;
         for (int i = this.index; i < list.Count; i++)
@@ -57,6 +60,7 @@ public class VocabularyManager : MonoBehaviour
             {
                 int page = (list.Count % listImg.Count != 0) ? (list.Count / 9 + 1) : (list.Count / 9);
                 this.indexPrevious = listImg.Count * page - 2 * listImg.Count;
+                this.nextBtn.gameObject.SetActive(false);
             }
 
             if (tmp >= listImg.Count)
@@ -78,10 +82,16 @@ public class VocabularyManager : MonoBehaviour
     {
         if(this.indexPrevious >= 0)
         {
+            this.nextBtn.gameObject.SetActive(true);
             ResetActiveFalse();
             int tmp = 0;
             for (int i = this.indexPrevious; i < list.Count; i++)
             {
+                if (this.indexPrevious == 0)
+                {
+                    this.previousBtn.gameObject.SetActive(false);
+                }
+
                 if (tmp >= listImg.Count)
                 {
                     this.index = i;
