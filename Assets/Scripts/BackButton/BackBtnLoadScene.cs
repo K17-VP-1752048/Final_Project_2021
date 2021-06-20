@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class BackBtnLoadScene : MonoBehaviour
 {
     [SerializeField] string sceneName;
-
+ 
     //public void LoadTopicsScene()
     //{
     //    SceneManager.LoadScene("Scenes/TopicsScene");
@@ -35,7 +35,7 @@ public class BackBtnLoadScene : MonoBehaviour
     //{
     //    // Create request popup
     //    SceneManager.LoadScene("Scenes/TopicsHouseScene");
-        
+
     //}
     //public void LoadTopicsNumberScene()
     //{

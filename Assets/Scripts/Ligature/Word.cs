@@ -17,8 +17,8 @@ public class Word : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator.SetTrigger("Zoom");
-        StartCoroutine(ZoomDelay(animator.GetCurrentAnimatorStateInfo(0).length));
+
+        //StartCoroutine(ZoomDelay(animator.GetCurrentAnimatorStateInfo(0).length));
     }
 
     IEnumerator ZoomDelay(float delay = 0)

@@ -10,6 +10,8 @@ public class Verify : MonoBehaviour
     [SerializeField] Sentinel sentinel;
     [SerializeField] GameObject verifierBtn;
     [SerializeField] GameObject popupCanvas;
+    [SerializeField] GameObject correctBox;
+    [SerializeField] AudioClip wordSpell;
 
     private bool allAnswerIsCorrect;
     private bool allBoxIsFilled;
@@ -68,12 +70,22 @@ public class Verify : MonoBehaviour
         }
         if (allBoxIsFilled && allAnswerIsCorrect)
         {
-            ShowPopup();
+            //ShowPopup();
+            StartCoroutine(ShowPopUp());
         }
     }
 
     private void ShowPopup()
     {
+        popupCanvas.SetActive(true);
+    }
+
+    IEnumerator ShowPopUp()
+    {
+        correctBox.SetActive(true);
+        yield return new WaitForSeconds(correctBox.GetComponent<AudioSource>().clip.length);
+        AudioSource.PlayClipAtPoint(wordSpell, Camera.main.transform.position);
+        yield return new WaitForSeconds(wordSpell.length);
         popupCanvas.SetActive(true);
     }
 
