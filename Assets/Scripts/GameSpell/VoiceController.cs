@@ -29,12 +29,12 @@ public class VoiceController : MonoBehaviour
     {
         if (count >= 3 && spellingManager.GetLength() > 0)
         {
-            spellingManager.NextRound();
+            spellingManager.TimeOut();
             count = 0;
         }
         else if (count >= 3 && spellingManager.GetLength() <= 0)
         {
-            spellingManager.EndGame();
+            spellingManager.EndGame_With_SpellTimeOut();
             count = 0;
         }
     }

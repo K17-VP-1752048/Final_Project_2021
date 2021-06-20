@@ -208,42 +208,6 @@ public class SpellingManager : MonoBehaviour
         Invoke("SelectPronunciation", gameObject.GetComponent<AudioSource>().clip.length + 0.1f);
     }
 
-    public void TryAgain()
-    {
-        GameObject obj = Instantiate(popupWrong);
-        obj.transform.SetParent(spellUI.transform, false);
-
-        gameObject.GetComponent<AudioSource>().clip = fail_audio;
-        gameObject.GetComponent<AudioSource>().Play();
-    }
-
-    public void EndGame()
-    {
-        //reset game
-        if (selectedTopic == "Animals")
-        {
-            slf.ResetCurrentSpell_Animals();
-            slf.ResetCurrentListSpell_Animals();
-        }
-        else if (selectedTopic == "Food")
-        {
-            slf.ResetCurrentSpell_Food();
-            slf.ResetCurrentListSpell_Food();
-        }
-        else if (selectedTopic == "Household")
-        {
-            slf.ResetCurrentSpell_House();
-            slf.ResetCurrentListSpell_House();
-        }
-
-        GameObject obj = Instantiate(congratEndGame);
-        obj.transform.SetParent(spellUI.transform, false);
-
-        gameObject.GetComponent<AudioSource>().clip = bravo_audio;
-        gameObject.GetComponent<AudioSource>().Play();
-        StartCoroutine(BackTopic(gameObject.GetComponent<AudioSource>().clip.length + 0.2f));
-    }
-
     public void TimeOut()
     {
         //reset game
@@ -266,13 +230,90 @@ public class SpellingManager : MonoBehaviour
         GameObject obj = Instantiate(popupTimeOut);
         obj.transform.SetParent(spellUI.transform, false);
 
+        gameObject.GetComponent<AudioSource>().clip = fail_audio;
+        gameObject.GetComponent<AudioSource>().Play();
+        Invoke("SelectPronunciation", gameObject.GetComponent<AudioSource>().clip.length + 0.3f);
+    }
+
+    public void TryAgain()
+    {
+        GameObject obj = Instantiate(popupWrong);
+        obj.transform.SetParent(spellUI.transform, false);
+
+        gameObject.GetComponent<AudioSource>().clip = fail_audio;
+        gameObject.GetComponent<AudioSource>().Play();
+    }
+
+    public void EndGame_With_SpellTimeOut()
+    {
+        //reset game
+        if (selectedTopic == "Animals")
+        {
+            slf.ResetCurrentSpell_Animals();
+            slf.ResetCurrentListSpell_Animals();
+        }
+        else if (selectedTopic == "Food")
+        {
+            slf.ResetCurrentSpell_Food();
+            slf.ResetCurrentListSpell_Food();
+        }
+        else if (selectedTopic == "Household")
+        {
+            slf.ResetCurrentSpell_House();
+            slf.ResetCurrentListSpell_House();
+        }
+
+        GameObject obj = Instantiate(popupTimeOut);
+        obj.transform.SetParent(spellUI.transform, false);
+
+        gameObject.GetComponent<AudioSource>().clip = fail_audio;
+        gameObject.GetComponent<AudioSource>().Play();
+
+        StartCoroutine(BackTopic(gameObject.GetComponent<AudioSource>().clip.length + 0.3f));
+    }
+
+    public void EndGame()
+    {
+        //reset game
+        if (selectedTopic == "Animals")
+        {
+            slf.ResetCurrentSpell_Animals();
+            slf.ResetCurrentListSpell_Animals();
+        }
+        else if (selectedTopic == "Food")
+        {
+            slf.ResetCurrentSpell_Food();
+            slf.ResetCurrentListSpell_Food();
+        }
+        else if (selectedTopic == "Household")
+        {
+            slf.ResetCurrentSpell_House();
+            slf.ResetCurrentListSpell_House();
+        }
+
+        //random popup congratulation
+        int val = Random.Range(0, congrats.Length);
+        GameObject obj = Instantiate(congrats[val]);
+        obj.transform.SetParent(spellUI.transform, false);
+
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();
-        StartCoroutine(BackTopic(gameObject.GetComponent<AudioSource>().clip.length + 0.2f));
+
+        StartCoroutine(BackTopic(gameObject.GetComponent<AudioSource>().clip.length + 0.1f));
     }
+
+
 
     IEnumerator BackTopic(float delayTime)
     {
+        yield return new WaitForSeconds(delayTime);
+
+        GameObject obj = Instantiate(congratEndGame);
+        obj.transform.SetParent(spellUI.transform, false);
+
+        gameObject.GetComponent<AudioSource>().clip = bravo_audio;
+        gameObject.GetComponent<AudioSource>().Play();
+
         yield return new WaitForSeconds(delayTime);
         SceneManager.LoadScene("TopicsAnimalsScene");
     }
