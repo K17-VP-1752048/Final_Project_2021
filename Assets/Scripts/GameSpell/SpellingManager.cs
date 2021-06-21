@@ -17,6 +17,8 @@ public class SpellingManager : MonoBehaviour
     [SerializeField] private GameObject popupWrong;
     [SerializeField] private GameObject popupTimeOut;
     [SerializeField] private string selectedTopic;
+    [SerializeField] private Image pronounceImg, speakImg;
+    [SerializeField] private Button backBtn;
 
     private List<Pronunciation> pronunciations;
     private Pronunciation selectedPronunciation;
@@ -39,6 +41,8 @@ public class SpellingManager : MonoBehaviour
         {
             SpellHousehold();
         }
+
+        SetEnabled(true);
     }
 
     public void SpellAnimal()
@@ -118,6 +122,8 @@ public class SpellingManager : MonoBehaviour
 
     void SelectPronunciation()
     {
+        SetEnabled(true);
+
         if (selectedTopic == "Animals")
         {
             if (pronunciations.Count <= 0)
@@ -178,6 +184,8 @@ public class SpellingManager : MonoBehaviour
 
     public void NextRound()
     {
+        SetEnabled(false);
+
         //remove after spell correct
         pronunciations.RemoveAt(this.index);
 
@@ -205,26 +213,31 @@ public class SpellingManager : MonoBehaviour
 
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();
-        Invoke("SelectPronunciation", gameObject.GetComponent<AudioSource>().clip.length + 0.1f);
+        Invoke("SelectPronunciation", 1.5f);
     }
 
     public void TimeOut()
     {
+        SetEnabled(false);
+
+        //remove after spell correct
+        pronunciations.RemoveAt(this.index);
+
         //reset game
         if (selectedTopic == "Animals")
         {
             slf.ResetCurrentSpell_Animals();
-            slf.ResetCurrentListSpell_Animals();
+            slf.SaveCurrentListSpellFood(pronunciations);
         }
         else if (selectedTopic == "Food")
         {
-            slf.ResetCurrentSpell_Food();
-            slf.ResetCurrentListSpell_Food();
+            slf.ResetCurrentSpell_House();
+            slf.SaveCurrentListSpellHousehold(pronunciations);
         }
         else if (selectedTopic == "Household")
         {
             slf.ResetCurrentSpell_House();
-            slf.ResetCurrentListSpell_House();
+            slf.SaveCurrentListSpellHousehold(pronunciations);
         }
 
         GameObject obj = Instantiate(popupTimeOut);
@@ -246,6 +259,11 @@ public class SpellingManager : MonoBehaviour
 
     public void EndGame_With_SpellTimeOut()
     {
+        SetEnabled(false);
+
+        //remove after spell correct
+        pronunciations.RemoveAt(this.index);
+
         //reset game
         if (selectedTopic == "Animals")
         {
@@ -274,6 +292,11 @@ public class SpellingManager : MonoBehaviour
 
     public void EndGame()
     {
+        SetEnabled(false);
+
+        //remove after spell correct
+        pronunciations.RemoveAt(this.index);
+
         //reset game
         if (selectedTopic == "Animals")
         {
@@ -299,23 +322,25 @@ public class SpellingManager : MonoBehaviour
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();
 
-        StartCoroutine(BackTopic(gameObject.GetComponent<AudioSource>().clip.length + 0.1f));
+        StartCoroutine(BackTopic(gameObject.GetComponent<AudioSource>().clip.length));
     }
-
-
 
     IEnumerator BackTopic(float delayTime)
     {
+        SetEnabled(false);
         yield return new WaitForSeconds(delayTime);
 
-        GameObject obj = Instantiate(congratEndGame);
-        obj.transform.SetParent(spellUI.transform, false);
+        Instantiate(congratEndGame);
 
-        gameObject.GetComponent<AudioSource>().clip = bravo_audio;
-        gameObject.GetComponent<AudioSource>().Play();
-
-        yield return new WaitForSeconds(delayTime);
+        yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("TopicsAnimalsScene");
+    }
+
+    void SetEnabled(bool enabled)
+    {
+        pronounceImg.GetComponent<BoxCollider2D>().enabled = enabled;
+        speakImg.GetComponent<BoxCollider2D>().enabled = enabled;
+        backBtn.enabled = enabled;
     }
 }
 

@@ -324,6 +324,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c350ebaa171b4b54ab7fa12483aa348c, type: 3}
+--- !u!114 &262210181 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1863078121771971365, guid: c350ebaa171b4b54ab7fa12483aa348c,
+    type: 3}
+  m_PrefabInstance: {fileID: 262210180}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &309888657
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,6 +565,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuitCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7493575153231094793, guid: 9595fa23ba08a274ab847f3e0cbcdac7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7493575153231094794, guid: 9595fa23ba08a274ab847f3e0cbcdac7,
         type: 3}
       propertyPath: sceneName
@@ -607,6 +624,9 @@ MonoBehaviour:
   popupTimeOut: {fileID: 6776602508805209136, guid: f454c20462f709644ba44946ec92efec,
     type: 3}
   selectedTopic: Animals
+  pronounceImg: {fileID: 1804608603}
+  speakImg: {fileID: 638834500}
+  backBtn: {fileID: 262210181}
 --- !u!4 &494471324
 Transform:
   m_ObjectHideFlags: 0
@@ -1166,6 +1186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8aa91752c9bf9c4f87879511b213f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isShowPopupAndroid: 1
 --- !u!4 &1135860479
 Transform:
   m_ObjectHideFlags: 0
