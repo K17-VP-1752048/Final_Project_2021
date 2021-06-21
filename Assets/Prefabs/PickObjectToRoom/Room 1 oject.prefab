@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2351267632127173313}
   - component: {fileID: 1964156240350794984}
   - component: {fileID: 502339315709056646}
-  - component: {fileID: 365159580}
   - component: {fileID: 298303060}
   - component: {fileID: 298303059}
   - component: {fileID: 298303055}
@@ -79,19 +78,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!65 &365159580
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5583575828386987902}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 49.83318, y: 50.02252, z: 1.00009}
-  m_Center: {x: 0.067989096, y: -0.021759972, z: -0.000044992485}
 --- !u!223 &298303060
 Canvas:
   m_ObjectHideFlags: 0

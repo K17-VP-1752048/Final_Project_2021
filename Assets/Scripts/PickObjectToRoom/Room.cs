@@ -5,6 +5,9 @@ using UnityEngine.EventSystems;
 
 public class Room : MonoBehaviour, IDropHandler
 {
+    public AudioSource rightSound;
+    public AudioSource wrongSound;
+
     private Level level;
     private GameObject droppedObj = null;
 
@@ -31,10 +34,15 @@ public class Room : MonoBehaviour, IDropHandler
     {
         if (eventData.pointerDrag != null && eventData.pointerDrag.tag == gameObject.tag)
         {
+            rightSound.Play();
             droppedObj = eventData.pointerDrag;
             droppedObj.GetComponent<DragObject>().CorrectRoom(true);
-            Debug.Log("in room");
+            //Debug.Log("in room");
             level.CountObject();
+        }
+        else
+        {
+            wrongSound.Play();
         }
     }
 }

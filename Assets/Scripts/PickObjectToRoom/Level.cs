@@ -32,10 +32,17 @@ public class Level : MonoBehaviour
             slf.ResetGamePickToRoom();
             ShowPopup();
         }
-        if (popupCanvas.activeSelf && Input.GetMouseButtonDown(0))
+
+        if (popupCanvas.activeSelf)
         {
-            SceneManager.LoadScene(nextScene);
+            StartCoroutine(waitToLoadScene());
         }
+    }
+
+    IEnumerator waitToLoadScene()
+    {
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene(nextScene);
     }
 
     private void ShowPopup()
