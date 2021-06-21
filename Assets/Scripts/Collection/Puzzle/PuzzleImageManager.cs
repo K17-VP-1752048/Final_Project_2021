@@ -33,13 +33,13 @@ public class PuzzleImageManager : MonoBehaviour
 
     public void TakeScreenShot()
     {
+        buttons.SetActive(false);
         StartCoroutine(takeAShot());
     }
 
     IEnumerator takeAShot()
     {
         yield return new WaitForEndOfFrame();
-        buttons.SetActive(false);
 
         Texture2D texture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
         texture.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
@@ -47,10 +47,9 @@ public class PuzzleImageManager : MonoBehaviour
 
         string name = "picture" + System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".jpg";
 
-        
         //byte []bytes = texture.EncodeToPNG();
         //File.WriteAllBytes(Application.dataPath + "/.../" + name, bytes);
-        
+
         NativeGallery.SaveImageToGallery(texture, "Monde Ludique", name);
 
         buttons.SetActive(true);
