@@ -1553,10 +1553,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuitCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7493575153231094793, guid: 9595fa23ba08a274ab847f3e0cbcdac7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7493575153231094794, guid: 9595fa23ba08a274ab847f3e0cbcdac7,
         type: 3}
       propertyPath: sceneName
       value: Scenes/TopicsHouseScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493575154319962977, guid: 9595fa23ba08a274ab847f3e0cbcdac7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9595fa23ba08a274ab847f3e0cbcdac7, type: 3}
@@ -2168,7 +2178,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.537409}
-  m_AnchoredPosition: {x: 0.0021972656, y: 0.6799927}
+  m_AnchoredPosition: {x: 0.0021972656, y: 0.67993164}
   m_SizeDelta: {x: 0.15478516, y: 0.9684906}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1574235554
@@ -2853,7 +2863,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 643.35986, y: -62.6933}
+  m_AnchoredPosition: {x: 613.1836, y: -62.6933}
   m_SizeDelta: {x: 67.319214, y: 125.3866}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &129561414641041771
@@ -2950,7 +2960,7 @@ PrefabInstance:
     - target: {fileID: 2351267632127173313, guid: b58f4f44dc018a94997051e69a06904a,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 63.660545
+      value: 63.660553
       objectReference: {fileID: 0}
     - target: {fileID: 2351267632127173313, guid: b58f4f44dc018a94997051e69a06904a,
         type: 3}
