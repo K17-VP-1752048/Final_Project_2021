@@ -9,6 +9,8 @@ public class CountManager : MonoBehaviour
 {
     [SerializeField] private int numberOfAnimalsSelected;
     [SerializeField] private string nextScene;
+    [SerializeField] private GameObject popupWin;
+    [SerializeField] private GameObject countUI;
 
     private SaveLoadFile slf;
     private static int time = 0;
@@ -106,13 +108,13 @@ public class CountManager : MonoBehaviour
         if(temp.ToLower() == numberText.ToLower())
         {
             correctAns = true;
-            if (nextScene == "")
+            if (nextScene != "" && nextScene != "TopicsNumberScene")
             {
-                slf.ResetGameCountNumber();
+                slf.SaveCurrentSceneCountNumber(nextScene);
             }
             else
             {
-                slf.SaveCurrentSceneCountNumber(nextScene);
+                slf.ResetGameCountNumber();
             }
             time = 0;
         }
@@ -127,14 +129,25 @@ public class CountManager : MonoBehaviour
 
     public void NextRound()
     {
-        if(nextScene == "")
-        {
-            SceneManager.LoadScene("TopicsNumberScene");
-        }
-        else
+        if(nextScene != "" && nextScene != "TopicsNumberScene")
         {
             SceneManager.LoadScene(nextScene);
         }
+        else
+        {
+            StartCoroutine(WinGame(5f));
+        }
+    }
+
+    IEnumerator WinGame(float delaytime)
+    {
+        Instantiate(popupWin);
+
+        yield return new WaitForSeconds(0.3f);
+        countUI.SetActive(false);
+
+        yield return new WaitForSeconds(delaytime);
+        SceneManager.LoadScene("TopicsNumberScene");
     }
 }
 

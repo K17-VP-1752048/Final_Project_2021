@@ -293,7 +293,7 @@ PrefabInstance:
     - target: {fileID: 7385834220206469488, guid: 8c2f23910fbf5944882b1caa9e0b9629,
         type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 7385834220206469488, guid: 8c2f23910fbf5944882b1caa9e0b9629,
         type: 3}
@@ -345,7 +345,8 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7385834219914235723, guid: 8c2f23910fbf5944882b1caa9e0b9629, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8c2f23910fbf5944882b1caa9e0b9629, type: 3}
 --- !u!1 &653226923
 GameObject:
@@ -933,6 +934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfAnimalsSelected: 1
   nextScene: Number_Count2
+  popupWin: {fileID: 0}
 --- !u!4 &1526130995
 Transform:
   m_ObjectHideFlags: 0

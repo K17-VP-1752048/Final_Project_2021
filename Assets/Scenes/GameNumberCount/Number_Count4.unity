@@ -156,7 +156,7 @@ PrefabInstance:
     - target: {fileID: 8089818636452830951, guid: c350ebaa171b4b54ab7fa12483aa348c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8089818636452830951, guid: c350ebaa171b4b54ab7fa12483aa348c,
         type: 3}
@@ -420,7 +420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.017290324, y: 0}
   m_AnchorMax: {x: 0.98122585, y: 1}
-  m_AnchoredPosition: {x: -398.00003, y: 0}
+  m_AnchoredPosition: {x: -398.00006, y: 0}
   m_SizeDelta: {x: -1320, y: -5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &653226925
@@ -941,6 +941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfAnimalsSelected: 3
   nextScene: Number_Count5
+  popupWin: {fileID: 0}
 --- !u!4 &1526130995
 Transform:
   m_ObjectHideFlags: 0
@@ -1131,7 +1132,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.017290324, y: 0}
   m_AnchorMax: {x: 0.98122585, y: 1}
-  m_AnchoredPosition: {x: -213.00003, y: 0}
+  m_AnchoredPosition: {x: -213.00002, y: 0}
   m_SizeDelta: {x: -1318, y: -5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1887684679
@@ -1339,6 +1340,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7385834219895792972, guid: 8c2f23910fbf5944882b1caa9e0b9629,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7385834219914235723, guid: 8c2f23910fbf5944882b1caa9e0b9629,
         type: 3}
       propertyPath: downEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1464,7 +1470,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7385834220206469488, guid: 8c2f23910fbf5944882b1caa9e0b9629,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385834220206469491, guid: 8c2f23910fbf5944882b1caa9e0b9629,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 900
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7385834219914235723, guid: 8c2f23910fbf5944882b1caa9e0b9629, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8c2f23910fbf5944882b1caa9e0b9629, type: 3}
 --- !u!114 &2090182044 stripped
 MonoBehaviour:

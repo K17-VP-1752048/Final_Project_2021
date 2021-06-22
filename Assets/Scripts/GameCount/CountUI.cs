@@ -23,12 +23,6 @@ public class CountUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //enabled images
-        /*for (int i = 0; i < options.Count; i++)
-        {
-            options[i].numberImg.GetComponent<BoxCollider2D>().enabled = true;
-        }
-        check.GetComponent<BoxCollider2D>().enabled = false;*/
     }
 
     void Update()
@@ -48,6 +42,7 @@ public class CountUI : MonoBehaviour
 
         if(this.indexCorrectAns != -1)
         {
+            SetEnabled(false);
             options[this.indexCorrectAns].numberImg.GetComponent<RectTransform>().position = Vector3.MoveTowards(options[this.indexCorrectAns].numberImg.GetComponent<RectTransform>().position, new Vector3(guessText.position.x - 0.4f, guessText.position.y, guessText.position.z), 10 * Time.deltaTime);
             if (Vector2.Distance(options[this.indexCorrectAns].numberImg.GetComponent<RectTransform>().position, guessText.position) < 0.2f)
             {
@@ -113,6 +108,7 @@ public class CountUI : MonoBehaviour
     //Circle the correct answer
     IEnumerator CircleCorrectAnswer(float delaytime)
     {
+        SetEnabled(false);
         yield return new WaitForSeconds(0.5f);
 
         for (int i = 0; i < options.Count; i++)
@@ -127,41 +123,83 @@ public class CountUI : MonoBehaviour
         yield return new WaitForSeconds(delaytime);
         showRes.SetActive(true);
         showRes.GetComponentInChildren<Image>().GetComponentInChildren<TMP_Text>().text = "Vous n'avez pas répondu correctement!!!";
+        
+        yield return new WaitForSeconds(delaytime);
+        countManager.NextRound();
+        showRes.SetActive(false);
+        SetEnabled(true);
     }
 
     //this give blink effect [if needed use or dont use]
     IEnumerator BlinkWrongImg(Image img)
     {
+        SetEnabled(false);
+
         img.color = Color.white;
         yield return new WaitForSeconds(0.1f);
         img.color = Color.red;
         //img.GetComponent<AudioSource>().Play();
         gameObject.GetComponent<AudioSource>().clip = fail_audio;
         gameObject.GetComponent<AudioSource>().Play();
+
         yield return new WaitForSeconds(0.5f);
         img.color = new Color(0.8823529f, 0.8862745f, 0.6509804f, 1);
+
         yield return new WaitForSeconds(gameObject.GetComponent<AudioSource>().clip.length);
+        SetEnabled(true);
     }
 
     //this give blink effect [if needed use or dont use]
     IEnumerator BlinkCorrectImg(Image img)
     {
+        SetEnabled(false);
         img.color = Color.white;
         yield return new WaitForSeconds(0.1f);
         img.color = Color.green;
         //img.GetComponent<AudioSource>().Play();
+
         showRes.SetActive(true);
         showRes.GetComponent<AudioSource>().clip = bravo_audio;
         showRes.GetComponent<AudioSource>().Play();
+
         //yield return new WaitForSeconds(1f);
         showRes.GetComponentInChildren<Image>().GetComponentInChildren<TMP_Text>().text = questionInfoText.text + " " + img.GetComponentInChildren<TMP_Text>().text.ToLower() + " " + questionAnimalText.text;
         showRes.GetComponentInChildren<Image>().GetComponentInChildren<TMP_Text>().color = Color.blue;
+
+        yield return new WaitForSeconds(showRes.GetComponent<AudioSource>().clip.length + 0.2f);
+        countManager.NextRound();
+        showRes.SetActive(false);
+        SetEnabled(true);
     }
 
     IEnumerator Warning(float delayTime)
     {
+        SetEnabled(false);
         warningImg.gameObject.SetActive(true);
+
         yield return new WaitForSeconds(delayTime);
+
         warningImg.gameObject.SetActive(false);
+        SetEnabled(true);
+    }
+
+    public void SetActive(bool flag)
+    {
+        //set active
+        for (int i = 0; i < options.Count; i++)
+        {
+            options[i].numberImg.gameObject.SetActive(flag);
+        }
+        check.gameObject.SetActive(flag);
+    }
+
+    public void SetEnabled(bool flag)
+    {
+        //enabled images
+        for (int i = 0; i < options.Count; i++)
+        {
+            options[i].numberImg.GetComponent<BoxCollider2D>().enabled = flag;
+        }
+        check.GetComponent<BoxCollider2D>().enabled = flag;
     }
 }

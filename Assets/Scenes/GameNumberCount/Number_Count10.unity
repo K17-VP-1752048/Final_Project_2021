@@ -841,7 +841,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.017290324, y: 0}
   m_AnchorMax: {x: 0.98122585, y: 1}
-  m_AnchoredPosition: {x: -143.00003, y: 0}
+  m_AnchoredPosition: {x: -143.00002, y: 0}
   m_SizeDelta: {x: -1340.6732, y: -5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &660799971
@@ -1014,6 +1014,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878483439}
   m_CullTransparentMesh: 0
+--- !u!1 &950975594 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7629502938879103733, guid: 37fed43bcc581144bb9a357cc16d1d2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1477612077}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &956251488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,6 +1598,11 @@ PrefabInstance:
       propertyPath: countManager
       value: 
       objectReference: {fileID: 1526130994}
+    - target: {fileID: 7629502940423474169, guid: 37fed43bcc581144bb9a357cc16d1d2a,
+        type: 3}
+      propertyPath: m_text
+      value: tigres
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37fed43bcc581144bb9a357cc16d1d2a, type: 3}
 --- !u!1 &1479112455
@@ -1699,7 +1710,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfAnimalsSelected: 10
-  nextScene: 
+  nextScene: TopicsNumberScene
+  popupWin: {fileID: 3911960353584594007, guid: 1fa913fc3caca95458ce7d0b4e3ccfbf,
+    type: 3}
+  countUI: {fileID: 950975594}
 --- !u!4 &1526130995
 Transform:
   m_ObjectHideFlags: 0
@@ -1957,7 +1971,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7385834220206469488, guid: 8c2f23910fbf5944882b1caa9e0b9629,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385834220206469491, guid: 8c2f23910fbf5944882b1caa9e0b9629,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 900
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7385834219914235723, guid: 8c2f23910fbf5944882b1caa9e0b9629, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8c2f23910fbf5944882b1caa9e0b9629, type: 3}
 --- !u!114 &1738496671 stripped
 MonoBehaviour:
@@ -2179,7 +2204,7 @@ PrefabInstance:
     - target: {fileID: 8089818636452830951, guid: c350ebaa171b4b54ab7fa12483aa348c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8089818636452830951, guid: c350ebaa171b4b54ab7fa12483aa348c,
         type: 3}
@@ -2314,7 +2339,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.017290324, y: 0}
   m_AnchorMax: {x: 0.98122585, y: 1}
-  m_AnchoredPosition: {x: -309.00003, y: 0}
+  m_AnchoredPosition: {x: -309.00006, y: 0}
   m_SizeDelta: {x: -1340.6732, y: -5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1888025847
