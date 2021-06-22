@@ -11,6 +11,8 @@ public class QuizUI : MonoBehaviour
     [SerializeField] private Image warningImg;
     [SerializeField] private Image questionImg;
     [SerializeField] private List<AnswerUI> options;
+    [SerializeField] private Image checkImg;
+    [SerializeField] private Button backBtn;
     [SerializeField] private AudioClip bravo_audio;
     [SerializeField] private AudioClip fail_audio;
     [SerializeField] private GameObject[] congrats;
@@ -59,6 +61,16 @@ public class QuizUI : MonoBehaviour
         }
         
         answered = false;
+    }
+
+    void SetEnabled(bool enabled)
+    {
+        for (int i = 0; i < options.Count; i++)
+        {
+            options[i].answerImg.GetComponent<BoxCollider2D>().enabled = enabled;
+        }
+        checkImg.GetComponent<BoxCollider2D>().enabled = enabled;
+        backBtn.enabled = enabled;
     }
 
     /*void ImageHolder()
@@ -134,6 +146,8 @@ public class QuizUI : MonoBehaviour
     //this give blink effect [if needed use or dont use]
     IEnumerator BlinkWrongImg(Image img)
     {
+        SetEnabled(false);
+
         img.color = Color.white;
         yield return new WaitForSeconds(0.2f);
         img.color = Color.red;
@@ -141,11 +155,15 @@ public class QuizUI : MonoBehaviour
         gameObject.GetComponent<AudioSource>().clip = fail_audio;
         gameObject.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(gameObject.GetComponent<AudioSource>().clip.length + 0.2f);
+
+        SetEnabled(true);
     }
 
     //this give blink effect [if needed use or dont use]
     IEnumerator BlinkCorrectImg(Image img)
     {
+        SetEnabled(false);
+
         img.color = Color.white;
         yield return new WaitForSeconds(0.2f);
         img.color = Color.green;
@@ -158,19 +176,27 @@ public class QuizUI : MonoBehaviour
 
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();
-        //yield return new WaitForSeconds(gameObject.GetComponent<AudioSource>().clip.length + 0.2f);
+        yield return new WaitForSeconds(1.5f);
+
+        SetEnabled(true);
     }
 
     IEnumerator Warning(float delayTime)
     {
+        SetEnabled(false);
         warningImg.gameObject.SetActive(true);
+
         yield return new WaitForSeconds(delayTime);
+
         warningImg.gameObject.SetActive(false);
+        SetEnabled(true);
     }
 
     //this give blink effect [if needed use or dont use]
     IEnumerator EndGame(Image img)
     {
+        SetEnabled(false);
+
         img.color = Color.white;
         yield return new WaitForSeconds(0.2f);
         img.color = Color.green;
@@ -179,9 +205,9 @@ public class QuizUI : MonoBehaviour
         //random popup congratulation
         Instantiate(congratEndGame);
 
-        gameObject.GetComponent<AudioSource>().clip = bravo_audio;
-        gameObject.GetComponent<AudioSource>().Play();
-        //yield return new WaitForSeconds(gameObject.GetComponent<AudioSource>().clip.length + 0.2f);
+        yield return new WaitForSeconds(1.5f);
+
+        SetEnabled(true);
     }
 
     public void HandleSpeakOption(Image speakImg)
