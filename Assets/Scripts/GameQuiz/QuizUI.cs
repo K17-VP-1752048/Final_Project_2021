@@ -63,7 +63,7 @@ public class QuizUI : MonoBehaviour
         answered = false;
     }
 
-    void SetEnabled(bool enabled)
+    public void SetEnabled(bool enabled)
     {
         for (int i = 0; i < options.Count; i++)
         {

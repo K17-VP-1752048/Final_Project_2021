@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CheckCompleteGame : MonoBehaviour
 {
     [SerializeField] private string nameGame;
+    [SerializeField] private Image completeImg;
 
     private SaveLoadFile slf;
 
@@ -13,17 +14,9 @@ public class CheckCompleteGame : MonoBehaviour
     void Start()
     {
         slf = gameObject.AddComponent<SaveLoadFile>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(nameGame != "")
+        if (slf.CheckCompleteGame(nameGame))
         {
-            if (slf.CheckCompleteGame(nameGame))
-            {
-                gameObject.SetActive(true);
-            }
+            completeImg.gameObject.SetActive(true);
         }
     }
 }

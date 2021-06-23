@@ -576,83 +576,51 @@ public class SaveLoadFile : MonoBehaviour
     //check complete game
     public bool CheckCompleteGame(string nameGame)
     {
-        if (nameGame == "GameSpellFood")
+        if (nameGame == "GameSpellFood" && File.Exists(Application.persistentDataPath + "/completeGameSpellFood.dat"))
         {
-            if (File.Exists(Application.persistentDataPath + "/completeGameSpellFood.dat"))
-            {
-                return true;
-            }
+            return true;
         }
-        else if (nameGame == "GameFindFood")
+        else if (nameGame == "GameFindFood" && File.Exists(Application.persistentDataPath + "/completeGameFindFood.dat"))
         {
-            if (File.Exists(Application.persistentDataPath + "/completeGameFindFood.dat"))
-            {
-                return true;
-            }
+            return true;
         }
-        else if (nameGame == "GamePickToRoom")
+        else if (nameGame == "GamePickToRoom" && File.Exists(Application.persistentDataPath + "/completeGamePickToRoom.dat"))
         {
-            if (File.Exists(Application.persistentDataPath + "/completeGamePickToRoom.dat"))
-            {
-                return true;
-            }
+            return true;
         }
-        else if (nameGame == "GameLigature")
+        else if (nameGame == "GameLigature" && File.Exists(Application.persistentDataPath + "/completeGameLigature.dat"))
         {
-            if (File.Exists(Application.persistentDataPath + "/completeGameLigature.dat"))
-            {
-                return true;
-            }
+            return true;
         }
-        else if (nameGame == "GameSpellHousehold")
+        else if (nameGame == "GameSpellHousehold" && File.Exists(Application.persistentDataPath + "/completeGameSpellHousehold.dat"))
         {
-            if (File.Exists(Application.persistentDataPath + "/completeGameSpellHousehold.dat"))
-            {
-                return true;
-            }
+            return true;
         }
-        else if (nameGame == "GameMatch")
+        else if (nameGame == "GameMatch" && File.Exists(Application.persistentDataPath + "/completeGameMatch.dat"))
         {
-            if (File.Exists(Application.persistentDataPath + "/completeGameMatch.dat"))
-            {
-                return true;
-            }
+            return true;
         }
-        else if (nameGame == "GameSpellAnimal")
+        else if (nameGame == "GameSpellAnimal" && File.Exists(Application.persistentDataPath + "/completeGameSpellAnimal.dat"))
         {
-            if (File.Exists(Application.persistentDataPath + "/completeGameSpellAnimal.dat"))
-            {
-                return true;
-            }
+            return true;
         }
-        else if (nameGame == "GameQuiz")
+        else if (nameGame == "GameQuiz" && File.Exists(Application.persistentDataPath + "/completeGameQuiz.dat"))
         {
-            if (File.Exists(Application.persistentDataPath + "/completeGameQuiz.dat"))
-            {
-                return true;
-            }
+             return true;
         }
-        else if (nameGame == "GameCountNumber")
+        else if (nameGame == "GameCountNumber" && File.Exists(Application.persistentDataPath + "/completeGameCountNumber.dat"))
         {
-            if (File.Exists(Application.persistentDataPath + "/completeGameCountNumber.dat"))
-            {
-                return true;
-            }
+            return true;
         }
-        else if (nameGame == "GameTrainStation")
+        else if (nameGame == "GameTrainStation" && File.Exists(Application.persistentDataPath + "/completeGameTrainStation.dat"))
         {
-            if (File.Exists(Application.persistentDataPath + "/completeGameTrainStation.dat"))
-            {
-                return true;
-            }
+            return true;
         }
-        else if (nameGame == "NumberIntroduce")
+        else if (nameGame == "NumberIntroduce" && File.Exists(Application.persistentDataPath + "/completeNumberIntroduce.dat"))
         {
-            if (File.Exists(Application.persistentDataPath + "/completeNumberIntroduce.dat"))
-            {
-                return true;
-            }
+            return true;
         }
+
         return false;
     }
 
