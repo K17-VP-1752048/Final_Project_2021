@@ -13,7 +13,9 @@ public class SpellingManager : MonoBehaviour
     [SerializeField] private AudioClip bravo_audio;
     [SerializeField] private AudioClip fail_audio;
     [SerializeField] private GameObject[] congrats;
-    [SerializeField] private GameObject congratEndGame;
+    [SerializeField] private GameObject gameWinCanvas;
+    [SerializeField] private GameObject getKeyRewardCanvas;
+    [SerializeField] private float timeTransition = 4f;
     [SerializeField] private GameObject popupWrong;
     [SerializeField] private GameObject popupTimeOut;
     [SerializeField] private string selectedTopic;
@@ -369,12 +371,22 @@ public class SpellingManager : MonoBehaviour
     IEnumerator BackTopic(float delayTime)
     {
         SetEnabled(false);
-        yield return new WaitForSeconds(delayTime);
+        //yield return new WaitForSeconds(delayTime);
 
         //win game
-        Instantiate(congratEndGame);
+        //Instantiate(congratEndGame);
 
-        yield return new WaitForSeconds(3f);
+        gameWinCanvas.SetActive(true);
+        yield return new WaitForSeconds(timeTransition);
+
+        if (getKeyRewardCanvas != null)
+        {
+            gameWinCanvas.SetActive(false);
+            getKeyRewardCanvas.SetActive(true);
+            yield return new WaitForSeconds(timeTransition);
+        }
+
+        //yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("TopicsAnimalsScene");
     }
 

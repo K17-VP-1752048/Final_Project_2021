@@ -41,7 +41,7 @@ public class Level : MonoBehaviour
 
     IEnumerator waitToLoadScene()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(4f);
         SceneManager.LoadScene(nextScene);
     }
 

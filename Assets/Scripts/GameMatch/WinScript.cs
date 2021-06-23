@@ -10,6 +10,10 @@ public class WinScript : MonoBehaviour
     [SerializeField] private GameObject popupWin;
     [SerializeField] private AudioClip bravo_audio;
 
+    [SerializeField] private GameObject gameWinCanvas;
+    [SerializeField] private GameObject getKeyRewardCanvas;
+    [SerializeField] private float timeTransition = 4f;
+
     private int pointsToWin;
     private int currentPoints;
     private SaveLoadFile slf;
@@ -79,14 +83,26 @@ public class WinScript : MonoBehaviour
 
     IEnumerator WinGame(float seconds)
     {
-        yield return new WaitForSeconds(2f);
+        //yield return new WaitForSeconds(2f);
 
-        //random popup congratulation
-        transform.GetChild(1).gameObject.SetActive(true);
+        ////random popup congratulation
+        //transform.GetChild(1).gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(seconds);
+        //yield return new WaitForSeconds(seconds);
+        //SceneManager.LoadScene("TopicsAnimalsScene");
+        //transform.GetChild(1).gameObject.SetActive(false);
+        //setActive = true;
+
+        gameWinCanvas.SetActive(true);
+        yield return new WaitForSeconds(timeTransition);
+
+        if (getKeyRewardCanvas != null)
+        {
+            gameWinCanvas.SetActive(false);
+            getKeyRewardCanvas.SetActive(true);
+            yield return new WaitForSeconds(timeTransition);
+        }
         SceneManager.LoadScene("TopicsAnimalsScene");
-        transform.GetChild(1).gameObject.SetActive(false);
         setActive = true;
     }
 

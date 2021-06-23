@@ -39,7 +39,6 @@ public class GameFindLevel : MonoBehaviour
         popUp.SetActive(true);
         yield return new WaitForSeconds(timeWait);
         SceneManager.LoadScene(nextScene);
-
     }
 
     public void Count()

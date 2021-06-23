@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameWinBehaviour : StateMachineBehaviour
 {
-
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{
@@ -22,8 +21,8 @@ public class GameWinBehaviour : StateMachineBehaviour
     {
         AudioSource audioSource = animator.gameObject.GetComponent<AudioSource>();
         audioSource.Play();
-        animator.gameObject.transform.GetChild(2).gameObject.SetActive(true);
-        animator.gameObject.transform.GetChild(3).gameObject.SetActive(true);
+        animator.gameObject.transform.GetChild(4).gameObject.SetActive(true);
+        animator.gameObject.transform.GetChild(5).gameObject.SetActive(true);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

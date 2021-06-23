@@ -16,7 +16,9 @@ public class QuizUI : MonoBehaviour
     [SerializeField] private AudioClip bravo_audio;
     [SerializeField] private AudioClip fail_audio;
     [SerializeField] private GameObject[] congrats;
-    [SerializeField] private GameObject congratEndGame;
+    [SerializeField] private GameObject gameWinCanvas;
+    [SerializeField] private GameObject getKeyRewardCanvas;
+    [SerializeField] private float timeTransition = 4f;
 
     private Question question;
     private Answer answer;
@@ -203,9 +205,19 @@ public class QuizUI : MonoBehaviour
         //img.GetComponent<AudioSource>().Play();
 
         //random popup congratulation
-        Instantiate(congratEndGame);
+        //Instantiate(congratEndGame);
 
-        yield return new WaitForSeconds(1.5f);
+        gameWinCanvas.SetActive(true);
+        yield return new WaitForSeconds(timeTransition);
+
+        if (getKeyRewardCanvas != null)
+        {
+            gameWinCanvas.SetActive(false);
+            getKeyRewardCanvas.SetActive(true);
+            yield return new WaitForSeconds(timeTransition);
+        }
+
+        //yield return new WaitForSeconds(1.5f);
 
         SetEnabled(true);
     }
