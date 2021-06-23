@@ -88,11 +88,14 @@ public class QuizManager : MonoBehaviour
             delayTime = 3f;
 
             //win game
-            //inscrease key
-            slf.IncreaseKey();
+            if (!slf.CheckCompleteGame("GameQuiz"))
+            {
+                //inscrease key
+                slf.IncreaseKey();
 
-            //complete game
-            slf.CompleteGame("GameQuiz");
+                //complete game
+                slf.CompleteGame("GameQuiz");
+            }
         }
         else
         {

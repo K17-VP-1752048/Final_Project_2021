@@ -309,8 +309,7 @@ public class SpellingManager : MonoBehaviour
         //remove after spell correct
         pronunciations.RemoveAt(this.index);
 
-        //inscrease key
-        slf.IncreaseKey();
+        
 
         //reset game
         if (selectedTopic == "Animals")
@@ -318,24 +317,42 @@ public class SpellingManager : MonoBehaviour
             slf.ResetCurrentSpell_Animals();
             slf.ResetCurrentListSpell_Animals();
 
-            //complete game
-            slf.CompleteGame("GameSpellAnimal");
+            if (!slf.CheckCompleteGame("GameSpellAnimal"))
+            {
+                //inscrease key
+                slf.IncreaseKey();
+
+                //complete game
+                slf.CompleteGame("GameSpellAnimal");
+            }
         }
         else if (selectedTopic == "Food")
         {
             slf.ResetCurrentSpell_Food();
             slf.ResetCurrentListSpell_Food();
 
-            //complete game
-            slf.CompleteGame("GameSpellFood");
+            if (!slf.CheckCompleteGame("GameSpellFood"))
+            {
+                //inscrease key
+                slf.IncreaseKey();
+
+                //complete game
+                slf.CompleteGame("GameSpellFood");
+            }
         }
         else if (selectedTopic == "Household")
         {
             slf.ResetCurrentSpell_House();
             slf.ResetCurrentListSpell_House();
 
-            //complete game
-            slf.CompleteGame("GameSpellHousehold");
+            if (!slf.CheckCompleteGame("GameSpellHousehold"))
+            {
+                //inscrease key
+                slf.IncreaseKey();
+
+                //complete game
+                slf.CompleteGame("GameSpellHousehold");
+            }
         }
 
         //random popup congratulation

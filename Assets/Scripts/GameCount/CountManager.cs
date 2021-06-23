@@ -135,13 +135,16 @@ public class CountManager : MonoBehaviour
         }
         else
         {
-            //increase key
-            slf.IncreaseKey();
+            if(!slf.CheckCompleteGame("GameCountNumber"))
+            {
+                //increase key
+                slf.IncreaseKey();
 
-            //complete game
-            slf.CompleteGame("GameCountNumber");
+                //complete game
+                slf.CompleteGame("GameCountNumber");
 
-            StartCoroutine(WinGame(5f));
+                StartCoroutine(WinGame(5f));
+            }    
         }
     }
 
