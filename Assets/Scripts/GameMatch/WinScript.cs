@@ -47,8 +47,12 @@ public class WinScript : MonoBehaviour
 
                     //Win game
                     slf.ResetGameMatch();
-                    slf.IncreaseKey();
-                    slf.CompleteGame("GameMatch");
+
+                    if (!slf.CheckCompleteGame("GameSpellFood"))
+                    {
+                        slf.IncreaseKey();
+                        slf.CompleteGame("GameMatch");
+                    }
 
                     StartCoroutine(WinGame(6f));
                 }
