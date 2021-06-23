@@ -512,6 +512,150 @@ public class SaveLoadFile : MonoBehaviour
         return 0;
     }
 
+    //complete game
+    public void CompleteGame(string nameGame)
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        if (nameGame == "GameSpellFood")
+        {
+            FileStream file = File.Open(Application.persistentDataPath + "/completeGameSpellFood.dat", FileMode.OpenOrCreate);
+            bf.Serialize(file, "complete");
+        }
+        else if (nameGame == "GameFindFood")
+        {
+            FileStream file = File.Open(Application.persistentDataPath + "/completeGameFindFood.dat", FileMode.OpenOrCreate);
+            bf.Serialize(file, "complete");
+        }
+        else if (nameGame == "GamePickToRoom")
+        {
+            FileStream file = File.Open(Application.persistentDataPath + "/completeGamePickToRoom.dat", FileMode.OpenOrCreate);
+            bf.Serialize(file, "complete");
+        }
+        else if (nameGame == "GameLigature")
+        {
+            FileStream file = File.Open(Application.persistentDataPath + "/completeGameLigature.dat", FileMode.OpenOrCreate);
+            bf.Serialize(file, "complete");
+        }
+        else if (nameGame == "GameSpellHousehold")
+        {
+            FileStream file = File.Open(Application.persistentDataPath + "/completeGameSpellHousehold.dat", FileMode.OpenOrCreate);
+            bf.Serialize(file, "complete");
+        }
+        else if (nameGame == "GameMatch")
+        {
+            FileStream file = File.Open(Application.persistentDataPath + "/completeGameMatch.dat", FileMode.OpenOrCreate);
+            bf.Serialize(file, "complete");
+        }
+        else if (nameGame == "GameSpellAnimal")
+        {
+            FileStream file = File.Open(Application.persistentDataPath + "/completeGameSpellAnimal.dat", FileMode.OpenOrCreate);
+            bf.Serialize(file, "complete");
+        }
+        else if (nameGame == "GameQuiz")
+        {
+            FileStream file = File.Open(Application.persistentDataPath + "/completeGameQuiz.dat", FileMode.OpenOrCreate);
+            bf.Serialize(file, "complete");
+        }
+        else if (nameGame == "GameCountNumber")
+        {
+            FileStream file = File.Open(Application.persistentDataPath + "/completeGameCountNumber.dat", FileMode.OpenOrCreate);
+            bf.Serialize(file, "complete");
+        }
+        else if (nameGame == "GameTrainStation")
+        {
+            FileStream file = File.Open(Application.persistentDataPath + "/completeGameTrainStation.dat", FileMode.OpenOrCreate);
+            bf.Serialize(file, "complete");
+        }
+        else if (nameGame == "NumberIntroduce")
+        {
+            FileStream file = File.Open(Application.persistentDataPath + "/completeNumberIntroduce.dat", FileMode.OpenOrCreate);
+            bf.Serialize(file, "complete");
+        }
+    }
+
+    //check complete game
+    public bool CheckCompleteGame(string nameGame)
+    {
+        if (nameGame == "GameSpellFood")
+        {
+            if (File.Exists(Application.persistentDataPath + "/completeGameSpellFood.dat"))
+            {
+                return true;
+            }
+        }
+        else if (nameGame == "GameFindFood")
+        {
+            if (File.Exists(Application.persistentDataPath + "/completeGameFindFood.dat"))
+            {
+                return true;
+            }
+        }
+        else if (nameGame == "GamePickToRoom")
+        {
+            if (File.Exists(Application.persistentDataPath + "/completeGamePickToRoom.dat"))
+            {
+                return true;
+            }
+        }
+        else if (nameGame == "GameLigature")
+        {
+            if (File.Exists(Application.persistentDataPath + "/completeGameLigature.dat"))
+            {
+                return true;
+            }
+        }
+        else if (nameGame == "GameSpellHousehold")
+        {
+            if (File.Exists(Application.persistentDataPath + "/completeGameSpellHousehold.dat"))
+            {
+                return true;
+            }
+        }
+        else if (nameGame == "GameMatch")
+        {
+            if (File.Exists(Application.persistentDataPath + "/completeGameMatch.dat"))
+            {
+                return true;
+            }
+        }
+        else if (nameGame == "GameSpellAnimal")
+        {
+            if (File.Exists(Application.persistentDataPath + "/completeGameSpellAnimal.dat"))
+            {
+                return true;
+            }
+        }
+        else if (nameGame == "GameQuiz")
+        {
+            if (File.Exists(Application.persistentDataPath + "/completeGameQuiz.dat"))
+            {
+                return true;
+            }
+        }
+        else if (nameGame == "GameCountNumber")
+        {
+            if (File.Exists(Application.persistentDataPath + "/completeGameCountNumber.dat"))
+            {
+                return true;
+            }
+        }
+        else if (nameGame == "GameTrainStation")
+        {
+            if (File.Exists(Application.persistentDataPath + "/completeGameTrainStation.dat"))
+            {
+                return true;
+            }
+        }
+        else if (nameGame == "NumberIntroduce")
+        {
+            if (File.Exists(Application.persistentDataPath + "/completeNumberIntroduce.dat"))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     //reset Quiz game
     public void ResetCurrentList_GameQuiz()
     {

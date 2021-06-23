@@ -143,6 +143,12 @@ public class CountManager : MonoBehaviour
     {
         Instantiate(popupWin);
 
+        //increase key
+        slf.IncreaseKey();
+
+        //complete game
+        slf.CompleteGame("GameCountNumber");
+
         yield return new WaitForSeconds(0.3f);
         countUI.SetActive(false);
 
