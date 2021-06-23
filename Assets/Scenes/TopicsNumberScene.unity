@@ -204,12 +204,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 658900451}
-        m_MethodName: 
+      - m_Target: {fileID: 658900452}
+        m_MethodName: LoadGameNumberIntro
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -714,19 +714,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74d4bf9b0d37b9941a49882b7c1fc040, type: 3}
---- !u!1 &658900451 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1361317192181117761, guid: 74d4bf9b0d37b9941a49882b7c1fc040,
-    type: 3}
-  m_PrefabInstance: {fileID: 658900450}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &658900452 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1361317192181117790, guid: 74d4bf9b0d37b9941a49882b7c1fc040,
     type: 3}
   m_PrefabInstance: {fileID: 658900450}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658900451}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1e44da859590554d8d9b724b409b505, type: 3}
@@ -850,7 +844,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 710303378}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 658900452}
+        m_MethodName: LoadGameTrain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &710303378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1783,7 +1788,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1159368714}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 658900452}
+        m_MethodName: LoadGameCount
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1159368714
 MonoBehaviour:
   m_ObjectHideFlags: 0
