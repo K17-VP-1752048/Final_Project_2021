@@ -86,6 +86,13 @@ public class QuizManager : MonoBehaviour
             slf.ResetCurrentQuestion_GameQuiz();
             slf.SaveCurrentList(questions);
             delayTime = 3f;
+
+            //win game
+            //inscrease key
+            slf.IncreaseKey();
+
+            //complete game
+            slf.CompleteGame("GameQuiz");
         }
         else
         {
@@ -101,11 +108,6 @@ public class QuizManager : MonoBehaviour
     IEnumerator NextRound(float delayTime)
     {
         //win game
-        //inscrease key
-        slf.IncreaseKey();
-
-        //complete game
-        slf.CompleteGame("GameQuiz");
 
         yield return new WaitForSeconds(delayTime);
         SceneManager.LoadScene("TopicsAnimalsScene");

@@ -135,6 +135,12 @@ public class CountManager : MonoBehaviour
         }
         else
         {
+            //increase key
+            slf.IncreaseKey();
+
+            //complete game
+            slf.CompleteGame("GameCountNumber");
+
             StartCoroutine(WinGame(5f));
         }
     }
@@ -142,12 +148,6 @@ public class CountManager : MonoBehaviour
     IEnumerator WinGame(float delaytime)
     {
         Instantiate(popupWin);
-
-        //increase key
-        slf.IncreaseKey();
-
-        //complete game
-        slf.CompleteGame("GameCountNumber");
 
         yield return new WaitForSeconds(0.3f);
         countUI.SetActive(false);
