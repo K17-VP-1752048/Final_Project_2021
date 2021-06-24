@@ -1476,6 +1476,86 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 642683823}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &714472540 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7250755033082773552, guid: 19ad22a7998776740a134bb5663740fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 716698481}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &716698481
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7250755033082773552, guid: 19ad22a7998776740a134bb5663740fd,
+        type: 3}
+      propertyPath: m_Name
+      value: GetKeyReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250755033082773552, guid: 19ad22a7998776740a134bb5663740fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 19ad22a7998776740a134bb5663740fd, type: 3}
 --- !u!1 &758845515
 GameObject:
   m_ObjectHideFlags: 0
@@ -2750,6 +2830,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 716038212478311229, guid: 78880a528ffffa54190d78a85d21783e,
         type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1468638230}
+    - target: {fileID: 716038212478311229, guid: 78880a528ffffa54190d78a85d21783e,
+        type: 3}
       propertyPath: nextScene
       value: TopicsHouseScene
       objectReference: {fileID: 0}
@@ -2763,6 +2848,11 @@ PrefabInstance:
       propertyPath: objectInThisLvl
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 716038212478311229, guid: 78880a528ffffa54190d78a85d21783e,
+        type: 3}
+      propertyPath: getKeyRewardCanvas
+      value: 
+      objectReference: {fileID: 714472540}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78880a528ffffa54190d78a85d21783e, type: 3}
 --- !u!1 &1468638230

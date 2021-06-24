@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
-    [SerializeField] GameObject popupCanvas;
+    [SerializeField] GameObject popupCanvas, getKeyRewardCanvas;
     [SerializeField] int objectInThisLvl;
     [SerializeField] string nextScene;
 
     [SerializeField] int objectNumber;
     private SaveLoadFile slf;
+    private bool finished = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,8 +30,20 @@ public class Level : MonoBehaviour
         }
         else if (objectNumber == objectInThisLvl && nextScene == "TopicsHouseScene") 
         {
+            if (!slf.CheckCompleteGame("GamePickToRoom"))
+            {
+                //increase key
+                slf.IncreaseKey();
+
+                //complete game
+                slf.CompleteGame("GamePickToRoom");
+
+                this.finished = true;
+            }
+
             slf.ResetGamePickToRoom();
             ShowPopup();
+
         }
 
         if (popupCanvas.activeSelf)
@@ -41,6 +54,12 @@ public class Level : MonoBehaviour
 
     IEnumerator waitToLoadScene()
     {
+        if (finished)
+        {
+            yield return new WaitForSeconds(4f);
+            getKeyRewardCanvas.SetActive(true);
+        }
+        
         yield return new WaitForSeconds(4f);
         SceneManager.LoadScene(nextScene);
     }
