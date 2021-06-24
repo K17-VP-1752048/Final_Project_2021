@@ -24,21 +24,23 @@ public class PuzzleImageManager : MonoBehaviour
     IEnumerator runAnim()
     {
         yield return new WaitForSeconds(1f);
+        buttons.SetActive(true);
+        yield return new WaitForSeconds(1f);
         mainCharac.SetActive(true);
         yield return new WaitForSeconds(3f);
         message.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
-        buttons.SetActive(true);
     }
 
     public void TakeScreenShot()
     {
-        buttons.SetActive(false);
         StartCoroutine(takeAShot());
     }
 
     IEnumerator takeAShot()
     {
+        yield return new WaitForSeconds(.8f);
+
+        buttons.SetActive(false);
         yield return new WaitForEndOfFrame();
 
         Texture2D texture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
@@ -52,6 +54,7 @@ public class PuzzleImageManager : MonoBehaviour
 
         NativeGallery.SaveImageToGallery(texture, "Monde Ludique", name);
 
+        yield return new WaitForSeconds(1f);
         buttons.SetActive(true);
         Destroy(texture);
     }
