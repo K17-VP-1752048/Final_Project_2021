@@ -10,11 +10,13 @@ public class NumberActiver : MonoBehaviour
 
     private string[] nums = {"One", "Two", "Three", "Four", "Five", "Six",
         "Seven", "Eight", "Nine", "Ten", "Zero"};
-
+    private SaveLoadFile slf;
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < nums.Length; i++)
+        slf = gameObject.AddComponent<SaveLoadFile>();
+
+        for (int i = 0; i < nums.Length; i++)
         {
             GameObject.Find(nums[i]).GetComponent<Text>().enabled = false;
         }
@@ -43,5 +45,10 @@ public class NumberActiver : MonoBehaviour
         yield return new WaitForSeconds(2f);
         message.text = "Excellent, vous êtes prêts à relever d'autres défis?";
         textBackground.SetActive(true);
+
+        if (!slf.CheckCompleteGame("NumberIntroduce"))
+        {
+            slf.CompleteGame("NumberIntroduce");
+        }
     }
 }
