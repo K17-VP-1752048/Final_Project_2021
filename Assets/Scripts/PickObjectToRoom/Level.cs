@@ -57,7 +57,12 @@ public class Level : MonoBehaviour
         if (finished)
         {
             yield return new WaitForSeconds(4f);
-            getKeyRewardCanvas.SetActive(true);
+            if (getKeyRewardCanvas != null)
+            {
+                popupCanvas.SetActive(false);
+                getKeyRewardCanvas.SetActive(true);
+                yield return new WaitForSeconds(2f);
+            }
         }
         
         yield return new WaitForSeconds(4f);
