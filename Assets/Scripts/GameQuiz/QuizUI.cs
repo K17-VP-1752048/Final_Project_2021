@@ -210,11 +210,14 @@ public class QuizUI : MonoBehaviour
         gameWinCanvas.SetActive(true);
         yield return new WaitForSeconds(timeTransition);
 
-        if (getKeyRewardCanvas != null)
+        if (quizManager.Finished)
         {
-            gameWinCanvas.SetActive(false);
-            getKeyRewardCanvas.SetActive(true);
-            yield return new WaitForSeconds(timeTransition);
+            if (getKeyRewardCanvas != null)
+            {
+                gameWinCanvas.SetActive(false);
+                getKeyRewardCanvas.SetActive(true);
+                yield return new WaitForSeconds(timeTransition);
+            }
         }
 
         //yield return new WaitForSeconds(1.5f);

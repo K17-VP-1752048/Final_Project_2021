@@ -18,6 +18,8 @@ public class WinScript : MonoBehaviour
     private int currentPoints;
     private SaveLoadFile slf;
     private bool setActive = true;
+    private bool finished = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,10 +54,11 @@ public class WinScript : MonoBehaviour
                     //Win game
                     slf.ResetGameMatch();
 
-                    if (!slf.CheckCompleteGame("GameSpellFood"))
+                    if (!slf.CheckCompleteGame("GameMatch"))
                     {
                         slf.IncreaseKey();
                         slf.CompleteGame("GameMatch");
+                        this.finished = true;
                     }
 
                     StartCoroutine(WinGame(6f));
@@ -96,12 +99,16 @@ public class WinScript : MonoBehaviour
         gameWinCanvas.SetActive(true);
         yield return new WaitForSeconds(timeTransition);
 
-        if (getKeyRewardCanvas != null)
+        if (finished)
         {
-            gameWinCanvas.SetActive(false);
-            getKeyRewardCanvas.SetActive(true);
-            yield return new WaitForSeconds(timeTransition);
+            if (getKeyRewardCanvas != null)
+            {
+                gameWinCanvas.SetActive(false);
+                getKeyRewardCanvas.SetActive(true);
+                yield return new WaitForSeconds(timeTransition);
+            }
         }
+        
         SceneManager.LoadScene("TopicsAnimalsScene");
         setActive = true;
     }

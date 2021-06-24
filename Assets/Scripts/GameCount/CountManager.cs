@@ -18,7 +18,7 @@ public class CountManager : MonoBehaviour
 
     private SaveLoadFile slf;
     private static int time = 0;
-
+    private bool finished = false;
     public static int Time { get => time; set => time = value; }
 
     // Start is called before the first frame update
@@ -119,6 +119,17 @@ public class CountManager : MonoBehaviour
             else
             {
                 slf.ResetGameCountNumber();
+
+                if (!slf.CheckCompleteGame("GameCountNumber"))
+                {
+                    //increase key
+                    slf.IncreaseKey();
+
+                    //complete game
+                    slf.CompleteGame("GameCountNumber");
+
+                    this.finished = true;
+                }
             }
             time = 0;
         }
@@ -139,16 +150,7 @@ public class CountManager : MonoBehaviour
         }
         else
         {
-            if(!slf.CheckCompleteGame("GameCountNumber"))
-            {
-                //increase key
-                slf.IncreaseKey();
-
-                //complete game
-                slf.CompleteGame("GameCountNumber");
-
-                StartCoroutine(WinGame(5f));
-            }    
+            StartCoroutine(WinGame(5f));
         }
     }
 
@@ -165,12 +167,17 @@ public class CountManager : MonoBehaviour
         gameWinCanvas.SetActive(true);
         yield return new WaitForSeconds(timeTransition);
         countUI.SetActive(false);
-        if (getKeyRewardCanvas != null)
+
+        if (finished)
         {
-            gameWinCanvas.SetActive(false);
-            getKeyRewardCanvas.SetActive(true);
-            yield return new WaitForSeconds(timeTransition);
+            if (getKeyRewardCanvas != null)
+            {
+                gameWinCanvas.SetActive(false);
+                getKeyRewardCanvas.SetActive(true);
+                yield return new WaitForSeconds(timeTransition);
+            }
         }
+        
         SceneManager.LoadScene("TopicsNumberScene");
     }
 }

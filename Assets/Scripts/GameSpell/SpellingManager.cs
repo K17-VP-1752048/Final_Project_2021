@@ -26,6 +26,7 @@ public class SpellingManager : MonoBehaviour
     private Pronunciation selectedPronunciation;
     private SaveLoadFile slf;
     private int index;
+    private bool finished = false;
 
     // Start is called before the first frame update
     void Start()
@@ -266,33 +267,54 @@ public class SpellingManager : MonoBehaviour
         //remove after spell correct
         pronunciations.RemoveAt(this.index);
 
-        //inscrease key
-        slf.IncreaseKey();
-
         //reset game
         if (selectedTopic == "Animals")
         {
             slf.ResetCurrentSpell_Animals();
             slf.ResetCurrentListSpell_Animals();
 
-            //complete game
-            slf.CompleteGame("GameSpellAnimal");
+            if (!slf.CheckCompleteGame("GameSpellAnimal"))
+            {
+                //inscrease key
+                slf.IncreaseKey();
+
+                //complete game
+                slf.CompleteGame("GameSpellAnimal");
+
+                this.finished = true;
+            }
         }
         else if (selectedTopic == "Food")
         {
             slf.ResetCurrentSpell_Food();
             slf.ResetCurrentListSpell_Food();
 
-            //complete game
-            slf.CompleteGame("GameSpellFood");
+            if (!slf.CheckCompleteGame("GameSpellFood"))
+            {
+                //inscrease key
+                slf.IncreaseKey();
+
+                //complete game
+                slf.CompleteGame("GameSpellFood");
+
+                this.finished = true;
+            }
         }
         else if (selectedTopic == "Household")
         {
             slf.ResetCurrentSpell_House();
             slf.ResetCurrentListSpell_House();
 
-            //complete game
-            slf.CompleteGame("GameSpellHousehold");
+            if (!slf.CheckCompleteGame("GameSpellHousehold"))
+            {
+                //inscrease key
+                slf.IncreaseKey();
+
+                //complete game
+                slf.CompleteGame("GameSpellHousehold");
+
+                this.finished = true;
+            }
         }
 
         GameObject obj = Instantiate(popupTimeOut);
@@ -326,6 +348,8 @@ public class SpellingManager : MonoBehaviour
 
                 //complete game
                 slf.CompleteGame("GameSpellAnimal");
+
+                this.finished = true;
             }
         }
         else if (selectedTopic == "Food")
@@ -340,6 +364,8 @@ public class SpellingManager : MonoBehaviour
 
                 //complete game
                 slf.CompleteGame("GameSpellFood");
+
+                this.finished = true;
             }
         }
         else if (selectedTopic == "Household")
@@ -354,6 +380,8 @@ public class SpellingManager : MonoBehaviour
 
                 //complete game
                 slf.CompleteGame("GameSpellHousehold");
+
+                this.finished = true;
             }
         }
 
@@ -379,13 +407,16 @@ public class SpellingManager : MonoBehaviour
         gameWinCanvas.SetActive(true);
         yield return new WaitForSeconds(timeTransition);
 
-        if (getKeyRewardCanvas != null)
+        if (this.finished)
         {
-            gameWinCanvas.SetActive(false);
-            getKeyRewardCanvas.SetActive(true);
-            yield return new WaitForSeconds(timeTransition);
+            if (getKeyRewardCanvas != null)
+            {
+                gameWinCanvas.SetActive(false);
+                getKeyRewardCanvas.SetActive(true);
+                yield return new WaitForSeconds(timeTransition);
+            }
         }
-
+        
         //yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("TopicsAnimalsScene");
     }

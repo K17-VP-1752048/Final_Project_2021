@@ -13,6 +13,9 @@ public class QuizManager : MonoBehaviour
     private Question selectedQuestion;
     private int index;
     private SaveLoadFile slf;
+    private bool finished = false;
+
+    public bool Finished { get => finished; set => finished = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -95,6 +98,8 @@ public class QuizManager : MonoBehaviour
 
                 //complete game
                 slf.CompleteGame("GameQuiz");
+
+                this.finished = true;
             }
         }
         else
