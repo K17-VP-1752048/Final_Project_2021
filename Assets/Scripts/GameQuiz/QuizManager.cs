@@ -127,6 +127,7 @@ public class Question
 {
     public string questionInfo;
     public Sprite questionImg;
+    public AudioClip audioQuestion;
     public List<Answer> options;
     public string correctAns;
 }
