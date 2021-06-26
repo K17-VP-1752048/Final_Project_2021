@@ -2898,6 +2898,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4714798095443501159, guid: 5f33807382d149b4a867680b5af2ad7d,
+        type: 3}
+      propertyPath: m_text
+      value: La Table
+      objectReference: {fileID: 0}
     - target: {fileID: 4714798095857429328, guid: 5f33807382d149b4a867680b5af2ad7d,
         type: 3}
       propertyPath: m_Name
@@ -3281,7 +3286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8867924, g: 0.7787566, b: 0.51450694, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
