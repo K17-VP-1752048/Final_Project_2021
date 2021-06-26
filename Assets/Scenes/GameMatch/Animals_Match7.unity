@@ -628,92 +628,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2036683752}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &174343750
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 236780935}
-    m_Modifications:
-    - target: {fileID: 7250755033082773552, guid: 19ad22a7998776740a134bb5663740fd,
-        type: 3}
-      propertyPath: m_Name
-      value: GetKeyReward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7250755033082773552, guid: 19ad22a7998776740a134bb5663740fd,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 19ad22a7998776740a134bb5663740fd, type: 3}
---- !u!1 &174343751 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7250755033082773552, guid: 19ad22a7998776740a134bb5663740fd,
-    type: 3}
-  m_PrefabInstance: {fileID: 174343750}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &174343752 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7250755033082773553, guid: 19ad22a7998776740a134bb5663740fd,
-    type: 3}
-  m_PrefabInstance: {fileID: 174343750}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &177966140 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7250755033035767972, guid: 19ad22a7998776740a134bb5663740fd,
@@ -756,11 +670,9 @@ MonoBehaviour:
   - {fileID: 27651416}
   - {fileID: 27651415}
   - {fileID: 27651414}
-  popupWin: {fileID: 174343751}
   bravo_audio: {fileID: 8300000, guid: 73651083d7edfb7429b17051b59edd47, type: 3}
   gameWinCanvas: {fileID: 98068727}
   getKeyRewardCanvas: {fileID: 177966140}
-  timeTransition: 4
 --- !u!4 &236780935
 Transform:
   m_ObjectHideFlags: 0
@@ -773,7 +685,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 27651412}
-  - {fileID: 174343752}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

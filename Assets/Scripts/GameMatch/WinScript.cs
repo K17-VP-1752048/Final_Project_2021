@@ -7,12 +7,10 @@ public class WinScript : MonoBehaviour
     [SerializeField] private GameObject myAnimals;
     [SerializeField] private string nextScene = "";
     [SerializeField] private GameObject[] congrats;
-    [SerializeField] private GameObject popupWin;
     [SerializeField] private AudioClip bravo_audio;
 
     [SerializeField] private GameObject gameWinCanvas;
     [SerializeField] private GameObject getKeyRewardCanvas;
-    [SerializeField] private float timeTransition = 4f;
 
     private int pointsToWin;
     private int currentPoints;
@@ -45,7 +43,7 @@ public class WinScript : MonoBehaviour
                     slf.SaveCurrentSceneMatch(nextScene);
 
                     //Next scene
-                    StartCoroutine(PrintfAfter(2.0f));
+                    StartCoroutine(PrintfAfter(2.5f));
                 }
                 else
                 {
@@ -61,7 +59,7 @@ public class WinScript : MonoBehaviour
                         this.finished = true;
                     }
 
-                    StartCoroutine(WinGame(6f));
+                    StartCoroutine(WinGame(3.5f));
                 }
             }
         }
@@ -86,26 +84,16 @@ public class WinScript : MonoBehaviour
 
     IEnumerator WinGame(float seconds)
     {
-        //yield return new WaitForSeconds(2f);
-
-        ////random popup congratulation
-        //transform.GetChild(1).gameObject.SetActive(true);
-
-        //yield return new WaitForSeconds(seconds);
-        //SceneManager.LoadScene("TopicsAnimalsScene");
-        //transform.GetChild(1).gameObject.SetActive(false);
-        //setActive = true;
-
         gameWinCanvas.SetActive(true);
-        yield return new WaitForSeconds(timeTransition);
+        yield return new WaitForSeconds(seconds);
 
-        if (finished)
+        if (finished && getKeyRewardCanvas != null)
         {
             if (getKeyRewardCanvas != null)
             {
-                gameWinCanvas.SetActive(false);
+                gameWinCanvas.GetComponentInChildren<Animator>().SetTrigger("Disappear");
                 getKeyRewardCanvas.SetActive(true);
-                yield return new WaitForSeconds(timeTransition);
+                yield return new WaitForSeconds(2f);
             }
         }
         

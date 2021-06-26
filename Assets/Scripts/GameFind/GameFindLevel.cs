@@ -13,7 +13,7 @@ public class GameFindLevel : MonoBehaviour
 
     private SaveLoadFile saveLoadFile;
     private bool finished = false;
-    //[SerializeField] string nextScene;
+    private float timeDelay;
 
     // Start is called before the first frame update
     void Start()
@@ -24,46 +24,62 @@ public class GameFindLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentObjectNumber == totalObjectNumber && nextScene != null && nextScene != "TopicsAlimentsScene")
-        {
-            //popUp.SetActive(true);
-            //popup.GetComponent<Achievement>().StartAnimations();
-            //StartCoroutine("LoadNextScene");
-            SaveCurrentScene();
+        //if (currentObjectNumber == totalObjectNumber && nextScene != null && nextScene != "TopicsAlimentsScene")
+        //{
+        //    //popUp.SetActive(true);
+        //    //popup.GetComponent<Achievement>().StartAnimations();
+        //    //StartCoroutine("LoadNextScene");
+        //    SaveCurrentScene();
 
-            StartCoroutine(LoadNextScene());
-        }
-        else if(currentObjectNumber == totalObjectNumber)
-        {
-            saveLoadFile.ResetGameFindFood();
+        //    StartCoroutine(LoadNextScene());
+        //}
+        //else if (currentObjectNumber == totalObjectNumber)
+        //{
+        //    saveLoadFile.ResetGameFindFood();
 
-            if (!saveLoadFile.CheckCompleteGame("GameFindFood"))
+        //    if (!saveLoadFile.CheckCompleteGame("GameFindFood"))
+        //    {
+        //        saveLoadFile.IncreaseKey();
+        //        saveLoadFile.CompleteGame("GameFindFood");
+        //        this.finished = true;
+        //    }
+
+        //    StartCoroutine(LoadPopUpAndLoadScene());
+        //}
+        if (currentObjectNumber == totalObjectNumber)
+        {
+            if(nextScene != null && nextScene != "TopicsAlimentsScene")
             {
-                saveLoadFile.IncreaseKey();
-                saveLoadFile.CompleteGame("GameFindFood");
-                this.finished = true;
+                SaveCurrentScene();
+                
+            }
+            else
+            {
+                saveLoadFile.ResetGameFindFood();
+
+                if (!saveLoadFile.CheckCompleteGame("GameFindFood"))
+                {
+                    saveLoadFile.IncreaseKey();
+                    saveLoadFile.CompleteGame("GameFindFood");
+                    this.finished = true;
+                }
             }
 
-            StartCoroutine(LoadNextScene());
+            StartCoroutine(LoadPopUpAndLoadScene());
         }
     }
 
-    IEnumerator LoadNextScene()
+    IEnumerator LoadPopUpAndLoadScene()
     {
         popUp.SetActive(true);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
 
-        if (finished)
+        if (finished && getKeyRewardCanvas != null)
         {
-            if (getKeyRewardCanvas != null)
-            {
-                popUp.SetActive(false);
-                getKeyRewardCanvas.SetActive(true);
-                yield return new WaitForSeconds(2f);
-            }
+            popUp.GetComponentInChildren<Animator>().SetTrigger("Disappear");
+            getKeyRewardCanvas.SetActive(true);
+            yield return new WaitForSeconds(2f);
         }
-
-        yield return new WaitForSeconds(timeWait);
         SceneManager.LoadScene(nextScene);
     }
 

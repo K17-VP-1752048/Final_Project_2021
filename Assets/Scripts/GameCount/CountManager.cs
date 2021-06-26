@@ -9,7 +9,6 @@ public class CountManager : MonoBehaviour
 {
     [SerializeField] private int numberOfAnimalsSelected;
     [SerializeField] private string nextScene;
-    [SerializeField] private GameObject popupWin;
     [SerializeField] private GameObject countUI;
 
     [SerializeField] private GameObject gameWinCanvas;
@@ -168,14 +167,11 @@ public class CountManager : MonoBehaviour
         yield return new WaitForSeconds(timeTransition);
         countUI.SetActive(false);
 
-        if (finished)
+        if (finished && getKeyRewardCanvas != null)
         {
-            if (getKeyRewardCanvas != null)
-            {
-                gameWinCanvas.SetActive(false);
-                getKeyRewardCanvas.SetActive(true);
-                yield return new WaitForSeconds(timeTransition);
-            }
+            gameWinCanvas.GetComponentInChildren<Animator>().SetTrigger("Disappear");
+            getKeyRewardCanvas.SetActive(true);
+            yield return new WaitForSeconds(timeTransition);
         }
         
         SceneManager.LoadScene("TopicsNumberScene");
