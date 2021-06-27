@@ -4,47 +4,49 @@ using UnityEngine.UI;
 
 public class NumberActiver : MonoBehaviour
 {
-    [SerializeField] TextWriter textWriter;
-    [SerializeField] GameObject textBackground;
-    private Text message;
+    //public TextWriter textWriter;
+    public GameObject[] numbers;
+    public GameObject textBackground;
+    public GameObject[] textsInTextBackground;
 
-    private string[] nums = {"One", "Two", "Three", "Four", "Five", "Six",
-        "Seven", "Eight", "Nine", "Ten", "Zero"};
+    private Text message;
     private SaveLoadFile slf;
+
     // Start is called before the first frame update
     void Start()
     {
         slf = gameObject.AddComponent<SaveLoadFile>();
-
-        for (int i = 0; i < nums.Length; i++)
-        {
-            GameObject.Find(nums[i]).GetComponent<Text>().enabled = false;
-        }
-
-        message = textBackground.transform.Find("TextRun").GetComponent<Text>();
         StartCoroutine(printNumberCoroutine());
     }
 
     IEnumerator printNumberCoroutine()
     {
-        textWriter.addWriter(message, "Bonjour!", .1f);
-        yield return new WaitForSeconds(2f);
-        textWriter.addWriter(message, "Aujourd'hui on va apprendre les chiffres 0-10", .1f);
-        yield return new WaitForSeconds(5f);
-        textWriter.addWriter(message, "Alors comptez avec moi", .1f);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
+        textBackground.SetActive(true);
+        for(int i = 0; i < textsInTextBackground.Length-1; i++)
+        {
+            textsInTextBackground[i].SetActive(true);
+            yield return new WaitForSeconds(4f);
+            textsInTextBackground[i].SetActive(false);
+        }
+
+        //yield return new WaitForSeconds(2f);
+        //textWriter.addWriter(message, "Aujourd'hui on va apprendre les chiffres 0-10", .1f);
+        //yield return new WaitForSeconds(5f);
+        //textWriter.addWriter(message, "Alors, comptez avec moi", .1f);
+        //yield return new WaitForSeconds(3f);
         textBackground.SetActive(false);
 
-        for (int i = 0; i < nums.Length; i++)
+        foreach (GameObject num in numbers)
         {
             GetComponent<AudioSource>().Play();
-            yield return new WaitForSeconds(2f);
-            GameObject.Find(nums[i]).GetComponent<Text>().enabled = true;
+            yield return new WaitForSeconds(2.5f);
+            num.SetActive(true);
         }
 
         yield return new WaitForSeconds(2f);
-        message.text = "Excellent, vous êtes prêts à relever d'autres défis?";
         textBackground.SetActive(true);
+        textsInTextBackground[textsInTextBackground.Length-1].SetActive(true);
 
         if (!slf.CheckCompleteGame("NumberIntroduce"))
         {

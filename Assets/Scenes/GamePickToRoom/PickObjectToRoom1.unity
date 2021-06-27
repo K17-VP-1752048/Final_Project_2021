@@ -382,6 +382,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c350ebaa171b4b54ab7fa12483aa348c, type: 3}
+--- !u!1001 &228013031
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2280013513883691937, guid: 7152be0181e499741b99c48d2d0733ee,
+        type: 3}
+      propertyPath: m_Name
+      value: GameSoundChecker
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280013513883691939, guid: 7152be0181e499741b99c48d2d0733ee,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280013513883691939, guid: 7152be0181e499741b99c48d2d0733ee,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280013513883691939, guid: 7152be0181e499741b99c48d2d0733ee,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280013513883691939, guid: 7152be0181e499741b99c48d2d0733ee,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280013513883691939, guid: 7152be0181e499741b99c48d2d0733ee,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280013513883691939, guid: 7152be0181e499741b99c48d2d0733ee,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280013513883691939, guid: 7152be0181e499741b99c48d2d0733ee,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280013513883691939, guid: 7152be0181e499741b99c48d2d0733ee,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280013513883691939, guid: 7152be0181e499741b99c48d2d0733ee,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280013513883691939, guid: 7152be0181e499741b99c48d2d0733ee,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280013513883691939, guid: 7152be0181e499741b99c48d2d0733ee,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7152be0181e499741b99c48d2d0733ee, type: 3}
 --- !u!224 &246286339 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8089818636452830951, guid: c350ebaa171b4b54ab7fa12483aa348c,
@@ -3061,6 +3130,11 @@ PrefabInstance:
       propertyPath: popupCanvas
       value: 
       objectReference: {fileID: 534607546}
+    - target: {fileID: 716038212478311229, guid: 78880a528ffffa54190d78a85d21783e,
+        type: 3}
+      propertyPath: popUpTimeDelay
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78880a528ffffa54190d78a85d21783e, type: 3}
 --- !u!1001 &1270864041055982530

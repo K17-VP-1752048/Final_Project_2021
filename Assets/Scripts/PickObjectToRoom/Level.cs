@@ -13,6 +13,7 @@ public class Level : MonoBehaviour
     [SerializeField] int objectNumber;
     private SaveLoadFile slf;
     private bool finished = false;
+    private float timeDelay;
 
     // Start is called before the first frame update
     void Start()
@@ -23,55 +24,43 @@ public class Level : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (objectNumber == objectInThisLvl && nextScene != "TopicsHouseScene")
+        if (objectNumber == objectInThisLvl)
         {
-            slf.SaveCurrentScenePickToRoom(nextScene);
-            ShowPopup();
-        }
-        else if (objectNumber == objectInThisLvl && nextScene == "TopicsHouseScene") 
-        {
-            if (!slf.CheckCompleteGame("GamePickToRoom"))
+            if (nextScene != "TopicsHouseScene")
             {
-                //increase key
-                slf.IncreaseKey();
-
-                //complete game
-                slf.CompleteGame("GamePickToRoom");
-
-                this.finished = true;
+                slf.SaveCurrentScenePickToRoom(nextScene);
+                timeDelay = 2.5f;
             }
+            else if (nextScene == "TopicsHouseScene")
+            {
+                if (!slf.CheckCompleteGame("GamePickToRoom"))
+                {
+                    //increase key
+                    slf.IncreaseKey();
 
-            slf.ResetGamePickToRoom();
-            ShowPopup();
+                    //complete game
+                    slf.CompleteGame("GamePickToRoom");
 
-        }
-
-        if (popupCanvas.activeSelf)
-        {
-            StartCoroutine(waitToLoadScene());
+                    this.finished = true;
+                }
+                slf.ResetGamePickToRoom();
+                timeDelay = 3.5f;
+            }
+            StartCoroutine(LoadPopUpAndLoadScene(timeDelay));
         }
     }
 
-    IEnumerator waitToLoadScene()
-    {
-        if (finished)
-        {
-            yield return new WaitForSeconds(4f);
-            if (getKeyRewardCanvas != null)
-            {
-                popupCanvas.SetActive(false);
-                getKeyRewardCanvas.SetActive(true);
-                yield return new WaitForSeconds(2f);
-            }
-        }
-        
-        yield return new WaitForSeconds(4f);
-        SceneManager.LoadScene(nextScene);
-    }
-
-    private void ShowPopup()
+    IEnumerator LoadPopUpAndLoadScene(float timeDelay)
     {
         popupCanvas.SetActive(true);
+        yield return new WaitForSeconds(timeDelay);
+        if (finished && getKeyRewardCanvas != null)
+        {
+            popupCanvas.GetComponentInChildren<Animator>().SetTrigger("Disappear");
+            getKeyRewardCanvas.SetActive(true);
+            yield return new WaitForSeconds(2f);
+        }
+        SceneManager.LoadScene(nextScene);
     }
 
     public int CountObject()

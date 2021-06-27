@@ -411,7 +411,7 @@ public class SpellingManager : MonoBehaviour
         {
             if (getKeyRewardCanvas != null)
             {
-                gameWinCanvas.SetActive(false);
+                gameWinCanvas.GetComponentInChildren<Animator>().SetTrigger("Disappear");
                 getKeyRewardCanvas.SetActive(true);
                 yield return new WaitForSeconds(timeTransition);
             }

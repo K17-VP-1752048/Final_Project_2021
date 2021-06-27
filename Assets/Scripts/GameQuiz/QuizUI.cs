@@ -48,6 +48,8 @@ public class QuizUI : MonoBehaviour
         questionText.text = question.questionInfo;
         questionImg.sprite = question.questionImg;
         questionImg.preserveAspect = true;
+        questionImg.GetComponent<AudioSource>().clip = question.audioQuestion;
+        questionImg.GetComponent<AudioSource>().Play();
 
         //shuffle the list of options
         List<Answer> ansOptions = ShuffleList.ShuffleListItems<Answer>(question.options);
@@ -214,7 +216,7 @@ public class QuizUI : MonoBehaviour
         {
             if (getKeyRewardCanvas != null)
             {
-                gameWinCanvas.SetActive(false);
+                gameWinCanvas.GetComponentInChildren<Animator>().SetTrigger("Disappear");
                 getKeyRewardCanvas.SetActive(true);
                 yield return new WaitForSeconds(timeTransition);
             }
