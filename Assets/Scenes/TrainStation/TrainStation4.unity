@@ -263,7 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalNumber: 4
   popup: {fileID: 1224506034}
-  nextLevel: TrainStation2
+  nextLevel: TrainStation5
   count: 0
   allNumberInPlace: 0
   popupText: 0
@@ -1513,6 +1513,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1661606685194968426, guid: 72745902e5d67734ebc3c12a6c70bf53,
+        type: 3}
+      propertyPath: m_text
+      value: deux
+      objectReference: {fileID: 0}
     - target: {fileID: 1661606685363891393, guid: 72745902e5d67734ebc3c12a6c70bf53,
         type: 3}
       propertyPath: wayPoints.Array.data[0]
@@ -1582,6 +1587,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Train 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661606685732719097, guid: 72745902e5d67734ebc3c12a6c70bf53,
+        type: 3}
+      propertyPath: m_text
+      value: quatre
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661606686224927740, guid: 72745902e5d67734ebc3c12a6c70bf53,
+        type: 3}
+      propertyPath: m_text
+      value: "z\xE9ro"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72745902e5d67734ebc3c12a6c70bf53, type: 3}
