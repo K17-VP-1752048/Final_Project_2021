@@ -8,17 +8,23 @@ public class Train : MonoBehaviour
     [SerializeField] List<RectTransform> wayPoints;
     [SerializeField] int moveSpeed = 400;
     [SerializeField] WheelJoint2D backWheel;
-    //[SerializeField] WheelJoint2D frontWheel;
+    [SerializeField] AudioClip clarksonSound;
+    [SerializeField] float clarksonVol = .5f;
 
     private int wayPointIndex = 0;
     private bool moving = true;
     private TrainStationLevel level;
     private bool moveToNextWP = false;
+    private AudioSource audioSource;
+    private int playRunSound = 0;
+    private int playClarkson = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         level = FindObjectOfType<TrainStationLevel>().GetComponent<TrainStationLevel>();
+        audioSource = GetComponent<AudioSource>();
+        StartCoroutine("PlayClarkson");
     }
 
     // Update is called once per frame
@@ -41,11 +47,20 @@ public class Train : MonoBehaviour
         if (moveToNextWP)
         {
             wayPointIndex = 1;
+            playClarkson++;
             moving = true;
         }
         if (Vector2.Distance(transform.position, wayPoints[wayPoints.Count - 1].position) < 2f)
         {
             level.LoadNextLevel(true);
+        }
+        if (playRunSound == 1)
+        {
+            audioSource.Play();
+        }
+        if (playClarkson == 1)
+        {
+            audioSource.PlayOneShot(clarksonSound, clarksonVol);
         }
     }
 
@@ -53,22 +68,24 @@ public class Train : MonoBehaviour
     {
         JointMotor2D motor = new JointMotor2D { motorSpeed = 0, maxMotorTorque = 10000 };
         backWheel.motor = motor;
-        //frontWheel.motor = motor;
         moving = false;
+        audioSource.Stop();
+        audioSource.PlayOneShot(clarksonSound, clarksonVol);
+        playRunSound = 0;
+    }
+
+    IEnumerator PlayClarkson()
+    {
+        audioSource.PlayOneShot(clarksonSound, clarksonVol);
+        yield return new WaitForSeconds(clarksonSound.length + .5f);
+        audioSource.PlayOneShot(clarksonSound, clarksonVol);
     }
 
     private void Move()
     {
         JointMotor2D motor = new JointMotor2D { motorSpeed = moveSpeed * -1, maxMotorTorque = 10000 };
         backWheel.motor = motor;
-        //frontWheel.motor = motor;
-    }
-
-    IEnumerator WaitBeforeMoving()
-    {
-        yield return new WaitForSeconds(1);
-        wayPointIndex++;
-        moving = true;
+        playRunSound++;
     }
 
     public void MoveToNextWayPoint(bool setter)

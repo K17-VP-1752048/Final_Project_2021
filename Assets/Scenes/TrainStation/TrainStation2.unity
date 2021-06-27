@@ -787,7 +787,7 @@ MonoBehaviour:
   wayPoints:
   - {fileID: 1120631858}
   moveSpeed: 2
-  jumpForce: 0.7
+  jumpForce: 0.9
   railroadCar: {fileID: 592144418}
   moveToTrainSpeed: 5
   order: 3
@@ -1056,6 +1056,108 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628313677}
   m_CullTransparentMesh: 0
+--- !u!1 &732667382 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 443178013815038704, guid: 2b3ea8318346b3d4b858a7040004a65a,
+    type: 3}
+  m_PrefabInstance: {fileID: 443178015021606323}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &732667389
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732667382}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ca583515381efaa418364bcdcd97e05a, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &762670037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,8 +1192,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wayPoints:
   - {fileID: 207051365}
-  moveSpeed: 1.7
-  jumpForce: 0.7
+  moveSpeed: 1.9
+  jumpForce: 0.9
   railroadCar: {fileID: 17418833}
   moveToTrainSpeed: 5
   order: 1
@@ -1549,7 +1651,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 443178015021606323}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 732667382}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b94dd20aa4a1484f862a11a9c2df5d3, type: 3}
@@ -2555,11 +2657,51 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 443178013441633437, guid: 2b3ea8318346b3d4b858a7040004a65a,
+        type: 3}
+      propertyPath: m_Frequency
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 443178013441633438, guid: 2b3ea8318346b3d4b858a7040004a65a,
+        type: 3}
+      propertyPath: m_Frequency
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 443178013648542906, guid: 2b3ea8318346b3d4b858a7040004a65a,
+        type: 3}
+      propertyPath: m_Frequency
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 443178013648542907, guid: 2b3ea8318346b3d4b858a7040004a65a,
+        type: 3}
+      propertyPath: m_Frequency
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 443178013734170892, guid: 2b3ea8318346b3d4b858a7040004a65a,
+        type: 3}
+      propertyPath: m_Frequency
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 443178013734170893, guid: 2b3ea8318346b3d4b858a7040004a65a,
+        type: 3}
+      propertyPath: m_Frequency
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 443178013815038704, guid: 2b3ea8318346b3d4b858a7040004a65a,
         type: 3}
       propertyPath: m_Name
       value: Train
       objectReference: {fileID: 0}
+    - target: {fileID: 443178013815038713, guid: 2b3ea8318346b3d4b858a7040004a65a,
+        type: 3}
+      propertyPath: runSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ca583515381efaa418364bcdcd97e05a, type: 3}
+    - target: {fileID: 443178013815038713, guid: 2b3ea8318346b3d4b858a7040004a65a,
+        type: 3}
+      propertyPath: clarksonSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e0164c20700be84289eab32072fe8cb, type: 3}
     - target: {fileID: 443178013815038713, guid: 2b3ea8318346b3d4b858a7040004a65a,
         type: 3}
       propertyPath: wayPoints.Array.data[0]
@@ -2624,6 +2766,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 443178013970277049, guid: 2b3ea8318346b3d4b858a7040004a65a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.719468
+      objectReference: {fileID: 0}
+    - target: {fileID: 443178013970277049, guid: 2b3ea8318346b3d4b858a7040004a65a,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.359734
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b3ea8318346b3d4b858a7040004a65a, type: 3}
