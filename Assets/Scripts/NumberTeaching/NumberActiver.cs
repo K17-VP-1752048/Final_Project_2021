@@ -45,8 +45,8 @@ public class NumberActiver : MonoBehaviour
         }
 
         yield return new WaitForSeconds(2f);
+        textsInTextBackground[textsInTextBackground.Length - 1].SetActive(true);
         textBackground.SetActive(true);
-        textsInTextBackground[textsInTextBackground.Length-1].SetActive(true);
 
         if (!slf.CheckCompleteGame("NumberIntroduce"))
         {
