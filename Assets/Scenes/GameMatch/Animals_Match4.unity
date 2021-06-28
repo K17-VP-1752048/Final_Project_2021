@@ -367,11 +367,9 @@ MonoBehaviour:
   - {fileID: 2066707225}
   - {fileID: 2066707224}
   - {fileID: 2066707223}
-  popupWin: {fileID: 0}
   bravo_audio: {fileID: 8300000, guid: 73651083d7edfb7429b17051b59edd47, type: 3}
   gameWinCanvas: {fileID: 0}
   getKeyRewardCanvas: {fileID: 0}
-  timeTransition: 4
 --- !u!4 &236780935
 Transform:
   m_ObjectHideFlags: 0
@@ -614,7 +612,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: L'hibou
+  m_text: Le hibou
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1081,7 +1079,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctForm: {fileID: 2072319374}
   audioAnimal: {fileID: 8300000, guid: 34cde24c801ccb44cb8cec975568842b, type: 3}
-  audioAnimalName: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+  audioAnimalName: {fileID: 8300000, guid: 50f91455b2acb42449e786ef678c017c, type: 3}
 --- !u!61 &697073217
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1502,7 +1500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctForm: {fileID: 584301827}
   audioAnimal: {fileID: 8300000, guid: 74001bae55f3983418d7359a86abcc0a, type: 3}
-  audioAnimalName: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+  audioAnimalName: {fileID: 8300000, guid: c1a9678f599ca8248a95a31731c58f99, type: 3}
 --- !u!82 &760676838
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1905,7 +1903,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctForm: {fileID: 18200453}
   audioAnimal: {fileID: 8300000, guid: dd4fc7491d6671d4e940713dac6d9da6, type: 3}
-  audioAnimalName: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+  audioAnimalName: {fileID: 8300000, guid: cd0091355f5382c43aec45d56d7c5af1, type: 3}
 --- !u!82 &1082091923
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2676,7 +2674,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 418, y: -171}
-  m_SizeDelta: {x: 120, y: 60}
+  m_SizeDelta: {x: 135, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1990024682
 MonoBehaviour:

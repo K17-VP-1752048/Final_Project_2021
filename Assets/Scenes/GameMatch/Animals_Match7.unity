@@ -915,7 +915,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Le rat
+  m_text: La souris
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1388,7 +1388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctForm: {fileID: 2072319374}
   audioAnimal: {fileID: 8300000, guid: 0abdda4a5c2063c48b72b9760015a31b, type: 3}
-  audioAnimalName: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+  audioAnimalName: {fileID: 8300000, guid: 0cf935332299e204aa0aef035f320a7d, type: 3}
 --- !u!61 &697073217
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1685,7 +1685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctForm: {fileID: 584301827}
   audioAnimal: {fileID: 8300000, guid: 0bff1f6b3109a3f43b94bb7084e8bf49, type: 3}
-  audioAnimalName: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+  audioAnimalName: {fileID: 8300000, guid: 3a8c34813a84cd646a8520723d43f916, type: 3}
 --- !u!82 &760676838
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2082,7 +2082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctForm: {fileID: 18200453}
   audioAnimal: {fileID: 8300000, guid: 07cb9384f4948ff42b3916e9645cdbd5, type: 3}
-  audioAnimalName: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
+  audioAnimalName: {fileID: 8300000, guid: b4a20378cbc655544ab70703ba3c1cea, type: 3}
 --- !u!82 &1082091923
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2913,7 +2913,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 335, y: -120}
-  m_SizeDelta: {x: 100, y: 50}
+  m_SizeDelta: {x: 140, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1990024682
 MonoBehaviour:
