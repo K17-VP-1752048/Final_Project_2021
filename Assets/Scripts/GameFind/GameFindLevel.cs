@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameFindLevel : MonoBehaviour
 {
-    [SerializeField] GameObject popUp, getKeyRewardCanvas;
+    [SerializeField] GameObject popUp, gameWinCanvas, getKeyRewardCanvas;
     [SerializeField] int currentObjectNumber = 0;
     [SerializeField] int totalObjectNumber;
     [SerializeField] string nextScene = null;
@@ -13,12 +13,14 @@ public class GameFindLevel : MonoBehaviour
 
     private SaveLoadFile saveLoadFile;
     private bool finished = false;
-    private float timeDelay;
+    private int index;
 
     // Start is called before the first frame update
     void Start()
     {
         saveLoadFile = gameObject.AddComponent<SaveLoadFile>();
+        //Get random popup
+        GetRandomPopUpIndex();
     }
 
     // Update is called once per frame
@@ -51,7 +53,7 @@ public class GameFindLevel : MonoBehaviour
             if(nextScene != null && nextScene != "TopicsAlimentsScene")
             {
                 SaveCurrentScene();
-                
+                StartCoroutine(LoadNextScene());
             }
             else
             {
@@ -63,20 +65,28 @@ public class GameFindLevel : MonoBehaviour
                     saveLoadFile.CompleteGame("GameFindFood");
                     this.finished = true;
                 }
-            }
-
-            StartCoroutine(LoadPopUpAndLoadScene());
+                StartCoroutine(WinGame());
+            } 
         }
     }
 
-    IEnumerator LoadPopUpAndLoadScene()
+    IEnumerator LoadNextScene()
     {
-        popUp.SetActive(true);
+        Debug.Log(index);
+        GameObject popUpObject = popUp.transform.GetChild(index).gameObject;
+        popUpObject.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(nextScene);
+    }
+
+    IEnumerator WinGame()
+    {
+        gameWinCanvas.SetActive(true);
         yield return new WaitForSeconds(3f);
 
         if (finished && getKeyRewardCanvas != null)
         {
-            popUp.GetComponentInChildren<Animator>().SetTrigger("Disappear");
+            gameWinCanvas.GetComponentInChildren<Animator>().SetTrigger("Disappear");
             getKeyRewardCanvas.SetActive(true);
             yield return new WaitForSeconds(2f);
         }
@@ -87,9 +97,16 @@ public class GameFindLevel : MonoBehaviour
     {
         currentObjectNumber++;
     }
-
     private void SaveCurrentScene()
     {
         saveLoadFile.SaveCurrentSceneFindFood(nextScene);
+    }
+
+    private void GetRandomPopUpIndex()
+    {
+        if (popUp != null)
+        {
+            index = Random.Range(0, popUp.transform.childCount);
+        }
     }
 }
