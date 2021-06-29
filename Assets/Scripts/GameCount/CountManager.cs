@@ -11,6 +11,7 @@ public class CountManager : MonoBehaviour
     [SerializeField] private string nextScene;
     [SerializeField] private GameObject countUI;
 
+    [SerializeField] GameObject popUp;
     [SerializeField] private GameObject gameWinCanvas;
     [SerializeField] private GameObject getKeyRewardCanvas;
     [SerializeField] private float timeTransition = 4f;
@@ -149,19 +150,13 @@ public class CountManager : MonoBehaviour
         }
         else
         {
-            StartCoroutine(WinGame(5f));
+            StartCoroutine(WinGame());
         }
     }
 
-    IEnumerator WinGame(float delaytime)
+    IEnumerator WinGame()
     {
-        //Instantiate(popupWin);
 
-        //yield return new WaitForSeconds(0.3f);
-        //countUI.SetActive(false);
-
-        //yield return new WaitForSeconds(delaytime);
-        //SceneManager.LoadScene("TopicsNumberScene");
 
         gameWinCanvas.SetActive(true);
         yield return new WaitForSeconds(timeTransition);

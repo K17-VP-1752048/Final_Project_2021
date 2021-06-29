@@ -13,6 +13,7 @@ public class SpellingManager : MonoBehaviour
     [SerializeField] private AudioClip bravo_audio;
     [SerializeField] private AudioClip fail_audio;
     [SerializeField] private GameObject[] congrats;
+    [SerializeField] private GameObject popUpCheeringCanvas;
     [SerializeField] private GameObject gameWinCanvas;
     [SerializeField] private GameObject getKeyRewardCanvas;
     [SerializeField] private float timeTransition = 4f;
@@ -386,9 +387,15 @@ public class SpellingManager : MonoBehaviour
         }
 
         //random popup congratulation
-        int val = Random.Range(0, congrats.Length);
-        GameObject obj = Instantiate(congrats[val]);
-        obj.transform.SetParent(spellUI.transform, false);
+        //int val = Random.Range(0, congrats.Length);
+        //GameObject obj = Instantiate(congrats[val]);
+        //obj.transform.SetParent(spellUI.transform, false);
+
+        int val = Random.Range(0, popUpCheeringCanvas.transform.childCount);
+        popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(true);
+        GameObject popUpCongrats =
+            Instantiate(popUpCheeringCanvas.transform.GetChild(val).gameObject);
+        popUpCongrats.transform.SetParent(spellUI.transform, false);
 
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();

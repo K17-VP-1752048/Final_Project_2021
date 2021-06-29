@@ -6,19 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
-    [SerializeField] GameObject popupCanvas, getKeyRewardCanvas;
+    [SerializeField] GameObject gameWinCanvas, getKeyRewardCanvas;
+    [SerializeField] GameObject popupCanvas;
     [SerializeField] int objectInThisLvl;
     [SerializeField] string nextScene;
 
     [SerializeField] int objectNumber;
     private SaveLoadFile slf;
     private bool finished = false;
-    private float timeDelay;
+    private int index;
 
     // Start is called before the first frame update
     void Start()
     {
         slf = gameObject.AddComponent<SaveLoadFile>();
+        GetRandomPopUpIndex();
+        Debug.Log(index);
     }
 
     // Update is called once per frame
@@ -29,7 +32,7 @@ public class Level : MonoBehaviour
             if (nextScene != "TopicsHouseScene")
             {
                 slf.SaveCurrentScenePickToRoom(nextScene);
-                timeDelay = 2.5f;
+                StartCoroutine(LoadNextScene());
             }
             else if (nextScene == "TopicsHouseScene")
             {
@@ -44,19 +47,26 @@ public class Level : MonoBehaviour
                     this.finished = true;
                 }
                 slf.ResetGamePickToRoom();
-                timeDelay = 3.5f;
+                StartCoroutine(WinGame());
             }
-            StartCoroutine(LoadPopUpAndLoadScene(timeDelay));
         }
     }
 
-    IEnumerator LoadPopUpAndLoadScene(float timeDelay)
+    IEnumerator LoadNextScene()
     {
-        popupCanvas.SetActive(true);
-        yield return new WaitForSeconds(timeDelay);
+        GameObject popUpObject = popupCanvas.transform.GetChild(index).gameObject;
+        popUpObject.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(nextScene);
+    }
+
+    IEnumerator WinGame()
+    {
+        gameWinCanvas.SetActive(true);
+        yield return new WaitForSeconds(3f);
         if (finished && getKeyRewardCanvas != null)
         {
-            popupCanvas.GetComponentInChildren<Animator>().SetTrigger("Disappear");
+            gameWinCanvas.GetComponentInChildren<Animator>().SetTrigger("Disappear");
             getKeyRewardCanvas.SetActive(true);
             yield return new WaitForSeconds(2f);
         }
@@ -76,5 +86,13 @@ public class Level : MonoBehaviour
     public int ObjectNumber()
     {
         return objectNumber;
+    }
+
+    private void GetRandomPopUpIndex()
+    {
+        if(popupCanvas != null)
+        {
+            index = UnityEngine.Random.Range(0, popupCanvas.transform.childCount);
+        }
     }
 }

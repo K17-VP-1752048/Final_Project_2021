@@ -72,10 +72,9 @@ public class GameFindLevel : MonoBehaviour
 
     IEnumerator LoadNextScene()
     {
-        Debug.Log(index);
         GameObject popUpObject = popUp.transform.GetChild(index).gameObject;
         popUpObject.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(nextScene);
     }
 

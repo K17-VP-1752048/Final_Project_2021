@@ -378,7 +378,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1053377087}
+  - {fileID: 1053377088}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -422,6 +422,8 @@ MonoBehaviour:
   - {fileID: 8784561621120543643, guid: 4b9c2b1a23cadcd47be0e8d024fbc92c, type: 3}
   - {fileID: 9189299650591468263, guid: 560b72dc33ba2f1478985dc6db25464e, type: 3}
   - {fileID: 5453239367352893849, guid: 91ec8ddf6d87647439187f5279c1d1f8, type: 3}
+  popUpCheeringCanvas: {fileID: 4468525993547083539, guid: 52a16bff4a1a1d6498bfade7d0a7465e,
+    type: 3}
   gameWinCanvas: {fileID: 1222357496}
   getKeyRewardCanvas: {fileID: 1221535964}
   timeTransition: 4
@@ -957,6 +959,11 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1053377086}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1053377088 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1053377086}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1135860477
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,7 +993,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8aa91752c9bf9c4f87879511b213f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isShowPopupAndroid: 1
 --- !u!4 &1135860479
 Transform:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ public class QuizUI : MonoBehaviour
     [SerializeField] private Button backBtn;
     [SerializeField] private AudioClip bravo_audio;
     [SerializeField] private AudioClip fail_audio;
-    [SerializeField] private GameObject[] congrats;
+    [SerializeField] private GameObject popUpCheeringCanvas;
     [SerializeField] private GameObject gameWinCanvas;
     [SerializeField] private GameObject getKeyRewardCanvas;
     [SerializeField] private float timeTransition = 4f;
@@ -174,8 +174,10 @@ public class QuizUI : MonoBehaviour
         //img.GetComponent<AudioSource>().Play();
 
         //random popup congratulation
-        int val = Random.Range(0, congrats.Length);
-        GameObject popUpCongrats =  Instantiate(congrats[val]);
+        int val = Random.Range(0, popUpCheeringCanvas.transform.childCount);
+        popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(true);
+        GameObject popUpCongrats = 
+            Instantiate(popUpCheeringCanvas.transform.GetChild(val).gameObject);
         popUpCongrats.transform.SetParent(transform.parent, false);
 
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
@@ -183,6 +185,7 @@ public class QuizUI : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
 
         SetEnabled(true);
+        Destroy(popUpCongrats);
     }
 
     IEnumerator Warning(float delayTime)
