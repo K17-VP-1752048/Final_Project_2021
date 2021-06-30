@@ -9,7 +9,7 @@ public class GameFindLevel : MonoBehaviour
     [SerializeField] int currentObjectNumber = 0;
     [SerializeField] int totalObjectNumber;
     [SerializeField] string nextScene = null;
-    [SerializeField] float timeWait = 1f;
+    //[SerializeField] float timeWait = 1f;
 
     private SaveLoadFile saveLoadFile;
     private bool finished = false;
