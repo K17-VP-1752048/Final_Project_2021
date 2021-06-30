@@ -12,7 +12,6 @@ public class SpellingManager : MonoBehaviour
     [SerializeField] private SpellHouseholdDataScriptable spellHouseholdData;
     [SerializeField] private AudioClip bravo_audio;
     [SerializeField] private AudioClip fail_audio;
-    [SerializeField] private GameObject[] congrats;
     [SerializeField] private GameObject popUpCheeringCanvas;
     [SerializeField] private GameObject gameWinCanvas;
     [SerializeField] private GameObject getKeyRewardCanvas;
@@ -211,13 +210,17 @@ public class SpellingManager : MonoBehaviour
         }
 
         //random popup congratulation
-        int val = Random.Range(0, congrats.Length);
-        GameObject obj = Instantiate(congrats[val]);
-        obj.transform.SetParent(spellUI.transform, false);
+        //int val = Random.Range(0, congrats.Length);
+        //GameObject obj = Instantiate(congrats[val]);
+        //obj.transform.SetParent(spellUI.transform, false);
+
+        int val = Random.Range(0, popUpCheeringCanvas.transform.childCount);
+        popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(true);
 
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();
         Invoke("SelectPronunciation", 1.5f);
+        popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(false);
     }
 
     public void TimeOut()
@@ -393,14 +396,13 @@ public class SpellingManager : MonoBehaviour
 
         int val = Random.Range(0, popUpCheeringCanvas.transform.childCount);
         popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(true);
-        GameObject popUpCongrats =
-            Instantiate(popUpCheeringCanvas.transform.GetChild(val).gameObject);
-        popUpCongrats.transform.SetParent(spellUI.transform, false);
+        
 
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();
 
         StartCoroutine(BackTopic(gameObject.GetComponent<AudioSource>().clip.length));
+        popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(false);
     }
 
     IEnumerator BackTopic(float delayTime)

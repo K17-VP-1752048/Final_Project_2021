@@ -176,16 +176,13 @@ public class QuizUI : MonoBehaviour
         //random popup congratulation
         int val = Random.Range(0, popUpCheeringCanvas.transform.childCount);
         popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(true);
-        GameObject popUpCongrats = 
-            Instantiate(popUpCheeringCanvas.transform.GetChild(val).gameObject);
-        popUpCongrats.transform.SetParent(transform.parent, false);
 
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(1.5f);
 
         SetEnabled(true);
-        Destroy(popUpCongrats);
+        popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(false);
     }
 
     IEnumerator Warning(float delayTime)
