@@ -578,6 +578,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PopUpCheeringCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4468525993547083539, guid: 52a16bff4a1a1d6498bfade7d0a7465e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4468525993547083551, guid: 52a16bff4a1a1d6498bfade7d0a7465e,
         type: 3}
       propertyPath: m_Pivot.x
@@ -918,7 +923,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -118.17, y: 0}
+  m_AnchoredPosition: {x: -118.16998, y: 0}
   m_SizeDelta: {x: -236.33618, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &780147969
@@ -1787,7 +1792,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Les raisins
+  m_text: Le raisin
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1886,7 +1891,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6a7bfdabe6ee86a4f974101eaada791b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5581b9e13e39b684f9472f4f5434030b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2123,7 +2128,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6a7bfdabe6ee86a4f974101eaada791b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f2d6b754ae6d32c46b94e758442e4351, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3342,7 +3347,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6a7bfdabe6ee86a4f974101eaada791b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bf6e847b8a3fc09419f0af1c70a8aada, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3560,7 +3565,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Le pizza
+  m_text: La pizza
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3647,7 +3652,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6a7bfdabe6ee86a4f974101eaada791b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 34334e159f7a50442a7638e0bc0c31db, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -4148,6 +4153,11 @@ PrefabInstance:
         type: 3}
       propertyPath: timeWait
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688829933694896850, guid: f7efaeeaa161cf84ab8d260936602f98,
+        type: 3}
+      propertyPath: gameWinCanvas
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7efaeeaa161cf84ab8d260936602f98, type: 3}
