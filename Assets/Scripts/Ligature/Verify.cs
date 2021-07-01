@@ -75,10 +75,10 @@ public class Verify : MonoBehaviour
         }
     }
 
-    private void ShowPopup()
-    {
-        popupCanvas.SetActive(true);
-    }
+    //private void ShowPopup()
+    //{
+    //    popupCanvas.SetActive(true);
+    //}
 
     IEnumerator ShowPopUp()
     {
