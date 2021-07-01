@@ -12,6 +12,7 @@ public class Number : MonoBehaviour
     [SerializeField] int order;
     [SerializeField] GameObject groundCheck;
     [SerializeField] GameObject orderControlObj;
+    [SerializeField] AudioClip clip;
 
     private int wayPointIndex = 0;
     private bool moving = true;
@@ -20,6 +21,7 @@ public class Number : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private TrainStationLevel level;
     private TSOrderControl orderControl;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -100,6 +102,9 @@ public class Number : MonoBehaviour
     {
         if (!moving && order == orderControl.CurrentOrder())
         {
+            gameObject.AddComponent<AudioSource>();
+            audioSource = GetComponent<AudioSource>();
+            audioSource.PlayOneShot(clip, 1f);
             MoveToTrain();
             orderControl.NextNumber();
         }

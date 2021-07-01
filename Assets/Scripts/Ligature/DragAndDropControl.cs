@@ -67,7 +67,7 @@ public class DragAndDropControl : MonoBehaviour, IPointerDownHandler,
     }
 
     IEnumerator Return()
-    {
+    { 
         yield return new WaitForEndOfFrame();
         if (droppedOnBox == false)
         {

@@ -738,6 +738,7 @@ MonoBehaviour:
   order: 1
   groundCheck: {fileID: 2141212726}
   orderControlObj: {fileID: 871254917}
+  clip: {fileID: 8300000, guid: b3151ae2acb998c43aef597d58c49d04, type: 3}
 --- !u!1 &371033858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,7 +1022,7 @@ GameObject:
   - component: {fileID: 762670039}
   - component: {fileID: 762670038}
   m_Layer: 10
-  m_Name: Nerf
+  m_Name: Neuf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1048,6 +1049,7 @@ MonoBehaviour:
   order: 4
   groundCheck: {fileID: 1507077352}
   orderControlObj: {fileID: 871254917}
+  clip: {fileID: 8300000, guid: cecb4558a015e954ebf07a7da9a7f7c8, type: 3}
 --- !u!50 &762670039
 Rigidbody2D:
   serializedVersion: 4
@@ -1905,6 +1907,7 @@ MonoBehaviour:
   order: 2
   groundCheck: {fileID: 1659715207}
   orderControlObj: {fileID: 871254917}
+  clip: {fileID: 8300000, guid: 3a4c4d8b41f26584abc2540e2982e715, type: 3}
 --- !u!50 &1526069466
 Rigidbody2D:
   serializedVersion: 4
@@ -2464,6 +2467,7 @@ MonoBehaviour:
   order: 3
   groundCheck: {fileID: 115653643}
   orderControlObj: {fileID: 871254917}
+  clip: {fileID: 8300000, guid: f184d9faa3ab9244a93104142bb4215d, type: 3}
 --- !u!50 &2059484279
 Rigidbody2D:
   serializedVersion: 4
@@ -2846,7 +2850,7 @@ PrefabInstance:
     - target: {fileID: 3160591264506660069, guid: f1fb06b3d68d4d94a9c4a5e5af1b6dd0,
         type: 3}
       propertyPath: m_text
-      value: 'nerf
+      value: 'neuf
 
 '
       objectReference: {fileID: 0}

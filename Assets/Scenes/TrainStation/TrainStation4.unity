@@ -726,12 +726,13 @@ MonoBehaviour:
   wayPoints:
   - {fileID: 1120631858}
   moveSpeed: 2
-  jumpForce: 0.7
+  jumpForce: 0.9
   railroadCar: {fileID: 937357262}
   moveToTrainSpeed: 6
   order: 3
   groundCheck: {fileID: 2141212726}
   orderControlObj: {fileID: 871254917}
+  clip: {fileID: 8300000, guid: 3a4c4d8b41f26584abc2540e2982e715, type: 3}
 --- !u!1 &371033858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,13 +1030,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wayPoints:
   - {fileID: 207051365}
-  moveSpeed: 2.1
-  jumpForce: 0.8
+  moveSpeed: 2.05
+  jumpForce: 0.7
   railroadCar: {fileID: 920847257}
   moveToTrainSpeed: 6
   order: 1
   groundCheck: {fileID: 1507077352}
   orderControlObj: {fileID: 871254917}
+  clip: {fileID: 8300000, guid: b3151ae2acb998c43aef597d58c49d04, type: 3}
 --- !u!50 &762670039
 Rigidbody2D:
   serializedVersion: 4
@@ -1999,12 +2001,13 @@ MonoBehaviour:
   wayPoints:
   - {fileID: 1939891434}
   moveSpeed: 2
-  jumpForce: 0.9
+  jumpForce: 0.8
   railroadCar: {fileID: 1970507151}
   moveToTrainSpeed: 6
   order: 4
   groundCheck: {fileID: 1659715207}
   orderControlObj: {fileID: 871254917}
+  clip: {fileID: 8300000, guid: 732c0ce503cee3244b0602319480d087, type: 3}
 --- !u!50 &1526069466
 Rigidbody2D:
   serializedVersion: 4
@@ -2552,12 +2555,13 @@ MonoBehaviour:
   wayPoints:
   - {fileID: 521014656}
   moveSpeed: 1.9
-  jumpForce: 0.7
+  jumpForce: 0.9
   railroadCar: {fileID: 403692581}
   moveToTrainSpeed: 6
   order: 2
   groundCheck: {fileID: 115653643}
   orderControlObj: {fileID: 871254917}
+  clip: {fileID: 8300000, guid: 17f00525013b11a4288fb18c84eddb54, type: 3}
 --- !u!50 &2059484279
 Rigidbody2D:
   serializedVersion: 4
@@ -2827,7 +2831,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141212726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.62, y: -3.36, z: 0}
+  m_LocalPosition: {x: 0.3, y: -3.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 280988668}

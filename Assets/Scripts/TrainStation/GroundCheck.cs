@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class GroundCheck : MonoBehaviour
 {
-    private GameObject number;
+    private Number number;
 
     // Start is called before the first frame update
     void Start()
     {
-        number = gameObject.transform.parent.gameObject;
+        number = gameObject.transform.parent.gameObject.GetComponent<Number>();
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class GroundCheck : MonoBehaviour
     {
         if (collision.collider.tag == "Ground")
         {
-            number.GetComponent<Number>().SetIsGrounded(true);
+            number.SetIsGrounded(true);
         }
     }
 
@@ -30,7 +30,7 @@ public class GroundCheck : MonoBehaviour
     {
         if (collision.collider.tag == "Ground")
         {
-            number.GetComponent<Number>().SetIsGrounded(false);
+            number.SetIsGrounded(false);
         }
     }
 }
