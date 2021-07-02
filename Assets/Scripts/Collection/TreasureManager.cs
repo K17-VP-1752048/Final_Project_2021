@@ -6,20 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class TreasureManager : MonoBehaviour
 {
-    private GameObject keyFly;
+    public GameObject keyFly;
     private Canvas OpenTreasureCanvas;
     private SaveLoadFile slf;
     private Text notifText;
-    private Image keyImage;
+    public Image keyImage;
 
     private void Start()
     {
         slf = gameObject.AddComponent<SaveLoadFile>();
         OpenTreasureCanvas = GameObject.Find("CanvasOpenTreasure").GetComponent<Canvas>();
         OpenTreasureCanvas.enabled = false;
-        keyFly = GameObject.Find("Key");
         keyFly.SetActive(false);
-        keyImage = GameObject.Find("Key Img").GetComponent<Image>();
+        //keyImage = GameObject.Find("Key Img").GetComponent<Image>();
         notifText = GameObject.Find("TitleText").GetComponent<Text>();
     }
 
@@ -58,7 +57,7 @@ public class TreasureManager : MonoBehaviour
         // Keys--
         slf.DecreaseKey(1);
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         keyFly.SetActive(false);
         tmp.transform.GetChild(1).GetComponent<Image>().enabled = false;
 
