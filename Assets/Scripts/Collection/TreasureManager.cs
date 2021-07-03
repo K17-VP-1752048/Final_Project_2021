@@ -9,7 +9,7 @@ public class TreasureManager : MonoBehaviour
     public GameObject keyFly;
     private Canvas OpenTreasureCanvas;
     private SaveLoadFile slf;
-    private Text notifText;
+    public Text notifText;
     public Image keyImage;
 
     private void Start()
@@ -18,8 +18,6 @@ public class TreasureManager : MonoBehaviour
         OpenTreasureCanvas = GameObject.Find("CanvasOpenTreasure").GetComponent<Canvas>();
         OpenTreasureCanvas.enabled = false;
         keyFly.SetActive(false);
-        //keyImage = GameObject.Find("Key Img").GetComponent<Image>();
-        notifText = GameObject.Find("TitleText").GetComponent<Text>();
     }
 
     public bool checkTreasureKey(int keyNeeded)
@@ -27,14 +25,15 @@ public class TreasureManager : MonoBehaviour
         return (slf.LoadKey() >= keyNeeded);
     }
 
-    public void alertNotEnoughKey()
+    public void alertNotEnoughKey(string message)
     {
-        StartCoroutine(notEnoughKey());
+        StartCoroutine(notEnoughKey(message));
     }
-    IEnumerator notEnoughKey()
+    IEnumerator notEnoughKey(string mes)
     {
+        string beginText = notifText.text;
         keyImage.color = Color.red;
-        notifText.text = "Les clés ne suffisent pas";
+        notifText.text = mes;
         yield return new WaitForSeconds(0.3f);
         keyImage.color = Color.white;
         yield return new WaitForSeconds(0.2f);
@@ -42,20 +41,21 @@ public class TreasureManager : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         keyImage.color = Color.white;
         yield return new WaitForSeconds(1f);
-        notifText.text = "Ouvrir ce trésor avec une clé";
+        notifText.text = beginText;
     }
 
-    public void startOpenTreasureAnim(string puzzleName)
+    public void startOpenTreasureAnim(string puzzleName, int numberOfKeyLost)
     {
         StartCoroutine(openTreasure(GameObject.Find(puzzleName)));
+        
+        // numberOfOpenTreasure++;
+        slf.IncreaseBox();
+        // Keys--
+        slf.DecreaseKey(numberOfKeyLost);
     }
     IEnumerator openTreasure(GameObject tmp)
     {
         keyFly.SetActive(true);
-        // numberOfOpenTreasure++;
-        slf.IncreaseBox();
-        // Keys--
-        slf.DecreaseKey(1);
 
         yield return new WaitForSeconds(1f);
         keyFly.SetActive(false);
@@ -74,8 +74,14 @@ public class TreasureManager : MonoBehaviour
 
     IEnumerator runTreasureCanNotOpenAnim()
     {
+        string beginText = notifText.text;
         notifText.text = "Impossible d'ouvrir ce trésor";
         yield return new WaitForSeconds(1f);
-        notifText.text = "Ouvrir ce trésor avec une clé";
+        notifText.text = beginText;
+    }
+
+    public void writeNotif(string notif)
+    {
+        notifText.text = notif;
     }
 }

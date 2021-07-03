@@ -18,7 +18,7 @@ public class CollectionManager : MonoBehaviour
         slf = gameObject.AddComponent<SaveLoadFile>();
         //slf.IncreaseKey();
         
-        slf.ResetBox();
+        //slf.ResetBox();
         numberOfOpenTreasure = slf.LoadBox();
 
         for (int i = 1; i <= numberOfTreasure; i++)
@@ -37,7 +37,7 @@ public class CollectionManager : MonoBehaviour
                 // impossible d'ouvrir un trésor à l'arrière sans ouvrir le trésor devant lui
                 if (i > numberOfOpenTreasure + 1)
                 {
-                    tmp.transform.GetChild(1).GetComponent<Image>().color = Color.grey;
+                    tmp.transform.GetChild(1).GetComponent<Image>().color = new Color(.1f, .1f, .1f, .6f);
                 }
             }
         }
