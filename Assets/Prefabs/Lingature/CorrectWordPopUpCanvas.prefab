@@ -32,8 +32,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4714798094419844766}
-  - {fileID: 4714798095443501158}
-  - {fileID: 4714798094465578432}
   m_Father: {fileID: 4714798095857429340}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -89,7 +87,7 @@ Animator:
   m_GameObject: {fileID: 2735207484501033281}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 74f50cefc0e91894084f64c1520498ec, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8cabd7bbf7602c0439983be06d37e78d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -108,7 +106,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c353de7a9c0e9354c898ac3e25acf80d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b0ce7940b5fb19643a17776d9d2168e3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -222,14 +220,16 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4714798095443501158}
+  - {fileID: 4714798094465578432}
   m_Father: {fileID: 2735207484501033294}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 496}
-  m_SizeDelta: {x: 898, y: 210}
+  m_AnchoredPosition: {x: 12.7, y: 496}
+  m_SizeDelta: {x: 930, y: 202}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4714798094419844764
 CanvasRenderer:
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 07199661eed5a5b4584162383ef11b7a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 034f0a1c1f354fb40ae90d073c6d61dd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -295,15 +295,15 @@ RectTransform:
   m_GameObject: {fileID: 4714798094465578435}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2735207484501033294}
-  m_RootOrder: 2
+  m_Father: {fileID: 4714798094419844766}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 438, y: 222}
-  m_SizeDelta: {x: 174, y: 204}
+  m_AnchoredPosition: {x: 366.29996, y: -2.9999695}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4714798094465578446
 CanvasRenderer:
@@ -332,7 +332,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 88d752a12d1b6ae45a296653e1ac6a56, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 769537b7fbd0b8548b08a3b2dd71a48d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -371,13 +371,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2735207484501033294}
-  m_RootOrder: 1
+  m_Father: {fileID: 4714798094419844766}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 34, y: 522}
-  m_SizeDelta: {x: 800, y: 100}
+  m_AnchoredPosition: {x: -63.372986, y: 0.000030517578}
+  m_SizeDelta: {x: 803.3462, y: 202}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4714798095443501156
 CanvasRenderer:
@@ -406,7 +406,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: La Fauteuil
+  m_text: New text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7088b5890387f5c4abd82f4b59c73561, type: 2}
   m_sharedMaterial: {fileID: 4230430018857126437, guid: 7088b5890387f5c4abd82f4b59c73561,
@@ -416,8 +416,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190258
-  m_fontColor: {r: 0.69803923, g: 0, b: 0, a: 1}
+    rgba: 4280821974
+  m_fontColor: {r: 0.83921576, g: 0.15686275, b: 0.15686275, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -588,4 +588,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9026f5ed7786e39499f5c7adc9d9814a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: Ligature2
