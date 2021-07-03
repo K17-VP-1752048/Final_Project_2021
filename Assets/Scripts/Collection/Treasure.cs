@@ -11,8 +11,6 @@ public class Treasure : MonoBehaviour
 
     public void openATreasure()
     {
-        //string name = "Puzzle" + (slf.LoadBox() + 1);
-
         puzzleName = this.transform.parent.name;
         Debug.Log("Click on button " + puzzleName);
 
@@ -24,17 +22,25 @@ public class Treasure : MonoBehaviour
             // check the keys
             if (treasureManager.checkTreasureKey(keyNeed))
             {
-                treasureManager.startOpenTreasureAnim(puzzleName);
+                treasureManager.startOpenTreasureAnim(puzzleName, keyNeed);
             }
             else
             {
                 // Alert that keys are not enough
-                treasureManager.alertNotEnoughKey();
+                treasureManager.alertNotEnoughKey(showMessageOfTreasure());
             }
         }
         else
         {
             treasureManager.alertTreasureCanNotOpen();
         }
+    }
+
+    public string showMessageOfTreasure()
+    {
+        if(keyNeed < 2)
+            return "Trouver " + keyNeed + " clé pour ouvrir ce trésor";
+        else
+            return "Trouver " + keyNeed + " clés pour ouvrir ce trésor";
     }
 }

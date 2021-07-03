@@ -8,13 +8,12 @@ public class swipeCollection : MonoBehaviour
     public GameObject scrollbar;// imageContent;
     private float scroll_pos = 0;
     float[] pos;
-    private bool runIt = false;
+    //private bool runIt = false;
     private float time;
 
-    // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -23,17 +22,17 @@ public class swipeCollection : MonoBehaviour
         pos = new float[transform.childCount];
         float distance = 1f / (pos.Length - 1f);
 
-        if (runIt)
-        {
-            //GecisiDuzenle(distance, pos, takeTheBtn);
-            time += Time.deltaTime;
+        //if (runIt)
+        //{
+        //    //GecisiDuzenle(distance, pos, takeTheBtn);
+        //    time += Time.deltaTime;
 
-            if (time > 1f)
-            {
-                time = 0;
-                runIt = false;
-            }
-        }
+        //    if (time > 1f)
+        //    {
+        //        time = 0;
+        //        runIt = false;
+        //    }
+        //}
 
         for (int i = 0; i < pos.Length; i++)
         {
@@ -55,7 +54,6 @@ public class swipeCollection : MonoBehaviour
             }
         }
 
-
         for (int i = 0; i < pos.Length; i++)
         {
             if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
@@ -64,6 +62,7 @@ public class swipeCollection : MonoBehaviour
                 transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(1.2f, 1.2f), 0.1f);
                 transform.GetChild(i).GetChild(0).GetComponent<Button>().interactable = true;
                 transform.GetChild(i).GetChild(1).GetComponent<Button>().interactable = true;
+
                 for (int j = 0; j < pos.Length; j++)
                 {
                     if (j != i)
