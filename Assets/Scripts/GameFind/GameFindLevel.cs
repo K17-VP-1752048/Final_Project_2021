@@ -81,7 +81,7 @@ public class GameFindLevel : MonoBehaviour
     IEnumerator WinGame()
     {
         gameWinCanvas.SetActive(true);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
 
         if (finished && getKeyRewardCanvas != null)
         {
