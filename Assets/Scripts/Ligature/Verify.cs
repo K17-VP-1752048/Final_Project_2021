@@ -3,18 +3,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Verify : MonoBehaviour
 {
     [SerializeField] List<GameObject> charBoxs;
     [SerializeField] Sentinel sentinel;
     [SerializeField] GameObject verifierBtn;
-    [SerializeField] GameObject popupCanvas;
+    //[SerializeField] GameObject popupCanvas;
     [SerializeField] GameObject correctBox;
     [SerializeField] AudioClip wordSpell;
+    [SerializeField] private GameObject gameWinCanvas;
+    [SerializeField] private GameObject getKeyRewardCanvas;
+    [SerializeField] string nextScene;
 
     private bool allAnswerIsCorrect;
     private bool allBoxIsFilled;
+    private bool setActive = true;
+    private bool finished = false;
+    private SaveLoadFile slf;
+
+    private void Start()
+    {
+        slf = gameObject.AddComponent<SaveLoadFile>();
+    }
 
     public void Click()
     {
@@ -70,8 +82,27 @@ public class Verify : MonoBehaviour
         }
         if (allBoxIsFilled && allAnswerIsCorrect)
         {
-            //ShowPopup();
-            StartCoroutine(ShowPopUp());
+            if(nextScene != "TopicsHouseScene" && nextScene != "")
+            {
+                slf.SaveCurrentSceneLingature(nextScene);
+
+                //ShowPopup();
+                StartCoroutine(ShowPopUp());
+            }
+            else
+            {
+                //Win Game
+                slf.ResetGameLingature();
+
+                if (!slf.CheckCompleteGame("GameLigature"))
+                {
+                    slf.IncreaseKey();
+                    slf.CompleteGame("GameLigature");
+                    this.finished = true;
+                }
+
+                StartCoroutine(WinGame(3.5f));
+            }
         }
     }
 
@@ -86,7 +117,8 @@ public class Verify : MonoBehaviour
         yield return new WaitForSeconds(correctBox.GetComponent<AudioSource>().clip.length);
         AudioSource.PlayClipAtPoint(wordSpell, Camera.main.transform.position);
         yield return new WaitForSeconds(wordSpell.length);
-        popupCanvas.SetActive(true);
+        //popupCanvas.SetActive(true);
+        SceneManager.LoadScene(nextScene);
     }
 
     IEnumerator BoxEmptyAlert(GameObject charBox)
@@ -104,5 +136,29 @@ public class Verify : MonoBehaviour
         }
         charBox.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
         sentinel.GetComponent<Sentinel>().SetAlertIssued(false);
+    }
+
+    IEnumerator WinGame(float seconds)
+    {
+        correctBox.SetActive(true);
+        yield return new WaitForSeconds(correctBox.GetComponent<AudioSource>().clip.length);
+        AudioSource.PlayClipAtPoint(wordSpell, Camera.main.transform.position);
+        yield return new WaitForSeconds(wordSpell.length);
+
+        gameWinCanvas.SetActive(true);
+        yield return new WaitForSeconds(seconds);
+
+        if (finished && getKeyRewardCanvas != null)
+        {
+            if (getKeyRewardCanvas != null)
+            {
+                gameWinCanvas.GetComponentInChildren<Animator>().SetTrigger("Disappear");
+                getKeyRewardCanvas.SetActive(true);
+                yield return new WaitForSeconds(2f);
+            }
+        }
+
+        SceneManager.LoadScene(nextScene);
+        setActive = true;
     }
 }

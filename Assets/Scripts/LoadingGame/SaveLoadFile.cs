@@ -432,6 +432,33 @@ public class SaveLoadFile : MonoBehaviour
         return null;
     }
 
+    //save and load current scene of Lingature game
+    public void SaveCurrentSceneLingature(string nameScene)
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentSceneLingature.dat", FileMode.OpenOrCreate);
+        bf.Serialize(file, nameScene);
+        file.Close();
+    }
+
+    public string LoadCurrentSceneLingature()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentSceneLingature.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/saveCurrentSceneLingature.dat", FileMode.OpenOrCreate);
+            if (file.Length == 0)
+            {
+                return null;
+            }
+            string res = bf.Deserialize(file) as string;
+            file.Close();
+
+            return res;
+        }
+        return null;
+    }
+
     //save and load value key
     public void IncreaseKey()
     {
@@ -723,6 +750,15 @@ public class SaveLoadFile : MonoBehaviour
         if (File.Exists(Application.persistentDataPath + "/saveCurrentScenePickToRoom.dat"))
         {
             File.Delete(Application.persistentDataPath + "/saveCurrentScenePickToRoom.dat");
+        }
+    }
+
+    //reset Lingature game
+    public void ResetGameLingature()
+    {
+        if (File.Exists(Application.persistentDataPath + "/saveCurrentSceneLingature.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/saveCurrentSceneLingature.dat");
         }
     }
 

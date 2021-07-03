@@ -67,6 +67,19 @@ public class LoadPlayer : MonoBehaviour
                 StartCoroutine(LoadAsynchronously(nameScene));
             }
         }
+        else if (nameGame == "GameLigature")
+        {
+            string nameScene = slf.LoadCurrentSceneLingature();
+            if (nameScene == null)
+            {
+                StartCoroutine(LoadAsynchronously("Lingature1"));
+            }
+            else
+            {
+                //back topic animal in UpLevelScript
+                StartCoroutine(LoadAsynchronously(nameScene));
+            }
+        }
     }
 
     IEnumerator LoadAsynchronously(string nameScene)
