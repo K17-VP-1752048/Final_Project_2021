@@ -10,12 +10,12 @@ public class Verify : MonoBehaviour
     [SerializeField] List<GameObject> charBoxs;
     [SerializeField] Sentinel sentinel;
     [SerializeField] GameObject verifierBtn;
-    [SerializeField] GameObject popupCanvas;
+    //[SerializeField] GameObject popupCanvas;
+    [SerializeField] GameObject correctBox;
     [SerializeField] AudioClip wordSpell;
     [SerializeField] private GameObject gameWinCanvas;
     [SerializeField] private GameObject getKeyRewardCanvas;
     [SerializeField] string nextScene;
-    [SerializeField] string correctWord;
 
     private bool allAnswerIsCorrect;
     private bool allBoxIsFilled;
@@ -86,6 +86,7 @@ public class Verify : MonoBehaviour
             {
                 slf.SaveCurrentSceneLingature(nextScene);
 
+                //ShowPopup();
                 StartCoroutine(ShowPopUp());
             }
             else
@@ -105,15 +106,18 @@ public class Verify : MonoBehaviour
         }
     }
 
+    //private void ShowPopup()
+    //{
+    //    popupCanvas.SetActive(true);
+    //}
+
     IEnumerator ShowPopUp()
     {
-        popupCanvas.GetComponentInChildren<Popup>().SetPopUpCanvasCorrectWord(correctWord);
-        Instantiate(popupCanvas);
-
-        yield return new WaitForSeconds(
-            popupCanvas.GetComponentInChildren<AudioSource>().clip.length);
+        correctBox.SetActive(true);
+        yield return new WaitForSeconds(correctBox.GetComponent<AudioSource>().clip.length);
         AudioSource.PlayClipAtPoint(wordSpell, Camera.main.transform.position);
         yield return new WaitForSeconds(wordSpell.length);
+        //popupCanvas.SetActive(true);
         SceneManager.LoadScene(nextScene);
     }
 
@@ -136,14 +140,10 @@ public class Verify : MonoBehaviour
 
     IEnumerator WinGame(float seconds)
     {
-        popupCanvas.GetComponentInChildren<Popup>().SetPopUpCanvasCorrectWord(correctWord);
-        GameObject popUp =  Instantiate(popupCanvas);
-
-        yield return new WaitForSeconds(
-            popupCanvas.GetComponentInChildren<AudioSource>().clip.length);
+        correctBox.SetActive(true);
+        yield return new WaitForSeconds(correctBox.GetComponent<AudioSource>().clip.length);
         AudioSource.PlayClipAtPoint(wordSpell, Camera.main.transform.position);
         yield return new WaitForSeconds(wordSpell.length);
-        Destroy(popUp);
 
         gameWinCanvas.SetActive(true);
         yield return new WaitForSeconds(seconds);
