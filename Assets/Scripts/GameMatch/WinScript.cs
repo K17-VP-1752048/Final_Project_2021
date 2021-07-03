@@ -59,7 +59,7 @@ public class WinScript : MonoBehaviour
                         this.finished = true;
                     }
 
-                    StartCoroutine(WinGame(4f));
+                    StartCoroutine(WinGame(3.5f));
                 }
             }
         }

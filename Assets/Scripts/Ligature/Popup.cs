@@ -2,12 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 public class Popup : MonoBehaviour
 {
-    public void SetPopUpCanvasCorrectWord(string correctWord)
+    //[SerializeField] string nextScene;
+
+    // Start is called before the first frame update
+    void Start()
     {
-        gameObject.transform.GetChild(0).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = correctWord;
+        //word.SetActive(true);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //if (word.GetComponent<Word>().AudioIsStop())
+        //{
+        //    if (Input.GetMouseButtonDown(0))
+        //    {
+        //        SceneManager.LoadScene(nextScene);
+        //    }
+        //}
+        //if (Input.GetMouseButtonDown(0))
+        //{
+           //SceneManager.LoadScene(nextScene);
+        //}
     }
 }

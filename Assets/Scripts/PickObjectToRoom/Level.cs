@@ -63,7 +63,7 @@ public class Level : MonoBehaviour
     IEnumerator WinGame()
     {
         gameWinCanvas.SetActive(true);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         if (finished && getKeyRewardCanvas != null)
         {
             gameWinCanvas.GetComponentInChildren<Animator>().SetTrigger("Disappear");
