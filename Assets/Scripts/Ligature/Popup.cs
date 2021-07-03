@@ -5,15 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Popup : MonoBehaviour
 {
-    [SerializeField] string nextScene;
-
-    public string NextScene { get => nextScene; set => nextScene = value; }
+    //[SerializeField] string nextScene;
 
     // Start is called before the first frame update
     void Start()
     {
         //word.SetActive(true);
-        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -26,9 +23,9 @@ public class Popup : MonoBehaviour
         //        SceneManager.LoadScene(nextScene);
         //    }
         //}
-        if (Input.GetMouseButtonDown(0))
-        {
-            SceneManager.LoadScene(nextScene);
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+           //SceneManager.LoadScene(nextScene);
+        //}
     }
 }

@@ -29,13 +29,11 @@ public class Tutorial : MonoBehaviour
         }
         if (moving)
         {
-            Debug.Log("moving" + moving);
-            //canvas.gameObject.SetActive(false);
             gameObject.GetComponent<RectTransform>().position = Vector3.MoveTowards(gameObject.GetComponent<RectTransform>().position, new Vector3(correctForm.transform.position.x, correctForm.transform.position.y, correctForm.transform.position.z), 10 * Time.deltaTime);
             if (Vector2.Distance(gameObject.GetComponent<RectTransform>().position, correctForm.transform.position) < 0.2f)
             {
                 moving = false;
-                SetEnabled(true);
+                StartCoroutine(EndofTutorial());
             }
         }
     }
@@ -55,5 +53,14 @@ public class Tutorial : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
         moving = true;
+    }
+
+    IEnumerator EndofTutorial()
+    {
+        //animation hand click
+
+        yield return new WaitForSeconds(1.5f);
+        Destroy(gameObject);
+        SetEnabled(true);
     }
 }
