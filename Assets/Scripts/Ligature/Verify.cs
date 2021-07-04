@@ -19,7 +19,6 @@ public class Verify : MonoBehaviour
 
     private bool allAnswerIsCorrect;
     private bool allBoxIsFilled;
-    private bool setActive = true;
     private bool finished = false;
     private SaveLoadFile slf;
 
@@ -160,6 +159,5 @@ public class Verify : MonoBehaviour
         }
 
         SceneManager.LoadScene(nextScene);
-        setActive = true;
     }
 }
