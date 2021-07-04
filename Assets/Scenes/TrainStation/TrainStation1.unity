@@ -232,6 +232,81 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5755858, y: 0.088453114}
   m_EdgeRadius: 0
+--- !u!1001 &147893077
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5117945494010119536, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_Name
+      value: WrongSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fca6f7c01d7b42d4ca534b6985796ca9, type: 3}
+--- !u!82 &147893078 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5117945494010119543, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+    type: 3}
+  m_PrefabInstance: {fileID: 147893077}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &148789810
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,12 +525,6 @@ RectTransform:
   m_AnchoredPosition: {x: 185, y: 7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &240421266 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3160591262945685727, guid: f1fb06b3d68d4d94a9c4a5e5af1b6dd0,
-    type: 3}
-  m_PrefabInstance: {fileID: 3160591263049201997}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &249507341
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -733,11 +802,12 @@ MonoBehaviour:
   - {fileID: 1120631858}
   moveSpeed: 2
   jumpForce: 0.7
-  railroadCar: {fileID: 1447347022}
+  railroadCar: {fileID: 1411401221}
   moveToTrainSpeed: 6
   order: 1
   groundCheck: {fileID: 2141212726}
   orderControlObj: {fileID: 871254917}
+  wrongSound: {fileID: 147893078}
   clip: {fileID: 8300000, guid: 39b64f99fddf3e94bb3e1f5e1418c351, type: 3}
 --- !u!1 &371033858
 GameObject:
@@ -934,6 +1004,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b94dd20aa4a1484f862a11a9c2df5d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &579642275 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3160591264648147074, guid: f1fb06b3d68d4d94a9c4a5e5af1b6dd0,
+    type: 3}
+  m_PrefabInstance: {fileID: 3160591263049201997}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &628313677
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,11 +1120,12 @@ MonoBehaviour:
   - {fileID: 207051365}
   moveSpeed: 2
   jumpForce: 0.7
-  railroadCar: {fileID: 1906207096}
+  railroadCar: {fileID: 1425860264}
   moveToTrainSpeed: 6
   order: 4
   groundCheck: {fileID: 1507077352}
   orderControlObj: {fileID: 871254917}
+  wrongSound: {fileID: 147893078}
   clip: {fileID: 8300000, guid: 3a4c4d8b41f26584abc2540e2982e715, type: 3}
 --- !u!50 &762670039
 Rigidbody2D:
@@ -1751,9 +1828,15 @@ MonoBehaviour:
   - {fileID: 1289142272}
   - {fileID: 77772358}
   train: {fileID: 572888112}
---- !u!224 &1447347022 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3160591263884179971, guid: f1fb06b3d68d4d94a9c4a5e5af1b6dd0,
+--- !u!1 &1411401221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3160591263884179979, guid: f1fb06b3d68d4d94a9c4a5e5af1b6dd0,
+    type: 3}
+  m_PrefabInstance: {fileID: 3160591263049201997}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1425860264 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3160591264418517050, guid: f1fb06b3d68d4d94a9c4a5e5af1b6dd0,
     type: 3}
   m_PrefabInstance: {fileID: 3160591263049201997}
   m_PrefabAsset: {fileID: 0}
@@ -1902,11 +1985,12 @@ MonoBehaviour:
   - {fileID: 1939891434}
   moveSpeed: 2
   jumpForce: 0.7
-  railroadCar: {fileID: 1674447319}
+  railroadCar: {fileID: 579642275}
   moveToTrainSpeed: 6
   order: 2
   groundCheck: {fileID: 1659715207}
   orderControlObj: {fileID: 871254917}
+  wrongSound: {fileID: 147893078}
   clip: {fileID: 8300000, guid: 17f00525013b11a4288fb18c84eddb54, type: 3}
 --- !u!50 &1526069466
 Rigidbody2D:
@@ -2090,12 +2174,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5755858, y: 0.088453114}
   m_EdgeRadius: 0
---- !u!224 &1674447319 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3160591264648147098, guid: f1fb06b3d68d4d94a9c4a5e5af1b6dd0,
-    type: 3}
-  m_PrefabInstance: {fileID: 3160591263049201997}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1719507485
 GameObject:
   m_ObjectHideFlags: 0
@@ -2131,12 +2209,6 @@ RectTransform:
   m_AnchoredPosition: {x: 2714, y: 59.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &1906207096 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3160591264418517045, guid: f1fb06b3d68d4d94a9c4a5e5af1b6dd0,
-    type: 3}
-  m_PrefabInstance: {fileID: 3160591263049201997}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1939891433
 GameObject:
   m_ObjectHideFlags: 0
@@ -2172,6 +2244,12 @@ RectTransform:
   m_AnchoredPosition: {x: -62, y: 7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1952304023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3160591262945685702, guid: f1fb06b3d68d4d94a9c4a5e5af1b6dd0,
+    type: 3}
+  m_PrefabInstance: {fileID: 3160591263049201997}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2035064317
 GameObject:
   m_ObjectHideFlags: 0
@@ -2462,11 +2540,12 @@ MonoBehaviour:
   - {fileID: 521014656}
   moveSpeed: 2
   jumpForce: 0.7
-  railroadCar: {fileID: 240421266}
+  railroadCar: {fileID: 1952304023}
   moveToTrainSpeed: 6
   order: 3
   groundCheck: {fileID: 115653643}
   orderControlObj: {fileID: 871254917}
+  wrongSound: {fileID: 147893078}
   clip: {fileID: 8300000, guid: 419e4ffe023202d448a9fe644fc01d6b, type: 3}
 --- !u!50 &2059484279
 Rigidbody2D:
@@ -2803,6 +2882,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.52
       objectReference: {fileID: 0}
+    - target: {fileID: 3160591263349461300, guid: f1fb06b3d68d4d94a9c4a5e5af1b6dd0,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160591263349461300, guid: f1fb06b3d68d4d94a9c4a5e5af1b6dd0,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160591263349461300, guid: f1fb06b3d68d4d94a9c4a5e5af1b6dd0,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3160591263349461301, guid: f1fb06b3d68d4d94a9c4a5e5af1b6dd0,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -2893,6 +2987,21 @@ PrefabInstance:
       propertyPath: wayPoints.Array.data[1]
       value: 
       objectReference: {fileID: 1719507486}
+    - target: {fileID: 3160591264418517043, guid: f1fb06b3d68d4d94a9c4a5e5af1b6dd0,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160591264418517043, guid: f1fb06b3d68d4d94a9c4a5e5af1b6dd0,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160591264418517043, guid: f1fb06b3d68d4d94a9c4a5e5af1b6dd0,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3160591264506660069, guid: f1fb06b3d68d4d94a9c4a5e5af1b6dd0,
         type: 3}
       propertyPath: m_fontSize

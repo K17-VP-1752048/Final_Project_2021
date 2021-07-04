@@ -374,6 +374,81 @@ RectTransform:
   m_AnchoredPosition: {x: 185, y: 7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &274664603
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5117945494010119536, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_Name
+      value: WrongSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fca6f7c01d7b42d4ca534b6985796ca9, type: 3}
+--- !u!82 &274664604 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5117945494010119543, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+    type: 3}
+  m_PrefabInstance: {fileID: 274664603}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &280988666
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,11 +597,12 @@ MonoBehaviour:
   - {fileID: 1120631858}
   moveSpeed: 2
   jumpForce: 0.7
-  railroadCar: {fileID: 4858599747694891161}
+  railroadCar: {fileID: 1078600284949944757}
   moveToTrainSpeed: 5
   order: 2
   groundCheck: {fileID: 2141212726}
   orderControlObj: {fileID: 871254917}
+  wrongSound: {fileID: 274664604}
   clip: {fileID: 8300000, guid: cecb4558a015e954ebf07a7da9a7f7c8, type: 3}
 --- !u!1 &371033858
 GameObject:
@@ -815,11 +891,12 @@ MonoBehaviour:
   - {fileID: 207051365}
   moveSpeed: 1.7
   jumpForce: 0.7
-  railroadCar: {fileID: 4858599749499130076}
+  railroadCar: {fileID: 1078600284949944756}
   moveToTrainSpeed: 5
   order: 3
   groundCheck: {fileID: 1507077352}
   orderControlObj: {fileID: 871254917}
+  wrongSound: {fileID: 274664604}
   clip: {fileID: 8300000, guid: b3151ae2acb998c43aef597d58c49d04, type: 3}
 --- !u!50 &762670039
 Rigidbody2D:
@@ -1802,11 +1879,12 @@ MonoBehaviour:
   - {fileID: 521014656}
   moveSpeed: 1.5
   jumpForce: 0.7
-  railroadCar: {fileID: 4858599748558576128}
+  railroadCar: {fileID: 1078600284949944758}
   moveToTrainSpeed: 5
   order: 1
   groundCheck: {fileID: 1659715207}
   orderControlObj: {fileID: 871254917}
+  wrongSound: {fileID: 274664604}
   clip: {fileID: 8300000, guid: 65ace82a47843b44185ec65c74403492, type: 3}
 --- !u!50 &1526069466
 Rigidbody2D:
@@ -2607,15 +2685,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89181e7102cf6f34aa1700d672e7e579, type: 3}
---- !u!224 &4858599747694891161 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5591996859376437546, guid: 89181e7102cf6f34aa1700d672e7e579,
+--- !u!1 &1078600284949944756 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5591996861077588342, guid: 89181e7102cf6f34aa1700d672e7e579,
     type: 3}
   m_PrefabInstance: {fileID: 1078600284949944755}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &4858599748558576128 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5591996859602256819, guid: 89181e7102cf6f34aa1700d672e7e579,
+--- !u!1 &1078600284949944757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5591996859376437554, guid: 89181e7102cf6f34aa1700d672e7e579,
+    type: 3}
+  m_PrefabInstance: {fileID: 1078600284949944755}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1078600284949944758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5591996859602256827, guid: 89181e7102cf6f34aa1700d672e7e579,
     type: 3}
   m_PrefabInstance: {fileID: 1078600284949944755}
   m_PrefabAsset: {fileID: 0}
@@ -2631,9 +2715,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b94dd20aa4a1484f862a11a9c2df5d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &4858599749499130076 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5591996861077588335, guid: 89181e7102cf6f34aa1700d672e7e579,
-    type: 3}
-  m_PrefabInstance: {fileID: 1078600284949944755}
-  m_PrefabAsset: {fileID: 0}

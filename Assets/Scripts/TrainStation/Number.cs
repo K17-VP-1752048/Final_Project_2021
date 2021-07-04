@@ -1,17 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Number : MonoBehaviour
 {
     [SerializeField] List<RectTransform> wayPoints;
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] float jumpForce = 0.2f;
-    [SerializeField] RectTransform railroadCar;
+    [SerializeField] GameObject railroadCar;
     [SerializeField] float moveToTrainSpeed = 2f;
     [SerializeField] int order;
     [SerializeField] GameObject groundCheck;
     [SerializeField] GameObject orderControlObj;
+    [SerializeField] AudioSource wrongSound;
     [SerializeField] AudioClip clip;
 
     private int wayPointIndex = 0;
@@ -46,7 +48,7 @@ public class Number : MonoBehaviour
         }
         if (moveToTrain)
         {
-            Vector3 targetPos = new Vector3(railroadCar.position.x, railroadCar.position.y + 3, 0);
+            Vector3 targetPos = new Vector3(railroadCar.GetComponent<RectTransform>().position.x, railroadCar.GetComponent<RectTransform>().position.y + 3, 0);
             transform.position = Vector3.MoveTowards(transform.position, targetPos, moveToTrainSpeed * Time.deltaTime);
 
             if (transform.position == targetPos)
@@ -108,6 +110,11 @@ public class Number : MonoBehaviour
             MoveToTrain();
             orderControl.NextNumber();
         }
+        else if(order != orderControl.CurrentOrder())
+        {
+            wrongSound.Play();
+            StartCoroutine(alertWrongOrder());
+        }
     }
 
     private void MoveToTrain()
@@ -117,5 +124,12 @@ public class Number : MonoBehaviour
         spriteRenderer.sortingOrder = 5;
         groundCheck.SetActive(false);
         moveToTrain = true;
+    }
+
+    IEnumerator alertWrongOrder()
+    {
+        railroadCar.transform.GetChild(4).gameObject.GetComponent<Image>().color = Color.red;
+        yield return new WaitForSeconds(1f);
+        railroadCar.transform.GetChild(4).gameObject.GetComponent<Image>().color = Color.white;
     }
 }
