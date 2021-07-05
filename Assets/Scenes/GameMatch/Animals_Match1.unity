@@ -817,7 +817,7 @@ PrefabInstance:
     - target: {fileID: 7493575153231094793, guid: 9595fa23ba08a274ab847f3e0cbcdac7,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7493575153231094794, guid: 9595fa23ba08a274ab847f3e0cbcdac7,
         type: 3}
@@ -2390,7 +2390,6 @@ MonoBehaviour:
   - {fileID: 760676835}
   - {fileID: 1082091920}
   - {fileID: 697073218}
-  btnBack: {fileID: 1420782759}
   trailFX: {fileID: 2065401374}
 --- !u!114 &1232178156
 MonoBehaviour:
@@ -2560,18 +2559,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356439099}
   m_CullTransparentMesh: 0
---- !u!114 &1420782759 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1863078121771971365, guid: c350ebaa171b4b54ab7fa12483aa348c,
-    type: 3}
-  m_PrefabInstance: {fileID: 429322291}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1468735161
 GameObject:
   m_ObjectHideFlags: 0
