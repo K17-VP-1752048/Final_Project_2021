@@ -7,7 +7,7 @@ public class Tutorial : MonoBehaviour
 {
     [SerializeField] GameObject correctForm, canvas;
     [SerializeField] SpriteRenderer[] animals;
-    [SerializeField] Button btnBack;
+    //[SerializeField] Button btnBack;
     [SerializeField] GameObject trailFX;
 
     private bool moving = false;
@@ -48,7 +48,7 @@ public class Tutorial : MonoBehaviour
         {
             animals[i].GetComponent<BoxCollider2D>().enabled = flag;
         }
-        btnBack.enabled = flag;
+        //btnBack.enabled = flag;
     }
 
     IEnumerator HandTutorial()
