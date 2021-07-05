@@ -275,7 +275,7 @@ public class SpellingManager : MonoBehaviour
 
     IEnumerator DestroyPopup(GameObject obj)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         Destroy(obj);
         SetEnabled(true);
     }
