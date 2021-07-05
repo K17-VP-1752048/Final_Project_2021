@@ -219,8 +219,15 @@ public class SpellingManager : MonoBehaviour
 
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();
+        StartCoroutine(ShowPopupCheering(val));
         Invoke("SelectPronunciation", 1.5f);
+    }
+
+    IEnumerator ShowPopupCheering(int val)
+    {
+        yield return new WaitForSeconds(1f);
         popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(false);
+        SetEnabled(true);
     }
 
     public void TimeOut()
@@ -257,6 +264,7 @@ public class SpellingManager : MonoBehaviour
 
     public void TryAgain()
     {
+        SetEnabled(false);
         GameObject obj = Instantiate(popupWrong);
         obj.transform.SetParent(spellUI.transform, false);
 
@@ -269,6 +277,7 @@ public class SpellingManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         Destroy(obj);
+        SetEnabled(true);
     }
 
     public void EndGame_With_SpellTimeOut()
@@ -408,6 +417,7 @@ public class SpellingManager : MonoBehaviour
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();
 
+        //StartCoroutine(ShowPopupCheering(val));
         StartCoroutine(BackTopic(gameObject.GetComponent<AudioSource>().clip.length));
         popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(false);
     }
@@ -435,13 +445,14 @@ public class SpellingManager : MonoBehaviour
         
         //yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("TopicsAnimalsScene");
+        SetEnabled(true);
     }
 
     void SetEnabled(bool enabled)
     {
         pronounceImg.GetComponent<BoxCollider2D>().enabled = enabled;
         speakImg.GetComponent<BoxCollider2D>().enabled = enabled;
-        backBtn.enabled = enabled;
+        //backBtn.enabled = enabled;
     }
 }
 
