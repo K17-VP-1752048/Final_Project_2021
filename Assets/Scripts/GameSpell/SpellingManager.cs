@@ -227,7 +227,6 @@ public class SpellingManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(false);
-        SetEnabled(true);
     }
 
     public void TimeOut()
@@ -259,7 +258,7 @@ public class SpellingManager : MonoBehaviour
 
         gameObject.GetComponent<AudioSource>().clip = fail_audio;
         gameObject.GetComponent<AudioSource>().Play();
-        Invoke("SelectPronunciation", gameObject.GetComponent<AudioSource>().clip.length + 0.3f);
+        Invoke("SelectPronunciation", gameObject.GetComponent<AudioSource>().clip.length + 1f);
     }
 
     public void TryAgain()
@@ -343,7 +342,7 @@ public class SpellingManager : MonoBehaviour
         gameObject.GetComponent<AudioSource>().clip = fail_audio;
         gameObject.GetComponent<AudioSource>().Play();
 
-        StartCoroutine(BackTopic(gameObject.GetComponent<AudioSource>().clip.length + 0.3f));
+        StartCoroutine(BackTopic(gameObject.GetComponent<AudioSource>().clip.length));
     }
 
     public void EndGame()
@@ -417,15 +416,17 @@ public class SpellingManager : MonoBehaviour
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
         gameObject.GetComponent<AudioSource>().Play();
 
-        //StartCoroutine(ShowPopupCheering(val));
+        StartCoroutine(ShowPopupCheering(val));
         StartCoroutine(BackTopic(gameObject.GetComponent<AudioSource>().clip.length));
-        popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(false);
+        //popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(false);
     }
+
+
 
     IEnumerator BackTopic(float delayTime)
     {
         SetEnabled(false);
-        //yield return new WaitForSeconds(delayTime);
+        yield return new WaitForSeconds(delayTime);
 
         //win game
         //Instantiate(congratEndGame);
