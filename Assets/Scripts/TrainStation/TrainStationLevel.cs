@@ -7,7 +7,9 @@ public class TrainStationLevel : MonoBehaviour
 {
     [SerializeField] int totalNumber;
     [SerializeField] GameObject popup;
+    [SerializeField] GameObject popUpCanvas;
     [SerializeField] string nextLevel;
+    [SerializeField] Train train;
 
     // for debugging
     [SerializeField] int count = 0;
@@ -24,7 +26,8 @@ public class TrainStationLevel : MonoBehaviour
         }
         if (popupText)
         {
-            popup.SetActive(true);
+            //popup.SetActive(true);
+            StartCoroutine(ShowPopUp());
         }
         if (loadNextLvl)
         {
@@ -50,5 +53,13 @@ public class TrainStationLevel : MonoBehaviour
     public void LoadNextLevel(bool setter)
     {
         loadNextLvl = setter;
+    }
+
+    IEnumerator ShowPopUp()
+    {
+        popUpCanvas.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        popUpCanvas.SetActive(false);
+        train.MoveToNextWayPoint(true);
     }
 }
