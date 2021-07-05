@@ -8,6 +8,7 @@ public class Tutorial : MonoBehaviour
     [SerializeField] GameObject correctForm, canvas;
     [SerializeField] SpriteRenderer[] animals;
     [SerializeField] Button btnBack;
+    [SerializeField] GameObject trailFX;
 
     private bool moving = false;
     private bool selected = true;
@@ -24,12 +25,15 @@ public class Tutorial : MonoBehaviour
         if (selected)
         {
             //animation hand click
+
             selected = false;
             StartCoroutine(HandTutorial());
         }
         if (moving)
         {
             gameObject.GetComponent<RectTransform>().position = Vector3.MoveTowards(gameObject.GetComponent<RectTransform>().position, new Vector3(correctForm.transform.position.x, correctForm.transform.position.y, correctForm.transform.position.z), 10 * Time.deltaTime);
+            // move trail when hand move
+            trailFX.transform.position = gameObject.GetComponent<RectTransform>().position;
             if (Vector2.Distance(gameObject.GetComponent<RectTransform>().position, correctForm.transform.position) < 0.2f)
             {
                 moving = false;
@@ -49,16 +53,19 @@ public class Tutorial : MonoBehaviour
 
     IEnumerator HandTutorial()
     {
+        // click 1 lan thi dung cai dong nay
+        //gameObject.GetComponent<Animator>().SetTrigger("SingleClick");
+        
         //animation hand click
-
-        yield return new WaitForSeconds(3f);
+        gameObject.GetComponent<Animator>().SetTrigger("PressHold");
+        yield return new WaitForSeconds(1.5f);
         moving = true;
     }
 
     IEnumerator EndofTutorial()
     {
         //animation hand click
-
+        gameObject.GetComponent<Animator>().SetTrigger("Release");
         yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
         SetEnabled(true);
