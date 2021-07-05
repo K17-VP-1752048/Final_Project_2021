@@ -17,12 +17,20 @@ public class CountUI : MonoBehaviour
     [SerializeField] private Image warningImg;
     [SerializeField] private RectTransform guessText;
     [SerializeField] private Image check;
+    [SerializeField] private GameObject handguideSelectedNumber, handguideCheck;
 
     private int indexCorrectAns = -1;
 
     // Start is called before the first frame update
     void Start()
     {
+        //disabled images
+        SetEnabled(false);
+
+        //tutorial Number_Count1
+        handguideSelectedNumber.SetActive(true);
+        options[0].numberImg.GetComponent<BoxCollider2D>().enabled = true;
+        //StartCoroutine(Tutorial(handguideSelectedNumber));
     }
 
     void Update()
@@ -30,11 +38,7 @@ public class CountUI : MonoBehaviour
         if (CountManager.Time >= 3)
         {
             //disabled images
-            for (int i = 0; i < options.Count; i++)
-            {
-                options[i].numberImg.GetComponent<BoxCollider2D>().enabled = false;
-            }
-            check.GetComponent<BoxCollider2D>().enabled = false;
+            SetEnabled(false);
 
             StartCoroutine(CircleCorrectAnswer(2f));
             CountManager.Time = 0;
@@ -48,6 +52,20 @@ public class CountUI : MonoBehaviour
             {
                 this.indexCorrectAns = -1;
             }
+        }
+
+        //tutorial Number_Count1
+        if(options[0].numberImg.color == new Color(0.8823529f, 0.8862745f, 0.6509804f, 1) && handguideSelectedNumber != null)
+        {
+            handguideSelectedNumber.GetComponent<Animator>().SetTrigger("SingleClick");
+        }
+
+        if (options[0].numberImg.color == new Color(1, 1, 0, 1) && (handguideSelectedNumber != null || handguideCheck != null))
+        {
+            Destroy(handguideSelectedNumber);
+            SetEnabled(false);
+            handguideCheck.SetActive(true);
+            StartCoroutine(Tutorial(handguideCheck));
         }
     }
 
@@ -180,6 +198,14 @@ public class CountUI : MonoBehaviour
         yield return new WaitForSeconds(delayTime);
 
         warningImg.gameObject.SetActive(false);
+        SetEnabled(true);
+    }
+
+    IEnumerator Tutorial(GameObject obj)
+    {
+        obj.GetComponent<Animator>().SetTrigger("SingleClick");
+        yield return new WaitForSeconds(2f);
+        Destroy(obj);
         SetEnabled(true);
     }
 
