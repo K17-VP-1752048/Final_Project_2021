@@ -262,6 +262,13 @@ public class SpellingManager : MonoBehaviour
 
         gameObject.GetComponent<AudioSource>().clip = fail_audio;
         gameObject.GetComponent<AudioSource>().Play();
+        StartCoroutine(DestroyPopup(obj));
+    }
+
+    IEnumerator DestroyPopup(GameObject obj)
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(obj);
     }
 
     public void EndGame_With_SpellTimeOut()
