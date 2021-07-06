@@ -607,7 +607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellUI: {fileID: 2009961809}
-  spellData: {fileID: 11400000, guid: 084adf4e69509804cb1b70bc360a346b, type: 2}
+  spellData: {fileID: 11400000, guid: b2c687d714a57db4881182efc2eb5256, type: 2}
   spellFoodData: {fileID: 0}
   spellHouseholdData: {fileID: 0}
   bravo_audio: {fileID: 8300000, guid: 73651083d7edfb7429b17051b59edd47, type: 3}
@@ -624,6 +624,8 @@ MonoBehaviour:
   pronounceImg: {fileID: 1804608603}
   speakImg: {fileID: 638834500}
   backBtn: {fileID: 262210181}
+  checkTopic: {fileID: 0}
+  checkKey: {fileID: 0}
 --- !u!4 &494471324
 Transform:
   m_ObjectHideFlags: 0

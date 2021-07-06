@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class SpellingManager : MonoBehaviour
 {
@@ -133,7 +134,7 @@ public class SpellingManager : MonoBehaviour
             {
                 slf.ResetCurrentSpell_Animals();
                 slf.ResetCurrentListSpell_Animals();
-                StartCoroutine(BackTopic(3f));
+                //StartCoroutine(BackTopic(3f));
             }
             else
             {
@@ -150,7 +151,7 @@ public class SpellingManager : MonoBehaviour
             {
                 slf.ResetCurrentSpell_Food();
                 slf.ResetCurrentListSpell_Food();
-                StartCoroutine(BackTopic(3f));
+                //StartCoroutine(BackTopic(3f));
             }
             else
             {
@@ -167,7 +168,7 @@ public class SpellingManager : MonoBehaviour
             {
                 slf.ResetCurrentSpell_House();
                 slf.ResetCurrentListSpell_House();
-                StartCoroutine(BackTopic(3f));
+                //StartCoroutine(BackTopic(3f));
             }
             else
             {
