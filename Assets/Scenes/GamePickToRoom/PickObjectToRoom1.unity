@@ -1784,6 +1784,7 @@ MonoBehaviour:
   trailFX: {fileID: 2019442214}
   selectedTopic: GamePickToRoom
   time: 5
+  distance: 0.2
 --- !u!95 &1156929897
 Animator:
   serializedVersion: 3
@@ -2033,7 +2034,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1361734459}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: TutorialPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
