@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3657692626748371374}
   - component: {fileID: 3657692626748371375}
   - component: {fileID: 3657692626748371344}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TrailFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 1
+  m_Time: 0.5
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -130,8 +130,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.013560758
-        value: 0.2734375
+        time: 0
+        value: 0.2890625
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -139,22 +139,22 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.16438356
       - serializedVersion: 3
-        time: 1
-        value: 0.1171875
-        inSlope: 0.7014267
-        outSlope: 0.7014267
+        time: 0.9864431
+        value: 0.1796875
+        inSlope: 0.039062038
+        outSlope: 0.039062038
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.15807582
+        inWeight: 0.20068218
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.23137257, g: 0.79215693, b: 0.9607844, a: 1}
-      key1: {r: 0.23137257, g: 0.79215693, b: 0.9607844, a: 0}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 0.23137257, g: 0.79215693, b: 0.9607844, a: 0}
+      key1: {r: 0.23137257, g: 0.79215693, b: 0.9607844, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -169,16 +169,16 @@ TrailRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 47224
-      atime2: 65535
-      atime3: 0
+      atime1: 17733
+      atime2: 48188
+      atime3: 65535
       atime4: 0
       atime5: 0
       atime6: 0
       atime7: 0
       m_Mode: 0
       m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
+      m_NumAlphaKeys: 4
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0

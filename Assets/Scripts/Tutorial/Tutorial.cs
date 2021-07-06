@@ -19,7 +19,7 @@ public class Tutorial : MonoBehaviour
     void Start()
     {
         SetEnabled(false);
-        trailFX.transform.position = gameObject.GetComponent<RectTransform>().position;
+        //trailFX.transform.position = gameObject.GetComponent<RectTransform>().position;
     }
 
     // Update is called once per frame
@@ -60,7 +60,7 @@ public class Tutorial : MonoBehaviour
         {
             // click 1 lan thi dung cai dong nay
             gameObject.GetComponent<Animator>().SetTrigger("SingleClick");
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
         }
 
         //animation hand click
@@ -75,6 +75,7 @@ public class Tutorial : MonoBehaviour
         gameObject.GetComponent<Animator>().SetTrigger("Release");
         yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
+        Destroy(trailFX);
         SetEnabled(true);
     }
 }
