@@ -6,13 +6,13 @@ using System.IO;
 public class PuzzleImageManager : MonoBehaviour
 {
     public GameObject mainCharac;
+    public GameObject flashLight;
 
     private GameObject message, buttons;
 
     // Start is called before the first frame update
     void Start()
     {
-        mainCharac.SetActive(false);
         message = GameObject.Find("ImageText");
         message.SetActive(false);
         buttons = GameObject.Find("Buttons");
@@ -39,8 +39,8 @@ public class PuzzleImageManager : MonoBehaviour
     IEnumerator takeAShot()
     {
         yield return new WaitForSeconds(.8f);
-
         buttons.SetActive(false);
+
         yield return new WaitForEndOfFrame();
 
         Texture2D texture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
@@ -49,13 +49,14 @@ public class PuzzleImageManager : MonoBehaviour
 
         string name = "picture" + System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".jpg";
 
-        //byte []bytes = texture.EncodeToPNG();
-        //File.WriteAllBytes(Application.dataPath + "/.../" + name, bytes);
-
         NativeGallery.SaveImageToGallery(texture, "Monde Ludique", name);
 
-        yield return new WaitForSeconds(1f);
+        flashLight.SetActive(true);
+
+        yield return new WaitForSeconds(.5f);
         buttons.SetActive(true);
+        flashLight.SetActive(false);
+
         Destroy(texture);
     }
 }
