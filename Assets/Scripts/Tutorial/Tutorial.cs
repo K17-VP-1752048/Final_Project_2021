@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour
 {
-    [SerializeField] GameObject correctForm, canvas;
-    [SerializeField] SpriteRenderer[] animals;
+    [SerializeField] private GameObject correctForm;
+    [SerializeField] private SpriteRenderer[] animals; //gameMatch
     //[SerializeField] Button btnBack;
-    [SerializeField] GameObject trailFX;
+    [SerializeField] private GameObject trailFX;
+    [SerializeField] private string selectedTopic;
 
     private bool moving = false;
     private bool selected = true;
@@ -53,9 +54,12 @@ public class Tutorial : MonoBehaviour
 
     IEnumerator HandTutorial()
     {
-        // click 1 lan thi dung cai dong nay
-        //gameObject.GetComponent<Animator>().SetTrigger("SingleClick");
-        
+        if(selectedTopic == "GamePickToRoom")
+        {
+            // click 1 lan thi dung cai dong nay
+            gameObject.GetComponent<Animator>().SetTrigger("SingleClick");
+        }
+
         //animation hand click
         gameObject.GetComponent<Animator>().SetTrigger("PressHold");
         yield return new WaitForSeconds(1.5f);

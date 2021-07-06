@@ -352,8 +352,6 @@ public class SpellingManager : MonoBehaviour
         //remove after spell correct
         pronunciations.RemoveAt(this.index);
 
-        
-
         //reset game
         if (selectedTopic == "Animals")
         {
@@ -420,8 +418,6 @@ public class SpellingManager : MonoBehaviour
         StartCoroutine(BackTopic(gameObject.GetComponent<AudioSource>().clip.length));
         //popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(false);
     }
-
-
 
     IEnumerator BackTopic(float delayTime)
     {
