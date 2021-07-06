@@ -10,6 +10,7 @@ public class Tutorial : MonoBehaviour
     //[SerializeField] Button btnBack;
     [SerializeField] private GameObject trailFX;
     [SerializeField] private string selectedTopic;
+    [SerializeField] private float time;
 
     private bool moving = false;
     private bool selected = true;
@@ -33,7 +34,7 @@ public class Tutorial : MonoBehaviour
         }
         if (moving)
         {
-            gameObject.GetComponent<RectTransform>().position = Vector3.MoveTowards(gameObject.GetComponent<RectTransform>().position, new Vector3(correctForm.transform.position.x, correctForm.transform.position.y, correctForm.transform.position.z), 10 * Time.deltaTime);
+            gameObject.GetComponent<RectTransform>().position = Vector3.MoveTowards(gameObject.GetComponent<RectTransform>().position, new Vector3(correctForm.transform.position.x, correctForm.transform.position.y, correctForm.transform.position.z), time * Time.deltaTime);
             // move trail when hand move
             trailFX.transform.position = gameObject.GetComponent<RectTransform>().position;
             if (Vector2.Distance(gameObject.GetComponent<RectTransform>().position, correctForm.transform.position) < 0.2f)
