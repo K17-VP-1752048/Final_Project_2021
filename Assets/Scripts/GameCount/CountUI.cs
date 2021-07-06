@@ -24,13 +24,16 @@ public class CountUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //disabled images
-        SetEnabled(false);
+        //only Tutorial Number_Count1
+        if (handguideSelectedNumber != null && handguideCheck != null)
+        {
+            //disabled images
+            SetEnabled(false);
 
-        //tutorial Number_Count1
-        handguideSelectedNumber.SetActive(true);
-        options[0].numberImg.GetComponent<BoxCollider2D>().enabled = true;
-        //StartCoroutine(Tutorial(handguideSelectedNumber));
+            handguideSelectedNumber.SetActive(true);
+            options[0].numberImg.GetComponent<BoxCollider2D>().enabled = true;
+            //StartCoroutine(Tutorial(handguideSelectedNumber));
+        }
     }
 
     void Update()
@@ -65,7 +68,13 @@ public class CountUI : MonoBehaviour
             Destroy(handguideSelectedNumber);
             SetEnabled(false);
             handguideCheck.SetActive(true);
-            StartCoroutine(Tutorial(handguideCheck));
+            handguideCheck.GetComponent<Animator>().SetTrigger("SingleClick");
+            check.GetComponent<BoxCollider2D>().enabled = true;
+        }
+
+        if (check.color == new Color(0.5962264f, 0.745283f, 0, 1) && (handguideSelectedNumber != null || handguideCheck != null))
+        {
+            Destroy(handguideCheck);
         }
     }
 
@@ -201,13 +210,11 @@ public class CountUI : MonoBehaviour
         SetEnabled(true);
     }
 
-    IEnumerator Tutorial(GameObject obj)
+    /*IEnumerator Tutorial(GameObject obj)
     {
         obj.GetComponent<Animator>().SetTrigger("SingleClick");
         yield return new WaitForSeconds(2f);
-        Destroy(obj);
-        SetEnabled(true);
-    }
+    }*/
 
     public void SetActive(bool flag)
     {
