@@ -20,12 +20,16 @@ public class CountUI : MonoBehaviour
     [SerializeField] private GameObject handguideSelectedNumber, handguideCheck;
 
     private int indexCorrectAns = -1;
+    private SaveLoadFile slf;
 
     // Start is called before the first frame update
     void Start()
     {
-        //only Tutorial Number_Count1
-        if (handguideSelectedNumber != null && handguideCheck != null)
+        //initiate
+        slf = gameObject.AddComponent<SaveLoadFile>();
+
+        //Tutorial Number_Count1 for beginners (only 1 time)
+        if (handguideSelectedNumber != null && handguideCheck != null && !slf.CheckCompleteGame("GameCountNumber"))
         {
             //disabled images
             SetEnabled(false);
@@ -57,24 +61,27 @@ public class CountUI : MonoBehaviour
             }
         }
 
-        //tutorial Number_Count1
-        if(options[0].numberImg.color == new Color(0.8823529f, 0.8862745f, 0.6509804f, 1) && handguideSelectedNumber != null)
+        //tutorial Number_Count1 for beginners
+        if (!slf.CheckCompleteGame("GameCountNumber"))
         {
-            handguideSelectedNumber.GetComponent<Animator>().SetTrigger("SingleClick");
-        }
+            if (options[0].numberImg.color == new Color(0.8823529f, 0.8862745f, 0.6509804f, 1) && handguideSelectedNumber != null)
+            {
+                handguideSelectedNumber.GetComponent<Animator>().SetTrigger("SingleClick");
+            }
 
-        if (options[0].numberImg.color == new Color(1, 1, 0, 1) && (handguideSelectedNumber != null || handguideCheck != null))
-        {
-            Destroy(handguideSelectedNumber);
-            SetEnabled(false);
-            handguideCheck.SetActive(true);
-            handguideCheck.GetComponent<Animator>().SetTrigger("SingleClick");
-            check.GetComponent<BoxCollider2D>().enabled = true;
-        }
+            if (options[0].numberImg.color == new Color(1, 1, 0, 1) && (handguideSelectedNumber != null || handguideCheck != null))
+            {
+                Destroy(handguideSelectedNumber);
+                SetEnabled(false);
+                handguideCheck.SetActive(true);
+                handguideCheck.GetComponent<Animator>().SetTrigger("SingleClick");
+                check.GetComponent<BoxCollider2D>().enabled = true;
+            }
 
-        if (check.color == new Color(0.5962264f, 0.745283f, 0, 1) && (handguideSelectedNumber != null || handguideCheck != null))
-        {
-            Destroy(handguideCheck);
+            if (check.color == new Color(0.5962264f, 0.745283f, 0, 1) && (handguideSelectedNumber != null || handguideCheck != null))
+            {
+                Destroy(handguideCheck);
+            }
         }
     }
 
