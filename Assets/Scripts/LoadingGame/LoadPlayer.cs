@@ -80,6 +80,19 @@ public class LoadPlayer : MonoBehaviour
                 StartCoroutine(LoadAsynchronously(nameScene));
             }
         }
+        else if (nameGame == "GameTrainStation")
+        {
+            string nameScene = slf.LoadCurrentSceneTrainStation();
+            if (nameScene == null)
+            {
+                StartCoroutine(LoadAsynchronously("TrainStation1"));
+            }
+            else
+            {
+                //back topic animal in UpLevelScript
+                StartCoroutine(LoadAsynchronously(nameScene));
+            }
+        }
     }
 
     IEnumerator LoadAsynchronously(string nameScene)

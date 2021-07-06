@@ -952,10 +952,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1839798284}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edf2449418ecc6d43aa559e0bb845b2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ee2dc54a50b234469e97dc2568f4451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneAddress: TrainStation1
+  progressBar: {fileID: 1839798287}
+  nameGame: GameTrainStation
 --- !u!114 &1839798287
 MonoBehaviour:
   m_ObjectHideFlags: 0
