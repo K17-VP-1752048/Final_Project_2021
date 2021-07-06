@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class TreasureManager : MonoBehaviour
 {
     public GameObject keyFly;
-    private Canvas OpenTreasureCanvas;
+    public GameObject OpenTreasureCanvas;
     private SaveLoadFile slf;
     public Text notifText;
     public Image keyImage;
@@ -15,9 +15,8 @@ public class TreasureManager : MonoBehaviour
     private void Start()
     {
         slf = gameObject.AddComponent<SaveLoadFile>();
-        OpenTreasureCanvas = GameObject.Find("CanvasOpenTreasure").GetComponent<Canvas>();
-        OpenTreasureCanvas.enabled = false;
-        keyFly.SetActive(false);
+
+        //keyFly.SetActive(false);
     }
 
     public bool checkTreasureKey(int keyNeeded)
@@ -53,6 +52,7 @@ public class TreasureManager : MonoBehaviour
         // Keys--
         slf.DecreaseKey(numberOfKeyLost);
     }
+
     IEnumerator openTreasure(GameObject tmp)
     {
         keyFly.SetActive(true);
@@ -61,7 +61,7 @@ public class TreasureManager : MonoBehaviour
         keyFly.SetActive(false);
         tmp.transform.GetChild(1).GetComponent<Image>().enabled = false;
 
-        OpenTreasureCanvas.enabled = true;
+        OpenTreasureCanvas.SetActive(true);
         yield return new WaitForSeconds(1f);
 
         SceneManager.LoadScene(tmp.name);

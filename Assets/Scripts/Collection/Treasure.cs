@@ -12,10 +12,7 @@ public class Treasure : MonoBehaviour
     public void openATreasure()
     {
         puzzleName = this.transform.parent.name;
-        Debug.Log("Click on button " + puzzleName);
-
-        // check if treasure is in the middle of screen
-        // ...
+        //Debug.Log("Click on button " + puzzleName);
 
         if (GetComponent<Image>().color == Color.white)
         {
