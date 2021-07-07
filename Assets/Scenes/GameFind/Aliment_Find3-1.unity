@@ -330,6 +330,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 840846757}
   moveSpeed: 20
+  sentinel: {fileID: 0}
+  handGuide: {fileID: 0}
 --- !u!114 &70497376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -709,6 +711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!82 &124970886
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1126,6 +1129,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1188106845}
   moveSpeed: 10
+  sentinel: {fileID: 0}
+  handGuide: {fileID: 0}
 --- !u!114 &321385945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1588,6 +1593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!82 &457500654
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1738,6 +1744,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1115517650}
+    - target: {fileID: 1863078121771971365, guid: c350ebaa171b4b54ab7fa12483aa348c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetTrigger
+      objectReference: {fileID: 0}
     - target: {fileID: 8089818636452830951, guid: c350ebaa171b4b54ab7fa12483aa348c,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2691,6 +2702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!82 &1139731567
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3574,6 +3586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!82 &1791351685
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3758,6 +3771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!82 &2105500205
 AudioSource:
   m_ObjectHideFlags: 0

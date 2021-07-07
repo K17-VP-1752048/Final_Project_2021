@@ -563,6 +563,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 918384643}
   moveSpeed: 20
+  sentinel: {fileID: 0}
+  handGuide: {fileID: 0}
 --- !u!114 &507046028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -792,6 +794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!82 &739151632
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1207,6 +1210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!82 &877556313
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1845,6 +1849,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1540966043}
+    - target: {fileID: 1863078121771971365, guid: c350ebaa171b4b54ab7fa12483aa348c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetTrigger
+      objectReference: {fileID: 0}
     - target: {fileID: 8089818636452830951, guid: c350ebaa171b4b54ab7fa12483aa348c,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2139,6 +2148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!82 &1031447379
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2533,6 +2543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!82 &1524958770
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3059,6 +3070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!82 &1713434588
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3551,6 +3563,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 986416939}
   moveSpeed: 20
+  sentinel: {fileID: 0}
+  handGuide: {fileID: 0}
 --- !u!114 &1895849068
 MonoBehaviour:
   m_ObjectHideFlags: 0
