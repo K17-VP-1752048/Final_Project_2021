@@ -24,6 +24,7 @@ public class Number : MonoBehaviour
     private TrainStationLevel level;
     private TSOrderControl orderControl;
     private AudioSource audioSource;
+    private bool isReady = false;
 
     // Start is called before the first frame update
     void Start()
@@ -85,6 +86,7 @@ public class Number : MonoBehaviour
     IEnumerator Wait()
     {
         moving = false;
+        isReady = true;
         yield return new WaitForSeconds(2);
         wayPointIndex++;
         //moving = true;
@@ -98,6 +100,19 @@ public class Number : MonoBehaviour
     public void SetIsGrounded(bool setter)
     {
         isGrounded = setter;
+    }
+
+    public bool IsReady()
+    {
+        return isReady;
+    }
+
+    private void OnMouseDown()
+    {
+        if (!moving && order == orderControl.CurrentOrder())
+        {
+            isReady = false;
+        }
     }
 
     private void OnMouseUp()
