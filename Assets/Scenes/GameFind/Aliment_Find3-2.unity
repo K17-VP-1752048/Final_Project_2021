@@ -769,6 +769,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 704249720}
   moveSpeed: 10
+  sentinel: {fileID: 0}
+  handGuide: {fileID: 0}
 --- !u!114 &426700354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -857,6 +859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!82 &568947307
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1867,6 +1870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!82 &1133430730
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2051,6 +2055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!82 &1170245721
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2469,7 +2474,7 @@ PrefabInstance:
     - target: {fileID: 5688829933694896850, guid: f7efaeeaa161cf84ab8d260936602f98,
         type: 3}
       propertyPath: nextScene
-      value: Aliment_Find3-2
+      value: Aliment_Find3-3
       objectReference: {fileID: 0}
     - target: {fileID: 5688829933694896850, guid: f7efaeeaa161cf84ab8d260936602f98,
         type: 3}
@@ -3023,6 +3028,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1885528184}
   moveSpeed: 10
+  sentinel: {fileID: 0}
+  handGuide: {fileID: 0}
 --- !u!114 &1644838099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3574,6 +3581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!82 &1890979420
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3758,6 +3766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!82 &2054252963
 AudioSource:
   m_ObjectHideFlags: 0

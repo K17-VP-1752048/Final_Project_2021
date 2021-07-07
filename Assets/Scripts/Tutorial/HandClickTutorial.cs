@@ -8,7 +8,12 @@ public class HandClickTutorial : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Tutorial());
+        //StartCoroutine(Tutorial());
+    }
+
+    void Update()
+    {
+        gameObject.GetComponent<Animator>().SetTrigger("SingleClick");
     }
 
     IEnumerator Tutorial()

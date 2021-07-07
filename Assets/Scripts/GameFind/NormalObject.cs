@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class NormalObject : MonoBehaviour, IPointerDownHandler
 {
+    [SerializeField] GameFindSentinel sentinel = null; // can be ignore if it's not the first scene
+
     private AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -17,6 +19,16 @@ public class NormalObject : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        audioSource.Play();
+        if (sentinel == null)
+        {
+            audioSource.Play();
+        }
+        else if (sentinel != null)
+        {
+            if (!sentinel.GetHandGuideState())
+            {
+                audioSource.Play();
+            }
+        }
     }
 }
