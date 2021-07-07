@@ -67,7 +67,20 @@ public class Verify : MonoBehaviour
                 allAnswerIsCorrect = false;
             }
         }
-        if (!allBoxIsFilled) verifierBtn.GetComponent<AudioSource>().Play();
+        if (!allBoxIsFilled) 
+        { 
+            verifierBtn.GetComponent<AudioSource>().Play();
+            if (!allAnswerIsCorrect)
+            {
+                foreach (GameObject charBox in charBoxs)
+                {
+                    if (charBox.GetComponent<CharBox>().Check() == 0)
+                    {
+                        charBox.GetComponent<CharBox>().SetToDefault();
+                    }
+                }
+            }
+        }
         if (allBoxIsFilled && !allAnswerIsCorrect)
         {
             GetComponent<AudioSource>().Play();
