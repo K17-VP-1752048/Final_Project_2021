@@ -427,7 +427,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 11ea229dfb57b064c951e6e0655d27c0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -699,7 +699,7 @@ PrefabInstance:
     - target: {fileID: 716038212478311229, guid: 78880a528ffffa54190d78a85d21783e,
         type: 3}
       propertyPath: nextScene
-      value: PickObjectToRoom5
+      value: PickObjectToRoom1-4
       objectReference: {fileID: 0}
     - target: {fileID: 716038212478311229, guid: 78880a528ffffa54190d78a85d21783e,
         type: 3}
@@ -1615,8 +1615,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 154.09134, y: -65.42833}
-  m_SizeDelta: {x: 175.07118, y: 72.24597}
+  m_AnchoredPosition: {x: 152.6, y: -64.061}
+  m_SizeDelta: {x: 270.3891, y: 128.12114}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1077177294
 AudioSource:
