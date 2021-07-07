@@ -402,6 +402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!1 &328680340
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!82 &328680345
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1232,6 +1234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!82 &958171454
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1624,6 +1627,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1485073937}
   moveSpeed: 10
+  sentinel: {fileID: 0}
+  handGuide: {fileID: 0}
 --- !u!114 &996966864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1865,6 +1870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!1 &1078171229
 GameObject:
   m_ObjectHideFlags: 0
@@ -2609,6 +2615,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 752872167}
   moveSpeed: 25
+  sentinel: {fileID: 0}
+  handGuide: {fileID: 0}
 --- !u!114 &1473907018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3194,6 +3202,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1370431119}
   moveSpeed: 10
+  sentinel: {fileID: 0}
+  handGuide: {fileID: 0}
 --- !u!114 &1596967710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3427,6 +3437,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1928429721}
   moveSpeed: 25
+  sentinel: {fileID: 0}
+  handGuide: {fileID: 0}
 --- !u!82 &1653476909
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3788,6 +3800,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1158523046}
   moveSpeed: 25
+  sentinel: {fileID: 0}
+  handGuide: {fileID: 0}
 --- !u!114 &1699562854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4248,7 +4262,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 87d96c3db8f31f64b83d7435225a9d88, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3ab22520fc18f47489942ec05385c265, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

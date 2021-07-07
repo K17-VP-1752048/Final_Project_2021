@@ -256,7 +256,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 87d96c3db8f31f64b83d7435225a9d88, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a69d00c962f4bc147a33bd3b004289af, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -494,6 +494,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 812511045}
   moveSpeed: 25
+  sentinel: {fileID: 0}
+  handGuide: {fileID: 0}
 --- !u!82 &155380806
 AudioSource:
   m_ObjectHideFlags: 0
@@ -869,6 +871,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 2012676055}
   moveSpeed: 10
+  sentinel: {fileID: 0}
+  handGuide: {fileID: 0}
 --- !u!82 &365295429
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1295,6 +1299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!82 &545064661
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1484,6 +1489,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 745313876}
   moveSpeed: 15
+  sentinel: {fileID: 0}
+  handGuide: {fileID: 0}
 --- !u!82 &581072669
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2477,6 +2484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!82 &884695702
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3067,6 +3075,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 138767466}
   moveSpeed: 26
+  sentinel: {fileID: 0}
+  handGuide: {fileID: 0}
 --- !u!82 &1490820122
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3482,6 +3492,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1371110167}
   moveSpeed: 28
+  sentinel: {fileID: 0}
+  handGuide: {fileID: 0}
 --- !u!82 &1778097519
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4327,6 +4339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!114 &2082203707
 MonoBehaviour:
   m_ObjectHideFlags: 0

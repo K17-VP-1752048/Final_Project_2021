@@ -278,7 +278,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 87d96c3db8f31f64b83d7435225a9d88, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d3b328e4f67ef1c489bc9ea10db34efb, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -452,6 +452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!82 &95214056
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1279,6 +1280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!1 &340175757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,6 +1456,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1615252568}
   moveSpeed: 13
+  sentinel: {fileID: 0}
+  handGuide: {fileID: 0}
 --- !u!82 &370286931
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1841,6 +1845,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 58275745}
   moveSpeed: 13
+  sentinel: {fileID: 0}
+  handGuide: {fileID: 0}
 --- !u!82 &539964073
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2316,6 +2322,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 2086291267}
   moveSpeed: 25
+  sentinel: {fileID: 0}
+  handGuide: {fileID: 0}
 --- !u!82 &1069701887
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2557,6 +2565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f85a877cd05d64418ecff3ff92f5ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentinel: {fileID: 0}
 --- !u!82 &1083075538
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2940,6 +2949,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1896311038}
   moveSpeed: 25
+  sentinel: {fileID: 0}
+  handGuide: {fileID: 0}
 --- !u!82 &1544915894
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4233,6 +4244,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 205413601}
   moveSpeed: 4
+  sentinel: {fileID: 0}
+  handGuide: {fileID: 0}
 --- !u!82 &2144604552
 AudioSource:
   m_ObjectHideFlags: 0
