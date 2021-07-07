@@ -156,8 +156,6 @@ public class CountManager : MonoBehaviour
 
     IEnumerator WinGame()
     {
-
-
         gameWinCanvas.SetActive(true);
         yield return new WaitForSeconds(timeTransition);
         countUI.SetActive(false);

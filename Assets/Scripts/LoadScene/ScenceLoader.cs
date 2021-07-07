@@ -61,6 +61,10 @@ public class ScenceLoader : MonoBehaviour
     {
         SceneManager.LoadScene("LoadingGameMatch");
     }
+    public void LoadGameLingature()
+    {
+        SceneManager.LoadScene("LoadingGameLigature");
+    }
     public void LoadGameFind()
     {
         SceneManager.LoadScene("LoadingGameFindFood");

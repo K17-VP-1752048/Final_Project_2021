@@ -207,6 +207,15 @@ public class QuizUI : MonoBehaviour
         //img.GetComponent<AudioSource>().Play();
 
         //random popup congratulation
+        int val = Random.Range(0, popUpCheeringCanvas.transform.childCount);
+        popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(true);
+
+        gameObject.GetComponent<AudioSource>().clip = bravo_audio;
+        gameObject.GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(1.5f);
+        popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(false);
+
+        //random popup congratulation
         //Instantiate(congratEndGame);
 
         gameWinCanvas.SetActive(true);

@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour
 {
-    [SerializeField] GameObject correctForm, canvas;
-    [SerializeField] SpriteRenderer[] animals;
+    [SerializeField] private GameObject correctForm;
+    [SerializeField] private SpriteRenderer[] animals; //gameMatch
     //[SerializeField] Button btnBack;
-    [SerializeField] GameObject trailFX;
+    [SerializeField] private GameObject trailFX;
+    [SerializeField] private string selectedTopic;
+    [SerializeField] private float time, distance;
 
     private bool moving = false;
     private bool selected = true;
@@ -17,6 +19,7 @@ public class Tutorial : MonoBehaviour
     void Start()
     {
         SetEnabled(false);
+        //trailFX.transform.position = gameObject.GetComponent<RectTransform>().position;
     }
 
     // Update is called once per frame
@@ -31,10 +34,10 @@ public class Tutorial : MonoBehaviour
         }
         if (moving)
         {
-            gameObject.GetComponent<RectTransform>().position = Vector3.MoveTowards(gameObject.GetComponent<RectTransform>().position, new Vector3(correctForm.transform.position.x, correctForm.transform.position.y, correctForm.transform.position.z), 10 * Time.deltaTime);
+            gameObject.GetComponent<RectTransform>().position = Vector3.MoveTowards(gameObject.GetComponent<RectTransform>().position, new Vector3(correctForm.transform.position.x, correctForm.transform.position.y, correctForm.transform.position.z), time * Time.deltaTime);
             // move trail when hand move
             trailFX.transform.position = gameObject.GetComponent<RectTransform>().position;
-            if (Vector2.Distance(gameObject.GetComponent<RectTransform>().position, correctForm.transform.position) < 0.2f)
+            if (Vector2.Distance(gameObject.GetComponent<RectTransform>().position, correctForm.transform.position) < distance)
             {
                 moving = false;
                 StartCoroutine(EndofTutorial());
@@ -53,9 +56,13 @@ public class Tutorial : MonoBehaviour
 
     IEnumerator HandTutorial()
     {
-        // click 1 lan thi dung cai dong nay
-        //gameObject.GetComponent<Animator>().SetTrigger("SingleClick");
-        
+        if(selectedTopic == "GamePickToRoom")
+        {
+            // click 1 lan thi dung cai dong nay
+            gameObject.GetComponent<Animator>().SetTrigger("SingleClick");
+            yield return new WaitForSeconds(2f);
+        }
+
         //animation hand click
         gameObject.GetComponent<Animator>().SetTrigger("PressHold");
         yield return new WaitForSeconds(1.5f);
@@ -68,6 +75,7 @@ public class Tutorial : MonoBehaviour
         gameObject.GetComponent<Animator>().SetTrigger("Release");
         yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
+        Destroy(trailFX);
         SetEnabled(true);
     }
 }

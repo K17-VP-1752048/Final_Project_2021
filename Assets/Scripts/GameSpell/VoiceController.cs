@@ -27,12 +27,12 @@ public class VoiceController : MonoBehaviour
 
     void Update()
     {
-        if (count >= 3 && spellingManager.GetLength() > 0)
+        if (count >= 3 && spellingManager.GetLength() > 1)
         {
             spellingManager.TimeOut();
             count = 0;
         }
-        else if (count >= 3 && spellingManager.GetLength() <= 0)
+        else if (count >= 3 && spellingManager.GetLength() <= 1)
         {
             spellingManager.EndGame_With_SpellTimeOut();
             count = 0;
@@ -66,12 +66,12 @@ public class VoiceController : MonoBehaviour
 
     void OnFinalSpeechResult(string result)
     {
-        if(result.ToLower() == resText.text.ToLower() && spellingManager.GetLength() > 0)
+        if(result.ToLower() == resText.text.ToLower() && spellingManager.GetLength() > 1)
         {
             spellingManager.NextRound();
             count = 0;
         }
-        else if ((result.ToLower() == resText.text.ToLower() && spellingManager.GetLength() <= 0))
+        else if ((result.ToLower() == resText.text.ToLower() && spellingManager.GetLength() <= 1))
         {
             spellingManager.EndGame();
             count = 0;
@@ -85,12 +85,12 @@ public class VoiceController : MonoBehaviour
 
     void OnPartialSpeechResult(string result)
     {
-        if (result.ToLower() == resText.text.ToLower() && spellingManager.GetLength() > 0)
+        if (result.ToLower() == resText.text.ToLower() && spellingManager.GetLength() > 1)
         {
             spellingManager.NextRound();
             count = 0;
         }
-        else if ((result.ToLower() == resText.text.ToLower() && spellingManager.GetLength() <= 0))
+        else if ((result.ToLower() == resText.text.ToLower() && spellingManager.GetLength() <= 1))
         {
             spellingManager.EndGame();
             count = 0;

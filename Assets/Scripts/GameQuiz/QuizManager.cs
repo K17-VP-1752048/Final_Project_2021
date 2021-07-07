@@ -53,7 +53,7 @@ public class QuizManager : MonoBehaviour
             slf.ResetCurrentQuestion_GameQuiz();
             slf.ResetCurrentList_GameQuiz();
 
-            StartCoroutine(NextRound(3f));
+            //StartCoroutine(NextRound(3f));
             //SceneManager.LoadScene("TopicsAnimalsScene");
         }
         else

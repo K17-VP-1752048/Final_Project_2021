@@ -10,6 +10,9 @@ public class TrainStationLevel : MonoBehaviour
     [SerializeField] GameObject popUpCanvas;
     [SerializeField] string nextLevel;
     [SerializeField] Train train;
+    [SerializeField] private GameObject gameWinCanvas;
+    [SerializeField] private GameObject getKeyRewardCanvas;
+    [SerializeField] private float timeTransition = 4f;
 
     // for debugging
     [SerializeField] int count = 0;
@@ -17,18 +20,55 @@ public class TrainStationLevel : MonoBehaviour
     [SerializeField] bool popupText = false;
     [SerializeField] bool loadNextLvl = false;
 
+    private SaveLoadFile slf;
+    private bool finished = false;
+
+    private void Start()
+    {
+        slf = gameObject.AddComponent<SaveLoadFile>();
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (count == totalNumber)
         {
             allNumberInPlace = true;
+
+            //save current scene
+            if (nextLevel != "" && nextLevel != "TopicsNumberScene")
+            {
+                slf.SaveCurrentSceneTrainStation(nextLevel);
+            }
+            else
+            {
+                slf.ResetGameTrainStation();
+
+                if (!slf.CheckCompleteGame("GameTrainStation"))
+                {
+                    //increase key
+                    slf.IncreaseKey();
+
+                    //complete game
+                    slf.CompleteGame("GameTrainStation");
+
+                    this.finished = true;
+                }
+            }
         }
-        if (popupText)
+        if (popupText && nextLevel != "TopicsNumberScene")
         {
             //popup.SetActive(true);
             StartCoroutine(ShowPopUp());
         }
+        else if(popupText && nextLevel == "TopicsNumberScene")
+        {
+            StartCoroutine(ShowPopUp());
+
+            //win game
+            StartCoroutine(WinGame());
+        }
+
         if (loadNextLvl)
         {
             SceneManager.LoadScene(nextLevel);
@@ -61,5 +101,23 @@ public class TrainStationLevel : MonoBehaviour
         yield return new WaitForSeconds(2f);
         popUpCanvas.SetActive(false);
         train.MoveToNextWayPoint(true);
+    }
+    IEnumerator WinGame()
+    {
+        yield return new WaitForSeconds(3f);
+        
+        gameWinCanvas.SetActive(true);
+        yield return new WaitForSeconds(timeTransition);
+        //countUI.SetActive(false);
+
+        Debug.Log(finished && getKeyRewardCanvas != null);
+        if (finished && getKeyRewardCanvas != null)
+        {
+            gameWinCanvas.GetComponentInChildren<Animator>().SetTrigger("Disappear");
+            getKeyRewardCanvas.SetActive(true);
+            yield return new WaitForSeconds(timeTransition);
+        }
+
+        SceneManager.LoadScene("TopicsNumberScene");
     }
 }
