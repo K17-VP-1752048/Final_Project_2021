@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NumberActiver : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class NumberActiver : MonoBehaviour
     public GameObject[] numbers;
     public GameObject textBackground;
     public GameObject[] textsInTextBackground;
+    public GameObject refreshBtn;
 
     private Text message;
     private SaveLoadFile slf;
@@ -30,11 +32,6 @@ public class NumberActiver : MonoBehaviour
             textsInTextBackground[i].SetActive(false);
         }
 
-        //yield return new WaitForSeconds(2f);
-        //textWriter.addWriter(message, "Aujourd'hui on va apprendre les chiffres 0-10", .1f);
-        //yield return new WaitForSeconds(5f);
-        //textWriter.addWriter(message, "Alors, comptez avec moi", .1f);
-        //yield return new WaitForSeconds(3f);
         textBackground.SetActive(false);
 
         foreach (GameObject num in numbers)
@@ -52,5 +49,8 @@ public class NumberActiver : MonoBehaviour
         {
             slf.CompleteGame("NumberIntroduce");
         }
+
+        yield return new WaitForSeconds(3f);
+        refreshBtn.SetActive(true);
     }
 }

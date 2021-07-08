@@ -5,16 +5,21 @@ using System.IO;
 
 public class PuzzleImageManager : MonoBehaviour
 {
-    public GameObject mainCharac;
+    public GameObject mainCharac1;
+    public GameObject message1;
+    public GameObject mainCharac2;
+    public GameObject message2;
+
     public GameObject flashLight;
 
-    private GameObject message, buttons;
+
+    private GameObject buttons;
 
     // Start is called before the first frame update
     void Start()
     {
-        message = GameObject.Find("ImageText");
-        message.SetActive(false);
+        //message1.SetActive(false);
+        //message2.SetActive(false);
         buttons = GameObject.Find("Buttons");
         buttons.SetActive(false);
 
@@ -26,9 +31,16 @@ public class PuzzleImageManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         buttons.SetActive(true);
         yield return new WaitForSeconds(1f);
-        mainCharac.SetActive(true);
+        mainCharac1.SetActive(true);
         yield return new WaitForSeconds(3f);
-        message.SetActive(true);
+        message1.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        if (mainCharac2 != null) mainCharac2.SetActive(true);
+        message1.SetActive(false);
+        if (message2 != null) {
+            yield return new WaitForSeconds(2f);
+            message2.SetActive(true); 
+        }
     }
 
     public void TakeScreenShot()

@@ -8,18 +8,17 @@ public class PuzzleControl : MonoBehaviour
 {
     [SerializeField] string puzzleName;
     [SerializeField] int orderNumber;
+    [SerializeField] GameObject winCanvas;
     public static bool continu, win;
 
     private static new string name;
-    private Canvas winCanvas;
 
     // Start is called before the first frame update
     void Start()
     {
         win = false;
         continu = true;
-        winCanvas = GameObject.Find("CanvasReussite").GetComponent<Canvas>();
-        winCanvas.enabled = false;
+        winCanvas.SetActive(false);
         GameObject.Find("Trans").GetComponent<Image>().enabled = false;
         name = puzzleName;
     }
@@ -50,7 +49,7 @@ public class PuzzleControl : MonoBehaviour
             continu = false;
             GameObject.Find("Trans").GetComponent<Image>().enabled = true;
             GameObject.Find("PanelPuzzle").SetActive(false);
-            winCanvas.enabled = true;
+            winCanvas.SetActive(true);
         }
         if(!continu)
         {

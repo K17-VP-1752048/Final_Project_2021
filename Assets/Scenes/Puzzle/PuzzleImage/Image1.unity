@@ -1319,7 +1319,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 523a69934fdce804badec737efa80be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCharac: {fileID: 643660607}
+  mainCharac1: {fileID: 643660607}
+  message1: {fileID: 1755219949}
+  mainCharac2: {fileID: 0}
+  message2: {fileID: 0}
   flashLight: {fileID: 1498781990}
 --- !u!1001 &1591996494
 PrefabInstance:
@@ -1484,7 +1487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1755219950
 RectTransform:
   m_ObjectHideFlags: 0
