@@ -55,6 +55,7 @@ public class Level : MonoBehaviour
     IEnumerator LoadNextScene()
     {
         GameObject popUpObject = popupCanvas.transform.GetChild(index).gameObject;
+        yield return new WaitForSeconds(.5f);
         popUpObject.SetActive(true);
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(nextScene);
