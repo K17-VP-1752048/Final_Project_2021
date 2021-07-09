@@ -43,7 +43,7 @@ public class DragAndDropControl : MonoBehaviour, IPointerDownHandler,
     private void ResetSprite()
     {
         gameObject.GetComponent<Image>().sprite = originalSprite;
-        gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(80, 85);
+        gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(90, 90);
     }
 
     public void OnBeginDrag(PointerEventData eventData)
