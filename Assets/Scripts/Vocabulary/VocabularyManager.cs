@@ -58,7 +58,7 @@ public class VocabularyManager : MonoBehaviour
         {
             if (i == list.Count - 1)
             {
-                int page = (list.Count % listImg.Count != 0) ? (list.Count / 9 + 1) : (list.Count / 9);
+                int page = (list.Count % listImg.Count != 0) ? (list.Count / 6 + 1) : (list.Count / 6);
                 this.indexPrevious = listImg.Count * page - 2 * listImg.Count;
                 this.nextBtn.gameObject.SetActive(false);
             }
