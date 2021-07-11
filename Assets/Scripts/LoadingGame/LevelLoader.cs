@@ -7,11 +7,16 @@ using UnityEngine.UI;
 public class LevelLoader : MonoBehaviour
 {
     private Image progressBar;
+    private AudioSource bgMusic;
     [SerializeField] private string sceneAddress;
     
     private void Start()
     {
-        progressBar = GameObject.Find("Progress Bar").GetComponent<Image>();
+        progressBar = transform.GetChild(0).Find("Progress Bar").GetComponent<Image>();
+        //GameObject.Find("Progress Bar").GetComponent<Image>();
+        bgMusic = GameObject.Find("BackgroundAudio").GetComponent<AudioSource>();
+        bgMusic.mute = true;
+
         StartCoroutine(LoadAsynchronously(sceneAddress));
     }
 
@@ -31,7 +36,7 @@ public class LevelLoader : MonoBehaviour
         {
             //progressBar.fillAmount = operation.progress;
             progressBar.fillAmount = 1;
-
+            bgMusic.mute = false;
             yield return null;
         }
     }
