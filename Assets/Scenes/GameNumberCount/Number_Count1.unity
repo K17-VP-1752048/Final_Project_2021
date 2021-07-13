@@ -446,12 +446,47 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 746834673460082436, guid: 8c2f23910fbf5944882b1caa9e0b9629,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746568475806243384, guid: 8c2f23910fbf5944882b1caa9e0b9629,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746568475806243384, guid: 8c2f23910fbf5944882b1caa9e0b9629,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746568475806243384, guid: 8c2f23910fbf5944882b1caa9e0b9629,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 237.89642
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746568475806243384, guid: 8c2f23910fbf5944882b1caa9e0b9629,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 709.93335
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746568475806243384, guid: 8c2f23910fbf5944882b1caa9e0b9629,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -118.94821
+      objectReference: {fileID: 0}
     - target: {fileID: 2985333504311921017, guid: 8c2f23910fbf5944882b1caa9e0b9629,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 034f0a1c1f354fb40ae90d073c6d61dd,
         type: 3}
+    - target: {fileID: 3107469563230379523, guid: 8c2f23910fbf5944882b1caa9e0b9629,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4538238358860024645, guid: 8c2f23910fbf5944882b1caa9e0b9629,
         type: 3}
       propertyPath: m_Name
@@ -482,6 +517,21 @@ PrefabInstance:
       propertyPath: downEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1526130994}
+    - target: {fileID: 7385834219914235724, guid: 8c2f23910fbf5944882b1caa9e0b9629,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.1509434
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385834219914235724, guid: 8c2f23910fbf5944882b1caa9e0b9629,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.1509434
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385834219914235724, guid: 8c2f23910fbf5944882b1caa9e0b9629,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.1509434
+      objectReference: {fileID: 0}
     - target: {fileID: 7385834219936882260, guid: 8c2f23910fbf5944882b1caa9e0b9629,
         type: 3}
       propertyPath: m_Camera
