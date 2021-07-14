@@ -23,9 +23,12 @@ namespace TextSpeech
         }
         public static void Init()
         {
-            if (_instance != null) return;
+            if (_instance != null)
+            {
+                return;
+            }
             GameObject obj = new GameObject();
-            obj.name = "TextToSpeech";
+            obj.name = "SpeechToText";
             _instance = obj.AddComponent<SpeechToText>();
         }
         void Awake()
