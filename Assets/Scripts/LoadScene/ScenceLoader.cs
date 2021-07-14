@@ -98,6 +98,11 @@ public class ScenceLoader : MonoBehaviour
         SceneManager.LoadScene("LoadingNumberIntro");
     }
 
+    public void RefreshGameNumberIntro()
+    {
+        SceneManager.LoadScene("NumberTeach");
+    }
+
     public void LoadPuzzle(int order)
     {
         SceneManager.LoadScene("Puzzle" + order);

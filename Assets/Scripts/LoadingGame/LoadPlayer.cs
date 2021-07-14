@@ -7,13 +7,15 @@ public class LoadPlayer : MonoBehaviour
 {
     [SerializeField] private Image progressBar;
     [SerializeField] private string nameGame;
+    private AudioSource bgMusic;
 
     private SaveLoadFile slf;
 
     private void Start()
     {
-        //StartCoroutine(LoadAsynchronously(PlayerPrefs.GetString(namePlayerPrefs, valueDefault)));
         slf = gameObject.AddComponent<SaveLoadFile>();
+        bgMusic = GameObject.Find("BackgroundAudio").GetComponent<AudioSource>();
+        bgMusic.mute = true;
 
         if (nameGame == "GameMatch")
         {
@@ -111,6 +113,7 @@ public class LoadPlayer : MonoBehaviour
         {
             //progressBar.fillAmount = operation.progress;
             progressBar.fillAmount = 1;
+            bgMusic.mute = false;
 
             yield return null;
         }

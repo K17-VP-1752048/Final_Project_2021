@@ -13,7 +13,6 @@ public class LevelLoader : MonoBehaviour
     private void Start()
     {
         progressBar = transform.GetChild(0).Find("Progress Bar").GetComponent<Image>();
-        //GameObject.Find("Progress Bar").GetComponent<Image>();
         bgMusic = GameObject.Find("BackgroundAudio").GetComponent<AudioSource>();
         bgMusic.mute = true;
 
@@ -37,6 +36,7 @@ public class LevelLoader : MonoBehaviour
             //progressBar.fillAmount = operation.progress;
             progressBar.fillAmount = 1;
             bgMusic.mute = false;
+
             yield return null;
         }
     }

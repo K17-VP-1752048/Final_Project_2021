@@ -8,7 +8,7 @@ public class PopUpPlaySound : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         AudioSource audioSource = animator.gameObject.GetComponent<AudioSource>();
-        audioSource.PlayDelayed(stateInfo.normalizedTime / 2);
+        audioSource.PlayDelayed(stateInfo.normalizedTime /2);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
