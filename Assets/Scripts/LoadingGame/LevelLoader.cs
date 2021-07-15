@@ -8,13 +8,22 @@ public class LevelLoader : MonoBehaviour
 {
     private Image progressBar;
     private AudioSource bgMusic;
+    private bool musicIsOn;
+
     [SerializeField] private string sceneAddress;
     
     private void Start()
     {
         progressBar = transform.GetChild(0).Find("Progress Bar").GetComponent<Image>();
         bgMusic = GameObject.Find("BackgroundAudio").GetComponent<AudioSource>();
-        bgMusic.mute = true;
+        musicIsOn = false;
+
+        // If the bg music is ON
+        if (!bgMusic.mute)
+        {
+            bgMusic.mute = true;
+            musicIsOn = true;
+        }
 
         StartCoroutine(LoadAsynchronously(sceneAddress));
     }
@@ -35,7 +44,9 @@ public class LevelLoader : MonoBehaviour
         {
             //progressBar.fillAmount = operation.progress;
             progressBar.fillAmount = 1;
-            bgMusic.mute = false;
+
+            if(musicIsOn)
+                bgMusic.mute = false;
 
             yield return null;
         }

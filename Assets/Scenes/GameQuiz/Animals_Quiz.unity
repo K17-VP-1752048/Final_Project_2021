@@ -971,7 +971,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d80956d604873ef4dae158154de3d851, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2528,8 +2528,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -2, y: 234}
-  m_SizeDelta: {x: 700, y: 100}
+  m_AnchoredPosition: {x: -0.0000121593475, y: 234}
+  m_SizeDelta: {x: 844.5614, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1696809575
 MonoBehaviour:
@@ -2552,8 +2552,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Question?
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 91dd7a0e8496e59469512691ef1651b9, type: 2}
-  m_sharedMaterial: {fileID: -8745814374204769617, guid: 91dd7a0e8496e59469512691ef1651b9,
+  m_fontAsset: {fileID: 11400000, guid: 6e42cfe0bcc1b4f47b5bbf910e5bf6a5, type: 2}
+  m_sharedMaterial: {fileID: 2611621081397593507, guid: 6e42cfe0bcc1b4f47b5bbf910e5bf6a5,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2578,10 +2578,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
+  m_fontSize: 72
   m_fontSizeBase: 45
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -2996,8 +2996,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0}
-  m_SizeDelta: {x: 400, y: 400}
+  m_AnchoredPosition: {x: 0.0000060796738, y: -0.0000060796738}
+  m_SizeDelta: {x: 448.18713, y: 448.18713}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1917231307
 MonoBehaviour:
