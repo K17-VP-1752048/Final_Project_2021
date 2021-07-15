@@ -45,8 +45,11 @@ public class TreasureManager : MonoBehaviour
 
     public void startOpenTreasureAnim(string puzzleName, int numberOfKeyLost)
     {
-        StartCoroutine(openTreasure(GameObject.Find(puzzleName)));
-        
+        if(!puzzleName.Contains("PuzzleExtra"))
+            StartCoroutine(openTreasure(GameObject.Find(puzzleName)));
+        else
+            StartCoroutine(openTreasureExtra(GameObject.Find(puzzleName)));
+
         // numberOfOpenTreasure++;
         slf.IncreaseBox();
         // Keys--
@@ -59,12 +62,29 @@ public class TreasureManager : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         keyFly.SetActive(false);
-        tmp.transform.GetChild(1).GetComponent<Image>().enabled = false;
+        //tmp.transform.GetChild(1).GetComponent<Image>().enabled = false;
+        tmp.transform.GetChild(1).gameObject.SetActive(false);
 
         OpenTreasureCanvas.SetActive(true);
         yield return new WaitForSeconds(1f);
 
         SceneManager.LoadScene(tmp.name);
+    }
+
+    IEnumerator openTreasureExtra(GameObject tmp)
+    {
+        keyFly.SetActive(true);
+
+        yield return new WaitForSeconds(1f);
+        keyFly.SetActive(false);
+        tmp.transform.GetChild(1).gameObject.SetActive(false);
+
+        OpenTreasureCanvas.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        OpenTreasureCanvas.SetActive(false);
+        tmp.transform.GetChild(0).gameObject.SetActive(true);
+
+        //SceneManager.LoadScene(tmp.name);
     }
 
     public void alertTreasureCanNotOpen()
