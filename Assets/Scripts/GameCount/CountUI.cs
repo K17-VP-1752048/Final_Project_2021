@@ -41,22 +41,16 @@ public class CountUI : MonoBehaviour
     }
 
     void Update()
-    {
-        if (CountManager.Time >= 3)
-        {
-            //disabled images
-            SetEnabled(false);
-
-            StartCoroutine(CircleCorrectAnswer(2f));
-            CountManager.Time = 0;
-        }
-
+    { 
         if(this.indexCorrectAns != -1)
         {
             SetEnabled(false);
             options[this.indexCorrectAns].numberImg.GetComponent<RectTransform>().position = Vector3.MoveTowards(options[this.indexCorrectAns].numberImg.GetComponent<RectTransform>().position, new Vector3(guessText.position.x - 0.4f, guessText.position.y, guessText.position.z), 10 * Time.deltaTime);
-            if (Vector2.Distance(options[this.indexCorrectAns].numberImg.GetComponent<RectTransform>().position, guessText.position) < 0.2f)
+
+            if (Vector2.Distance(options[this.indexCorrectAns].numberImg.GetComponent<RectTransform>().position, guessText.position) <= 0.4f)
             {
+                StartCoroutine(ShowPopup(2f, options[this.indexCorrectAns].numberImg));
+
                 this.indexCorrectAns = -1;
             }
         }
@@ -139,31 +133,6 @@ public class CountUI : MonoBehaviour
         //yield return new WaitForSeconds(img.GetComponent<AudioSource>().clip.length + 0.2f);
     }
 
-    //Circle the correct answer
-    IEnumerator CircleCorrectAnswer(float delaytime)
-    {
-        SetEnabled(false);
-        yield return new WaitForSeconds(0.5f);
-
-        for (int i = 0; i < options.Count; i++)
-        {
-            if (options[i].numberImg.GetComponentInChildren<TMP_Text>().text.ToLower() == countManager.ConvertNumberToFrench().ToLower())
-            {
-                this.indexCorrectAns = i;
-                break;
-            }
-        }
-
-        yield return new WaitForSeconds(delaytime);
-        showRes.SetActive(true);
-        showRes.GetComponentInChildren<Image>().GetComponentInChildren<TMP_Text>().text = "Vous n'avez pas répondu correctement!!!";
-        
-        yield return new WaitForSeconds(delaytime);
-        countManager.NextRound();
-        showRes.SetActive(false);
-        SetEnabled(true);
-    }
-
     //this give blink effect [if needed use or dont use]
     IEnumerator BlinkWrongImg(Image img)
     {
@@ -192,6 +161,32 @@ public class CountUI : MonoBehaviour
         img.color = Color.green;
         //img.GetComponent<AudioSource>().Play();
 
+        StartCoroutine(MoveCorrectAnswer(2f));
+    }
+
+    //Move the correct answer
+    IEnumerator MoveCorrectAnswer(float delaytime)
+    {
+        SetEnabled(false);
+        yield return new WaitForSeconds(0.5f);
+
+        for (int i = 0; i < options.Count; i++)
+        {
+            if (options[i].numberImg.GetComponentInChildren<TMP_Text>().text.ToLower() == countManager.ConvertNumberToFrench().ToLower())
+            {
+                this.indexCorrectAns = i;
+                break;
+            }
+        }
+
+        SetEnabled(true);
+    }
+
+    IEnumerator ShowPopup(float delaytime, Image img)
+    {
+        Debug.Log("showpopup");
+        SetEnabled(false);
+        yield return new WaitForSeconds(delaytime);
         showRes.SetActive(true);
         showRes.GetComponent<AudioSource>().clip = bravo_audio;
         showRes.GetComponent<AudioSource>().Play();
