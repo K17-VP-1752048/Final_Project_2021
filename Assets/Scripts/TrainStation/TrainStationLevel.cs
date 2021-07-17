@@ -56,22 +56,25 @@ public class TrainStationLevel : MonoBehaviour
                 }
             }
         }
-        if (popupText && nextLevel != "TopicsNumberScene")
+        if (popupText)
         {
             //popup.SetActive(true);
             StartCoroutine(ShowPopUp());
         }
-        else if(popupText && nextLevel == "TopicsNumberScene")
-        {
-            StartCoroutine(ShowPopUp());
-
-            //win game
-            StartCoroutine(WinGame());
-        }
 
         if (loadNextLvl)
         {
-            SceneManager.LoadScene(nextLevel);
+            if(nextLevel != "TopicsNumberScene")
+            {
+                SceneManager.LoadScene(nextLevel);
+            }
+            else
+            {
+                StartCoroutine(ShowPopUp());
+
+                //win game
+                StartCoroutine(WinGame());
+            }
         }
     }
 
