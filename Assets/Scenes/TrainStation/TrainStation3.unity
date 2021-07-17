@@ -151,7 +151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalNumber: 3
-  popup: {fileID: 0}
   popUpCanvas: {fileID: 1944915474}
   nextLevel: TrainStation4
   train: {fileID: 4858599748762045822}
@@ -433,7 +432,7 @@ MonoBehaviour:
   wayPoints:
   - {fileID: 1120631858}
   moveSpeed: 2
-  jumpForce: 0.7
+  jumpForce: 1.8
   railroadCar: {fileID: 1078600284949944757}
   moveToTrainSpeed: 5
   order: 2
@@ -727,7 +726,7 @@ MonoBehaviour:
   wayPoints:
   - {fileID: 207051365}
   moveSpeed: 1.7
-  jumpForce: 0.7
+  jumpForce: 1.7
   railroadCar: {fileID: 1078600284949944756}
   moveToTrainSpeed: 5
   order: 3
@@ -1489,7 +1488,7 @@ MonoBehaviour:
   wayPoints:
   - {fileID: 521014656}
   moveSpeed: 1.5
-  jumpForce: 0.7
+  jumpForce: 1.9
   railroadCar: {fileID: 1078600284949944758}
   moveToTrainSpeed: 5
   order: 1
@@ -1756,6 +1755,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3308907326135941798, guid: 9595fa23ba08a274ab847f3e0cbcdac7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7493575153231094788, guid: 9595fa23ba08a274ab847f3e0cbcdac7,
         type: 3}
       propertyPath: m_Pivot.x

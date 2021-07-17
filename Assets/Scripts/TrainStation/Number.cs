@@ -34,8 +34,7 @@ public class Number : MonoBehaviour
         orderControl = orderControlObj.GetComponent<TSOrderControl>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         if (wayPointIndex <= wayPoints.Count - 1 && moving)
         {

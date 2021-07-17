@@ -27,8 +27,7 @@ public class Train : MonoBehaviour
         StartCoroutine("PlayClarkson");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         if (wayPointIndex <= wayPoints.Count - 1 && moving)
         {
@@ -37,9 +36,14 @@ public class Train : MonoBehaviour
             if (Vector2.Distance(transform.position, targetPosition) < 2f)
             {
                 Debug.Log("Stop");
-                Stop();  
+                Stop();
             }
         }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         if (level.AllNumberIsInPlace())
         {
             level.TogglePopupText(true);
