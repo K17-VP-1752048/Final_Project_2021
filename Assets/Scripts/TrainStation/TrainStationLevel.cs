@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class TrainStationLevel : MonoBehaviour
 {
     [SerializeField] int totalNumber;
-    [SerializeField] GameObject popup;
     [SerializeField] GameObject popUpCanvas;
     [SerializeField] string nextLevel;
     [SerializeField] Train train;
