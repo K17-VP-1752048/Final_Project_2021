@@ -13,6 +13,7 @@ public class SaveLoadFile : MonoBehaviour
     private SpellHouseholdDataScriptable spellHouseholdData;
     private int key;
     private int box;
+    private int numberofskips;
 
     public QuizDataScriptable QuizData { get => quizData; set => quizData = value; }
     public SpellDataScriptable SpellData { get => spellData; set => spellData = value; }
@@ -813,6 +814,90 @@ public class SaveLoadFile : MonoBehaviour
         if (File.Exists(Application.persistentDataPath + "/saveBox.dat"))
         {
             File.Delete(Application.persistentDataPath + "/saveBox.dat");
+        }
+    }
+
+    public void SaveNumberOfSkipsGameSpell(string selectTopic)
+    {
+
+        //increase number of skips
+        this.numberofskips = LoadNumberOfSkipsGameSpell(selectTopic);
+        this.numberofskips++;
+
+        BinaryFormatter bf = new BinaryFormatter();
+        if (selectTopic == "Animals")
+        {
+            FileStream file = File.Open(Application.persistentDataPath + "/saveNumberOfSkipsGameSpellAnimals.dat", FileMode.OpenOrCreate);
+            bf.Serialize(file, this.numberofskips.ToString());
+        }
+        else if (selectTopic == "Food")
+        {
+            FileStream file = File.Open(Application.persistentDataPath + "/saveNumberOfSkipsGameSpellFood.dat", FileMode.OpenOrCreate);
+            bf.Serialize(file, this.numberofskips.ToString());
+        }
+        else if (selectTopic == "Household")
+        {
+            FileStream file = File.Open(Application.persistentDataPath + "/saveNumberOfSkipsGameSpellFood.dat", FileMode.OpenOrCreate);
+            bf.Serialize(file, this.numberofskips.ToString());
+        }
+    }
+
+    public int LoadNumberOfSkipsGameSpell(string selectTopic)
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        if (selectTopic == "Animals" && File.Exists(Application.persistentDataPath + "/saveNumberOfSkipsGameSpellAnimals.dat"))
+        {
+            FileStream file = File.Open(Application.persistentDataPath + "/saveNumberOfSkipsGameSpellAnimals.dat", FileMode.OpenOrCreate);
+            if (file.Length == 0)
+            {
+                return 0;
+            }
+            string res = bf.Deserialize(file) as string;
+            file.Close();
+
+            return Int32.Parse(res);
+        }
+        else if (selectTopic == "Food" && File.Exists(Application.persistentDataPath + "/saveNumberOfSkipsGameSpellFood.dat"))
+        {
+            FileStream file = File.Open(Application.persistentDataPath + "/saveNumberOfSkipsGameSpellFood.dat", FileMode.OpenOrCreate);
+            if (file.Length == 0)
+            {
+                return 0;
+            }
+            string res = bf.Deserialize(file) as string;
+            file.Close();
+
+            return Int32.Parse(res);
+        }
+        else if (selectTopic == "Household" && File.Exists(Application.persistentDataPath + "/saveNumberOfSkipsGameSpellHousehold.dat"))
+        {
+            FileStream file = File.Open(Application.persistentDataPath + "/saveNumberOfSkipsGameSpellHousehold.dat", FileMode.OpenOrCreate);
+            if (file.Length == 0)
+            {
+                return 0;
+            }
+            string res = bf.Deserialize(file) as string;
+            file.Close();
+
+            return Int32.Parse(res);
+        }
+        return 0;
+    }
+
+    public void ResetNumberOfSkipsGameSpell(string selectTopic)
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        if (selectTopic == "Animals" && File.Exists(Application.persistentDataPath + "/saveNumberOfSkipsGameSpellAnimals.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/saveNumberOfSkipsGameSpellAnimals.dat");
+        }
+        else if (selectTopic == "Food" && File.Exists(Application.persistentDataPath + "/saveNumberOfSkipsGameSpellFood.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/saveNumberOfSkipsGameSpellFood.dat");
+        }
+        else if (selectTopic == "Household" && File.Exists(Application.persistentDataPath + "/saveNumberOfSkipsGameSpellHousehold.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/saveNumberOfSkipsGameSpellHousehold.dat");
         }
     }
 }
