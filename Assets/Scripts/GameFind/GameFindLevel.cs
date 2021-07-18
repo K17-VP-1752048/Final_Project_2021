@@ -26,28 +26,6 @@ public class GameFindLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (currentObjectNumber == totalObjectNumber && nextScene != null && nextScene != "TopicsAlimentsScene")
-        //{
-        //    //popUp.SetActive(true);
-        //    //popup.GetComponent<Achievement>().StartAnimations();
-        //    //StartCoroutine("LoadNextScene");
-        //    SaveCurrentScene();
-
-        //    StartCoroutine(LoadNextScene());
-        //}
-        //else if (currentObjectNumber == totalObjectNumber)
-        //{
-        //    saveLoadFile.ResetGameFindFood();
-
-        //    if (!saveLoadFile.CheckCompleteGame("GameFindFood"))
-        //    {
-        //        saveLoadFile.IncreaseKey();
-        //        saveLoadFile.CompleteGame("GameFindFood");
-        //        this.finished = true;
-        //    }
-
-        //    StartCoroutine(LoadPopUpAndLoadScene());
-        //}
         if (currentObjectNumber == totalObjectNumber)
         {
             if(nextScene != null && nextScene != "TopicsAlimentsScene")
@@ -72,7 +50,7 @@ public class GameFindLevel : MonoBehaviour
 
     IEnumerator LoadNextScene()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.2f);
         GameObject popUpObject = popUp.transform.GetChild(index).gameObject;
         popUpObject.SetActive(true);
         yield return new WaitForSeconds(2f);
@@ -81,6 +59,7 @@ public class GameFindLevel : MonoBehaviour
 
     IEnumerator WinGame()
     {
+        yield return new WaitForSeconds(1.2f);
         gameWinCanvas.SetActive(true);
         yield return new WaitForSeconds(3f);
 
