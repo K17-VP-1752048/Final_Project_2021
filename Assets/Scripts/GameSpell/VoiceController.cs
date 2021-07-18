@@ -11,6 +11,7 @@ public class VoiceController : MonoBehaviour
     const string LANG_CODE = "fr_FR";
     [SerializeField] private TMP_Text resText;
     [SerializeField] private SpellingManager spellingManager;
+    [SerializeField] private Button skipBtn;
 
     private int count = 0;
 
@@ -27,7 +28,7 @@ public class VoiceController : MonoBehaviour
 
     void Update()
     {
-        if (count >= 3 && spellingManager.GetLength() > 1)
+        /*if (count >= 3 && spellingManager.GetLength() > 1)
         {
             spellingManager.TimeOut();
             count = 0;
@@ -36,6 +37,11 @@ public class VoiceController : MonoBehaviour
         {
             spellingManager.EndGame_With_SpellTimeOut();
             count = 0;
+        }*/
+
+        if (count >= 3)
+        {
+            skipBtn.gameObject.SetActive(true); 
         }
     }
 
@@ -73,7 +79,7 @@ public class VoiceController : MonoBehaviour
         }
         else if ((result.ToLower() == resText.text.ToLower() && spellingManager.GetLength() <= 1))
         {
-            spellingManager.EndGame();
+            spellingManager.EndGame(true);
             count = 0;
         }
         else
@@ -92,7 +98,7 @@ public class VoiceController : MonoBehaviour
         }
         else if ((result.ToLower() == resText.text.ToLower() && spellingManager.GetLength() <= 1))
         {
-            spellingManager.EndGame();
+            spellingManager.EndGame(true);
             count = 0;
         }
         else
@@ -105,5 +111,21 @@ public class VoiceController : MonoBehaviour
     void Setup(string code)
     {
         SpeechToText.instance.Setting(code);
+    }
+
+    public void EventSkipBtn()
+    {
+        skipBtn.GetComponent<AudioSource>().Play();
+
+        if (spellingManager.GetLength() > 1)
+        {
+            spellingManager.Skip();
+        }
+        else if (spellingManager.GetLength() <= 1)
+        {
+            spellingManager.EndGame(false);
+        }
+
+        count = 0;
     }
 }
