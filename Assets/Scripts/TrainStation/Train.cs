@@ -18,12 +18,14 @@ public class Train : MonoBehaviour
     private AudioSource audioSource;
     private int playRunSound = 0;
     private int playClarkson = 0;
+    private PauseGame pauseGame;
 
     // Start is called before the first frame update
     void Start()
     {
         level = FindObjectOfType<TrainStationLevel>().GetComponent<TrainStationLevel>();
         audioSource = GetComponent<AudioSource>();
+        pauseGame = FindObjectOfType<PauseGame>();
         StartCoroutine("PlayClarkson");
     }
 
@@ -61,6 +63,11 @@ public class Train : MonoBehaviour
         if (playRunSound == 1)
         {
             audioSource.Play();
+        }
+        if (playRunSound > 1 && pauseGame.IsPause())
+        {
+            audioSource.Pause();
+            playRunSound = 0;
         }
         if (playClarkson == 1)
         {

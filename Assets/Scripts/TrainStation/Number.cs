@@ -25,6 +25,7 @@ public class Number : MonoBehaviour
     private TSOrderControl orderControl;
     private AudioSource audioSource;
     private bool isReady = false;
+    private PauseGame pauseGame;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class Number : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         level = FindObjectOfType<TrainStationLevel>().GetComponent<TrainStationLevel>();
         orderControl = orderControlObj.GetComponent<TSOrderControl>();
+        pauseGame = FindObjectOfType<PauseGame>();
     }
 
     private void FixedUpdate()
@@ -108,7 +110,7 @@ public class Number : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!moving && order == orderControl.CurrentOrder())
+        if (!moving && order == orderControl.CurrentOrder() && !pauseGame.IsPause())
         {
             isReady = false;
         }
@@ -116,7 +118,7 @@ public class Number : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (!moving && order == orderControl.CurrentOrder())
+        if (!moving && order == orderControl.CurrentOrder() && !pauseGame.IsPause())
         {
             gameObject.AddComponent<AudioSource>();
             audioSource = GetComponent<AudioSource>();
@@ -124,7 +126,7 @@ public class Number : MonoBehaviour
             MoveToTrain();
             orderControl.NextNumber();
         }
-        else if(order != orderControl.CurrentOrder())
+        else if(order != orderControl.CurrentOrder() && !pauseGame.IsPause())
         {
             wrongSound.Play();
             StartCoroutine(alertWrongOrder());

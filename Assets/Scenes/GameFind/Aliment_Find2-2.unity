@@ -2809,6 +2809,18 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 1538297740}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1538297742 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1143696468, guid: 9595fa23ba08a274ab847f3e0cbcdac7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1538297740}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64794a7931563934d8dccf3c7c5c4a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1625615139
 GameObject:
   m_ObjectHideFlags: 0
@@ -3005,8 +3017,18 @@ PrefabInstance:
       objectReference: {fileID: 1538297741}
     - target: {fileID: 1863078121771971365, guid: c350ebaa171b4b54ab7fa12483aa348c,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1538297742}
+    - target: {fileID: 1863078121771971365, guid: c350ebaa171b4b54ab7fa12483aa348c,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 1863078121771971365, guid: c350ebaa171b4b54ab7fa12483aa348c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Pause
       objectReference: {fileID: 0}
     - target: {fileID: 8089818636452830951, guid: c350ebaa171b4b54ab7fa12483aa348c,
         type: 3}

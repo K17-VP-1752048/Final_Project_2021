@@ -927,8 +927,18 @@ PrefabInstance:
       objectReference: {fileID: 939036047}
     - target: {fileID: 1863078121771971365, guid: c350ebaa171b4b54ab7fa12483aa348c,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 939036048}
+    - target: {fileID: 1863078121771971365, guid: c350ebaa171b4b54ab7fa12483aa348c,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 1863078121771971365, guid: c350ebaa171b4b54ab7fa12483aa348c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Pause
       objectReference: {fileID: 0}
     - target: {fileID: 8089818636452830951, guid: c350ebaa171b4b54ab7fa12483aa348c,
         type: 3}
@@ -1096,7 +1106,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 13.799988, y: 110}
+  m_AnchoredPosition: {x: 13.799927, y: 110}
   m_SizeDelta: {x: -272.67944, y: 130.85666}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &622162494
@@ -1611,6 +1621,18 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 939036046}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &939036048 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1143696468, guid: 9595fa23ba08a274ab847f3e0cbcdac7,
+    type: 3}
+  m_PrefabInstance: {fileID: 939036046}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64794a7931563934d8dccf3c7c5c4a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &948241045
 PrefabInstance:
   m_ObjectHideFlags: 0

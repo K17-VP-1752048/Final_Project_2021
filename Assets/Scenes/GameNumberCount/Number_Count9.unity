@@ -574,8 +574,18 @@ PrefabInstance:
       objectReference: {fileID: 2120661841}
     - target: {fileID: 1863078121771971365, guid: c350ebaa171b4b54ab7fa12483aa348c,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2120661842}
+    - target: {fileID: 1863078121771971365, guid: c350ebaa171b4b54ab7fa12483aa348c,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 1863078121771971365, guid: c350ebaa171b4b54ab7fa12483aa348c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Pause
       objectReference: {fileID: 0}
     - target: {fileID: 8089818636452830951, guid: c350ebaa171b4b54ab7fa12483aa348c,
         type: 3}
@@ -3282,7 +3292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 236.3, y: -118.94821}
+  m_AnchoredPosition: {x: 236.29999, y: -118.94821}
   m_SizeDelta: {x: 157.53595, y: 237.89642}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2103352182
@@ -3452,6 +3462,18 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 2120661840}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2120661842 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1143696468, guid: 9595fa23ba08a274ab847f3e0cbcdac7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2120661840}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64794a7931563934d8dccf3c7c5c4a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &746834673060230773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3530,7 +3552,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 78.8, y: -118.94821}
+  m_AnchoredPosition: {x: 78.79999, y: -118.94821}
   m_SizeDelta: {x: 157.53595, y: 237.89642}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2985333504179357704
