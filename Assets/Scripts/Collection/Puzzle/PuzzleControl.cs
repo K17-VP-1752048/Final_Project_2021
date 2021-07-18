@@ -9,6 +9,8 @@ public class PuzzleControl : MonoBehaviour
     [SerializeField] string puzzleName;
     [SerializeField] int orderNumber;
     [SerializeField] GameObject winCanvas;
+    [SerializeField] private GameObject guideCanvas;
+
     public static bool continu, win;
 
     private static new string name;
@@ -18,8 +20,11 @@ public class PuzzleControl : MonoBehaviour
     {
         win = false;
         continu = true;
-        winCanvas.SetActive(false);
-        GameObject.Find("Trans").GetComponent<Image>().enabled = false;
+        if(guideCanvas != null)
+        {
+            StartCoroutine(showGuideHand());
+        }
+//        winCanvas.SetActive(false);
         name = puzzleName;
     }
 
@@ -47,19 +52,24 @@ public class PuzzleControl : MonoBehaviour
         if (win && continu)
         {
             continu = false;
-            GameObject.Find("Trans").GetComponent<Image>().enabled = true;
-            GameObject.Find("PanelPuzzle").SetActive(false);
-            winCanvas.SetActive(true);
         }
         if(!continu)
         {
-            StartCoroutine(loadToCollection());
+            StartCoroutine(showWinCanvas());
         }
     }
 
-    IEnumerator loadToCollection()
+    IEnumerator showWinCanvas()
     {
-        yield return new WaitForSeconds(3f);
+        winCanvas.SetActive(true);
+        yield return new WaitForSeconds(1.6f);
         SceneManager.LoadScene("Image" + orderNumber);
+    }
+
+    IEnumerator showGuideHand()
+    {
+        guideCanvas.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        guideCanvas.SetActive(false);
     }
 }
