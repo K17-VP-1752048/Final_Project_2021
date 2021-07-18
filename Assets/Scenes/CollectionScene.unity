@@ -233,7 +233,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1899819589}
-        m_MethodName: LoadImagePuzzlePrize
+        m_MethodName: LoadPuzzle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1659,7 +1659,7 @@ GameObject:
   - component: {fileID: 377711274}
   - component: {fileID: 377711275}
   m_Layer: 5
-  m_Name: Topics
+  m_Name: Treasures
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1688,8 +1688,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.00012016}
-  m_SizeDelta: {x: 5552, y: 405.74738}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 5560, y: 405.74738}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &377711274
 MonoBehaviour:
@@ -1990,7 +1990,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1899819589}
-        m_MethodName: LoadImagePuzzlePrize
+        m_MethodName: LoadPuzzle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2092,8 +2092,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 953922393}
   m_HandleRect: {fileID: 953922392}
   m_Direction: 0
-  m_Value: -0.00000003027538
-  m_Size: 0.27377525
+  m_Value: -0.00000003021543
+  m_Size: 0.27338132
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2532,7 +2532,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1899819589}
-        m_MethodName: LoadImagePuzzlePrize
+        m_MethodName: LoadPuzzle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2954,7 +2954,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1899819589}
-        m_MethodName: LoadImagePuzzlePrize
+        m_MethodName: LoadPuzzle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3595,7 +3595,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1899819589}
-        m_MethodName: LoadImagePuzzlePrize
+        m_MethodName: LoadPuzzle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5355,7 +5355,7 @@ GameObject:
   - component: {fileID: 1946569661}
   - component: {fileID: 1946569660}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PanelTreasure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
