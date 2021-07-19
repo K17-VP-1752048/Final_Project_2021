@@ -19,6 +19,7 @@ public class QuizUI : MonoBehaviour
     [SerializeField] private GameObject popUpCheeringCanvas;
     [SerializeField] private GameObject gameWinCanvas;
     [SerializeField] private GameObject getKeyRewardCanvas;
+    [SerializeField] private GameObject blocker;
     [SerializeField] private float timeTransition = 4f;
 
     private Question question;

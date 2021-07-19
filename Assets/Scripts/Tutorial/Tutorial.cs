@@ -11,6 +11,7 @@ public class Tutorial : MonoBehaviour
     [SerializeField] private GameObject trailFX;
     [SerializeField] private string selectedTopic;
     [SerializeField] private float time, distance;
+    [SerializeField] private AudioSource dragSound;
 
     private bool moving = false;
     private bool selected = true;
@@ -31,6 +32,7 @@ public class Tutorial : MonoBehaviour
 
             selected = false;
             StartCoroutine(HandTutorial());
+            dragSound.PlayDelayed(1f);
         }
         if (moving)
         {
@@ -41,6 +43,7 @@ public class Tutorial : MonoBehaviour
             {
                 moving = false;
                 StartCoroutine(EndofTutorial());
+                dragSound.Stop();
             }
         }
     }

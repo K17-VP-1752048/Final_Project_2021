@@ -1829,6 +1829,7 @@ MonoBehaviour:
   selectedTopic: GamePickToRoom
   time: 5
   distance: 0.2
+  dragSound: {fileID: 2019442215}
 --- !u!95 &1156929897
 Animator:
   serializedVersion: 3
@@ -3188,6 +3189,12 @@ Transform:
 --- !u!1 &2019442214 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3657692626748371345, guid: d5df11f4aadb58a4d97106e56428f2eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 2019442212}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &2019442215 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2065401378, guid: d5df11f4aadb58a4d97106e56428f2eb,
     type: 3}
   m_PrefabInstance: {fileID: 2019442212}
   m_PrefabAsset: {fileID: 0}

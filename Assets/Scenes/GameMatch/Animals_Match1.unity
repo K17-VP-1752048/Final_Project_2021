@@ -2437,6 +2437,7 @@ MonoBehaviour:
   selectedTopic: 
   time: 10
   distance: 0.2
+  dragSound: {fileID: 2065401378}
 --- !u!114 &1232178156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3491,6 +3492,12 @@ CanvasRenderer:
 --- !u!1 &2065401374 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3657692626748371345, guid: d5df11f4aadb58a4d97106e56428f2eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 3657692628209465231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &2065401378 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2065401378, guid: d5df11f4aadb58a4d97106e56428f2eb,
     type: 3}
   m_PrefabInstance: {fileID: 3657692628209465231}
   m_PrefabAsset: {fileID: 0}

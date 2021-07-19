@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PauseGame : MonoBehaviour
 {
+    [SerializeField] GameObject blocker;
     private bool isPause = false;
 
     public void Pause()
     {
         Time.timeScale = 0f;
+        blocker.SetActive(true);
         isPause = true;
     }
 
@@ -16,6 +18,7 @@ public class PauseGame : MonoBehaviour
     {
         Time.timeScale = 1f;
         StartCoroutine("ResumeDelay");
+        blocker.SetActive(false);
     }
 
     IEnumerator ResumeDelay()
