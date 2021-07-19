@@ -13,11 +13,13 @@ public class MoveSystem : MonoBehaviour
     private float startPosX;
     private float startPosY;
     private Vector3 resetPosition;
+    private PauseGame pause;
 
     // Start is called before the first frame update
     void Start()
     {
         resetPosition = this.transform.localPosition;
+        pause = FindObjectOfType<PauseGame>();
     }
 
     // Update is called once per frame
@@ -39,7 +41,7 @@ public class MoveSystem : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !pause.IsPause())
         {
             Vector3 mousePos;
             mousePos = Input.mousePosition;
@@ -54,17 +56,17 @@ public class MoveSystem : MonoBehaviour
 
     private void OnMouseUp()
     {
-        moving = false;
 
+        moving = false;
         if (Mathf.Abs(this.transform.position.x - correctForm.transform.position.x) <= 0.5f &&
             Mathf.Abs(this.transform.position.y - correctForm.transform.position.y) <= 0.5f)
         {
-            this.transform.position    = new Vector3(correctForm.transform.position.x,
-                                                       correctForm.transform.position.y,
-                                                       correctForm.transform.position.z - 1); // not overridden by image shadow
-            this.transform.localScale       = new Vector3(correctForm.transform.localScale.x,
-                                                       correctForm.transform.localScale.y,
-                                                       correctForm.transform.localScale.z);
+            this.transform.position = new Vector3(correctForm.transform.position.x,
+                                                        correctForm.transform.position.y,
+                                                        correctForm.transform.position.z - 1); // not overridden by image shadow
+            this.transform.localScale = new Vector3(correctForm.transform.localScale.x,
+                                                        correctForm.transform.localScale.y,
+                                                        correctForm.transform.localScale.z);
             finish = true;
 
             GameObject.Find("PointsHandle").GetComponent<WinScript>().AddPoints();
