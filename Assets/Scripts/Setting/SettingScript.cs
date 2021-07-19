@@ -13,7 +13,7 @@ public class SettingScript : MonoBehaviour
     }
     public void OpenSettingPanel()
     {
-        if(settingPanel != null)
+        if(settingPanel != null && settingPanel.activeInHierarchy == false)
         {
             settingPanel.SetActive(true);
         }
@@ -21,7 +21,7 @@ public class SettingScript : MonoBehaviour
 
     public void CloseSettingPanel()
     {
-        if(settingPanel != null)
+        if(settingPanel != null && settingPanel.activeInHierarchy)
         {
             settingPanel.SetActive(false);
         }

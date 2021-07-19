@@ -99,6 +99,7 @@ public class TrainStationLevel : MonoBehaviour
 
     IEnumerator ShowPopUp()
     {
+        yield return new WaitForSeconds(0.5f);
         popUpCanvas.SetActive(true);
         yield return new WaitForSeconds(2f);
         popUpCanvas.SetActive(false);
