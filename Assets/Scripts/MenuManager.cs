@@ -14,4 +14,16 @@ public class MenuManager : MonoBehaviour
             gameMusic.Play();
         }
     }
+
+    //For trophies tutorial
+    public void onPressTrophy(GameObject tutorialPanel)
+    {
+        tutorialPanel.SetActive(true);
+    }
+
+    //For trophies tutorial
+    public void onReleaseTrophy(GameObject tutorialPanel)
+    {
+        tutorialPanel.SetActive(false);
+    }
 }
