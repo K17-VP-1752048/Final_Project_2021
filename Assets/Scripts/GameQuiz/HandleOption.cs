@@ -8,9 +8,19 @@ using UnityEngine.Rendering;
 public class HandleOption : MonoBehaviour
 {
     public UnityEvent downEvent;
+    private PauseGame pause;
+
+    private void Start()
+    {
+        pause = FindObjectOfType<PauseGame>();
+    }
+
     void OnMouseDown()
     {
-        //run event
-        downEvent?.Invoke();
+        if (!pause.IsPause())
+        {
+            //run event
+            downEvent?.Invoke();
+        }
     }
 }

@@ -53,7 +53,7 @@ public class QuizManager : MonoBehaviour
             slf.ResetCurrentQuestion_GameQuiz();
             slf.ResetCurrentList_GameQuiz();
 
-            StartCoroutine(NextRound(8f));
+            //StartCoroutine(NextRound(8f));
             //SceneManager.LoadScene("TopicsAnimalsScene");
         }
         else
@@ -113,13 +113,13 @@ public class QuizManager : MonoBehaviour
         return correctAns;
     }
 
-    IEnumerator NextRound(float delayTime)
+    /*IEnumerator NextRound(float delayTime)
     {
         //win game
 
         yield return new WaitForSeconds(delayTime);
         SceneManager.LoadScene("TopicsAnimalsScene");
-    }
+    }*/
 }
 
 [System.Serializable]

@@ -10,17 +10,30 @@ public class Spelling_Pronounce_Script : MonoBehaviour
     [SerializeField] private Image pronounceImg;
     public UnityEvent upEvent;
     public UnityEvent downEvent;
+    private PauseGame pause;
+
+    private void Start()
+    {
+        pause = FindObjectOfType<PauseGame>();
+    }
+
     void OnMouseDown()
     {
-        pronounceImg.color = new Color(0.5962264f, 0.745283f, 0, 1);
-        //run event
-        downEvent?.Invoke();
+        if (!pause.IsPause())
+        {
+            pronounceImg.color = new Color(0.5962264f, 0.745283f, 0, 1);
+            //run event
+            downEvent?.Invoke();
+        }
     }
 
     private void OnMouseUp()
     {
-        pronounceImg.color = new Color(1, 1, 1, 1);
-        //run event
-        upEvent?.Invoke();
+        if (!pause.IsPause())
+        {
+            pronounceImg.color = new Color(1, 1, 1, 1);
+            //run event
+            upEvent?.Invoke();
+        }
     }
 }
