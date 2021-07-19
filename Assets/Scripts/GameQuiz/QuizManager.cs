@@ -67,6 +67,7 @@ public class QuizManager : MonoBehaviour
             quizUI.SetQuestion(selectedQuestion);
             this.index = val;     
         }
+        quizUI.SetEnabled(true);
     }
 
     public int Answer(string answered)

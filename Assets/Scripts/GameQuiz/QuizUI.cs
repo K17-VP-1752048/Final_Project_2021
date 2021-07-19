@@ -182,8 +182,8 @@ public class QuizUI : MonoBehaviour
         gameObject.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(1.5f);
 
-        SetEnabled(true);
         popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(false);
+        //SetEnabled(true);
     }
 
     IEnumerator Warning(float delayTime)
