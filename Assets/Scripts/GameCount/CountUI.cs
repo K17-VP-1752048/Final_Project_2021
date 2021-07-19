@@ -45,9 +45,10 @@ public class CountUI : MonoBehaviour
         if(this.indexCorrectAns != -1)
         {
             SetEnabled(false);
-            options[this.indexCorrectAns].numberImg.GetComponent<RectTransform>().position = Vector3.MoveTowards(options[this.indexCorrectAns].numberImg.GetComponent<RectTransform>().position, new Vector3(guessText.position.x - 0.4f, guessText.position.y, guessText.position.z), 10 * Time.deltaTime);
+            options[this.indexCorrectAns].numberImg.GetComponent<RectTransform>().position = Vector3.MoveTowards(options[this.indexCorrectAns].numberImg.GetComponent<RectTransform>().position, new Vector3(guessText.position.x - 0.45f, guessText.position.y, guessText.position.z), 10 * Time.deltaTime);
+            Vector2 vector = new Vector2(guessText.position.x - 0.45f, guessText.position.y);
 
-            if (Vector2.Distance(options[this.indexCorrectAns].numberImg.GetComponent<RectTransform>().position, guessText.position) <= 0.4f)
+            if (Vector2.Distance(options[this.indexCorrectAns].numberImg.GetComponent<RectTransform>().position, vector) < 0.1f)
             {
                 StartCoroutine(ShowPopup(2f, options[this.indexCorrectAns].numberImg));
 
