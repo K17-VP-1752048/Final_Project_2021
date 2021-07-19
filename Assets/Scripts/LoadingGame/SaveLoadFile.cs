@@ -575,56 +575,67 @@ public class SaveLoadFile : MonoBehaviour
         {
             FileStream file = File.Open(Application.persistentDataPath + "/completeGameSpellFood.dat", FileMode.OpenOrCreate);
             bf.Serialize(file, "complete");
+            file.Close();
         }
         else if (nameGame == "GameFindFood")
         {
             FileStream file = File.Open(Application.persistentDataPath + "/completeGameFindFood.dat", FileMode.OpenOrCreate);
             bf.Serialize(file, "complete");
+            file.Close();
         }
         else if (nameGame == "GamePickToRoom")
         {
             FileStream file = File.Open(Application.persistentDataPath + "/completeGamePickToRoom.dat", FileMode.OpenOrCreate);
             bf.Serialize(file, "complete");
+            file.Close();
         }
         else if (nameGame == "GameLigature")
         {
             FileStream file = File.Open(Application.persistentDataPath + "/completeGameLigature.dat", FileMode.OpenOrCreate);
             bf.Serialize(file, "complete");
+            file.Close();
         }
         else if (nameGame == "GameSpellHousehold")
         {
             FileStream file = File.Open(Application.persistentDataPath + "/completeGameSpellHousehold.dat", FileMode.OpenOrCreate);
             bf.Serialize(file, "complete");
+            file.Close();
         }
         else if (nameGame == "GameMatch")
         {
             FileStream file = File.Open(Application.persistentDataPath + "/completeGameMatch.dat", FileMode.OpenOrCreate);
             bf.Serialize(file, "complete");
+            file.Close();
         }
         else if (nameGame == "GameSpellAnimal")
         {
             FileStream file = File.Open(Application.persistentDataPath + "/completeGameSpellAnimal.dat", FileMode.OpenOrCreate);
             bf.Serialize(file, "complete");
+            file.Close();
         }
         else if (nameGame == "GameQuiz")
         {
             FileStream file = File.Open(Application.persistentDataPath + "/completeGameQuiz.dat", FileMode.OpenOrCreate);
             bf.Serialize(file, "complete");
+            file.Close();
         }
         else if (nameGame == "GameCountNumber")
         {
             FileStream file = File.Open(Application.persistentDataPath + "/completeGameCountNumber.dat", FileMode.OpenOrCreate);
             bf.Serialize(file, "complete");
+            file.Close();
         }
         else if (nameGame == "GameTrainStation")
         {
             FileStream file = File.Open(Application.persistentDataPath + "/completeGameTrainStation.dat", FileMode.OpenOrCreate);
             bf.Serialize(file, "complete");
+            file.Close();
         }
         else if (nameGame == "NumberIntroduce")
         {
             FileStream file = File.Open(Application.persistentDataPath + "/completeNumberIntroduce.dat", FileMode.OpenOrCreate);
             bf.Serialize(file, "complete");
+            file.Close();
         }
     }
 
