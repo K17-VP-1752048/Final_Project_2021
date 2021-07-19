@@ -797,7 +797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed0dcc0b849e384cbe80778b0e94bee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 85220640}
 --- !u!114 &421778610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -907,6 +907,12 @@ PrefabInstance:
 --- !u!4 &431294099 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5117945494010119542, guid: fca6f7c01d7b42d4ca534b6985796ca9,
+    type: 3}
+  m_PrefabInstance: {fileID: 431294098}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &431294100 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5117945494010119543, guid: fca6f7c01d7b42d4ca534b6985796ca9,
     type: 3}
   m_PrefabInstance: {fileID: 431294098}
   m_PrefabAsset: {fileID: 0}
@@ -1243,6 +1249,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 749376189}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &749376191 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4594295391232606449, guid: 321c0ec3926c0704bb8e9f916c3712de,
+    type: 3}
+  m_PrefabInstance: {fileID: 749376189}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &783951285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,7 +1477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed0dcc0b849e384cbe80778b0e94bee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 85220640}
 --- !u!225 &783951291
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2673,7 +2685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed0dcc0b849e384cbe80778b0e94bee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 85220640}
 --- !u!225 &1436321938
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3325,7 +3337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed0dcc0b849e384cbe80778b0e94bee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 85220640}
 --- !u!114 &2016692719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3494,7 +3506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed0dcc0b849e384cbe80778b0e94bee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 85220640}
 --- !u!114 &502339316720476231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3536,8 +3548,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8d71ff6eb08d7b4e9adff7be68e94f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightSound: {fileID: 0}
-  wrongSound: {fileID: 0}
+  rightSound: {fileID: 749376191}
+  wrongSound: {fileID: 431294100}
 --- !u!224 &1228548244115215012
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4026,8 +4038,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8d71ff6eb08d7b4e9adff7be68e94f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightSound: {fileID: 0}
-  wrongSound: {fileID: 0}
+  rightSound: {fileID: 749376191}
+  wrongSound: {fileID: 431294100}
 --- !u!82 &8832042711578422880
 AudioSource:
   m_ObjectHideFlags: 0

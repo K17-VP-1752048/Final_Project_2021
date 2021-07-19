@@ -307,7 +307,7 @@ PrefabInstance:
     - target: {fileID: 7742220137547408222, guid: c3246b2795eb2c14e83ff9407a57b369,
         type: 3}
       propertyPath: charBoxs.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7742220137547408222, guid: c3246b2795eb2c14e83ff9407a57b369,
         type: 3}
@@ -328,7 +328,7 @@ PrefabInstance:
         type: 3}
       propertyPath: charBoxs.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 661522898}
     - target: {fileID: 7742220137547408222, guid: c3246b2795eb2c14e83ff9407a57b369,
         type: 3}
       propertyPath: charBoxs.Array.data[4]
@@ -1422,6 +1422,12 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2634252858133590432, guid: 2fbf3e86f94221145ba71ca6ba84ea75,
     type: 3}
   m_PrefabInstance: {fileID: 601732224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &661522898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3688042251853942765, guid: c97e9faec15571d4f92d3d24a8ed0160,
+    type: 3}
+  m_PrefabInstance: {fileID: 2044467610}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &690628283
 PrefabInstance:
