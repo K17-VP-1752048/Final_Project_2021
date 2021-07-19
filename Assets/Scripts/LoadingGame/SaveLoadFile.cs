@@ -829,16 +829,19 @@ public class SaveLoadFile : MonoBehaviour
         {
             FileStream file = File.Open(Application.persistentDataPath + "/saveNumberOfSkipsGameSpellAnimals.dat", FileMode.OpenOrCreate);
             bf.Serialize(file, this.numberofskips.ToString());
+            file.Close();
         }
         else if (selectTopic == "Food")
         {
             FileStream file = File.Open(Application.persistentDataPath + "/saveNumberOfSkipsGameSpellFood.dat", FileMode.OpenOrCreate);
             bf.Serialize(file, this.numberofskips.ToString());
+            file.Close();
         }
         else if (selectTopic == "Household")
         {
             FileStream file = File.Open(Application.persistentDataPath + "/saveNumberOfSkipsGameSpellFood.dat", FileMode.OpenOrCreate);
             bf.Serialize(file, this.numberofskips.ToString());
+            file.Close();
         }
     }
 

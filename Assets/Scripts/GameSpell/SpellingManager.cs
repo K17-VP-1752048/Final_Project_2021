@@ -241,24 +241,24 @@ public class SpellingManager : MonoBehaviour
         //remove after spell correct
         pronunciations.RemoveAt(this.index);
 
+        //save number of skip
+        slf.SaveNumberOfSkipsGameSpell(selectedTopic);
+
         //reset game
         if (selectedTopic == "Animals")
         {
             slf.ResetCurrentSpell_Animals();
             slf.SaveCurrentListSpellAnimals(pronunciations);
-            slf.SaveNumberOfSkipsGameSpell("Animals");
         }
         else if (selectedTopic == "Food")
         {
             slf.ResetCurrentSpell_House();
             slf.SaveCurrentListSpellHousehold(pronunciations);
-            slf.SaveNumberOfSkipsGameSpell("Food");
         }
         else if (selectedTopic == "Household")
         {
             slf.ResetCurrentSpell_House();
             slf.SaveCurrentListSpellHousehold(pronunciations);
-            slf.SaveNumberOfSkipsGameSpell("Household");
         }
 
         Invoke("SelectPronunciation", 1f);
@@ -289,13 +289,25 @@ public class SpellingManager : MonoBehaviour
         //remove after spell correct
         pronunciations.RemoveAt(this.index);
 
+        //save number of skips
+        if (flag)
+        {
+            numberofskips = slf.LoadNumberOfSkipsGameSpell(selectedTopic).ToString();
+        }
+        else
+        {
+            numberofskips = (slf.LoadNumberOfSkipsGameSpell(selectedTopic) + 1).ToString();
+        }
+
+        slf.ResetNumberOfSkipsGameSpell(selectedTopic);
+
         //reset game
         if (selectedTopic == "Animals")
         {
             slf.ResetCurrentSpell_Animals();
             slf.ResetCurrentListSpell_Animals();
 
-            if (!slf.CheckCompleteGame("GameSpellAnimal") && slf.LoadNumberOfSkipsGameSpell("Animals") < 11)
+            if (!slf.CheckCompleteGame("GameSpellAnimal") && System.Int32.Parse(numberofskips) < 11)
             {
                 //inscrease key
                 slf.IncreaseKey();
@@ -306,24 +318,13 @@ public class SpellingManager : MonoBehaviour
                 this.finished = true;
             }
 
-            //save number of skips
-            if (!flag)
-            {
-                numberofskips = (slf.LoadNumberOfSkipsGameSpell("Animals") + 1).ToString();
-            }
-            else
-            {
-                numberofskips = slf.LoadNumberOfSkipsGameSpell("Animals").ToString();
-            }
-
-            slf.ResetNumberOfSkipsGameSpell("Animals");
         }
         else if (selectedTopic == "Food")
         {
             slf.ResetCurrentSpell_Food();
             slf.ResetCurrentListSpell_Food();
 
-            if (!slf.CheckCompleteGame("GameSpellFood") && slf.LoadNumberOfSkipsGameSpell("Food") < 11)
+            if (!slf.CheckCompleteGame("GameSpellFood") && System.Int32.Parse(numberofskips) < 11)
             {
                 //inscrease key
                 slf.IncreaseKey();
@@ -333,25 +334,13 @@ public class SpellingManager : MonoBehaviour
 
                 this.finished = true;
             }
-
-            //save number of skips
-            if (!flag)
-            {
-                numberofskips = (slf.LoadNumberOfSkipsGameSpell("Food") + 1).ToString();
-            }
-            else
-            {
-                numberofskips = slf.LoadNumberOfSkipsGameSpell("Food").ToString();
-            }
-
-            slf.ResetNumberOfSkipsGameSpell("Food");
         }
         else if (selectedTopic == "Household")
         {
             slf.ResetCurrentSpell_House();
             slf.ResetCurrentListSpell_House();
 
-            if (!slf.CheckCompleteGame("GameSpellHousehold") && slf.LoadNumberOfSkipsGameSpell("Household") < 11)
+            if (!slf.CheckCompleteGame("GameSpellHousehold") && System.Int32.Parse(numberofskips) < 11)
             {
                 //inscrease key
                 slf.IncreaseKey();
@@ -361,18 +350,6 @@ public class SpellingManager : MonoBehaviour
 
                 this.finished = true;
             }
-
-            //save number of skips
-            if (!flag)
-            {
-                numberofskips = (slf.LoadNumberOfSkipsGameSpell("Household") + 1).ToString();
-            }
-            else
-            {
-                numberofskips = slf.LoadNumberOfSkipsGameSpell("Household").ToString();
-            }
-
-            slf.ResetNumberOfSkipsGameSpell("Household");
         }
 
         //random popup congratulation
@@ -380,7 +357,7 @@ public class SpellingManager : MonoBehaviour
         //GameObject obj = Instantiate(congrats[val]);
         //obj.transform.SetParent(spellUI.transform, false);
 
-        if (flag)
+        if (flag && System.Int32.Parse(numberofskips) < 11)
         {
             int val = Random.Range(0, popUpCheeringCanvas.transform.childCount);
             popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(true);
@@ -391,6 +368,18 @@ public class SpellingManager : MonoBehaviour
 
             StartCoroutine(ShowPopupCheering(val));
             StartCoroutine(BackTopic(gameObject.GetComponent<AudioSource>().clip.length));
+        }
+        else if (flag && System.Int32.Parse(numberofskips) >= 11)
+        {
+            int val = Random.Range(0, popUpCheeringCanvas.transform.childCount);
+            popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(true);
+
+
+            gameObject.GetComponent<AudioSource>().clip = bravo_audio;
+            gameObject.GetComponent<AudioSource>().Play();
+
+            StartCoroutine(ShowPopupCheering(val));
+            StartCoroutine(GameOver(gameObject.GetComponent<AudioSource>().clip.length));
         }
         else
         {
