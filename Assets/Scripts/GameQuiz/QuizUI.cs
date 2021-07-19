@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class QuizUI : MonoBehaviour
 {
@@ -231,7 +232,8 @@ public class QuizUI : MonoBehaviour
             }
         }
 
-        //yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("TopicsAnimalsScene");
 
         SetEnabled(true);
     }
