@@ -850,7 +850,7 @@ public class SaveLoadFile : MonoBehaviour
         }
         else if (selectTopic == "Household")
         {
-            FileStream file = File.Open(Application.persistentDataPath + "/saveNumberOfSkipsGameSpellFood.dat", FileMode.OpenOrCreate);
+            FileStream file = File.Open(Application.persistentDataPath + "/saveNumberOfSkipsGameSpellHousehold.dat", FileMode.OpenOrCreate);
             bf.Serialize(file, this.numberofskips.ToString());
             file.Close();
         }

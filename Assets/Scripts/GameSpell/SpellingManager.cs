@@ -252,8 +252,8 @@ public class SpellingManager : MonoBehaviour
         }
         else if (selectedTopic == "Food")
         {
-            slf.ResetCurrentSpell_House();
-            slf.SaveCurrentListSpellHousehold(pronunciations);
+            slf.ResetCurrentSpell_Food();
+            slf.SaveCurrentListSpellFood(pronunciations);
         }
         else if (selectedTopic == "Household")
         {
@@ -357,6 +357,8 @@ public class SpellingManager : MonoBehaviour
         //GameObject obj = Instantiate(congrats[val]);
         //obj.transform.SetParent(spellUI.transform, false);
 
+        //flag = true -> no skip, flag = false -> skip
+        //number of skips >= 11 -> game over
         if (flag && System.Int32.Parse(numberofskips) < 11)
         {
             int val = Random.Range(0, popUpCheeringCanvas.transform.childCount);
@@ -380,6 +382,18 @@ public class SpellingManager : MonoBehaviour
 
             StartCoroutine(ShowPopupCheering(val));
             StartCoroutine(GameOver(gameObject.GetComponent<AudioSource>().clip.length));
+        }
+        else if (!flag && System.Int32.Parse(numberofskips) < 11)
+        {
+            int val = Random.Range(0, popUpCheeringCanvas.transform.childCount);
+            popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(true);
+
+
+            gameObject.GetComponent<AudioSource>().clip = bravo_audio;
+            gameObject.GetComponent<AudioSource>().Play();
+
+            StartCoroutine(ShowPopupCheering(val));
+            StartCoroutine(BackTopic(gameObject.GetComponent<AudioSource>().clip.length));
         }
         else
         {
@@ -411,7 +425,19 @@ public class SpellingManager : MonoBehaviour
         }
 
         //yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("TopicsAnimalsScene");
+
+        if (selectedTopic == "Animals")
+        {
+            SceneManager.LoadScene("TopicsAnimalsScene");
+        }
+        else if (selectedTopic == "Food")
+        {
+            SceneManager.LoadScene("TopicsAlimentsScene");
+        }
+        else if (selectedTopic == "Household")
+        {
+            SceneManager.LoadScene("TopicsHouseScene");
+        }
         SetEnabled(true);
     }
 

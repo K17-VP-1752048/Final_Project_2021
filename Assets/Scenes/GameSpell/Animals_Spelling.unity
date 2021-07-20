@@ -648,7 +648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellUI: {fileID: 2009961809}
-  spellData: {fileID: 11400000, guid: 084adf4e69509804cb1b70bc360a346b, type: 2}
+  spellData: {fileID: 11400000, guid: fc6b0e9474054b34da95588d95cafb23, type: 2}
   spellFoodData: {fileID: 0}
   spellHouseholdData: {fileID: 0}
   bravo_audio: {fileID: 8300000, guid: 73651083d7edfb7429b17051b59edd47, type: 3}
@@ -2771,7 +2771,7 @@ PrefabInstance:
     - target: {fileID: 3048700820269039504, guid: 755576769d832644eb4eade6f908de46,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3048700820815810688, guid: 755576769d832644eb4eade6f908de46,
         type: 3}
@@ -2882,6 +2882,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameOver Object
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048700820815810691, guid: 755576769d832644eb4eade6f908de46,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 755576769d832644eb4eade6f908de46, type: 3}

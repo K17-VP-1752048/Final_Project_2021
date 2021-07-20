@@ -611,7 +611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resText: {fileID: 1696809575}
   spellingManager: {fileID: 494471323}
-  skipBtn: {fileID: 0}
+  skipBtn: {fileID: 826681699}
 --- !u!4 &376157234
 Transform:
   m_ObjectHideFlags: 0
@@ -793,6 +793,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &423921054 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3048700820815810691, guid: 755576769d832644eb4eade6f908de46,
+    type: 3}
+  m_PrefabInstance: {fileID: 423921051}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &491379280
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,7 +930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellUI: {fileID: 2009961809}
   spellData: {fileID: 0}
-  spellFoodData: {fileID: 11400000, guid: 7f6b3f9d6180b5c4e8c401d1b5260cdb, type: 2}
+  spellFoodData: {fileID: 11400000, guid: 7f6ff6bb1a6f03d42a90de6e8ef944d4, type: 2}
   spellHouseholdData: {fileID: 0}
   bravo_audio: {fileID: 8300000, guid: 73651083d7edfb7429b17051b59edd47, type: 3}
   fail_audio: {fileID: 8300000, guid: f0f9a1758c486cc4db3ffa18611d8755, type: 3}
@@ -940,8 +946,8 @@ MonoBehaviour:
   pronounceImg: {fileID: 1804608603}
   speakImg: {fileID: 638834500}
   backBtn: {fileID: 1900430748}
-  skipBtn: {fileID: 0}
-  NotCompleted: {fileID: 0}
+  skipBtn: {fileID: 826681699}
+  NotCompleted: {fileID: 423921054}
 --- !u!4 &494471324
 Transform:
   m_ObjectHideFlags: 0
@@ -1406,6 +1412,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1899174561721639932, guid: c4578a2f8cbbca94a8781b9eb691a19d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 376157233}
+    - target: {fileID: 1899174561721639932, guid: c4578a2f8cbbca94a8781b9eb691a19d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EventSkipBtn
+      objectReference: {fileID: 0}
     - target: {fileID: 1899174561721639933, guid: c4578a2f8cbbca94a8781b9eb691a19d,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1519,6 +1535,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 826681697}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &826681699 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1899174561721639932, guid: c4578a2f8cbbca94a8781b9eb691a19d,
+    type: 3}
+  m_PrefabInstance: {fileID: 826681697}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1135860477
 GameObject:
   m_ObjectHideFlags: 0

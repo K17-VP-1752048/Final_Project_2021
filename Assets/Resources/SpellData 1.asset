@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee73e79fd8ce33f45bed8cf07cb3ba11, type: 3}
+  m_Name: SpellData 1
+  m_EditorClassIdentifier: 
+  pronunciations:
+  - pronounceText: l'ours
+    pronounceAudio: {fileID: 8300000, guid: b0eed9c921f7b474cb5b16097d374efb, type: 3}
+    audio: {fileID: 8300000, guid: 1e88f5034455dca4a967220e0d0fcfe4, type: 3}
+    sprite: {fileID: 21300000, guid: 6fb5d630a092f6244becfe41bd649805, type: 3}
+  - pronounceText: le chien
+    pronounceAudio: {fileID: 8300000, guid: 0cf935332299e204aa0aef035f320a7d, type: 3}
+    audio: {fileID: 8300000, guid: 0abdda4a5c2063c48b72b9760015a31b, type: 3}
+    sprite: {fileID: 21300000, guid: f9f285b96051eac41bd85bc50f12995c, type: 3}
+  - pronounceText: le singe
+    pronounceAudio: {fileID: 8300000, guid: 50f91455b2acb42449e786ef678c017c, type: 3}
+    audio: {fileID: 8300000, guid: 34cde24c801ccb44cb8cec975568842b, type: 3}
+    sprite: {fileID: 21300000, guid: 1f6eff36d4ab41d4fac81b614e930de7, type: 3}
