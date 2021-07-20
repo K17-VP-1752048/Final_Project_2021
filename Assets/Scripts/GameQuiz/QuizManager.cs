@@ -8,6 +8,7 @@ public class QuizManager : MonoBehaviour
 {
     [SerializeField] private QuizUI quizUI;
     [SerializeField] private QuizDataScriptable quizData;
+    [SerializeField] private TMP_Text countScene;
 
     private List<Question> questions;
     private Question selectedQuestion;
@@ -43,6 +44,8 @@ public class QuizManager : MonoBehaviour
             quizUI.SetQuestion(selectedQuestion);
             this.index = questions.IndexOf(q);
         }
+
+        countScene.text = (slf.QuizData.questions.Count + 1 - questions.Count).ToString();
     }
 
     void SelectQuestion()
@@ -67,6 +70,9 @@ public class QuizManager : MonoBehaviour
             quizUI.SetQuestion(selectedQuestion);
             this.index = val;     
         }
+
+        countScene.text = (slf.QuizData.questions.Count + 1 - questions.Count).ToString();
+
         quizUI.SetEnabled(true);
     }
 

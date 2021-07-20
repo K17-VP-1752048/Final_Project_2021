@@ -59,12 +59,12 @@ public class Tutorial : MonoBehaviour
 
     IEnumerator HandTutorial()
     {
-        if(selectedTopic == "GamePickToRoom")
+        /*if(selectedTopic == "GamePickToRoom")
         {
             // click 1 lan thi dung cai dong nay
             gameObject.GetComponent<Animator>().SetTrigger("SingleClick");
             yield return new WaitForSeconds(2f);
-        }
+        }*/
 
         //animation hand click
         gameObject.GetComponent<Animator>().SetTrigger("PressHold");
