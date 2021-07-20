@@ -23,6 +23,7 @@ public class SpellingManager : MonoBehaviour
     [SerializeField] private Image pronounceImg, speakImg;
     [SerializeField] private Button backBtn, skipBtn;
     [SerializeField] private GameObject NotCompleted;
+    [SerializeField] private TMP_Text countScene;
 
     private List<Pronunciation> pronunciations;
     private Pronunciation selectedPronunciation;
@@ -74,6 +75,8 @@ public class SpellingManager : MonoBehaviour
             spellUI.SetPronunciation(p);
             this.index = pronunciations.IndexOf(p);
         }
+
+        countScene.text = (slf.SpellData.pronunciations.Count + 1 - pronunciations.Count).ToString();
     }
 
     public void SpellFood()
@@ -99,6 +102,8 @@ public class SpellingManager : MonoBehaviour
             spellUI.SetPronunciation(p);
             this.index = pronunciations.IndexOf(p);
         }
+
+        countScene.text = (slf.SpellFoodData.pronunciations.Count + 1 - pronunciations.Count).ToString();
     }
 
     public void SpellHousehold()
@@ -124,6 +129,8 @@ public class SpellingManager : MonoBehaviour
             spellUI.SetPronunciation(p);
             this.index = pronunciations.IndexOf(p);
         }
+
+        countScene.text = (slf.SpellHouseholdData.pronunciations.Count + 1 - pronunciations.Count).ToString();
     }
 
     void SelectPronunciation()
@@ -146,6 +153,8 @@ public class SpellingManager : MonoBehaviour
                 spellUI.SetPronunciation(selectedPronunciation);
                 slf.SaveCurrentSpellAnimal(selectedPronunciation);
             }
+
+            countScene.text = (slf.SpellData.pronunciations.Count + 1 - pronunciations.Count).ToString();
         }
         else if (selectedTopic == "Food")
         {
@@ -163,6 +172,8 @@ public class SpellingManager : MonoBehaviour
                 spellUI.SetPronunciation(selectedPronunciation);
                 slf.SaveCurrentSpellFood(selectedPronunciation);
             }
+
+            countScene.text = (slf.SpellFoodData.pronunciations.Count + 1 - pronunciations.Count).ToString();
         }
         else if (selectedTopic == "Household")
         {
@@ -180,6 +191,8 @@ public class SpellingManager : MonoBehaviour
                 spellUI.SetPronunciation(selectedPronunciation);
                 slf.SaveCurrentSpellHousehold(selectedPronunciation);
             }
+
+            countScene.text = (slf.SpellHouseholdData.pronunciations.Count + 1 - pronunciations.Count).ToString();
         }
         skipBtn.gameObject.SetActive(false);
     }
