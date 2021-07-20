@@ -9,7 +9,7 @@ public class Room : MonoBehaviour, IDropHandler
     public AudioSource wrongSound;
 
     private Level level;
-    private GameObject droppedObj = null;
+    private List<GameObject> droppedObjList = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -19,13 +19,16 @@ public class Room : MonoBehaviour, IDropHandler
 
     private void Update()
     {
-        if (droppedObj != null) 
+        for (int i = 0; i < droppedObjList.Count; i++)
         {
-            bool isOnThisRoom = droppedObj.GetComponent<DragObject>().IsInCorrectRoom();
-            if (!isOnThisRoom && level.ObjectNumber() > 0)
+            if (droppedObjList[i] != null)
             {
-                level.Undo();
-                droppedObj = null;
+                bool isOnThisRoom = droppedObjList[i].GetComponent<DragObject>().IsInCorrectRoom();
+                if (!isOnThisRoom && level.ObjectNumber() > 0)
+                {
+                    level.Undo();
+                    droppedObjList.Remove(droppedObjList[i]);
+                }
             }
         }
     }
@@ -35,10 +38,11 @@ public class Room : MonoBehaviour, IDropHandler
         if (eventData.pointerDrag != null && eventData.pointerDrag.tag == gameObject.tag)
         {
             rightSound.Play();
-            droppedObj = eventData.pointerDrag;
+            GameObject droppedObj = eventData.pointerDrag;
             droppedObj.GetComponent<DragObject>().CorrectRoom(true);
             //Debug.Log("in room");
             level.CountObject();
+            droppedObjList.Add(droppedObj);
         }
         else
         {
