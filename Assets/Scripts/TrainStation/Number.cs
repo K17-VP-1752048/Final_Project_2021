@@ -20,6 +20,7 @@ public class Number : MonoBehaviour
     private bool moving = true;
     private bool isGrounded = false;
     private bool moveToTrain = false;
+    private bool onTheTrain = false;
     private SpriteRenderer spriteRenderer;
     private TrainStationLevel level;
     private TSOrderControl orderControl;
@@ -50,6 +51,7 @@ public class Number : MonoBehaviour
         }
         if (moveToTrain)
         {
+            onTheTrain = true;
             Vector3 targetPos = new Vector3(railroadCar.GetComponent<RectTransform>().position.x, railroadCar.GetComponent<RectTransform>().position.y + 3, 0);
             transform.position = Vector3.MoveTowards(transform.position, targetPos, moveToTrainSpeed * Time.deltaTime);
 
@@ -126,7 +128,7 @@ public class Number : MonoBehaviour
             MoveToTrain();
             orderControl.NextNumber();
         }
-        else if(order != orderControl.CurrentOrder() && !pauseGame.IsPause())
+        else if(order != orderControl.CurrentOrder() && !pauseGame.IsPause() && !onTheTrain)
         {
             wrongSound.Play();
             StartCoroutine(alertWrongOrder());
