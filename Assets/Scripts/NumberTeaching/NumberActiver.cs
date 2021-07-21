@@ -28,6 +28,8 @@ public class NumberActiver : MonoBehaviour
         for(int i = 0; i < textsInTextBackground.Length-1; i++)
         {
             textsInTextBackground[i].SetActive(true);
+            if (KeepSoundPlay.state)
+                textsInTextBackground[i].GetComponent<AudioSource>().Play();
             yield return new WaitForSeconds(4f);
             textsInTextBackground[i].SetActive(false);
         }
@@ -36,9 +38,12 @@ public class NumberActiver : MonoBehaviour
 
         foreach (GameObject num in numbers)
         {
-            GetComponent<AudioSource>().Play();
+            if (KeepSoundPlay.state)
+                GetComponent<AudioSource>().Play();
             yield return new WaitForSeconds(2.5f);
             num.SetActive(true);
+            if (KeepSoundPlay.state)
+                num.GetComponent<AudioSource>().Play();
         }
 
         yield return new WaitForSeconds(2f);

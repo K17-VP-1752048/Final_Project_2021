@@ -124,7 +124,8 @@ public class Number : MonoBehaviour
         {
             gameObject.AddComponent<AudioSource>();
             audioSource = GetComponent<AudioSource>();
-            audioSource.PlayOneShot(clip, 1f);
+            if (KeepSoundPlay.state)
+                audioSource.PlayOneShot(clip, 1f);
             MoveToTrain();
             orderControl.NextNumber();
         }

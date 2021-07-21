@@ -57,11 +57,14 @@ public class VoiceController : MonoBehaviour
 
     public void StartPronouce(Image pronounceImg)
     {
-        pronounceImg.GetComponent<AudioSource>().Play();
+        if (KeepSoundPlay.state)
+            pronounceImg.GetComponent<AudioSource>().Play();
     }
 
     public void StartListening()
     {
+        if (KeepSoundPlay.state)
+            GetComponent<AudioSource>().Play();
         SpeechToText.instance.StartRecording();
     }
 

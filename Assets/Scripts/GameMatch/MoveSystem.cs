@@ -85,9 +85,11 @@ public class MoveSystem : MonoBehaviour
 
     IEnumerator PlayAudio(float delaytime)
     {
-        GetComponent<AudioSource>().Play();
+        if(KeepSoundPlay.state)
+            GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(delaytime);
         GetComponent<AudioSource>().clip = audioAnimal;
-        GetComponent<AudioSource>().Play();
+        if (KeepSoundPlay.state)
+            GetComponent<AudioSource>().Play();
     }
 }

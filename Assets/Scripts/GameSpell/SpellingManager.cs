@@ -235,7 +235,8 @@ public class SpellingManager : MonoBehaviour
         popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(true);
 
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
-        gameObject.GetComponent<AudioSource>().Play();
+        if (KeepSoundPlay.state)
+            gameObject.GetComponent<AudioSource>().Play();
         StartCoroutine(ShowPopupCheering(val));
         Invoke("SelectPronunciation", 1.5f);
     }
@@ -284,7 +285,8 @@ public class SpellingManager : MonoBehaviour
         obj.transform.SetParent(spellUI.transform, false);
 
         gameObject.GetComponent<AudioSource>().clip = fail_audio;
-        gameObject.GetComponent<AudioSource>().Play();
+        if (KeepSoundPlay.state)
+            gameObject.GetComponent<AudioSource>().Play();
         StartCoroutine(DestroyPopup(obj));
     }
 
@@ -379,7 +381,8 @@ public class SpellingManager : MonoBehaviour
 
 
             gameObject.GetComponent<AudioSource>().clip = bravo_audio;
-            gameObject.GetComponent<AudioSource>().Play();
+            if (KeepSoundPlay.state)
+                gameObject.GetComponent<AudioSource>().Play();
 
             StartCoroutine(ShowPopupCheering(val));
             StartCoroutine(BackTopic(gameObject.GetComponent<AudioSource>().clip.length));
@@ -391,7 +394,8 @@ public class SpellingManager : MonoBehaviour
 
 
             gameObject.GetComponent<AudioSource>().clip = bravo_audio;
-            gameObject.GetComponent<AudioSource>().Play();
+            if (KeepSoundPlay.state)
+                gameObject.GetComponent<AudioSource>().Play();
 
             StartCoroutine(ShowPopupCheering(val));
             StartCoroutine(GameOver(gameObject.GetComponent<AudioSource>().clip.length));

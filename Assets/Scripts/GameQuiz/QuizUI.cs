@@ -51,7 +51,8 @@ public class QuizUI : MonoBehaviour
         questionImg.sprite = question.questionImg;
         questionImg.preserveAspect = true;
         questionImg.GetComponent<AudioSource>().clip = question.audioQuestion;
-        questionImg.GetComponent<AudioSource>().Play();
+        if (KeepSoundPlay.state)
+            questionImg.GetComponent<AudioSource>().Play();
 
         //shuffle the list of options
         List<Answer> ansOptions = ShuffleList.ShuffleListItems<Answer>(question.options);
@@ -145,7 +146,8 @@ public class QuizUI : MonoBehaviour
         img.color = Color.white;
         yield return new WaitForSeconds(0.1f);
         img.color = new Color(0.5962264f,0.745283f,0,1);
-        img.GetComponent<AudioSource>().Play();
+        if (KeepSoundPlay.state)
+            img.GetComponent<AudioSource>().Play();
         //yield return new WaitForSeconds(img.GetComponent<AudioSource>().clip.length + 0.2f);
     }
 
@@ -157,9 +159,9 @@ public class QuizUI : MonoBehaviour
         img.color = Color.white;
         yield return new WaitForSeconds(0.2f);
         img.color = Color.red;
-        //img.GetComponent<AudioSource>().Play();
         gameObject.GetComponent<AudioSource>().clip = fail_audio;
-        gameObject.GetComponent<AudioSource>().Play();
+        if (KeepSoundPlay.state)
+            gameObject.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(gameObject.GetComponent<AudioSource>().clip.length + 0.2f);
 
         SetEnabled(true);
@@ -173,14 +175,14 @@ public class QuizUI : MonoBehaviour
         img.color = Color.white;
         yield return new WaitForSeconds(0.2f);
         img.color = Color.green;
-        //img.GetComponent<AudioSource>().Play();
 
         //random popup congratulation
         int val = Random.Range(0, popUpCheeringCanvas.transform.childCount);
         popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(true);
 
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
-        gameObject.GetComponent<AudioSource>().Play();
+        if (KeepSoundPlay.state)
+            gameObject.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(1.5f);
 
         popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(false);
@@ -206,14 +208,14 @@ public class QuizUI : MonoBehaviour
         img.color = Color.white;
         yield return new WaitForSeconds(0.2f);
         img.color = Color.green;
-        //img.GetComponent<AudioSource>().Play();
 
         //random popup congratulation
         int val = Random.Range(0, popUpCheeringCanvas.transform.childCount);
         popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(true);
 
         gameObject.GetComponent<AudioSource>().clip = bravo_audio;
-        gameObject.GetComponent<AudioSource>().Play();
+        if (KeepSoundPlay.state)
+            gameObject.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(1.5f);
         popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(false);
 
@@ -241,7 +243,8 @@ public class QuizUI : MonoBehaviour
 
     public void HandleSpeakOption(Image speakImg)
     {
-        speakImg.GetComponent<AudioSource>().Play();
+        if (KeepSoundPlay.state)
+            speakImg.GetComponent<AudioSource>().Play();
     }
 }
 

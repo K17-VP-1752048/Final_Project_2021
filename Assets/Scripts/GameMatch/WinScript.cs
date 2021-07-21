@@ -75,7 +75,8 @@ public class WinScript : MonoBehaviour
 
         //setting audio
         transform.GetComponent<AudioSource>().clip = bravo_audio;
-        transform.GetComponent<AudioSource>().Play();
+        if(KeepSoundPlay.state)
+            transform.GetComponent<AudioSource>().Play();
 
         yield return new WaitForSeconds(transform.GetComponent<AudioSource>().clip.length + 0.2f);
         setActive = true;

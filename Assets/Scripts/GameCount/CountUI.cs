@@ -131,7 +131,8 @@ public class CountUI : MonoBehaviour
         img.color = Color.white;
         yield return new WaitForSeconds(0.1f);
         img.color = new Color(1, 1, 0, 1);
-        img.GetComponent<AudioSource>().Play();
+        if(KeepSoundPlay.state)
+            img.GetComponent<AudioSource>().Play();
         //yield return new WaitForSeconds(img.GetComponent<AudioSource>().clip.length + 0.2f);
     }
 
@@ -145,7 +146,8 @@ public class CountUI : MonoBehaviour
         img.color = Color.red;
         //img.GetComponent<AudioSource>().Play();
         gameObject.GetComponent<AudioSource>().clip = fail_audio;
-        gameObject.GetComponent<AudioSource>().Play();
+        if(KeepSoundPlay.state)
+            gameObject.GetComponent<AudioSource>().Play();
 
         yield return new WaitForSeconds(0.5f);
         img.color = new Color(0.8823529f, 0.8862745f, 0.6509804f, 1);
@@ -191,7 +193,8 @@ public class CountUI : MonoBehaviour
         yield return new WaitForSeconds(delaytime);
         showRes.SetActive(true);
         showRes.GetComponent<AudioSource>().clip = bravo_audio;
-        showRes.GetComponent<AudioSource>().Play();
+        if(KeepSoundPlay.state)
+            showRes.GetComponent<AudioSource>().Play();
 
         //yield return new WaitForSeconds(1f);
         showRes.GetComponentInChildren<Image>().GetComponentInChildren<TMP_Text>().text = questionInfoText.text + " " + img.GetComponentInChildren<TMP_Text>().text.ToLower() + " " + questionAnimalText.text;

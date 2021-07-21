@@ -26,7 +26,8 @@ public class SpellingUI : MonoBehaviour
         speak.GetComponent<AudioSource>().clip      = pronunciation.pronounceAudio;
         animalImg.sprite                            = pronunciation.sprite;
         spellUI.GetComponent<AudioSource>().clip    = pronunciation.audio;
-        spellUI.GetComponent<AudioSource>().Play();
+        if (KeepSoundPlay.state)
+            spellUI.GetComponent<AudioSource>().Play();
         animalImg.preserveAspect                    = true;
     }
 }

@@ -68,8 +68,9 @@ public class Verify : MonoBehaviour
             }
         }
         if (!allBoxIsFilled) 
-        { 
-            verifierBtn.GetComponent<AudioSource>().Play();
+        {
+            if(KeepSoundPlay.state)
+                verifierBtn.GetComponent<AudioSource>().Play();
             if (!allAnswerIsCorrect)
             {
                 foreach (GameObject charBox in charBoxs)
@@ -83,7 +84,8 @@ public class Verify : MonoBehaviour
         }
         if (allBoxIsFilled && !allAnswerIsCorrect)
         {
-            GetComponent<AudioSource>().Play();
+            if (KeepSoundPlay.state)
+                GetComponent<AudioSource>().Play();
             foreach (GameObject charBox in charBoxs)
             {
                 if (charBox.GetComponent<CharBox>().Check() == 0)
@@ -151,10 +153,11 @@ public class Verify : MonoBehaviour
     {
         popupCanvas.GetComponentInChildren<Popup>().SetPopUpCanvasCorrectWord(correctWord);
         GameObject popUp =  Instantiate(popupCanvas);
-
+        
         yield return new WaitForSeconds(
             popupCanvas.GetComponentInChildren<AudioSource>().clip.length);
-        AudioSource.PlayClipAtPoint(wordSpell, Camera.main.transform.position);
+        if (KeepSoundPlay.state)
+            AudioSource.PlayClipAtPoint(wordSpell, Camera.main.transform.position);
         yield return new WaitForSeconds(wordSpell.length);
         Destroy(popUp);
 

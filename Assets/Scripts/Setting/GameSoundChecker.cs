@@ -19,10 +19,13 @@ public class GameSoundChecker : MonoBehaviour
         AudioSource[] sounds = FindObjectsOfType<AudioSource>();
         foreach (AudioSource s in sounds)
         {
-            if (!s.clip.ToString().Equals("bgMusic (UnityEngine.AudioClip)"))
+            if (s.clip != null)
             {
-                //Debug.Log("Turn off " + s.clip.ToString());
-                s.mute = !state;
+                if (!s.clip.ToString().Equals("bgMusic (UnityEngine.AudioClip)"))
+                {
+                    //Debug.Log("Turn off " + s.clip.ToString());
+                    s.mute = !state;
+                }
             }
         }
     }

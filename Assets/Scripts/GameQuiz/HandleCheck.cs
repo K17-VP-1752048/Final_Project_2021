@@ -22,7 +22,8 @@ public class HandleCheck : MonoBehaviour
         if (!pause.IsPause())
         {
             checkImg.color = new Color(0.5962264f, 0.745283f, 0, 1);
-            checkImg.GetComponent<AudioSource>().Play();
+            if(KeepSoundPlay.state)
+                checkImg.GetComponent<AudioSource>().Play();
             //run event
             downEvent?.Invoke();
         }
