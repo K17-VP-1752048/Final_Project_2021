@@ -3066,6 +3066,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1401910529}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1561250494 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2065401378, guid: d5df11f4aadb58a4d97106e56428f2eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1401910529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1687990892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3770,7 +3776,7 @@ MonoBehaviour:
   selectedTopic: 
   time: 3
   distance: 1
-  dragSound: {fileID: 0}
+  dragSound: {fileID: 1561250494}
 --- !u!114 &1907166089
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,10 +7,7 @@ public class SettingScript : MonoBehaviour
 {
     [SerializeField] GameObject settingPanel;
 
-    void Start()
-    {
-        settingPanel.SetActive(false);
-    }
+    
     public void OpenSettingPanel()
     {
         if(settingPanel != null && settingPanel.activeInHierarchy == false)
