@@ -19,8 +19,11 @@ public class GameWinBehaviour : StateMachineBehaviour
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        AudioSource audioSource = animator.gameObject.GetComponent<AudioSource>();
-        audioSource.Play();
+        if (KeepSoundPlay.state)
+        {
+            AudioSource audioSource = animator.gameObject.GetComponent<AudioSource>();
+            audioSource.Play();
+        }
         animator.gameObject.transform.GetChild(4).gameObject.SetActive(true);
         animator.gameObject.transform.GetChild(5).gameObject.SetActive(true);
     }

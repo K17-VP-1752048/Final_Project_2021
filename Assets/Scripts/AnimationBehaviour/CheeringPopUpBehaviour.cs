@@ -7,8 +7,11 @@ public class CheeringPopUpBehaviour : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        AudioSource audioSource = animator.gameObject.GetComponent<AudioSource>();
-        audioSource.PlayDelayed(stateInfo.normalizedTime / 2);
+        if (KeepSoundPlay.state)
+        {
+            AudioSource audioSource = animator.gameObject.GetComponent<AudioSource>();
+            audioSource.PlayDelayed(stateInfo.normalizedTime / 2);
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

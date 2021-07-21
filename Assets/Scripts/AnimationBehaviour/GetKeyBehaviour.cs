@@ -7,9 +7,11 @@ public class GetKeyBehaviour : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        AudioSource audioSource = animator.gameObject.GetComponent<AudioSource>();
-        audioSource.Play();
-
+        if (KeepSoundPlay.state)
+        {
+            AudioSource audioSource = animator.gameObject.GetComponent<AudioSource>();
+            audioSource.Play();
+        }
         GameObject sunShinesFX =  animator.gameObject.transform.GetChild(2).gameObject;
         sunShinesFX.SetActive(true);
     }
