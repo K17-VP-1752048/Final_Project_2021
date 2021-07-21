@@ -62,6 +62,8 @@ public class PuzzleControl : MonoBehaviour
     IEnumerator showWinCanvas()
     {
         winCanvas.SetActive(true);
+        if (KeepSoundPlay.state)
+            winCanvas.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(1.6f);
         SceneManager.LoadScene("Image" + orderNumber);
     }
