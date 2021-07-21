@@ -124,7 +124,7 @@ public class Verify : MonoBehaviour
     {
         popupCanvas.GetComponentInChildren<Popup>().SetPopUpCanvasCorrectWord(correctWord);
         Instantiate(popupCanvas);
-
+        
         yield return new WaitForSeconds(
             popupCanvas.GetComponentInChildren<AudioSource>().clip.length);
         if (KeepSoundPlay.state)

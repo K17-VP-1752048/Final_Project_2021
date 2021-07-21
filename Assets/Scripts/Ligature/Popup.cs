@@ -9,7 +9,5 @@ public class Popup : MonoBehaviour
     public void SetPopUpCanvasCorrectWord(string correctWord)
     {
         gameObject.transform.GetChild(0).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = correctWord;
-        if (KeepSoundPlay.state)
-            transform.GetChild(0).GetComponent<AudioSource>().Play();
     }
 }
