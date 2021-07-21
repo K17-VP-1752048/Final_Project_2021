@@ -50,6 +50,7 @@ public class CountUI : MonoBehaviour
 
             if (Vector2.Distance(options[this.indexCorrectAns].numberImg.GetComponent<RectTransform>().position, vector) < 0.1f)
             {
+                SetEnabled(false);
                 StartCoroutine(ShowPopup(2f, options[this.indexCorrectAns].numberImg));
 
                 this.indexCorrectAns = -1;
