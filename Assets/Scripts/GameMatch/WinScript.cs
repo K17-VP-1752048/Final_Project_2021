@@ -59,7 +59,7 @@ public class WinScript : MonoBehaviour
                         this.finished = true;
                     }
 
-                    StartCoroutine(WinGame(3.5f));
+                    StartCoroutine(WinGame(4f));
                 }
             }
         }
@@ -84,7 +84,9 @@ public class WinScript : MonoBehaviour
 
     IEnumerator WinGame(float seconds)
     {
+        yield return new WaitForSeconds(3f);
         gameWinCanvas.SetActive(true);
+
         yield return new WaitForSeconds(seconds);
 
         if (finished && getKeyRewardCanvas != null)
