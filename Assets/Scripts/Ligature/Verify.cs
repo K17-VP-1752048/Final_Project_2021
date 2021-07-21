@@ -127,7 +127,8 @@ public class Verify : MonoBehaviour
 
         yield return new WaitForSeconds(
             popupCanvas.GetComponentInChildren<AudioSource>().clip.length);
-        AudioSource.PlayClipAtPoint(wordSpell, Camera.main.transform.position);
+        if (KeepSoundPlay.state)
+            AudioSource.PlayClipAtPoint(wordSpell, Camera.main.transform.position);
         yield return new WaitForSeconds(wordSpell.length);
         SceneManager.LoadScene(nextScene);
     }
