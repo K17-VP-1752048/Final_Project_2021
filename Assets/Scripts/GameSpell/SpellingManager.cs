@@ -401,11 +401,10 @@ public class SpellingManager : MonoBehaviour
             int val = Random.Range(0, popUpCheeringCanvas.transform.childCount);
             popUpCheeringCanvas.transform.GetChild(val).gameObject.SetActive(true);
 
-
-            gameObject.GetComponent<AudioSource>().clip = bravo_audio;
+            /*gameObject.GetComponent<AudioSource>().clip = bravo_audio;
             gameObject.GetComponent<AudioSource>().Play();
 
-            StartCoroutine(ShowPopupCheering(val));
+            StartCoroutine(ShowPopupCheering(val));*/
             StartCoroutine(BackTopic(gameObject.GetComponent<AudioSource>().clip.length));
         }
         else
