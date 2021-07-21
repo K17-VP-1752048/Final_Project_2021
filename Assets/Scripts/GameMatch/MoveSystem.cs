@@ -14,6 +14,7 @@ public class MoveSystem : MonoBehaviour
     private float startPosY;
     private Vector3 resetPosition;
     private PauseGame pause;
+    private bool point = true;
 
     // Start is called before the first frame update
     void Start()
@@ -56,7 +57,6 @@ public class MoveSystem : MonoBehaviour
 
     private void OnMouseUp()
     {
-
         moving = false;
         if (Mathf.Abs(this.transform.position.x - correctForm.transform.position.x) <= 0.5f &&
             Mathf.Abs(this.transform.position.y - correctForm.transform.position.y) <= 0.5f)
@@ -69,7 +69,11 @@ public class MoveSystem : MonoBehaviour
                                                         correctForm.transform.localScale.z);
             finish = true;
 
-            GameObject.Find("PointsHandle").GetComponent<WinScript>().AddPoints();
+            if (point)
+            {
+                GameObject.Find("PointsHandle").GetComponent<WinScript>().AddPoints();
+                point = false;
+            }
             GetComponent<AudioSource>().clip = audioAnimalName;
             StartCoroutine(PlayAudio(GetComponent<AudioSource>().clip.length + 0.2f));
         }
