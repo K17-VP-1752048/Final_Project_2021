@@ -17,6 +17,7 @@ public class SettingScript : MonoBehaviour
         if(settingPanel != null && settingPanel.activeInHierarchy == false)
         {
             settingPanel.SetActive(true);
+            GetComponent<AudioSource>().Play();
         }
     }
 
