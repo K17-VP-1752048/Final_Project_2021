@@ -68,10 +68,9 @@ public class QuizManager : MonoBehaviour
             slf.SaveCurrentQuestion(selectedQuestion);
 
             quizUI.SetQuestion(selectedQuestion);
-            this.index = val;     
+            this.index = val;
+            countScene.text = (slf.QuizData.questions.Count + 1 - questions.Count).ToString();
         }
-
-        countScene.text = (slf.QuizData.questions.Count + 1 - questions.Count).ToString();
 
         quizUI.SetEnabled(true);
     }
