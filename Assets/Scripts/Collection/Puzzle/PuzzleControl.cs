@@ -14,6 +14,7 @@ public class PuzzleControl : MonoBehaviour
     public static bool continu, win;
 
     private static new string name;
+    private bool playsound = false;
 
     // Start is called before the first frame update
     void Start()
@@ -54,8 +55,11 @@ public class PuzzleControl : MonoBehaviour
         }
         if(!continu)
         {
-            if (KeepSoundPlay.state)
+            if (KeepSoundPlay.state && !playsound)
+            {
+                playsound = true;
                 GetComponent<AudioSource>().Play();
+            }
             StartCoroutine(showWinCanvas());
         }
     }
