@@ -24,7 +24,6 @@ public class PuzzleControl : MonoBehaviour
         {
             StartCoroutine(showGuideHand());
         }
-//        winCanvas.SetActive(false);
         name = puzzleName;
     }
 
@@ -55,16 +54,19 @@ public class PuzzleControl : MonoBehaviour
         }
         if(!continu)
         {
+            if (KeepSoundPlay.state)
+                GetComponent<AudioSource>().Play();
             StartCoroutine(showWinCanvas());
         }
     }
 
     IEnumerator showWinCanvas()
     {
+        
         winCanvas.SetActive(true);
-        if (KeepSoundPlay.state)
-            winCanvas.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(1.6f);
+
+        yield return new WaitForSeconds(1.8f);
+        //yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
         SceneManager.LoadScene("Image" + orderNumber);
     }
 

@@ -1168,7 +1168,7 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 3
   m_Spacing: 0
-  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
@@ -1749,6 +1749,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731113556180249899, guid: e024d99e310ae4348a07fe56181e27d8,
+        type: 3}
+      propertyPath: m_ChildForceExpandHeight
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1731113557988734359, guid: e024d99e310ae4348a07fe56181e27d8,
         type: 3}
@@ -3215,6 +3220,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 148189099212410064, guid: 858bce08c8129a34b9a6b4d7bc34488e,
         type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 148189099212410064, guid: 858bce08c8129a34b9a6b4d7bc34488e,
+        type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -3333,6 +3343,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 886338133324064446, guid: 858bce08c8129a34b9a6b4d7bc34488e,
+        type: 3}
+      propertyPath: m_ChildControlHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 886338133324064446, guid: 858bce08c8129a34b9a6b4d7bc34488e,
+        type: 3}
+      propertyPath: m_ChildForceExpandHeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 886338134606166896, guid: 858bce08c8129a34b9a6b4d7bc34488e,
         type: 3}
       propertyPath: rightSound
@@ -3343,6 +3363,23 @@ PrefabInstance:
       propertyPath: wrongSound
       value: 
       objectReference: {fileID: 706636816}
+    - target: {fileID: 5570415559305388665, guid: 858bce08c8129a34b9a6b4d7bc34488e,
+        type: 3}
+      propertyPath: m_text
+      value: 'La salle de bain
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5570415559305388665, guid: 858bce08c8129a34b9a6b4d7bc34488e,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 5570415559305388665, guid: 858bce08c8129a34b9a6b4d7bc34488e,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 38
+      objectReference: {fileID: 0}
     - target: {fileID: 6572963637368894340, guid: 858bce08c8129a34b9a6b4d7bc34488e,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -3351,6 +3388,11 @@ PrefabInstance:
     - target: {fileID: 6572963637368894340, guid: 858bce08c8129a34b9a6b4d7bc34488e,
         type: 3}
       propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572963637368894340, guid: 858bce08c8129a34b9a6b4d7bc34488e,
+        type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6572963637368894340, guid: 858bce08c8129a34b9a6b4d7bc34488e,
