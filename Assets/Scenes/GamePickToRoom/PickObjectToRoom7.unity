@@ -3309,7 +3309,12 @@ PrefabInstance:
     - target: {fileID: 5693861486351045773, guid: 75ee373c27a88c843b4285548a285709,
         type: 3}
       propertyPath: m_Spacing
-      value: 5
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693861486351045773, guid: 75ee373c27a88c843b4285548a285709,
+        type: 3}
+      propertyPath: m_Padding.m_Top
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5693861487291520349, guid: 75ee373c27a88c843b4285548a285709,
         type: 3}
@@ -3390,6 +3395,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7415959536155393891, guid: acd0ef987e44c2748a98b8cf711ffa73,
+        type: 3}
+      propertyPath: m_Padding.m_Top
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7415959536155393891, guid: acd0ef987e44c2748a98b8cf711ffa73,
         type: 3}
