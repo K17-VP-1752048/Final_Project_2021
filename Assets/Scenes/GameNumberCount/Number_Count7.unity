@@ -305,7 +305,7 @@ PrefabInstance:
     - target: {fileID: 7680545776091709144, guid: 1e8e4475d3067bd4eb7027e4eaedb3c1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -31.302017
+      value: -31.302002
       objectReference: {fileID: 0}
     - target: {fileID: 7680545776091709144, guid: 1e8e4475d3067bd4eb7027e4eaedb3c1,
         type: 3}
@@ -2883,32 +2883,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!61 &7385834220585874969
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7385834220585875170}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1550, y: 800}
-  m_EdgeRadius: 0
 --- !u!223 &7385834220585874970
 Canvas:
   m_ObjectHideFlags: 0
@@ -3063,7 +3037,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1550, y: 800}
+  m_SizeDelta: {x: 2000, y: 1100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7385834220585874974
 CanvasRenderer:
@@ -3114,7 +3088,6 @@ GameObject:
   - component: {fileID: 7385834220585874974}
   - component: {fileID: 7385834220585874975}
   - component: {fileID: 7385834220585874972}
-  - component: {fileID: 7385834220585874969}
   - component: {fileID: 7385834220585874970}
   - component: {fileID: 7385834220585874971}
   m_Layer: 5

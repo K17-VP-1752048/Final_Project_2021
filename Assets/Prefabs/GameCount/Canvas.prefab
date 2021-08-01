@@ -168,10 +168,10 @@ RectTransform:
   m_Father: {fileID: 3921959548869791947}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 214.91376, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 709.93335, y: -118.94821}
+  m_SizeDelta: {x: 214.91376, y: 237.89642}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2208090443724579078
 CanvasRenderer:
@@ -202,7 +202,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: e3bc27b26ec97ca4caba56fa18ad30b0, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -355,8 +355,6 @@ GameObject:
   - component: {fileID: 7385834219914235725}
   - component: {fileID: 7385834219914235724}
   - component: {fileID: 7385834219914235727}
-  - component: {fileID: 7385834219914235722}
-  - component: {fileID: 7385834219914235723}
   - component: {fileID: 7385834219914235721}
   - component: {fileID: 7385834219914235720}
   m_Layer: 5
@@ -386,7 +384,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1550, y: 800}
+  m_SizeDelta: {x: 2000, y: 1100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7385834219914235725
 CanvasRenderer:
@@ -409,7 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.63529414}
+  m_Color: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 0.63529414}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -521,58 +519,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!61 &7385834219914235722
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7385834219914235825}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1550, y: 800}
-  m_EdgeRadius: 0
---- !u!114 &7385834219914235723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7385834219914235825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2e2a4c27ef325f41a0bf7efa5981b33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  downEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: NextRound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Number_Count4
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!223 &7385834219914235721
 Canvas:
   m_ObjectHideFlags: 0
@@ -743,10 +689,10 @@ RectTransform:
   m_Father: {fileID: 7385834219914235726}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 90}
-  m_SizeDelta: {x: 1000, y: 213}
+  m_AnchorMin: {x: 0.21877421, y: 0.5}
+  m_AnchorMax: {x: 0.78000003, y: 0.73625004}
+  m_AnchoredPosition: {x: 1.2258301, y: -39.938004}
+  m_SizeDelta: {x: -222.4519, y: -46.87506}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7385834220206469489
 CanvasRenderer:
@@ -803,10 +749,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
+  m_fontSize: 72
   m_fontSizeBase: 90
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -839,7 +785,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.0979747, y: 0, z: 0.085378066, w: 0}
+  m_margin: {x: 0.0979747, y: 0, z: 8.671399, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
