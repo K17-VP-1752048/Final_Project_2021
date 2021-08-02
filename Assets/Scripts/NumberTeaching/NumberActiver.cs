@@ -49,6 +49,8 @@ public class NumberActiver : MonoBehaviour
         yield return new WaitForSeconds(2f);
         textsInTextBackground[textsInTextBackground.Length - 1].SetActive(true);
         textBackground.SetActive(true);
+        if (KeepSoundPlay.state)
+            textsInTextBackground[textsInTextBackground.Length - 1].GetComponent<AudioSource>().Play();
 
         if (!slf.CheckCompleteGame("NumberIntroduce"))
         {

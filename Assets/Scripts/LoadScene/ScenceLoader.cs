@@ -108,7 +108,7 @@ public class ScenceLoader : MonoBehaviour
         SceneManager.LoadScene("Puzzle" + order);
     }
 
-    public void LoadImagePuzzlePrize(int order)
+    public void LoadImagePuzzlePrize(string order)
     {
         SceneManager.LoadScene("Image" + order);
     }
