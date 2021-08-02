@@ -1865,6 +1865,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PopUpCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 411364596593297745, guid: a74bd4b3cc9291c4bb2dc02dbe3ae8e1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 411364596593297757, guid: a74bd4b3cc9291c4bb2dc02dbe3ae8e1,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1969,6 +1974,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 411364597256977973, guid: a74bd4b3cc9291c4bb2dc02dbe3ae8e1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 411364597256977973, guid: a74bd4b3cc9291c4bb2dc02dbe3ae8e1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 411364597256977973, guid: a74bd4b3cc9291c4bb2dc02dbe3ae8e1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a74bd4b3cc9291c4bb2dc02dbe3ae8e1, type: 3}
