@@ -100,14 +100,18 @@ public class TrainStationLevel : MonoBehaviour
     IEnumerator ShowPopUp()
     {
         yield return new WaitForSeconds(0.5f);
-        popUpCanvas.SetActive(true);
+        if(popUpCanvas != null)
+        {
+            popUpCanvas.SetActive(true);
+        }
+        
         yield return new WaitForSeconds(2f);
-        popUpCanvas.SetActive(false);
+        Destroy(popUpCanvas);
         train.MoveToNextWayPoint(true);
     }
     IEnumerator WinGame()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2.5f);
         
         gameWinCanvas.SetActive(true);
         yield return new WaitForSeconds(timeTransition);
