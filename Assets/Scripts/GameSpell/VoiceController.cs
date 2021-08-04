@@ -70,7 +70,7 @@ public class VoiceController : MonoBehaviour
     {
         if (KeepSoundPlay.state)
             GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.5f);
         SpeechToText.instance.StartRecording();
     }
 
