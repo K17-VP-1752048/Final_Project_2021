@@ -45,10 +45,13 @@ public class TreasureManager : MonoBehaviour
 
     public void startOpenTreasureAnim(string puzzleName, int numberOfKeyLost)
     {
-        if(!puzzleName.Contains("PuzzleExtra"))
-            StartCoroutine(openTreasure(GameObject.Find(puzzleName)));
+        if(puzzleName.Contains("Extra1"))
+            StartCoroutine(openTreasureExtra(GameObject.Find(puzzleName), "ImageExtra1"));
+        else if(puzzleName.Contains("Extra2"))
+            StartCoroutine(openTreasureExtra(GameObject.Find(puzzleName), "ImageExtra2"));
         else
-            StartCoroutine(openTreasureExtra(GameObject.Find(puzzleName)));
+            StartCoroutine(openTreasure(GameObject.Find(puzzleName)));
+        
 
         // numberOfOpenTreasure++;
         slf.IncreaseBox();
@@ -71,20 +74,19 @@ public class TreasureManager : MonoBehaviour
         SceneManager.LoadScene(tmp.name);
     }
 
-    IEnumerator openTreasureExtra(GameObject tmp)
+    IEnumerator openTreasureExtra(GameObject tmp, string scene)
     {
         keyFly.SetActive(true);
 
         yield return new WaitForSeconds(1f);
         keyFly.SetActive(false);
+        //tmp.transform.GetChild(1).GetComponent<Image>().enabled = false;
         tmp.transform.GetChild(1).gameObject.SetActive(false);
 
         OpenTreasureCanvas.SetActive(true);
         yield return new WaitForSeconds(1f);
-        OpenTreasureCanvas.SetActive(false);
-        tmp.transform.GetChild(0).gameObject.SetActive(true);
 
-        //SceneManager.LoadScene(tmp.name);
+        SceneManager.LoadScene(scene);
     }
 
     public void alertTreasureCanNotOpen()

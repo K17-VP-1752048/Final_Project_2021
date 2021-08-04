@@ -63,8 +63,14 @@ public class VoiceController : MonoBehaviour
 
     public void StartListening()
     {
+        StartCoroutine(startRecord());
+    }
+
+    IEnumerator startRecord()
+    {
         if (KeepSoundPlay.state)
             GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(1f);
         SpeechToText.instance.StartRecording();
     }
 

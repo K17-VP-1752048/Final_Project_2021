@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
+using UnityEngine.UI;
 
 public class PuzzleImageManager : MonoBehaviour
 {
@@ -9,7 +9,7 @@ public class PuzzleImageManager : MonoBehaviour
     public GameObject message1;
     public GameObject mainCharac2;
     public GameObject message2;
-
+    [SerializeField] GameObject screenshot;
     public GameObject flashLight;
 
 
@@ -50,25 +50,31 @@ public class PuzzleImageManager : MonoBehaviour
 
     IEnumerator takeAShot()
     {
-        yield return new WaitForSeconds(.8f);
         buttons.SetActive(false);
 
         yield return new WaitForEndOfFrame();
-
+        if(KeepSoundPlay.state)
+            GetComponent<AudioSource>().Play();
         Texture2D texture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
         texture.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
         texture.Apply();
 
-        string name = "picture" + System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".jpg";
+        string name = "mondeludique" + System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".jpg";
 
         NativeGallery.SaveImageToGallery(texture, "Monde Ludique", name);
 
         flashLight.SetActive(true);
 
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.2f);
         buttons.SetActive(true);
         flashLight.SetActive(false);
 
+        screenshot.transform.GetChild(0).GetComponent<Image>().sprite 
+            = Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), new Vector2(0f, 0f));
+        screenshot.SetActive(true);
+        
+        yield return new WaitForSeconds(1.5f);
+        screenshot.SetActive(false);
         Destroy(texture);
     }
 }
