@@ -36,6 +36,7 @@ public class MoveSystem : MonoBehaviour
                 this.gameObject.transform.position = new Vector3(mousePos.x - startPosX,
                                                                     mousePos.y - startPosY,
                                                                     this.gameObject.transform.position.z);
+                this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
             }
         }
     }
@@ -67,6 +68,9 @@ public class MoveSystem : MonoBehaviour
             this.transform.localScale = new Vector3(correctForm.transform.localScale.x,
                                                         correctForm.transform.localScale.y,
                                                         correctForm.transform.localScale.z);
+
+            this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
+
             finish = true;
 
             if (point)
@@ -80,6 +84,7 @@ public class MoveSystem : MonoBehaviour
         else
         {
             this.transform.localPosition = new Vector3(resetPosition.x, resetPosition.y, resetPosition.z);
+            this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
         }
     }
 
