@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
@@ -23,17 +24,22 @@ public class Card : MonoBehaviour
 
     public void CardCorrectAnimation()
     {
-        StartCoroutine(CardAnimation(0.1f, "Corrected"));
+        StartCoroutine(CardAnimation(0f, "Corrected"));
+    }
+
+    public void CardWrongAnimation()
+    {
+
     }
 
     public void HideCardAnimation()
     {
-        StartCoroutine(CardAnimation(2f, "Hide"));
+        StartCoroutine(CardAnimation(1f, "Hide"));
     }
 
     public void ShowCardAnimation()
     {
-        StartCoroutine(CardAnimation(2f, "Show"));
+        StartCoroutine(CardAnimation(1f, "Show"));
     }
 
     IEnumerator CardAnimation(float delay, string triggerName)
@@ -45,5 +51,9 @@ public class Card : MonoBehaviour
     public string getCardValue()
     {
         return cardValue;
+    }
+    public void setCardValue(string value)
+    {
+        cardValue = value;
     }
 }
