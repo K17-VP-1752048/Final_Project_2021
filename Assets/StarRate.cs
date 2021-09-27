@@ -17,7 +17,7 @@ public class StarRate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //StartCoroutine(UpdateProgressBar());
+
     }
 
     public void UpdateStarRate(int starAchieved)
@@ -38,7 +38,10 @@ public class StarRate : MonoBehaviour
         progressBar.fillAmount = fillAmmount;
         for(int i = 0; i < starAchieved; i++)
         {
-            stars.transform.GetChild(i).GetComponent<Animator>().SetTrigger("Unlocked");
+            GameObject star = stars.transform.GetChild(i).gameObject;
+            star.GetComponent<Image>().color = new Color(250, 230, 0);
+            LeanTween.scale(star.GetComponent<RectTransform>(), new Vector3(1.2f, 1.2f, 1.2f), 1f)
+                .setEasePunch();
         }
     }
 

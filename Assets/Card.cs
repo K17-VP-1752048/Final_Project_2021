@@ -5,15 +5,18 @@ using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
-    private Animator cardAnimator;
     
     //storing the answer of each card
     [SerializeField] private string cardValue;
 
+    private Vector3 currentCardPos;
+    private Vector3 startCardPos;
+
     // Start is called before the first frame update
     void Start()
     {
-        cardAnimator = GetComponent<Animator>();
+        startCardPos = GetComponent<RectTransform>().anchoredPosition;
+        Debug.Log(startCardPos.y);
     }
 
     // Update is called once per frame
@@ -24,28 +27,27 @@ public class Card : MonoBehaviour
 
     public void CardCorrectAnimation()
     {
-        StartCoroutine(CardAnimation(0f, "Corrected"));
+        LeanTween.scale(gameObject.GetComponent<RectTransform>(),
+            new Vector3(1.2f, 1.2f, 1.2f), 1f)
+            .setEasePunch();
     }
 
     public void CardWrongAnimation()
     {
-
+        
     }
 
     public void HideCardAnimation()
     {
-        StartCoroutine(CardAnimation(1f, "Hide"));
+        LeanTween.moveY(gameObject.GetComponent<RectTransform>(), -600f, 0.5f)
+            .setDelay(1f).setEase(LeanTweenType.linear);
+        
     }
 
     public void ShowCardAnimation()
     {
-        StartCoroutine(CardAnimation(1f, "Show"));
-    }
-
-    IEnumerator CardAnimation(float delay, string triggerName)
-    {
-        yield return new WaitForSeconds(delay);
-        cardAnimator.SetTrigger(triggerName);
+        LeanTween.moveY(gameObject.GetComponent<RectTransform>(), startCardPos.y, 0.5f)
+            .setDelay(2f).setEase(LeanTweenType.linear);
     }
 
     public string getCardValue()
